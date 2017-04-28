@@ -47,16 +47,18 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public RedirectView login(@RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password) {
+    public RedirectView login(ModelMap model,@RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password) {
 
 
         if (ls.validateUser(loginEmail, password)) {
             if (ls.userType(loginEmail).equals("teacher")) {
 
+                model.put("curentUser",loginEmail);
                 return new RedirectView("/teacher");
 
             } else if (ls.userType(loginEmail).equals("parent")) {
 
+                model.put("curentUser",loginEmail);
                 return new RedirectView("/parentSignUp");
             }
 
@@ -66,3 +68,5 @@ public class LoginController {
     }
 
 }
+
+
