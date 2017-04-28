@@ -6,8 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "teachertalk")
-public class TeacherSignUp {
+@Table(name = "teacher")
+public class Teacher {
 
     @Id
     @GeneratedValue
@@ -20,10 +20,10 @@ public class TeacherSignUp {
     private Integer phoneNumber;
     private String subjectArea;
 
-    public TeacherSignUp() {
+    public Teacher() {
     }
 
-    public TeacherSignUp(String firstName, String lastName, String email, String password, Integer phoneNumber, String messageSubject) {
+    public Teacher(String firstName, String lastName, String email, String password, Integer phoneNumber, String messageSubject) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
