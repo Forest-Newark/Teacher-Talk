@@ -1,18 +1,17 @@
 package com.forestnewark.controller;
 
-import com.forestnewark.repository.ParentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * Created by cmitchell on 4/28/17.
- */
+
 @Controller
 public class ParentController {
 
-    @RequestMapping("/parentSignUp")
+
+    @RequestMapping("/parent")
     public String parentSignUp() {
-        return "parentSignUp";
+        return "parent";
     }
 }

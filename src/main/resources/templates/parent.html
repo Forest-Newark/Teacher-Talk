@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="parentSignUp.html" th:action="@{/parentSignUp}">
+<form action="parent.html" th:action="@{/parentSignUp}">
     <fieldset>
         <legend>Parent Registration</legend>
         <label for="registerPrimaryFirstName">
@@ -48,23 +48,44 @@
         <label for="registerSubjectArea">
             Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${subjectArea}"/>
         </label>
-    </fieldset>
 
-    <fieldset>
         <legend>Preferred Contact Method</legend>
+        <select name = "preferredContactMethod">
+            <option value=""></option>
+            <option value="phone">Phone</option>
+            <option value="text">Text</option>
+            <option value="email">Email</option>
+            <option value="both">Both</option>
+        </select>
 
-        <input type="checkbox" id="phone" name="phone" th:value="${phone}"/>
+        <input type="radio" id="phone" name="phone" th:value="${phone}"/>
         <label for="phone">Phone</label>
 
-        <input type="checkbox" id="text" name="text" th:value="${text}"/>
+        <input type="radio" id="text" name="text" th:value="${text}"/>
         <label for="text">Text</label>
 
-        <input type="checkbox" id="email" name="email" th:value="${email}"/>
+        <input type="radio" id="email" name="email" th:value="${email}"/>
         <label for="email">Email</label>
 
-        <input type="checkbox" id="both" name="both" th:value="${both}"/>
+        <input type="radio" id="both" name="both" th:value="${both}"/>
         <label for="both">Both</label>
     </fieldset>
+
+    <!--<fieldset>-->
+        <!--<legend>Preferred Contact Method</legend>-->
+
+        <!--<input type="checkbox" id="phone" name="phone" th:value="${phone}"/>-->
+        <!--<label for="phone">Phone</label>-->
+
+        <!--<input type="checkbox" id="text" name="text" th:value="${text}"/>-->
+        <!--<label for="text">Text</label>-->
+
+        <!--<input type="checkbox" id="email" name="email" th:value="${email}"/>-->
+        <!--<label for="email">Email</label>-->
+
+        <!--<input type="checkbox" id="both" name="both" th:value="${both}"/>-->
+        <!--<label for="both">Both</label>-->
+    <!--</fieldset>-->
 
 
 

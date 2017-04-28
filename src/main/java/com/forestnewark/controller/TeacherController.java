@@ -4,10 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class TeacherSignUpController {
+public class TeacherController {
 
-    @RequestMapping("/teacherSignUp")
-    public String teacherSignUp (){
-        return "teacherSignUp";
-    }
+
 }

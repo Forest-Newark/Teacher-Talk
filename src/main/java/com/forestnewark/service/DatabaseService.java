@@ -7,9 +7,7 @@ import com.forestnewark.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by forestnewark on 4/28/17.
- */
+
 @Component
 public class DatabaseService {
 
