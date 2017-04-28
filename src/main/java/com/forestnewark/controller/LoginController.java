@@ -20,7 +20,6 @@ import javax.servlet.http.HttpServletRequest;
 @SessionAttributes("currentUser")
 public class LoginController {
 
-
     final
     LoginService ls;
 
