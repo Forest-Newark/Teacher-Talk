@@ -9,37 +9,72 @@
 <form action="parentSignUp.html" th:action="@{/parentSignUp}">
     <fieldset>
         <legend>Parent Registration</legend>
-        <label for="registerFirstName">
-            First Name <input type="text" id="registerFirstName" name="loginEmail" th:value="${userEmail}"/>
+        <label for="registerPrimaryFirstName">
+            Primary First Name <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${userPrimaryFirstName}"/>
         </label>
         <br/>
-        <label for="registerLastName">
-            Last Name <input type="password" id="registerLastName" name="loginPassword" th:value="${userPassword}"/>
+        <label for="registerPrimaryLastName">
+            Primary Last Name <input type="text" id="registerPrimaryLastName" name="loginPassword" th:value="${userPrimaryLastName}"/>
         </label>
         <br/>
-        <label for="registerEmail">
-            Email <input type="password" id="registerEmail" name="loginPassword" th:value="${userPassword}"/>
+        <label for="registerSecondaryFirstName">
+            Secondary First Name <input type="text" id="registerSecondaryFirstName" name="registerSecondaryFirstName" th:value="${userSecondaryFirstName}"/>
+        </label>
+        <br/>
+        <label for="registerSecondaryLastName">
+            Secondary Last Name <input type="text" id="registerSecondaryLastName" name="registerSecondaryLastName" th:value="${userSecondaryLastName}"/>
+        </label>
+        <br/>
+        <label for="registerPrimaryEmail">
+            Email <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${userPrimaryEmail}"/>
+        </label>
+        <br/>
+        <label for="registerSecondaryEmail">
+            Email <input type="email" id="registerSecondaryEmail" name="registerSecondaryEmail" th:value="${userSecondaryEmail}"/>
         </label>
         <br/>
         <label for="registerPassword">
-            Password <input type="text" id="registerPassword" name="loginEmail" th:value="${userEmail}"/>
+            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${userPassword}"/>
         </label>
         <br/>
         <label for="registerPhoneNumber">
-            Phone Number <input type="password" id="registerPhoneNumber" name="loginPassword" th:value="${userPassword}"/>
+            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${userPhone}"/>
         </label>
         <br/>
         <label for="registerSchoolName">
-            School Name <input type="password" id="registerSchoolName" name="loginPassword" th:value="${userPassword}"/>
+            School Name <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${schoolName}"/>
         </label>
         <br/>
         <label for="registerSubjectArea">
-            Subject Area <input type="password" id="registerSubjectArea" name="loginPassword" th:value="${userPassword}"/>
+            Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${subjectArea}"/>
         </label>
     </fieldset>
-    <button type="submit">Register</button>
 
+    <fieldset>
+        <legend>Preferred Contact Method</legend>
+
+        <input type="checkbox" id="phone" name="phone" th:value="${phone}"/>
+        <label for="phone">Phone</label>
+
+        <input type="checkbox" id="text" name="text" th:value="${text}"/>
+        <label for="text">Text</label>
+
+        <input type="checkbox" id="email" name="email" th:value="${email}"/>
+        <label for="email">Email</label>
+
+        <input type="checkbox" id="both" name="both" th:value="${both}"/>
+        <label for="both">Both</label>
+    </fieldset>
+
+
+
+
+
+
+
+    <button type="submit">Register</button>
 </form>
+
 
 </body>
 </html>

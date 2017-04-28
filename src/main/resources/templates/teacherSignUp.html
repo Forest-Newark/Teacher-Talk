@@ -10,31 +10,31 @@
     <fieldset>
         <legend>Teacher Registration</legend>
         <label for="registerFirstName">
-            First Name <input type="text" id="registerFirstName" name="loginEmail" th:value="${userEmail}"/>
+            First Name <input type="text" id="registerFirstName" name="registerFirstName" th:value="${userFirstName}"/>
         </label>
         <br/>
         <label for="registerLastName">
-            Last Name <input type="password" id="registerLastName" name="loginPassword" th:value="${userPassword}"/>
+            Last Name <input type="text" id="registerLastName" name="registerLastName" th:value="${userLastName}"/>
         </label>
         <br/>
         <label for="registerEmail">
-            Email <input type="password" id="registerEmail" name="loginPassword" th:value="${userPassword}"/>
+            Email <input type="email" id="registerEmail" name="registerEmail" th:value="${userEmail}"/>
         </label>
         <br/>
         <label for="registerPassword">
-            Password <input type="text" id="registerPassword" name="loginEmail" th:value="${userEmail}"/>
+            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${userPassword}"/>
         </label>
         <br/>
         <label for="registerPhoneNumber">
-            Phone Number <input type="password" id="registerPhoneNumber" name="loginPassword" th:value="${userPassword}"/>
+            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${userPhone}"/>
         </label>
         <br/>
         <label for="registerSchoolName">
-            School Name <input type="password" id="registerSchoolName" name="loginPassword" th:value="${userPassword}"/>
+            School Name <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${schoolName}"/>
         </label>
         <br/>
         <label for="registerSubjectArea">
-            Subject Area <input type="password" id="registerSubjectArea" name="loginPassword" th:value="${userPassword}"/>
+            Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${subjectArea}"/>
         </label>
     </fieldset>
     <button type="submit">Register</button>
