@@ -18,11 +18,13 @@ public class CookieService {
         if (cookies.length > 0) {
             //Loop Through All Cookies
             for (int i = 0; i < cookies.length; i++) {
+
                 //Check for UserName Cookie
                 if (cookies[i].getName().equals("username")) {
                     //Set UserName to Model Attribute
                     model.put("currentUser", cookies[i].getValue());
                 }
+
                 //Check for rememberMe Cookie
                 if (cookies[i].getName().equals("rememberMe")) {
                     //Check for Value of Remember Me
