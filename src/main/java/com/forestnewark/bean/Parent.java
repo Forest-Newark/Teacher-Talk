@@ -3,13 +3,13 @@ package com.forestnewark.bean;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
+
+
 
 /**
  * Created by cmitchell on 4/28/17.
  */
 @Entity
-@Table(name = "Parent")
 public class Parent {
 
     @Id

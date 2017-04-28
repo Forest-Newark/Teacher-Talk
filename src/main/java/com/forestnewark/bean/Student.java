@@ -4,15 +4,11 @@ package com.forestnewark.bean;
  * Created by cmitchell on 4/28/17.
  */
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
-@Table(name = "Student")
-public class Student {
+public class Student{
 
     @Id
     @GeneratedValue
@@ -23,6 +19,8 @@ public class Student {
     private String grade;
     private String school;
     private String notes;
+
+    @OneToOne (cascade = CascadeType.ALL)
     private Parent parent;
 
 

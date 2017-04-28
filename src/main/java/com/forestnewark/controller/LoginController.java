@@ -1,6 +1,7 @@
 package com.forestnewark.controller;
 
 import com.forestnewark.service.CookieService;
+import com.forestnewark.service.DatabaseService;
 import com.forestnewark.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,8 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @SessionAttributes("currentUser")
 public class LoginController {
+    final
+    DatabaseService databaseService;
 
     final
     LoginService ls;
@@ -26,9 +29,10 @@ public class LoginController {
     CookieService cs;
 
     @Autowired
-    public LoginController(CookieService cs, LoginService ls) {
+    public LoginController(CookieService cs, LoginService ls, DatabaseService databaseService) {
         this.cs = cs;
         this.ls = ls;
+        this.databaseService = databaseService;
     }
 
 
