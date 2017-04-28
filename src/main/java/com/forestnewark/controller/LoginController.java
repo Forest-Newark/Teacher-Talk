@@ -1,5 +1,7 @@
 package com.forestnewark.controller;
 
+import com.forestnewark.bean.Parent;
+import com.forestnewark.repository.ParentRepository;
 import com.forestnewark.service.CookieService;
 import com.forestnewark.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +23,20 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
 
     final
+    ParentRepository parentRepository;
+
+    final
     LoginService ls;
 
     final
     CookieService cs;
 
     @Autowired
-    public LoginController(CookieService cs, LoginService ls) {
+    public LoginController(CookieService cs, LoginService ls, ParentRepository parentRepository) {
         this.cs = cs;
         this.ls = ls;
 
+        this.parentRepository = parentRepository;
     }
 
     /*
@@ -52,19 +58,39 @@ public class LoginController {
         if (ls.validateUser(loginEmail, password)) {
             if (ls.userType(loginEmail).equals("teacher")) {
 
-                model.put("curentUser",loginEmail);
+                model.put("currentUser",loginEmail);
                 return new RedirectView("/teacher");
 
             } else if (ls.userType(loginEmail).equals("parent")) {
 
-                model.put("curentUser",loginEmail);
-                return new RedirectView("/parentSignUp");
+                model.put("currentUser",loginEmail);
+                return new RedirectView("/parent");
             }
 
         }
             return new RedirectView("/");
 
     }
+
+    @RequestMapping("/parent")
+    public String parentSignUp(ModelMap model) {
+
+        Parent parent = parentRepository.findByPrimaryEmail((String) model.get("currentUser")).get(0);
+
+        model.addAttribute("parent",parent);
+
+        return "parent";
+    }
+
+   /*
+   parentSignUp Mapping
+   Returns "parent"
+    */
+
+   /*
+   teacherSignUp Mapping
+   returns "teacherSignUP
+    */
 
 }
 

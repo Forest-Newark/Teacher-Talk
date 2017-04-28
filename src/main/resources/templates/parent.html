@@ -10,7 +10,7 @@
     <fieldset>
         <legend>Parent Registration</legend>
         <label for="registerPrimaryFirstName">
-            Primary First Name <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${userPrimaryFirstName}"/>
+            Primary First Name <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}"/>
         </label>
         <br/>
         <label for="registerPrimaryLastName">
