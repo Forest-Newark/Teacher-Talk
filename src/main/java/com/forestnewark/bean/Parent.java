@@ -6,9 +6,7 @@ import javax.persistence.Id;
 
 
 
-/**
- * Created by cmitchell on 4/28/17.
- */
+
 @Entity
 public class Parent {
 
