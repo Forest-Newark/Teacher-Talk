@@ -13,6 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Student")
 public class Student {
+
     @Id
     @GeneratedValue
     private int id;
@@ -22,16 +23,19 @@ public class Student {
     private String grade;
     private String school;
     private String notes;
+    private Parent parent;
+
 
     public Student() {
     }
 
-    public Student(String studentFirstName, String studentLastName, String grade, String school, String notes) {
+    public Student(String studentFirstName, String studentLastName, String grade, String school, String notes, Parent parent) {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
         this.grade = grade;
         this.school = school;
         this.notes = notes;
+        this.parent = parent;
     }
 
     public String getStudentFirstName() {
@@ -72,5 +76,21 @@ public class Student {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public Parent getParent() {
+        return parent;
+    }
+
+    public void setParent(Parent parent) {
+        this.parent = parent;
     }
 }
