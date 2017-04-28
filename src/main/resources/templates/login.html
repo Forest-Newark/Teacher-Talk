@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>title</title>
+    <meta charset="UTF-8"/>
+    <title>Teacher Talk</title>
 </head>
 <body>
+
+<form action="login.html" th:action="@{/login}">
+    <fieldset>
+        <legend>Teacher Talk Login</legend>
+        <label for="loginEmail">
+            Email <input type="text" id="loginEmail" name="loginEmail" th:value="${userEmail}"/>
+        </label>
+        <label for="loginPassword">
+            Password <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
+        </label>
+        <input type="checkbox" id="rememberMe" name="rememberMe" th:value="${rememberUser}"/>
+        <label for="rememberMe">Remember me?</label>
+    </fieldset>
+    <button type="submit">Login</button>
+    <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button>
+</form>
+
 
 </body>
 </html>

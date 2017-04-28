@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Register Your Info</title>
+</head>
+<body>
+
+<form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
+    <fieldset>
+        <legend>Teacher Registration</legend>
+        <label for="registerFirstName">
+            First Name <input type="text" id="registerFirstName" name="loginEmail" th:value="${userEmail}"/>
+        </label>
+        <br/>
+        <label for="registerLastName">
+            Last Name <input type="password" id="registerLastName" name="loginPassword" th:value="${userPassword}"/>
+        </label>
+        <br/>
+        <label for="registerEmail">
+            Email <input type="password" id="registerEmail" name="loginPassword" th:value="${userPassword}"/>
+        </label>
+        <br/>
+        <label for="registerPassword">
+            Password <input type="text" id="registerPassword" name="loginEmail" th:value="${userEmail}"/>
+        </label>
+        <br/>
+        <label for="registerPhoneNumber">
+            Phone Number <input type="password" id="registerPhoneNumber" name="loginPassword" th:value="${userPassword}"/>
+        </label>
+        <br/>
+        <label for="registerSchoolName">
+            School Name <input type="password" id="registerSchoolName" name="loginPassword" th:value="${userPassword}"/>
+        </label>
+        <br/>
+        <label for="registerSubjectArea">
+            Subject Area <input type="password" id="registerSubjectArea" name="loginPassword" th:value="${userPassword}"/>
+        </label>
+    </fieldset>
+    <button type="submit">Register</button>
+
+</form>
+
+</body>
+</html>
