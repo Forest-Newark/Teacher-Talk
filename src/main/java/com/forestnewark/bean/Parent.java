@@ -23,13 +23,13 @@ public class Parent {
     private String primaryEmail;
     private String secondaryEmail;
     private String password;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private String preferredContactMethod;
 
     public Parent() {
     }
 
-    public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, Integer phoneNumber, String preferredContactMethod) {
+    public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber, String preferredContactMethod) {
         this.primaryFirstName = primaryFirstName;
         this.secondaryFirstName = secondaryFirstName;
         this.primaryLastName = primaryLastName;
@@ -105,11 +105,11 @@ public class Parent {
         this.password = password;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 

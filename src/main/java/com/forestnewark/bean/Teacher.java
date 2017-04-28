@@ -16,13 +16,13 @@ public class Teacher {
     private String lastName;
     private String email;
     private String password;
-    private Integer phoneNumber;
+    private String phoneNumber;
     private String subjectArea;
 
     public Teacher() {
     }
 
-    public Teacher(String firstName, String lastName, String email, String password, Integer phoneNumber, String messageSubject) {
+    public Teacher(String firstName, String lastName, String email, String password, String phoneNumber, String messageSubject) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -71,11 +71,11 @@ public class Teacher {
         this.password = password;
     }
 
-    public Integer getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Integer phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
