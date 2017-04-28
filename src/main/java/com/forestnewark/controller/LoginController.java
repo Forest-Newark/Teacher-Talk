@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -33,7 +34,6 @@ public class LoginController {
 
     }
 
-
     /*
     Returns Login html page from root request
      */
@@ -46,25 +46,23 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(@RequestParam("loginEmail") String loginEmail, @RequestParam("password") String password){
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public RedirectView login(@RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password) {
 
-        if(ls.validateUser(loginEmail,password)){
+
+        if (ls.validateUser(loginEmail, password)) {
             if (ls.userType(loginEmail).equals("teacher")) {
 
-                return "TeacherPage";
+                return new RedirectView("/teacher");
 
-            }else {
-                return "parentSignUp";
+            } else if (ls.userType(loginEmail).equals("parent")) {
+
+                return new RedirectView("/parentSignUp");
             }
 
         }
-
-        else {
-            return "login";
-        }
+            return new RedirectView("/");
 
     }
-
 
 }
