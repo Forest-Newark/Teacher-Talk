@@ -1,5 +1,6 @@
 package com.forestnewark.service;
 
+import org.springframework.stereotype.Component;
 import org.springframework.ui.ModelMap;
 
 import javax.servlet.http.Cookie;
@@ -8,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by forestnewark on 4/28/17.
  */
+@Component
 public class CookieService {
 
 
