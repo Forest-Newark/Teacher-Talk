@@ -1,8 +1,6 @@
 package com.forestnewark.bean;
 
-/**
- * Created by cmitchell on 4/28/17.
- */
+
 
 import javax.persistence.*;
 
