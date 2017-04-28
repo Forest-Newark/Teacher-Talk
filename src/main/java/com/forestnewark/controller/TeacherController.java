@@ -7,4 +7,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TeacherController {
 
 
+    @RequestMapping("/teacherSignUp")
+    public String teacherSignUp(){
+        return "teacherSignUp";
+    }
+
+    @RequestMapping("/teacher")
+    public String teacher(){
+        return "teacher";
+    }
+
 }

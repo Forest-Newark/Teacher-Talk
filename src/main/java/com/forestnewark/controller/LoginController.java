@@ -1,7 +1,6 @@
 package com.forestnewark.controller;
 
 import com.forestnewark.service.CookieService;
-import com.forestnewark.service.DatabaseService;
 import com.forestnewark.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,8 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @SessionAttributes("currentUser")
 public class LoginController {
-    final
-    DatabaseService databaseService;
+
 
     final
     LoginService ls;
@@ -29,12 +28,11 @@ public class LoginController {
     CookieService cs;
 
     @Autowired
-    public LoginController(CookieService cs, LoginService ls, DatabaseService databaseService) {
+    public LoginController(CookieService cs, LoginService ls) {
         this.cs = cs;
         this.ls = ls;
-        this.databaseService = databaseService;
-    }
 
+    }
 
     /*
     Returns Login html page from root request
@@ -48,25 +46,27 @@ public class LoginController {
         return "login";
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public String login(@RequestParam("loginEmail") String loginEmail, @RequestParam("password") String password){
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public RedirectView login(ModelMap model,@RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password) {
 
-        if(ls.validateUser(loginEmail,password)){
+
+        if (ls.validateUser(loginEmail, password)) {
             if (ls.userType(loginEmail).equals("teacher")) {
 
-                return "TeacherPage";
+                model.put("curentUser",loginEmail);
+                return new RedirectView("/teacher");
 
-            }else {
-                return "parentSignUp";
+            } else if (ls.userType(loginEmail).equals("parent")) {
+
+                model.put("curentUser",loginEmail);
+                return new RedirectView("/parentSignUp");
             }
 
         }
-
-        else {
-            return "login";
-        }
+            return new RedirectView("/");
 
     }
 
-
 }
+
+
