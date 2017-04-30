@@ -14,45 +14,45 @@
         </label>
         <br/>
         <label for="registerPrimaryLastName">
-            Primary Last Name <input type="text" id="registerPrimaryLastName" name="loginPassword" th:value="${userPrimaryLastName}"/>
+            Primary Last Name <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName" th:value="${parent.getPrimaryLastName()}"/>
         </label>
         <br/>
         <label for="registerSecondaryFirstName">
-            Secondary First Name <input type="text" id="registerSecondaryFirstName" name="registerSecondaryFirstName" th:value="${userSecondaryFirstName}"/>
+            Secondary First Name <input type="text" id="registerSecondaryFirstName" name="registerSecondaryFirstName" th:value="${parent.getSecondaryFirstName()}"/>
         </label>
         <br/>
         <label for="registerSecondaryLastName">
-            Secondary Last Name <input type="text" id="registerSecondaryLastName" name="registerSecondaryLastName" th:value="${userSecondaryLastName}"/>
+            Secondary Last Name <input type="text" id="registerSecondaryLastName" name="registerSecondaryLastName" th:value="${parent.getSecondaryLastName()}"/>
         </label>
         <br/>
         <label for="registerPrimaryEmail">
-            Email <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${userPrimaryEmail}"/>
+            Email <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${parent.getPrimaryEmail()}"/>
         </label>
         <br/>
         <label for="registerSecondaryEmail">
-            Email <input type="email" id="registerSecondaryEmail" name="registerSecondaryEmail" th:value="${userSecondaryEmail}"/>
+            Email <input type="email" id="registerSecondaryEmail" name="registerSecondaryEmail" th:value="${parent.getSecondaryEmail()}"/>
         </label>
         <br/>
         <label for="registerPassword">
-            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${userPassword}"/>
+            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${parent.getPassword()}"/>
         </label>
         <br/>
         <label for="registerPhoneNumber">
-            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${userPhone}"/>
+            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${parent.getPhoneNumber()}"/>
         </label>
         <br/>
         <label for="registerSchoolName">
-            School Name <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${schoolName}"/>
+            School Name <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${parent.getSchoolName()}"/>
         </label>
         <br/>
         <label for="registerSubjectArea">
-            Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${subjectArea}"/>
+            Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${parent.getSubjectArea()}"/>
         </label>
 
         <legend>Preferred Contact Method</legend>
         <select name = "preferredContactMethod">
             <option value=""></option>
-            <option value="phone">Phone</option>
+            <option value="phone" th:value="${parent.getPreferredContactMethod()}">Phone</option>
             <option value="text">Text</option>
             <option value="email">Email</option>
             <option value="both">Both</option>
