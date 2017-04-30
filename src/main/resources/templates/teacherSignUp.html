@@ -10,31 +10,31 @@
     <fieldset>
         <legend>Teacher Registration</legend>
         <label for="registerFirstName">
-            First Name <input type="text" id="registerFirstName" name="registerFirstName" th:value="${userFirstName}"/>
+            First Name <input type="text" id="registerFirstName" name="registerFirstName" th:value="${teacher.getFirstName()}"/>
         </label>
         <br/>
         <label for="registerLastName">
-            Last Name <input type="text" id="registerLastName" name="registerLastName" th:value="${userLastName}"/>
+            Last Name <input type="text" id="registerLastName" name="registerLastName" th:value="${teacher.getLastName()}"/>
         </label>
         <br/>
         <label for="registerEmail">
-            Email <input type="email" id="registerEmail" name="registerEmail" th:value="${userEmail}"/>
+            Email <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
         </label>
         <br/>
         <label for="registerPassword">
-            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${userPassword}"/>
+            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${teacher.getPassword()}"/>
         </label>
         <br/>
         <label for="registerPhoneNumber">
-            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${userPhone}"/>
+            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${teacher.getPhoneNumber()}"/>
         </label>
         <br/>
         <label for="registerSchoolName">
-            School Name <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${schoolName}"/>
+            School Name <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${teacher.getSchoolName()}"/>
         </label>
         <br/>
         <label for="registerSubjectArea">
-            Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${subjectArea}"/>
+            Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${teacher.getSubjectArea()}"/>
         </label>
     </fieldset>
     <button type="submit">Register</button>
