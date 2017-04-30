@@ -1,0 +1,12 @@
+<dataset>
+<parent id="1"
+        password="password123"
+        phone_number="919555555"
+        preferred_contact_method="both"
+        primary_email="parentPrimary@gmail.com"
+        primary_first_name="Suzie"
+        primary_last_name="Jones"
+        secondary_email="parentSecondary@gmail.com"
+        secondary_first_name="John"
+        secondary_last_name="Jones"/>
+</dataset>

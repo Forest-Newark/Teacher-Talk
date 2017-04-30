@@ -43,7 +43,7 @@ public class LoginController {
     Returns Login html page from root request
      */
     @RequestMapping("/")
-    public String landingPage(ModelMap model, HttpServletRequest request) {
+    public String loginPage(ModelMap model, HttpServletRequest request) {
 
         //Handle login cookies
         cs.readLoginCookies(model, request);
@@ -82,15 +82,15 @@ public class LoginController {
         return "parent";
     }
 
-   /*
-   parentSignUp Mapping
-   Returns "parent"
-    */
+    @RequestMapping("/teacherSignUp")
+    public String teacherSignUp(){
+        return "teacherSignUp";
+    }
 
-   /*
-   teacherSignUp Mapping
-   returns "teacherSignUP
-    */
+    @RequestMapping("/teacher")
+    public String teacher(){
+        return "teacher";
+    }
 
 }
 
