@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * Controller for Login page
@@ -45,20 +46,21 @@ public class LoginController {
     @RequestMapping("/")
     public String loginPage(ModelMap model, HttpServletRequest request) {
 
-        //Handle login cookies
-        cs.readLoginCookies(model, request);
+
+        model.addAttribute("userEmail",cs.readEmailCookie(request));
 
         return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public RedirectView login(ModelMap model,@RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password) {
+    public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password) {
 
 
         if (ls.validateUser(loginEmail, password)) {
             if (ls.userType(loginEmail).equals("teacher")) {
 
                 model.put("currentUser",loginEmail);
+                cs.saveUserEmail(response, loginEmail);
                 return new RedirectView("/teacher");
 
             } else if (ls.userType(loginEmail).equals("parent")) {
