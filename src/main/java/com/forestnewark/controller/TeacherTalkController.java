@@ -3,7 +3,8 @@ package com.forestnewark.controller;
 import com.forestnewark.bean.Parent;
 import com.forestnewark.repository.ParentRepository;
 import com.forestnewark.service.CookieService;
-import com.forestnewark.service.LoginService;
+import com.forestnewark.service.DatabaseService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -21,23 +22,22 @@ import javax.servlet.http.HttpServletResponse;
  */
 @Controller
 @SessionAttributes("currentUser")
-public class LoginController {
+public class TeacherTalkController {
+
+    final
+    DatabaseService ds;
 
     final
     ParentRepository parentRepository;
 
     final
-    LoginService ls;
-
-    final
     CookieService cs;
 
     @Autowired
-    public LoginController(CookieService cs, LoginService ls, ParentRepository parentRepository) {
+    public TeacherTalkController(CookieService cs, ParentRepository parentRepository, DatabaseService ds) {
         this.cs = cs;
-        this.ls = ls;
-
         this.parentRepository = parentRepository;
+        this.ds = ds;
     }
 
     /*
@@ -47,30 +47,36 @@ public class LoginController {
     public String loginPage(ModelMap model, HttpServletRequest request) {
 
 
-        model.addAttribute("userEmail",cs.readEmailCookie(request));
-
+        if (cs.readEmailCookie(request) != null) {
+            model.addAttribute("userEmail", cs.readEmailCookie(request));
+            model.addAttribute("userPassword", ds.getUserPassword(cs.readEmailCookie(request)));
+            model.addAttribute("rememberMe", true);
+        }
         return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password) {
+    public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam("rememberMe") String rememberMe) {
+        if (ds.validateUser(loginEmail, password)) {
+            if (ds.userType(loginEmail).equals("teacher")) {
 
-
-        if (ls.validateUser(loginEmail, password)) {
-            if (ls.userType(loginEmail).equals("teacher")) {
-
-                model.put("currentUser",loginEmail);
-                cs.saveUserEmail(response, loginEmail);
+                model.put("currentUser", loginEmail);
+                if (rememberMe.equals("rememberMe")) {
+                    cs.saveUserEmail(response, loginEmail);
+                }
                 return new RedirectView("/teacher");
 
-            } else if (ls.userType(loginEmail).equals("parent")) {
+            } else if (ds.userType(loginEmail).equals("parent")) {
 
-                model.put("currentUser",loginEmail);
+                model.put("currentUser", loginEmail);
+                if (rememberMe.equals("rememberMe")) {
+                    cs.saveUserEmail(response, loginEmail);
+                }
                 return new RedirectView("/parent");
             }
 
         }
-            return new RedirectView("/");
+        return new RedirectView("/");
 
     }
 
@@ -79,18 +85,18 @@ public class LoginController {
 
         Parent parent = parentRepository.findByPrimaryEmail((String) model.get("currentUser")).get(0);
 
-        model.addAttribute("parent",parent);
+        model.addAttribute("parent", parent);
 
         return "parent";
     }
 
     @RequestMapping("/teacherSignUp")
-    public String teacherSignUp(){
+    public String teacherSignUp() {
         return "teacherSignUp";
     }
 
     @RequestMapping("/teacher")
-    public String teacher(){
+    public String teacher() {
         return "teacher";
     }
 

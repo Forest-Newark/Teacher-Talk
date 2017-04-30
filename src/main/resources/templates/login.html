@@ -15,7 +15,7 @@
         <label for="loginPassword">
             Password <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
         </label>
-        <input type="checkbox" id="rememberMe" name="rememberMe" th:value="${rememberUser}"/>
+        <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"  th:checked="${rememberMe}" />
         <label for="rememberMe">Remember me?</label>
     </fieldset>
     <button type="submit">Login</button>

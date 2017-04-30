@@ -23,7 +23,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class LoginControllerTest {
+public class TeacherTalkControllerTest {
 
     @Autowired
     private WebApplicationContext wac;
