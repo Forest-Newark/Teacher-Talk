@@ -13,6 +13,7 @@
         <option th:remove="all">Student 2</option>
         <option th:remove="all">Student 3</option>
     </select>
+
     <select name="message" id="messageSelect">
         <option th:each="message: ${messages}" th:value="${message.getMessageName()}" th:text="${message.getMessageName()}" th:attr="data-message=${message.getEnglishMessage()}" >Template 1</option>
         <option th:remove="all">Template 2</option>
