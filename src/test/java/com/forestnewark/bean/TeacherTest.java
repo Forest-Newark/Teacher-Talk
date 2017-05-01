@@ -12,7 +12,7 @@ public class TeacherTest {
 
     @Before
     public void setUp(){
-        teacher = new Teacher("Niki", "Cama", "Niki@gmail.com", "qwerty", "919-438-1838", "tardy");
+        teacher = new Teacher("Niki", "Cama", "Niki@gmail.com", "qwerty", "919-438-1838", "tardy", "Sanderson High");
     }
 
     @Test

@@ -19,19 +19,28 @@ public class Teacher {
     private String password;
     private String phoneNumber;
     private String subjectArea;
+    private String schoolName;
 
     public Teacher() {
     }
-//Contructor for Teacher
-    public Teacher(String firstName, String lastName, String email, String password, String phoneNumber, String messageSubject) {
+
+    //Contructor for Teacher
+    public Teacher(String firstName, String lastName, String email, String password, String phoneNumber, String subjectArea, String schoolName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
         this.phoneNumber = phoneNumber;
-        this.subjectArea = messageSubject;
+        this.subjectArea = subjectArea;
+        this.schoolName = schoolName;
     }
+<<<<<<< HEAD
 //Getters and Setter
+=======
+
+
+//Getters and Setters for Teacher
+>>>>>>> 91aca6059742ac72ffa6448e104166effac8f8e7
     public int getId() {
         return id;
     }
@@ -86,5 +95,13 @@ public class Teacher {
 
     public void setSubjectArea(String subjectArea) {
         this.subjectArea = subjectArea;
+    }
+
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
     }
 }
