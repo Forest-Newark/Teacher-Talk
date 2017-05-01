@@ -4,10 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-
+//this tells JPA that the teacher class is a JPA entity and can be persisted to a database
 @Entity
 public class Teacher {
-
+//@Id this tells JPA that private int id is the primary key.
+// @Generated Value this tells JPA that is should automatically generate this key for this entity
     @Id
     @GeneratedValue
     private int id;
@@ -21,7 +22,7 @@ public class Teacher {
 
     public Teacher() {
     }
-
+//Contructor for Teacher
     public Teacher(String firstName, String lastName, String email, String password, String phoneNumber, String messageSubject) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -30,7 +31,7 @@ public class Teacher {
         this.phoneNumber = phoneNumber;
         this.subjectArea = messageSubject;
     }
-
+//Getters and Setter
     public int getId() {
         return id;
     }
