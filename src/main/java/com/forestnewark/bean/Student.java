@@ -4,10 +4,10 @@ package com.forestnewark.bean;
 
 import javax.persistence.*;
 
-
+//@Entity is telling JPA tht the Student class is a JPA entity  and this can be persisted to a database
 @Entity
 public class Student{
-
+//@Id this tells JPA that private int id is the primary key for this entity.@GeneratedValue this tells JPA that JPA should automatically generate this key for the entity
     @Id
     @GeneratedValue
     private int id;
@@ -18,13 +18,14 @@ public class Student{
     private String school;
     private String notes;
 
+//@OnetoOne is establishing a one to one relationship with the parent class
     @OneToOne (cascade = CascadeType.ALL)
     private Parent parent;
 
 
     public Student() {
     }
-
+//constructors for the student class
     public Student(String studentFirstName, String studentLastName, String grade, String school, String notes, Parent parent) {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
@@ -33,7 +34,7 @@ public class Student{
         this.notes = notes;
         this.parent = parent;
     }
-
+//establishing getters and setters for the Student class
     public String getStudentFirstName() {
         return studentFirstName;
     }
