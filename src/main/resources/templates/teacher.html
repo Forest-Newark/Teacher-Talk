@@ -1,39 +1,61 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>Teacher Talk</title>
+
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 </head>
-<body>
-<h1>Teacher Page</h1>
 
-<form action="teacher.html">
-    <select>
-        <option th:each="student : ${students}" th:value="${student.getId()}" th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()} ">Student 1</option>
-        <option th:remove="all">Student 2</option>
-        <option th:remove="all">Student 3</option>
-    </select>
-    <select onchange="myFunction()" id="messageSelect">
-        <option th:each="message: ${messages}" th:value="${message.getMessageName()}" th:text="${message.getMessageName()}" th:attr="data-message=${message.getEnglishMessage()}" >Template 1</option>
-        <option th:remove="all">Template 2</option>
-        <option th:remove="all">Template 3</option>
-    </select>
-    <label>
-      Message <textarea id="messageTextArea">Message Goes Here</textarea>
-    </label>
-    <button>Send Message</button>
-</form>
-
-<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    $("#messageSelect").change(function () {
-
-       var message = $(this).find(':selected').data('message');
-       $('#messageTextArea').val(message);
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../static/images/teacher-talk-logo.gif" alt="teacher talk logo" />
+        <h1>Teacher Talk</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Add Student</a></li>
+          <li><a href="#">Add Template</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
 
 
-    });
-</script>
+    <section class="message-container">
+      <div class="container-title">New Message</div>
+
+      <form action="teacher.html">
+        <select>
+            <option th:each="student : ${students}" th:value="${student.getId()}" th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()} ">Student 1</option>
+            <option th:remove="all">Student 2</option>
+            <option th:remove="all">Student 3</option>
+        </select>
+        <hr>
+        <select onchange="myFunction()" id="messageSelect">
+            <option th:each="message: ${messages}" th:value="${message.getMessageName()}" th:text="${message.getMessageName()}" th:attr="data-message=${message.getEnglishMessage()}" >Template 1</option>
+            <option th:remove="all">Template 2</option>
+            <option th:remove="all">Template 3</option>
+        </select>
+        <hr>
+        <label>
+          Message
+          <textarea id="messageTextArea">Message Goes Here</textarea>
+        </label>
+        <button>Send Message</button>
+    </form>
+  </section>
+
+    <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $("#messageSelect").change(function () {
+           var message = $(this).find(':selected').data('message');
+           $('#messageTextArea').val(message);
+        });
+    </script>
 
 
 </body>
