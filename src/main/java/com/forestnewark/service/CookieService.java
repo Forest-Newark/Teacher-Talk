@@ -13,7 +13,7 @@ public class CookieService {
 
 
 
-    public void saveUserEmail(HttpServletResponse response,String loginEmail) {
+    public void saveUserEmail(HttpServletResponse response, String loginEmail) {
 
         Cookie cookieLoginEmail = new Cookie("loginEmail", loginEmail);
         cookieLoginEmail.setMaxAge(60*60);
@@ -23,7 +23,6 @@ public class CookieService {
 
 
     public String readEmailCookie(HttpServletRequest request) {
-
 
 
         //Check for and read cookie values for saved user login credentials

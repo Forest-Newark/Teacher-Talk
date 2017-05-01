@@ -1,6 +1,7 @@
 package com.forestnewark.controller;
 
 import com.forestnewark.bean.Parent;
+import com.forestnewark.bean.Teacher;
 import com.forestnewark.service.CookieService;
 import com.forestnewark.service.DatabaseService;
 
@@ -78,7 +79,6 @@ public class TeacherTalkController {
     @RequestMapping("/parent")
     public String parentSignUp(ModelMap model) {
 
-
         Parent parent = ds.parentByPrimaryEmail(model.get("currentUser").toString());
         model.addAttribute("parent", parent);
 
@@ -86,7 +86,9 @@ public class TeacherTalkController {
     }
 
     @RequestMapping("/teacherSignUp")
-    public String teacherSignUp() {
+    public String teacherSignUp(ModelMap model) {
+        Teacher teacher = new Teacher();
+        model.addAttribute("teacher",teacher);
         return "teacherSignUp";
     }
 
