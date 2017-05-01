@@ -35,9 +35,6 @@ public class Teacher {
         this.schoolName = schoolName;
     }
 
-//Getters and Setter
-
-
 
 //Getters and Setters for Teacher
 

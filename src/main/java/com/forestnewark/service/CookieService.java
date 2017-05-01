@@ -34,8 +34,6 @@ public class CookieService {
                 for (int i = 0; i < cookies.length; i++) {
 
 
-
-
                     //Check for UserName Cookie
                     if (cookies[i].getName().equals("loginEmail")) {
                         //Set UserName to Model Attribute
