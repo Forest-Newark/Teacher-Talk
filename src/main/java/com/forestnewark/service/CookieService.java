@@ -24,20 +24,25 @@ public class CookieService {
 
     public String readEmailCookie(HttpServletRequest request) {
 
+
+
         //Check for and read cookie values for saved user login credentials
         Cookie[] cookies = request.getCookies();
 
-        if (cookies.length > 0) {
-            //Loop Through All Cookies
-            for (int i = 0; i < cookies.length; i++) {
+        if(cookies != null){
+            if (cookies.length > 0) {
+                //Loop Through All Cookies
+                for (int i = 0; i < cookies.length; i++) {
 
-                //Check for UserName Cookie
-                if (cookies[i].getName().equals("loginEmail")) {
-                    //Set UserName to Model Attribute
-                   return cookies[i].getValue();
+                    //Check for UserName Cookie
+                    if (cookies[i].getName().equals("loginEmail")) {
+                        //Set UserName to Model Attribute
+                        return cookies[i].getValue();
+                    }
                 }
             }
         }
+
 
         return null;
 
