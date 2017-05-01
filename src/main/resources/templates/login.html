@@ -13,7 +13,7 @@
   </div>
 
   <div class="login-input">
-    <img src="../static/images/teacher-talk-logo.gif" alt="teacher talk logo" />
+    <img src="../static/images/teacher-talk-logo.gif" th:src="${'images/teacher-talk-logo.gif'}" alt="teacher talk logo" />
     <h1>Teacher Talk</h1>
     <h3>Where communication between teachers and parents has never been easier.</h3>
     <form action="login.html" th:action="@{/login}" method="post">
@@ -37,7 +37,5 @@
       <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button>
     </form>
   </div>
-
-
 </body>
 </html>
