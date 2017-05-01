@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
+
 //created Parent class added Entity for hibernate to persist data
 
 @Entity

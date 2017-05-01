@@ -93,7 +93,12 @@ public class TeacherTalkController {
     }
 
     @RequestMapping("/teacher")
-    public String teacher() {
+    public String teacher(ModelMap model) {
+
+
+        model.addAttribute("students",ds.getAllStudents());
+
+
         return "teacher";
     }
 

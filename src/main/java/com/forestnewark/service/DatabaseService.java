@@ -8,6 +8,8 @@ import com.forestnewark.repository.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * Created by forestnewark on 4/30/17.
  */
@@ -77,5 +79,10 @@ public class DatabaseService {
     public Parent parentByPrimaryEmail(String userEmail) {
         return parentRepository.findByPrimaryEmail(userEmail);
 
+    }
+
+    public List<Student> getAllStudents() {
+
+        return studentRepository.findAll();
     }
 }
