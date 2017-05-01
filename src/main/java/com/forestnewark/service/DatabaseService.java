@@ -1,7 +1,9 @@
 package com.forestnewark.service;
 
+import com.forestnewark.bean.Message;
 import com.forestnewark.bean.Parent;
 import com.forestnewark.bean.Student;
+import com.forestnewark.repository.MessageRepository;
 import com.forestnewark.repository.ParentRepository;
 import com.forestnewark.repository.StudentRepository;
 import com.forestnewark.repository.TeacherRepository;
@@ -25,12 +27,16 @@ public class DatabaseService {
     final
     TeacherRepository teacherRepository;
 
+    final
+    MessageRepository messageRepository;
+
 
     @Autowired
-    public DatabaseService(ParentRepository parentRepository, StudentRepository studentRepository, TeacherRepository teacherRepository) {
+    public DatabaseService(ParentRepository parentRepository, StudentRepository studentRepository, TeacherRepository teacherRepository, MessageRepository messageRepository) {
         this.parentRepository = parentRepository;
         this.studentRepository = studentRepository;
         this.teacherRepository = teacherRepository;
+        this.messageRepository = messageRepository;
     }
 
 
@@ -84,5 +90,10 @@ public class DatabaseService {
     public List<Student> getAllStudents() {
 
         return studentRepository.findAll();
+    }
+
+    public List<Message> getAllMessages() {
+
+        return messageRepository.findAll();
     }
 }
