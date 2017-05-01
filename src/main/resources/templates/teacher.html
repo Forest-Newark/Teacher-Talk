@@ -7,13 +7,17 @@
 <body>
 <h1>Teacher Page</h1>
 
-<form action="teacher.html">
-    <select>
+<form th:action="@{/sendMessage}" action="teacher.html" method="post">
+    <select name="student">
         <option th:each="student : ${students}" th:value="${student.getId()}" th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()} ">Student 1</option>
         <option th:remove="all">Student 2</option>
         <option th:remove="all">Student 3</option>
     </select>
+<<<<<<< HEAD
     <select onchange="myFunction()" id="messageSelect">
+=======
+    <select name="message" id="messageSelect">
+>>>>>>> a8141798d0b0dbddbcea629ba2c19271d342d951
         <option th:each="message: ${messages}" th:value="${message.getMessageName()}" th:text="${message.getMessageName()}" th:attr="data-message=${message.getEnglishMessage()}" >Template 1</option>
         <option th:remove="all">Template 2</option>
         <option th:remove="all">Template 3</option>
