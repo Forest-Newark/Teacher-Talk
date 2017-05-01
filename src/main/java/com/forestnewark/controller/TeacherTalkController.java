@@ -68,7 +68,7 @@ public class TeacherTalkController {
                 if (rememberMe.equals("rememberMe")) {
                     cs.saveUserEmail(response, loginEmail);
                 }
-                return new RedirectView("/parent");
+                return new RedirectView("/parentLogin");
             }
 
         }
@@ -76,19 +76,31 @@ public class TeacherTalkController {
 
     }
 
-    @RequestMapping("/parent")
+    @RequestMapping("/parentSignUp")
     public String parentSignUp(ModelMap model) {
+
+        Parent parent = new Parent();
+        model.addAttribute("parent", parent);
+
+        return "parent";
+    }
+
+    @RequestMapping("/parentLogin")
+    public String parentLogin(ModelMap model, String rememberMe){
 
         Parent parent = ds.parentByPrimaryEmail(model.get("currentUser").toString());
         model.addAttribute("parent", parent);
+        model.addAttribute("rememberMe", rememberMe);
 
         return "parent";
     }
 
     @RequestMapping("/teacherSignUp")
     public String teacherSignUp(ModelMap model) {
+
         Teacher teacher = new Teacher();
         model.addAttribute("teacher",teacher);
+
         return "teacherSignUp";
     }
 
