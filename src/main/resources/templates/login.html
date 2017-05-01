@@ -3,24 +3,40 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Teacher Talk</title>
-</head>
-<body>
 
-<form action="login.html" th:action="@{/login}" method="post">
-    <fieldset>
-        <legend>Teacher Talk Login</legend>
-        <label for="loginEmail">
-            Email <input type="text" id="loginEmail" name="loginEmail" th:value="${userEmail}"/>
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+</head>
+<body id="login-page">
+
+  <div class="login-shape">
+  </div>
+
+  <div class="login-input">
+    <img src="../static/images/teacher-talk-logo.gif" alt="teacher talk logo" />
+    <h1>Teacher Talk</h1>
+    <h3>Where communication between teachers and parents has never been easier.</h3>
+    <form action="login.html" th:action="@{/login}" method="post">
+      <fieldset>
+        <legend>Login</legend>
+        <label for="loginEmail" class="loginEmail">
+            Email
+            <input type="text" id="loginEmail" name="loginEmail" th:value="${userEmail}"/>
         </label>
-        <label for="loginPassword">
-            Password <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
+        <label for="loginPassword" class="loginPassword">
+            Password
+            <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
         </label>
-        <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"  th:checked="${rememberMe}" />
-        <label for="rememberMe">Remember me?</label>
-    </fieldset>
-    <button type="submit">Login</button>
-    <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button>
-</form>
+        <label for="rememberMe" class="rememberMe">
+          <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"  th:checked="${rememberMe}" />
+        Remember me?
+        </label>
+      </fieldset>
+      <p>Forgot Password</p>
+      <button type="submit">Login</button>
+      <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button>
+    </form>
+  </div>
 
 
 </body>

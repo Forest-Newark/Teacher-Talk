@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>Teacher Talk</title>
+
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 </head>
-<body>
-Teacher page
-</body>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="../static/images/teacher-talk-logo.gif" alt="teacher talk logo" />
+        <h1>Teacher Talk</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Add Student</a></li>
+          <li><a href="#">Add Template</a></li>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="message-container">
+      <div class="container-title">New Message</div>
+      <form>
+        <fieldset>
+          <!-- <legend>New Message</legend> -->
+          <label for="student"> Student
+            <input type="text" id="student" name="student" />
+          </label>
+          <hr>
+          <label for="subject">Subject
+            <select name="subject" placeholder="Choose Template">
+              <option value="absent">Absent</option>
+              <option value="absent">Behavior</option>
+              <option value="absent">Grades</option>
+              <option value="absent">Tardy</option>
+          </select>
+          </label>
+          <hr>
+          <label for="message">Message
+            <textarea type="text" id="message" name="message"></textarea>
+          </label>
+        </fieldset>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+  </body>
 </html>
