@@ -31,7 +31,7 @@ public class Teacher {
         this.phoneNumber = phoneNumber;
         this.subjectArea = messageSubject;
     }
-//Getters and Setters for Teacher
+//Getters and Setter
     public int getId() {
         return id;
     }
