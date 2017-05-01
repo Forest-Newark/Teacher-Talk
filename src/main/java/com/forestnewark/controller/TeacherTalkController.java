@@ -52,7 +52,7 @@ public class TeacherTalkController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam("rememberMe") String rememberMe) {
+    public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam(value = "rememberMe", required = false, defaultValue = "dontRememberMe") String rememberMe) {
         if (ds.validateUser(loginEmail, password)) {
             if (ds.userType(loginEmail).equals("teacher")) {
 
@@ -109,10 +109,14 @@ public class TeacherTalkController {
 
 
         model.addAttribute("students",ds.getAllStudents());
-
+        model.addAttribute("messages",ds.getAllMessages());
 
         return "teacher";
     }
+
+
+
+
 
 }
 

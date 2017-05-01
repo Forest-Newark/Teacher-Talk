@@ -8,6 +8,11 @@ import javax.persistence.Id;
 
 //created Parent class added Entity for hibernate to persist data
 
+
+
+//created Parent class added Entity for hibernate to persist data
+
+
 @Entity
 public class Parent {
 //@ID is setting the primary key which is private int id.

@@ -34,9 +34,13 @@ public class Teacher {
         this.subjectArea = subjectArea;
         this.schoolName = schoolName;
     }
+<<<<<<< HEAD
+//Getters and Setter
+=======
 
 
 //Getters and Setters for Teacher
+>>>>>>> 91aca6059742ac72ffa6448e104166effac8f8e7
     public int getId() {
         return id;
     }
