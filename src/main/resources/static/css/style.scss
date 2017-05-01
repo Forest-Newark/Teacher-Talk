@@ -1,0 +1,164 @@
+// Variables
+
+$primary:#00b074; //green
+$secondary:#e88510; //orange
+$header: #faf0a1; //yellow
+$accent:#ececec; //off white for background
+
+@import "partials/header";
+@import "partials/teacher";
+
+* {
+  margin:0;
+  padding:0;
+}
+
+body {
+  font-size: 16px;
+  font-family: sans-serif;
+  color: #333;
+  background: $accent;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+h6 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  display: block;
+  margin: 15px auto;
+  background: $primary;
+  color: #333;
+  font-weight: 700;
+  padding: 10px 30px;
+  border: none;
+  a {
+    text-decoration: none;
+    color: #333;
+  }
+}
+
+input, textarea {
+  outline: none;
+}
+
+///////////////////////////
+// Login Page?////////////
+/////////////////////////
+
+#login-page {
+  display: flex;
+  justify-content: top;
+  background: #fff;
+}
+
+.login-shape {
+  background: url("../images/login-shapes.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 50vw;
+}
+
+// Login Input////////////
+
+
+fieldset {
+  border:none;
+}
+
+.login-input {
+  margin: 25px;
+
+  // Logo
+  img {
+    height: 50px;
+  }
+}
+
+.login-input {
+  form {
+    text-align: center;
+    margin: 15px 0;
+    legend {
+      font-weight: 700;
+      font-size: 26px;
+      margin: 25px auto 15px;
+    }
+    label {
+      margin: 10px;
+      text-align: right;
+      display: block;
+    }
+  }
+}
+
+.loginEmail, .loginPassword, .rememberMe {
+  width: 350px;
+  // display: block;
+  padding: 5px;
+  font-weight: 700;
+  font-size: 1.15rem;
+
+  input {
+    border:1px solid $primary;
+    padding: 10px;
+    text-align: left;
+  }
+}
+
+.rememberMe {
+  font-size: .8rem;
+  margin: 0 auto;
+
+}
+
+.login-input {
+  p {
+    margin: 0;
+    font-size: .8rem;
+    color: $primary;
+    text-decoration: underline;
+  }
+
+  button {
+    margin: 15px auto;
+    padding: 10px 60px;
+  }
+
+  button:nth-of-type(2){
+    background: $secondary;
+  }
+}

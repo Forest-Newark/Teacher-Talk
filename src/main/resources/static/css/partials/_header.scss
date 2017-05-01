@@ -1,0 +1,43 @@
+header {
+  background: $header;
+  height: 100px;
+  padding: 0 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.logo {
+  position: relative;
+  img {
+    height: 75px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+  }
+}
+
+nav {
+  ul {
+    li {
+      display: inline-block;
+      a {
+        cursor: pointer;
+        color: #333;
+        text-decoration: none;
+        margin: 5px;
+        padding: 5px 0;
+        border-bottom: 2px solid transparent;
+        transition: border 1s;
+      }
+      a:hover {
+        border-color: #333;
+      }
+    }
+  }
+}
