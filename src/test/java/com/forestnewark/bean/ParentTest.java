@@ -8,9 +8,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.*;
 
-/**
- * Created by forestnewark on 4/29/17.
- */
+
 public class ParentTest {
 
     private Parent parent;

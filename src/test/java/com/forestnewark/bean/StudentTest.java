@@ -6,15 +6,13 @@ import org.junit.Test;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.*;
 
-/**
- * Created by forestnewark on 4/29/17.
- */
+
 public class StudentTest {
     private Student student;
 
     @Before
     public void setUp(){
-        student = new Student("Nathan", "Walker", "Ninth", "Sanderson High", "tardy", student.getParent());
+        student = new Student("Nathan", "Walker", "6", "Sanderson High", "tardy", student.getParent());
     }
 
     @Test
@@ -41,13 +39,13 @@ public class StudentTest {
 
     @Test
     public void getGrade() throws Exception {
-        assertThat(student.getGrade(), equalTo("A"));
+        assertThat(student.getGrade(), equalTo("6"));
     }
 
     @Test
     public void setGrade() throws Exception {
-        student.setGrade("C");
-        assertThat(student.getGrade(), equalTo("C"));
+        student.setGrade("9");
+        assertThat(student.getGrade(), equalTo("9"));
     }
 
     @Test
