@@ -5,8 +5,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
+<<<<<<< HEAD
 //created Parent class added Entity for hibernate to persist data
 
+=======
+>>>>>>> 880b92216a8d0abc0ac451b71772543b6edf304f
 @Entity
 public class Parent {
 //@ID is setting the primary key which is private int id.
