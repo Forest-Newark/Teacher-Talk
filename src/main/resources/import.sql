@@ -4,3 +4,4 @@ INSERT INTO parent(id, password, phone_number, preferred_contact_method, primary
 
 INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (1,'6','Very-Hyper','School Of The Arts','Johnny','Smith',1);
 
+INSERT INTO message(id, english_message, message_name, spanish_message) VALUES (1,'Hello from Teacher Talk!','helloMessage','Hola de Teacher Talk ');

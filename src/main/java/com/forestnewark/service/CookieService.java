@@ -33,12 +33,11 @@ public class CookieService {
 
                 //Check for UserName Cookie
                 if (cookies[i].getName().equals("loginEmail")) {
-                    //Set UserName to Model Attribute
+                    //Returns loginEmail Value
                    return cookies[i].getValue();
                 }
             }
-        }
-
+        }//Otherwise return null
         return null;
 
     }

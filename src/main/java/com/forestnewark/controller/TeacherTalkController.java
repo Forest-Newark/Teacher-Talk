@@ -78,7 +78,6 @@ public class TeacherTalkController {
     @RequestMapping("/parent")
     public String parentSignUp(ModelMap model) {
 
-
         Parent parent = ds.parentByPrimaryEmail(model.get("currentUser").toString());
         model.addAttribute("parent", parent);
 
@@ -91,7 +90,12 @@ public class TeacherTalkController {
     }
 
     @RequestMapping("/teacher")
-    public String teacher() {
+    public String teacher(ModelMap model) {
+
+
+        model.addAttribute("students",ds.getAllStudents());
+
+
         return "teacher";
     }
 
