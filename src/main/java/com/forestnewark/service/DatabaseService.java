@@ -96,4 +96,14 @@ public class DatabaseService {
 
         return messageRepository.findAll();
     }
+
+    public Student getStudentById(String studentId) {
+
+        return studentRepository.getOne(Integer.parseInt(studentId));
+    }
+
+    public Message getMessageByName(String messageName) {
+
+        return messageRepository.findByMessageName(messageName);
+    }
 }

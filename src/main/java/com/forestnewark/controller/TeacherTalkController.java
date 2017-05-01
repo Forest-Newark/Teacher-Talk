@@ -5,6 +5,7 @@ import com.forestnewark.bean.Teacher;
 import com.forestnewark.service.CookieService;
 import com.forestnewark.service.DatabaseService;
 
+import com.forestnewark.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -24,6 +25,9 @@ import javax.servlet.http.HttpServletResponse;
 @SessionAttributes("currentUser")
 public class TeacherTalkController {
 
+    final
+    MessageService ms;
+
     private final
     DatabaseService ds;
 
@@ -31,9 +35,10 @@ public class TeacherTalkController {
     CookieService cs;
 
     @Autowired
-    public TeacherTalkController(CookieService cs, DatabaseService ds) {
+    public TeacherTalkController(CookieService cs, DatabaseService ds, MessageService ms) {
         this.cs = cs;
         this.ds = ds;
+        this.ms = ms;
     }
 
     /*
@@ -112,6 +117,14 @@ public class TeacherTalkController {
         model.addAttribute("messages",ds.getAllMessages());
 
         return "teacher";
+    }
+
+    @RequestMapping("/sendMessage")
+    public RedirectView sendMessage(@RequestParam("student") String studentId, @RequestParam("message") String messageName)  {
+
+        ms.sendMessage(studentId,messageName);
+
+        return new RedirectView("/teacher");
     }
 
 
