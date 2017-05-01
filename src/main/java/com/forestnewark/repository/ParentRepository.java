@@ -10,6 +10,6 @@ import java.util.List;
 
 public interface ParentRepository extends JpaRepository<Parent, Integer> {
 
-    List<Parent> findByPrimaryEmail(String email);
+    Parent findByPrimaryEmail(String email);
 
 }

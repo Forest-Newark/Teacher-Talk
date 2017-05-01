@@ -1,5 +1,6 @@
 package com.forestnewark.service;
 
+import com.forestnewark.bean.Parent;
 import com.forestnewark.bean.Student;
 import com.forestnewark.repository.ParentRepository;
 import com.forestnewark.repository.StudentRepository;
@@ -40,8 +41,8 @@ public class DatabaseService {
             }
         }
 
-        else if(parentRepository.findByPrimaryEmail(email).size() >0){
-            if(parentRepository.findByPrimaryEmail(email).get(0).getPassword().equals(password)){
+        else if(parentRepository.findByPrimaryEmail(email) != null){
+            if(parentRepository.findByPrimaryEmail(email).getPassword().equals(password)){
                 return true;
             }
         }
@@ -54,7 +55,7 @@ public class DatabaseService {
             return "teacher";
         }
 
-        if(parentRepository.findByPrimaryEmail(loginEmail).size() >0) {
+        if(parentRepository.findByPrimaryEmail(loginEmail) != null) {
             return "parent";
         }
 
@@ -67,8 +68,14 @@ public class DatabaseService {
         if(userType(loginEmail).equals("teacher")){
            return teacherRepository.findByEmail(loginEmail).get(0).getPassword();
         }else {
-            return parentRepository.findByPrimaryEmail(loginEmail).get(0).getPassword();
+            return parentRepository.findByPrimaryEmail(loginEmail).getPassword();
         }
+
+    }
+
+
+    public Parent parentByPrimaryEmail(String userEmail) {
+        return parentRepository.findByPrimaryEmail(userEmail);
 
     }
 }

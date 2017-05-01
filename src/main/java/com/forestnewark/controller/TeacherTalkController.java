@@ -1,7 +1,6 @@
 package com.forestnewark.controller;
 
 import com.forestnewark.bean.Parent;
-import com.forestnewark.repository.ParentRepository;
 import com.forestnewark.service.CookieService;
 import com.forestnewark.service.DatabaseService;
 
@@ -24,19 +23,15 @@ import javax.servlet.http.HttpServletResponse;
 @SessionAttributes("currentUser")
 public class TeacherTalkController {
 
-    final
+    private final
     DatabaseService ds;
 
-    final
-    ParentRepository parentRepository;
-
-    final
+    private final
     CookieService cs;
 
     @Autowired
-    public TeacherTalkController(CookieService cs, ParentRepository parentRepository, DatabaseService ds) {
+    public TeacherTalkController(CookieService cs, DatabaseService ds) {
         this.cs = cs;
-        this.parentRepository = parentRepository;
         this.ds = ds;
     }
 
@@ -83,8 +78,8 @@ public class TeacherTalkController {
     @RequestMapping("/parent")
     public String parentSignUp(ModelMap model) {
 
-        Parent parent = parentRepository.findByPrimaryEmail((String) model.get("currentUser")).get(0);
 
+        Parent parent = ds.parentByPrimaryEmail(model.get("currentUser").toString());
         model.addAttribute("parent", parent);
 
         return "parent";
