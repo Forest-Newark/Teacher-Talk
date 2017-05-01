@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action="parent.html" th:action="@{/parent}">
+<form action="parent.html" th:action="@{/parentSignUp}">
     <fieldset>
         <legend>Parent Registration</legend>
         <label for="registerPrimaryFirstName">
@@ -52,10 +52,9 @@
         </select>
 
     </fieldset>
-
-    <button type="submit">Register</button>
 </form>
 
+<a href="login.html" th:href="@{/}"><button type="submit">Register</button></a>
 
 </body>
 </html>

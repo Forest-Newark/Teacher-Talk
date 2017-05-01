@@ -35,6 +35,7 @@ public class Teacher {
         this.schoolName = schoolName;
     }
 
+
 //Getters and Setters for Teacher
 
     public int getId() {
