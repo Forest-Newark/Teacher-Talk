@@ -33,11 +33,9 @@ public class CookieService {
                 //Loop Through All Cookies
                 for (int i = 0; i < cookies.length; i++) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 91aca6059742ac72ffa6448e104166effac8f8e7
+
+
                     //Check for UserName Cookie
                     if (cookies[i].getName().equals("loginEmail")) {
                         //Set UserName to Model Attribute
@@ -49,18 +47,6 @@ public class CookieService {
 
         //Otherwise return null
 
-<<<<<<< HEAD
-=======
-                //Check for UserName Cookie
-                if (cookies[i].getName().equals("loginEmail")) {
-                    //Returns loginEmail Value
-                   return cookies[i].getValue();
-                }
-            }
-        }//Otherwise return null
->>>>>>> 880b92216a8d0abc0ac451b71772543b6edf304f
-=======
->>>>>>> 91aca6059742ac72ffa6448e104166effac8f8e7
         return null;
 
     }
