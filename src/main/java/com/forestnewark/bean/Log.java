@@ -11,7 +11,7 @@ import javax.persistence.Id;
  */
 
 @Entity
-private class Log {
+public class Log {
 
     @Id
     @GeneratedValue
@@ -34,5 +34,51 @@ private class Log {
         this.notes = notes;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getMessageSentTo() {
+        return messageSentTo;
+    }
+
+    public void setMessageSentTo(String messageSentTo) {
+        this.messageSentTo = messageSentTo;
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public String getParentName() {
+        return parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public String getTemplatesent() {
+        return templatesent;
+    }
+
+    public void setTemplatesent(String templatesent) {
+        this.templatesent = templatesent;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
 }
