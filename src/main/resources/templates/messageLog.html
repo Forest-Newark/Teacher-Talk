@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Message Log</title>
 </head>
 <body>
 
+<form action="messageLog.html" th:action="@{/messageLog}">
+    <label>
+        <span>Search:</span>
+        <input type="text" name="search" value="" th:value="${search}"/>
+    </label>
+    <button>Search</button>
+</form>
+
+
+<table>
+    <tr>
+        <th>Log ID</th>
+        <th>Date</th>
+        <th>Message Sent</th>
+        <th>Student Name</th>
+        <th>Parent Name</th>
+        <th>Template Sent</th>
+        <th>Notes</th>
+    </tr>
+</table>
 </body>
 </html>
