@@ -5,18 +5,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * Log like bean, html page that has a table on it, gets populated with data from log.
- * Form on top of log that lets you search. logservice.save. make another repointerface for log table. in database service need to autowire in logrepo.
- * Created by cmitchell on 5/1/17.
+ * Log bean, html page that has a table on it, gets populated with data from log.
+ * Form on top of log that lets you search.
  */
+
 //creating log class for the message log for the teacher to view previous/recent messages that the teacher sent to the parents/guardians regarding the student/child
 
 //this tells JPA that the log class is a JPA entity and can be persisted to a database
 @Entity
 public class Log {
 //using @Id and @GeneratedValue for hibernate.
-// @Id this tells JPA that private int id is the primary key.
-// @Generated Value this tells JPA that is should automatically generate this key for this entity
+// @Id tells JPA that private int id is the primary key.
+// @Generated Value tells JPA that is should automatically generate this key for this entity
     @Id
     @GeneratedValue
     private int id;

@@ -127,7 +127,13 @@ public class TeacherTalkController {
         return new RedirectView("/teacher");
     }
 
+    @RequestMapping("/messageLog")
+    public String messageLog(ModelMap model){
 
+        model.addAttribute("messages", ds.getAllMessages());
+
+        return "messageLog";
+    }
 
 
 
