@@ -5,19 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
-
-//created Parent class added Entity for hibernate to persist data
-
-
-
 //created Parent class added Entity for hibernate to persist data
 
 
 @Entity
 public class Parent {
-//@ID is setting the primary key which is private int id.
+    //@ID is setting the primary key which is private int id.
     //@Generated Value is telling JPA that it should automatically generate the key for this entity(private int id
-
+    //@Id this tells JPA that private int id is the primary key for this entity.
+// @GeneratedValue this tells JPA that JPA should automatically generate this key for the entity
     @Id
     @GeneratedValue
     private int id;
@@ -34,7 +30,8 @@ public class Parent {
 
     public Parent() {
     }
-//setting constructors for parent class
+
+    //setting constructors for parent class
     public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber, String preferredContactMethod) {
         this.primaryFirstName = primaryFirstName;
         this.secondaryFirstName = secondaryFirstName;
@@ -46,7 +43,8 @@ public class Parent {
         this.phoneNumber = phoneNumber;
         this.preferredContactMethod = preferredContactMethod;
     }
-//setting the getters and setters for the Parent class
+
+    //setting the getters and setters for the Parent class
     public int getId() {
         return id;
     }

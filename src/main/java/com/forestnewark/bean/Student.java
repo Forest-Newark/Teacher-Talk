@@ -7,7 +7,8 @@ import javax.persistence.*;
 //@Entity is telling JPA tht the Student class is a JPA entity  and this can be persisted to a database
 @Entity
 public class Student{
-//@Id this tells JPA that private int id is the primary key for this entity.@GeneratedValue this tells JPA that JPA should automatically generate this key for the entity
+//@Id this tells JPA that private int id is the primary key for this entity.
+// @GeneratedValue this tells JPA that JPA should automatically generate this key for the entity
     @Id
     @GeneratedValue
     private int id;

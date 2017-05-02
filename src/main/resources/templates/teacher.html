@@ -8,54 +8,58 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 </head>
 
-  <body>
-    <header>
-      <div class="logo">
-        <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}" alt="teacher talk logo" />
+<body>
+<header>
+    <div class="logo">
+        <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+             alt="teacher talk logo"/>
         <h1>Teacher Talk</h1>
-      </div>
-      <nav>
+    </div>
+    <nav>
         <ul>
           <li><a href="#">Add Student</a></li>
           <li><a href="#">Add Template</a></li>
-          <li><a href="#">History</a></li>
-          <li><a href="#">Profile</a></li>
+          <li><a href="#" th:href="@{/messageLog}">History</a></li>
+          <li><a href="#">Profile</a></li>git
         </ul>
-      </nav>
-    </header>
+    </nav>
+</header>
 
 
-    <section class="message-container">
-      <div class="container-title">New Message</div>
-
-      <form th:action="@{/sendMessage}" action="teacher.html" method="post">
-        <select name="student">
-            <option th:each="student : ${students}" th:value="${student.getId()}" th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()} ">Student 1</option>
+<section class="message-container">
+    <div class="container-title">New Message</div>
+    <button id="addStudent">+</button>
+    <form th:action="@{/sendMessage}" action="teacher.html" method="post">
+        <select id="studentddl" name="studentddl">
+            <option th:each="student : ${students}" th:value="${student.getId()}"
+                    th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()} ">Student 1
+            </option>
             <option th:remove="all">Student 2</option>
             <option th:remove="all">Student 3</option>
         </select>
-        <hr />
+        <div id="studentNameArea"></div>
+        <hr/>
 
-        <select onchange="myFunction()" id="messageSelect">
-            <option th:each="message: ${messages}" th:value="${message.getMessageName()}" th:text="${message.getMessageName()}" th:attr="data-message=${message.getEnglishMessage()}" >Template 1</option>
+        <select id="messageSelect" name="message">
+            <option th:each="message: ${messages}" th:value="${message.getMessageName()}"
+                    th:text="${message.getMessageName()}" th:attr="data-message=${message.getEnglishMessage()}">Template
+                1
+            </option>
             <option th:remove="all">Template 2</option>
             <option th:remove="all">Template 3</option>
         </select>
-        <hr />
+        <hr/>
         <label>
-          Message
-          <textarea id="messageTextArea">Message Goes Here</textarea>
+            Message
+            <textarea id="messageTextArea">Message Goes Here</textarea>
         </label>
         <button>Send Message</button>
     </form>
-  </section>
+</section>
 
-  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script>
-      $("#messageSelect").change(function () {
-         var message = $(this).find(':selected').data('message');
-         $('#messageTextArea').val(message);
-      });
-  </script>
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
+
 </body>
 </html>
