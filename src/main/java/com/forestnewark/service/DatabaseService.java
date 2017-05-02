@@ -3,10 +3,7 @@ package com.forestnewark.service;
 import com.forestnewark.bean.Message;
 import com.forestnewark.bean.Parent;
 import com.forestnewark.bean.Student;
-import com.forestnewark.repository.MessageRepository;
-import com.forestnewark.repository.ParentRepository;
-import com.forestnewark.repository.StudentRepository;
-import com.forestnewark.repository.TeacherRepository;
+import com.forestnewark.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +15,7 @@ import java.util.List;
 @Component
 public class DatabaseService {
 
+    // Autowiring repositories and created parameters for constructor
     final
     ParentRepository parentRepository;
 
@@ -30,13 +28,17 @@ public class DatabaseService {
     final
     MessageRepository messageRepository;
 
+    final
+    MessageLogRepository messageLogRepository;
+
 
     @Autowired
-    public DatabaseService(ParentRepository parentRepository, StudentRepository studentRepository, TeacherRepository teacherRepository, MessageRepository messageRepository) {
+    public DatabaseService(ParentRepository parentRepository, StudentRepository studentRepository, TeacherRepository teacherRepository, MessageRepository messageRepository, MessageLogRepository messageLogRepository) {
         this.parentRepository = parentRepository;
         this.studentRepository = studentRepository;
         this.teacherRepository = teacherRepository;
         this.messageRepository = messageRepository;
+        this.messageLogRepository = messageLogRepository;
     }
 
 

@@ -1,10 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title>Message Log</title>
 </head>
 <body>
 
+<form action="messageLog.html" th:action="@{/messageLog}">
+    <label>
+        <span>Search:</span>
+        <input type="text" name="search" value="" th:value="${search}"/>
+    </label>
+    <button>Search</button>
+</form>
+
+
+<table>
+    <tr>
+        <th>
+            <a href="messageLog.html" title="Log ID">Log ID</a>
+        </th>
+        <th>
+            <a href="messageLog.html" title="Date">Date</a>
+        </th>
+        <th>
+            <a href="messageLog.html" title="Message Sent">Message Sent</a>
+        </th>
+        <th>
+            <a href="messageLog.html" title="Student Name">Student Name</a>
+        </th>
+        <th>
+            <a href="messageLog.html" title="Parent Name">Parent Name</a>
+        </th>
+        <th>
+            <a href="messageLog.html" title="Template Sent">Template Sent</a>
+        </th>
+
+        <th>
+            <a href="messageLog.html" title="Notes">Notes</a>
+        </th>
+    </tr>
+</table>
 </body>
 </html>
