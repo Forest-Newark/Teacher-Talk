@@ -17,8 +17,8 @@ public class MessageService {
 
     private final DatabaseService ds;
 
-    final String username = "teacher.talk.tiy@gmail.com"; //Enter email login username - IE. name@gmail.com
-    final String password = "tiyteachertalk"; //Enter email login password - IE. 123Password
+    final String username = "teacher.talk.tiy@gmail.com";
+    final String password = "tiyteachertalk";
 
     @Autowired
     public MessageService(DatabaseService ds) {
