@@ -22,6 +22,7 @@ public class Log {
     private int id;
 
     private String messageSentTo;
+    private String localDate;
     private String studentName;
     private String parentName;
     private String templatesent;
@@ -30,12 +31,14 @@ public class Log {
     public Log() {
     }
 //setting Contructors
-    public Log(String messageSentTo, String studentName, String parentName, String templatesent, String notes) {
+    public Log(String messageSentTo, String studentName, String localDate,String parentName, String templatesent, String notes) {
         this.messageSentTo = messageSentTo;
         this.studentName = studentName;
         this.parentName = parentName;
         this.templatesent = templatesent;
         this.notes = notes;
+        this.localDate = localDate;
+
     }
 //setting getters and setters
     public int getId() {
@@ -84,5 +87,13 @@ public class Log {
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public String getLocalDate() {
+        return localDate;
+    }
+
+    public void setLocalDate(String localDate) {
+        this.localDate = localDate;
     }
 }
