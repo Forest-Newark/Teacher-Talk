@@ -17,6 +17,9 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * Controller for Login page
@@ -120,9 +123,29 @@ public class TeacherTalkController {
     }
 
     @RequestMapping("/sendMessage")
-    public RedirectView sendMessage(@RequestParam("student") String studentId, @RequestParam("message") String messageName)  {
+    public RedirectView sendMessage(@RequestParam Map<String, String> params)  {
 
-        ms.sendMessage(studentId,messageName);
+        System.out.println(params);
+        ArrayList<String> studentIdList = new ArrayList<>();
+        String messageName = null;
+
+        for (Map.Entry<String, String> entry : params.entrySet())
+        {
+            System.out.println(entry.getKey() + "/" + entry.getValue());
+            if(entry.getKey().contains("studentddl")){
+              studentIdList.add(entry.getValue());
+            }
+            if(entry.getKey().contains("message")){
+                messageName = entry.getValue();
+            }
+
+        }
+
+        for(String studentId : studentIdList){
+
+            ms.sendMessage(studentId,messageName);
+
+        }
 
         return new RedirectView("/teacher");
     }

@@ -17,8 +17,8 @@ public class MessageService {
 
     private final DatabaseService ds;
 
-    final String username = ""; //Enter email login username - IE. name@gmail.com
-    final String password = ""; //Enter email login password - IE. 123Password
+    final String username = "teacher.talk.tiy@gmail.com"; //Enter email login username - IE. name@gmail.com
+    final String password = "tiyteachertalk"; //Enter email login password - IE. 123Password
 
     @Autowired
     public MessageService(DatabaseService ds) {
@@ -46,7 +46,7 @@ public class MessageService {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(username)); //Sender's Email Address (FROM)
             message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("forest.newark@gmail.com")); //Receiver's Email Address (TO)
+                    InternetAddress.parse(ds.getStudentById(studentId).getParent().getPrimaryEmail())); //Receiver's Email Address (TO)
             message.setSubject("Teacher Talk Test: Student Name: " + ds.getStudentById(studentId).getStudentFirstName()); // Subject Line
             message.setText(ds.getMessageByName(messageName).getEnglishMessage()); // Body Text
 
