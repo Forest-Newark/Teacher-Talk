@@ -32,8 +32,8 @@
 
     <input id="studentAutoComplete" name="studentSearchBox" class="awesomplete" list="mylist" />
     <datalist id="mylist">
-        <option th:each="student : ${students}" th:value="${student.getId()}"
-                th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()}"
+        <option th:each="student : ${students}"
+                th:text="${student.getId()} + '-'+${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()}"
                 >Student 1
         </option>
     </datalist>

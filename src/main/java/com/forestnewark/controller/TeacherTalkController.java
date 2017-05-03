@@ -180,7 +180,7 @@ public class TeacherTalkController {
             System.out.println("Sorry, the email provided does not match our records. Please try again.");
         }
         else if(ds.userType(loginEmail).equals("teacher")){
-            model.put()
+//            model.put();
         }
         return new RedirectView("/");
     }
