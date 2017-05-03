@@ -18,11 +18,10 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
- * Controller for Login page
+ * Controller for Teacher Talk
  */
 @Controller
 @SessionAttributes("currentUser")
@@ -44,8 +43,12 @@ public class TeacherTalkController {
         this.ms = ms;
     }
 
-    /*
-    Returns Login html page from root request
+
+    /**
+     * Request for site root
+     * @param model to set model attributes
+     * @param request to read user cookies
+     * @return login page
      */
     @RequestMapping("/")
     public String loginPage(ModelMap model, HttpServletRequest request) {
@@ -59,6 +62,16 @@ public class TeacherTalkController {
         return "login";
     }
 
+
+    /**
+     * Request for site login
+     * @param model to set model attributes
+     * @param response to save userEmail cookie if rememeber me box is seleted
+     * @param loginEmail of the current user
+     * @param password of the current user
+     * @param rememberMe option to create cookies for site
+     * @return RedirectView to correct page based on user login credentials
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam(value = "rememberMe", required = false, defaultValue = "dontRememberMe") String rememberMe) {
         if (ds.validateUser(loginEmail, password)) {
@@ -84,6 +97,11 @@ public class TeacherTalkController {
 
     }
 
+    /**
+     * Request for parent sign up page
+     * @param model to set model attributes
+     * @return parent page
+     */
     @RequestMapping("/parentSignUp")
     public String parentSignUp(ModelMap model) {
 
@@ -93,6 +111,12 @@ public class TeacherTalkController {
         return "parent";
     }
 
+    /**
+     * Request for parent page after logging in
+     * @param model to set model attributes
+     * @param rememberMe
+     * @return
+     */
     @RequestMapping("/parentLogin")
     public String parentLogin(ModelMap model, String rememberMe){
 
@@ -125,13 +149,11 @@ public class TeacherTalkController {
     @RequestMapping("/sendMessage")
     public RedirectView sendMessage(@RequestParam Map<String, String> params)  {
 
-        System.out.println(params);
         ArrayList<String> studentIdList = new ArrayList<>();
         String messageName = null;
 
         for (Map.Entry<String, String> entry : params.entrySet())
         {
-            System.out.println(entry.getKey() + "/" + entry.getValue());
             if(entry.getKey().contains("studentddl")){
               studentIdList.add(entry.getValue());
             }

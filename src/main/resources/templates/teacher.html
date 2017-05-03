@@ -30,7 +30,7 @@
     <div class="container-title">New Message</div>
     <button id="addStudent">+</button>
     <form th:action="@{/sendMessage}" action="teacher.html" method="post">
-        <select id="studentddl" name="student">
+        <select id="studentddl" name="studentddl">
             <option th:each="student : ${students}" th:value="${student.getId()}"
                     th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()} ">Student 1
             </option>
@@ -60,7 +60,6 @@
 <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
-
 
 </body>
 </html>
