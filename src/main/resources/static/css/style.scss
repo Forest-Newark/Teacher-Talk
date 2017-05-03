@@ -8,6 +8,7 @@ $accent:#ececec; //off white for background
 @import "partials/header";
 @import "partials/teacher";
 @import "partials/loginModal";
+@import "partials/teacherSignUp";
 
 * {
   margin:0;
@@ -16,6 +17,7 @@ $accent:#ececec; //off white for background
 
 body {
   font-size: 16px;
+  line-height: 1.4;
   font-family: sans-serif;
   color: #333;
   background: $accent;
@@ -69,7 +71,7 @@ button {
   color: #333;
   font-weight: 700;
   min-width: 200px;
-  // padding: 10px 30px;
+  padding: 10px 30px;
   border: none;
   outline: 0;
   -webkit-transition: background 0.2s;
@@ -97,13 +99,15 @@ input, textarea {
 }
 
 ///////////////////////////
-// Login Page?////////////
+// Login Pag /////////////
 /////////////////////////
 
-#login-page {
+#login-page, #teacherSignUp {
   display: flex;
   justify-content: top;
   background: #fff;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .login-shape {
@@ -114,15 +118,16 @@ input, textarea {
   width: 50vw;
 }
 
-// Login Input////////////
+// Login Input/////////////
+// Teacher Sign Up Input//
 
 
 fieldset {
   border:none;
 }
 
-.login-input {
-  margin: 25px;
+.login-input, .signup {
+  margin: 25px auto;
 
   // Logo
   img {
@@ -130,7 +135,7 @@ fieldset {
   }
 }
 
-.login-input {
+.login-input, .signup {
   form {
     text-align: center;
     margin: 15px 0;
@@ -147,7 +152,7 @@ fieldset {
   }
 }
 
-.loginEmail, .loginPassword, .rememberMe {
+label {
   width: 350px;
   // display: block;
   padding: 5px;
