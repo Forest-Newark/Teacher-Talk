@@ -150,15 +150,18 @@ public class TeacherTalkController {
         return new RedirectView("/teacher");
     }
 
-    @RequestMapping("/messageLog")
-    public String messageLog(ModelMap model){
+//    @RequestMapping("/messageLog")
+//    public String messageLog(ModelMap model){
+        //if value = "id"
+        //model.addatribute("messages", ds.getAllMessagesOrderById();
+        //if value = "name"
+        //model.addattribute("message" ,ds.getAllMessagesOrderByName();
+        //model.addAttribute("messages", ds.getAllMessages());
 
-        model.addAttribute("messages", ds.getAllMessages());
+        //return "messageLog";
+   // }
 
-        return "messageLog";
-    }
-
-
+//    /mesageLog?value=name
 
 }
 
