@@ -12,7 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 public class CookieService {
 
 
-
+    /**
+     * Create and saves a cookie which contain user email address
+     * @param response used to set cookies
+     * @param loginEmail email address of the user to be set
+     */
     public void saveUserEmail(HttpServletResponse response, String loginEmail) {
 
         Cookie cookieLoginEmail = new Cookie("loginEmail", loginEmail);
@@ -21,7 +25,11 @@ public class CookieService {
     }
 
 
-
+    /**
+     * Check for and read user email cookies
+     * @param request to read user cookies
+     * @return string value of users email address if cookies found
+     */
     public String readEmailCookie(HttpServletRequest request) {
 
 

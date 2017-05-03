@@ -17,9 +17,11 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
- * Controller for Login page
+ * Controller for Teacher Talk
  */
 @Controller
 @SessionAttributes("currentUser")
@@ -41,8 +43,12 @@ public class TeacherTalkController {
         this.ms = ms;
     }
 
-    /*
-    Returns Login html page from root request
+
+    /**
+     * Request for site root
+     * @param model to set model attributes
+     * @param request to read user cookies
+     * @return login page
      */
     @RequestMapping("/")
     public String loginPage(ModelMap model, HttpServletRequest request) {
@@ -56,6 +62,16 @@ public class TeacherTalkController {
         return "login";
     }
 
+
+    /**
+     * Request for site login
+     * @param model to set model attributes
+     * @param response to save userEmail cookie if rememeber me box is seleted
+     * @param loginEmail of the current user
+     * @param password of the current user
+     * @param rememberMe option to create cookies for site
+     * @return RedirectView to correct page based on user login credentials
+     */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam(value = "rememberMe", required = false, defaultValue = "dontRememberMe") String rememberMe) {
         if (ds.validateUser(loginEmail, password)) {
@@ -81,6 +97,11 @@ public class TeacherTalkController {
 
     }
 
+    /**
+     * Request for parent sign up page
+     * @param model to set model attributes
+     * @return parent page
+     */
     @RequestMapping("/parentSignUp")
     public String parentSignUp(ModelMap model) {
 
@@ -90,6 +111,12 @@ public class TeacherTalkController {
         return "parent";
     }
 
+    /**
+     * Request for parent page after logging in
+     * @param model to set model attributes
+     * @param rememberMe
+     * @return
+     */
     @RequestMapping("/parentLogin")
     public String parentLogin(ModelMap model, String rememberMe){
 
@@ -121,20 +148,31 @@ public class TeacherTalkController {
 
 //    Redirecting to teacher
     @RequestMapping("/sendMessage")
-    public RedirectView sendMessage(@RequestParam("student") String studentId, @RequestParam("message") String messageName)  {
+    public RedirectView sendMessage(@RequestParam Map<String, String> params)  {
 
-        ms.sendMessage(studentId,messageName);
+        ArrayList<String> studentIdList = new ArrayList<>();
+        String messageName = null;
+
+        for (Map.Entry<String, String> entry : params.entrySet())
+        {
+            if(entry.getKey().contains("studentddl")){
+              studentIdList.add(entry.getValue());
+            }
+            if(entry.getKey().contains("message")){
+                messageName = entry.getValue();
+            }
+
+        }
+
+        for(String studentId : studentIdList){
+
+            ms.sendMessage(studentId,messageName);
+
+        }
 
         return new RedirectView("/teacher");
     }
 
-    @RequestMapping("/messageLog")
-    public String messageLog(ModelMap model){
-
-        model.addAttribute("messages", ds.getAllMessages());
-
-        return "messageLog";
-    }
 
     @RequestMapping("/forgotPassword")
     public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
@@ -147,6 +185,19 @@ public class TeacherTalkController {
         return new RedirectView("/");
     }
 
+//    @RequestMapping("/messageLog")
+//    public String messageLog(ModelMap model){
+        //if value = "id"
+        //model.addatribute("messages", ds.getAllMessagesOrderById();
+        //if value = "name"
+        //model.addattribute("message" ,ds.getAllMessagesOrderByName();
+        //model.addAttribute("messages", ds.getAllMessages());
+
+        //return "messageLog";
+   // }
+
+
+//    /mesageLog?value=name
 
 }
 

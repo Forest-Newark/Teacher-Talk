@@ -4,13 +4,14 @@
     <meta charset="UTF-8"/>
     <title>Teacher Talk</title>
 
+    <script th:href="@{https://use.fontawesome.com/f2bdd0ae67.js}" src="https://use.fontawesome.com/f2bdd0ae67.js"></script>
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 </head>
+
 <body id="login-page">
 
-  <div class="login-shape">
-  </div>
+  <div class="login-shape"></div>
 
   <div class="login-input">
     <img src="../static/images/teacher-talk-logo.gif" th:src="${'images/teacher-talk-logo.gif'}" alt="teacher talk logo" />
@@ -32,10 +33,32 @@
         Remember me?
         </label>
       </fieldset>
-      <p>Forgot Your Password?</p>
-      <button type="submit">Login</button>
-      <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button>
+
+      <p>Forgot Password</p>
+      <button type="submit" class="send">Login</button>
+      <!-- <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button> -->
     </form>
+    <button id="openModal" class="update">Sign Up</button>
+
+
+
+    	<!-- Modal -->
+      <!-- <div class="modal-bkgrd"></div> -->
+    	<div id="modal" class="remodal" role="dialog" aria-hidden="true">
+  			<div class="modal-content">
+          <i class="fa fa-times close" aria-label="close" aria-hidden="true"></i>
+  				<h3>Which Account Would You Like to Create?</h3>
+          <a href="parent.html"><button class="update">Parent</button></a>
+          <a href="teacherSignUp.html"><button class="update">Teacher</button></a>
+  			</div>
+    	</div>
+
+
+
   </div>
+
+  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="../static/js/modal.js"></script>
+
 </body>
 </html>

@@ -1,20 +1,16 @@
 header {
   background: #faf0a1;
-  height: 100px;
-  padding: 0 50px;
+  padding: 25px 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: flex-end; }
 
-.logo {
-  position: relative; }
-  .logo img {
-    height: 75px; }
-  .logo h1 {
-    font-size: 1.5rem;
-    position: absolute;
-    bottom: 0px;
-    left: 80px; }
+.logo img {
+  height: 50px; }
+.logo h1 {
+  font-size: 1.3rem;
+  bottom: 0px;
+  left: 80px; }
 
 nav ul li {
   display: inline-block; }
@@ -50,12 +46,77 @@ nav ul li {
   padding: 10px;
   font-weight: 700; }
 
+.remodal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); }
+  .remodal .modal-content {
+    position: relative;
+    top: 30%;
+    box-sizing: border-box;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto 10px;
+    padding: 35px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    color: #2b2e38;
+    background: #fff;
+    border-top: 25px solid #e88510;
+    border-bottom: 10px solid #e88510; }
+    .remodal .modal-content .update {
+      display: inline-block;
+      min-width: 110px;
+      padding: 12px 0;
+      text-align: center;
+      vertical-align: middle;
+      text-decoration: none; }
+
+.fa-times {
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  font-size: 30px;
+  text-shadow: 2px 2px #ddd; }
+
+.fa-times:hover,
+.fa-times:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer; }
+
+.faq {
+  border-right: 1px solid #333;
+  width: 55%;
+  margin: 25px 0;
+  padding: 25px; }
+  .faq img {
+    max-height: 250px;
+    padding-bottom: 15px;
+    display: block;
+    margin: 0 auto; }
+  .faq hr {
+    margin: 15px; }
+  .faq h1 {
+    text-align: center;
+    display: block;
+    margin: 0 auto; }
+  .faq h3 {
+    font-weight: 700;
+    margin: 15px 0 5px; }
+
 * {
   margin: 0;
   padding: 0; }
 
 body {
   font-size: 16px;
+  line-height: 1.4;
   font-family: sans-serif;
   color: #333;
   background: #ececec; }
@@ -89,25 +150,46 @@ h6 {
 img {
   max-width: 100%; }
 
+a {
+  text-decoration: none;
+  color: #333; }
+
 button {
+  cursor: pointer;
   display: block;
   margin: 15px auto;
-  background: #00b074;
   color: #333;
   font-weight: 700;
+  min-width: 200px;
   padding: 10px 30px;
-  border: none; }
-  button a {
-    text-decoration: none;
-    color: #333; }
+  border: none;
+  outline: 0;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s; }
+
+.send {
+  background: #00b074; }
+
+.send:hover,
+.send:focus {
+  background: #53b98f; }
+
+.update {
+  background: #e88510; }
+
+.update:hover,
+.update:focus {
+  background: #e2994e; }
 
 input, textarea {
   outline: none; }
 
-#login-page {
+#login-page, #teacherSignUp {
   display: flex;
   justify-content: top;
-  background: #fff; }
+  background: #fff;
+  max-width: 960px;
+  margin: 0 auto; }
 
 .login-shape {
   background: url("../images/login-shapes.gif");
@@ -119,29 +201,29 @@ input, textarea {
 fieldset {
   border: none; }
 
-.login-input {
-  margin: 25px; }
-  .login-input img {
+.login-input, .signup {
+  margin: 25px auto; }
+  .login-input img, .signup img {
     height: 50px; }
 
-.login-input form {
+.login-input form, .signup form {
   text-align: center;
   margin: 15px 0; }
-  .login-input form legend {
+  .login-input form legend, .signup form legend {
     font-weight: 700;
     font-size: 26px;
     margin: 25px auto 15px; }
-  .login-input form label {
+  .login-input form label, .signup form label {
     margin: 10px;
     text-align: right;
     display: block; }
 
-.loginEmail, .loginPassword, .rememberMe {
+label {
   width: 350px;
   padding: 5px;
   font-weight: 700;
   font-size: 1.15rem; }
-  .loginEmail input, .loginPassword input, .rememberMe input {
+  label input {
     border: 1px solid #00b074;
     padding: 10px;
     text-align: left; }
@@ -158,7 +240,5 @@ fieldset {
 .login-input button {
   margin: 15px auto;
   padding: 10px 60px; }
-.login-input button:nth-of-type(2) {
-  background: #e88510; }
 
 /*# sourceMappingURL=style.css.map */
