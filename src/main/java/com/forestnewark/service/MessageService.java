@@ -91,7 +91,7 @@ public class MessageService {
                     InternetAddress.parse(email)); //Receiver's Email Address (TO)
             message.setSubject("Teacher Talk Password Reset "); // Subject Line
 
-            message.setText("Dear User,\n You can reset your password at the following addres\n" +
+            message.setText("Dear User,\n You can reset your password at the following address\n" +
                     "http://localhost:8080/resetPassword?userId="+userId);
 
 

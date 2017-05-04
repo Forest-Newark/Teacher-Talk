@@ -211,6 +211,15 @@ public class TeacherTalkController {
     }
 
 
+    @RequestMapping("/updatePassword")
+    public RedirectView passwordResetSubmit(@RequestParam("newPassword") String password, @RequestParam("userId") Integer userId) {
+
+        ds.updateUserPasswordById(password, userId);
+
+        return new RedirectView ("/");
+    }
+
+
 
     @RequestMapping("/messageLog")
     public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "duck") String value) {
