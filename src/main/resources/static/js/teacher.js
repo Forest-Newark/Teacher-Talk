@@ -2,48 +2,44 @@
  * Created by forestnewark on 5/1/17.
  */
 
+$(document).ready(function() {
+    var userId;
+    var options = {
+        url: "/getAllStudents",
+
+        getValue: function(element) {
+            userId = element.id;
+            return element.studentFirstName + ' ' + element.studentLastName;
+        },
+
+        list: {
+            onChooseEvent: function() {
+                var studentId = $("#provider-json").getSelectedItemData().id;
+                var studentFirstName = $("#provider-json").getSelectedItemData().studentFirstName;
+                var studentLastName = $("#provider-json").getSelectedItemData().studentLastName;
+
+                var input = document.createElement("input");
+                input.setAttribute("value",studentFirstName + ' ' + studentLastName);
+                input.setAttribute("readonly","readonly");
 
 
-window.addEventListener("awesomplete-selectcomplete", function(e){
+                var hiddenInput = document.createElement("input");
+                hiddenInput.setAttribute("type","hidden");
+                hiddenInput.setAttribute("value", studentId);
+                $("#studentNameArea").append(input).append(hiddenInput);
 
-    var studentName = e.text;
-    alert(studentName);
+            },
+            match: {
+                enabled: true
+            }
+        }
+    };
 
-    var input = document.createElement("input");
-    input.setAttribute("value", studentName);
-    input.setAttribute("readonly","readonly");
-    $("#studentNameArea").append(input);
+    $("#provider-json").easyAutocomplete(options);
 
-
-
-    //
-    // alert('event listener ' + studentId);
-
-}, false);
-
-
-$(function(){
-    $('#studentAutoComplete').change(function () {
-           // alert('here is an alert');
-
-            // var index = 1;
-            //
-            // var input = document.createElement("input");
-            //
-            //
-            //
-            //
-            //  $('input[name=studentSearchBox]').val('');
-            //
-            // // input.attr("id", "student_" + index);
-            // input.setAttribute("value", studentName);
-            // input.setAttribute("readonly","readonly");
-            //
-            // //input.attr("placeholder", studentId);
-            // $("#studentNameArea").append(input);
-
-    });
 });
+
+
 
 
 $(document).ready(function() {
@@ -61,23 +57,5 @@ $("#messageSelect").change(function () {
     $('#messageTextArea').val(message);
 
 });
-
-
-// $("#addStudent").click(function() {
-//
-//    var index = $('#studentNameArea select').length + 1;
-//
-//     //Clone the DropDownList
-//     var ddl = $("#studentddl").clone();
-//
-//     //Set the ID and Name
-//     ddl.attr("id", "studentddl_" + index);
-//     ddl.attr("name", "studentddl_" + index);
-//
-//     $("#studentNameArea").append(ddl);
-//
-//
-//
-// });
 
 

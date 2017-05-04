@@ -176,21 +176,24 @@ public class TeacherTalkController {
         return new RedirectView("/teacher");
     }
 
-<<<<<<< HEAD
+
     @RequestMapping("/messageLog")
     public String messageLog(ModelMap model, String value) {
 
-            System.out.println(value);
+        System.out.println(value);
 
-            if(value == null){
-                model.addAttribute("messages",ds.getAllLog());
-            }
+        if (value == null) {
+            model.addAttribute("messages", ds.getAllLog());
+        }
 
-=======
+        return "messageLog";
+    }
+
+
 
     @RequestMapping("/forgotPassword")
     public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
-        if((loginEmail == null)){
+        if(loginEmail == null){
             System.out.println("Sorry, the email provided does not match our records. Please try again.");
         }
         else if(ds.userType(loginEmail).equals("teacher")){
@@ -206,7 +209,7 @@ public class TeacherTalkController {
         //if value = "name"
         //model.addattribute("message" ,ds.getAllMessagesOrderByName();
         //model.addAttribute("messages", ds.getAllMessages());
->>>>>>> b3e2f75d6f96736a7f07578096a753339a0288a6
+
 
 //            model.addAttribute("messages", ds.getAllMessagesOrderById());
 
@@ -229,12 +232,12 @@ public class TeacherTalkController {
 //        }
 
 
-        return "messageLog";
+//        return "messageLog";
     }
 
 
 //    /mesageLog?value=name
 
-}
+
 
 
