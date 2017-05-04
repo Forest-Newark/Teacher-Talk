@@ -175,7 +175,21 @@ public class DatabaseService {
     }
 
     public List<Log> getAllLogIdDesc(){
-        return messageLogRepository.findAllByOrderByIdDesc();
+        return messageLogRepository.findAllByOrderById();
+    }
+
+    public List<Log> getAllLogOrderById() {
+
+        return messageLogRepository.findAllByOrderById();
+    }
+
+    public List<Log> getAllLogOrderByStudentName() {
+        return messageLogRepository.findAllByOrderByStudentName();
+
+    }
+
+    public List<Log> getAllLogOrderByParentName() {
+        return messageLogRepository.findAllByOrderByParentName();
     }
 
 //    public List<Log> getAllMessagesOrderByStudentName() {

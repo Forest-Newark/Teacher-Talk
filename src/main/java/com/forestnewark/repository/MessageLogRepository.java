@@ -10,12 +10,16 @@ import java.util.List;
  */
 public interface MessageLogRepository extends JpaRepository<Log, Integer> {
 
-    List<Log> findAllByOrderByIdDesc();
+    List<Log> findAllByOrderById();
+
+    List<Log> findAllByOrderByStudentName();
+
+    List<Log> findAllByOrderByParentName();
 
 
-//    List<Log> findAllOrderById();
+//    List<Log> findAllByOrderById();
 //
-//    List<Log> findAllOrderByParentName();
+//   List<Log> findAllByOrderByParentName();
 //
 //    List<Log> findAllOrderByStudentName();
 //

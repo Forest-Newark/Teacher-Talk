@@ -161,16 +161,10 @@ nav ul li {
       transform: translateY(-10px); }
     .signup form .input-wrapper input {
       font-size: .8rem;
-      position: relative;
       border: 1px solid #ececec;
       padding: 10px; }
-    .signup form .input-wrapper input:valid + label {
-      transform: translateY(-27px); }
     .signup form .input-wrapper input:focus {
       border-color: #00b074; }
-    .signup form .input-wrapper input:focus + label {
-      color: #00b074;
-      transform: translateY(-27px); }
 
 .addContact {
   text-align: right;

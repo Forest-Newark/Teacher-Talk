@@ -68,6 +68,8 @@ public class TeacherTalkController {
      * Request for site login
      *
      * @param model      to set model attributes
+     * @param response   to save userEmail cookie if remember me box is selected
+     * @param model      to set model attributes
      * @param response   to save userEmail cookie if rememeber me box is seleted
      * @param loginEmail of the current user
      * @param password   of the current user
@@ -150,7 +152,7 @@ public class TeacherTalkController {
         return "teacher";
     }
 
-//    Redirecting to teacher
+    //    Redirecting to teacher
     @RequestMapping("/sendMessage")
     public RedirectView sendMessage(@RequestParam Map<String, String> params) {
 
@@ -177,66 +179,57 @@ public class TeacherTalkController {
     }
 
 
-    @RequestMapping("/messageLog")
-    public String messageLog(ModelMap model, String value) {
-
-        System.out.println(value);
-
-        if (value == null) {
-            model.addAttribute("messages", ds.getAllLog());
-        }
-
-        return "messageLog";
-    }
-
-
-
     @RequestMapping("/forgotPassword")
-    public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
-        if(loginEmail == null){
+    public RedirectView checkEmailType(@RequestParam("loginEmail") String loginEmail) {
+        if (ds.userType(loginEmail) == null) {
             System.out.println("Sorry, the email provided does not match our records. Please try again.");
-        }
-        else if(ds.userType(loginEmail).equals("teacher")){
-//            model.put();
+        } else if (ds.userType(loginEmail).equals("teacher")) {
+            System.out.println("Please check your email to reset your password");
+            return new RedirectView("/resetPassword");
+
         }
         return new RedirectView("/");
     }
 
-//    @RequestMapping("/messageLog")
-//    public String messageLog(ModelMap model){
-        //if value = "id"
-        //model.addatribute("messages", ds.getAllMessagesOrderById();
-        //if value = "name"
-        //model.addattribute("message" ,ds.getAllMessagesOrderByName();
-        //model.addAttribute("messages", ds.getAllMessages());
+
+    @RequestMapping("/messageLog")
+    public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "duck") String value) {
+
+        System.out.println(value);
 
 
-//            model.addAttribute("messages", ds.getAllMessagesOrderById());
+        //if value is duck i dont care about the order
+
+        if (value.equals("duck")) {
+            model.addAttribute("messages", ds.getAllLog());
+        }
+
+        //if value is id I wanted it ordered by ID from 1 -> up
+        if (value.equals("id")) {
+            System.out.println("you want it ordered by id");
+            model.addAttribute("messages", ds.getAllLogOrderById());
+        }
 
 
+        if (value.equals("studentName")) {
+            System.out.println("You want it ordered by student name");
+            model.addAttribute("messages", ds.getAllLogOrderByStudentName());
+        }
+        //if value is ParentName i want it ordered alphabetically by parent name
+        if (value.equals("parentName")) {
+            System.out.println("You want it ordered by parent name");
+            model.addAttribute("messages", ds.getAllLogOrderByParentName());
 
-//        if (value = "student name") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByStudentName());
-//        }
-//        if (value = "parent name") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByParentName());
-//        }
-//        if (value = "local date") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByLocalDate());
-//        }
-//        if (value = "template sent") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByTemplateSent());
-//        }
-//        if (value = "notes") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByNotes());
-//        }
+            //ordered by parent name
+        }
 
-
-//        return "messageLog";
+        return "messageLog";
     }
+}
 
 
-//    /mesageLog?value=name
+
+
 
 
 
