@@ -146,6 +146,7 @@ public class TeacherTalkController {
         return "teacher";
     }
 
+//    Redirecting to teacher
     @RequestMapping("/sendMessage")
     public RedirectView sendMessage(@RequestParam Map<String, String> params)  {
 
@@ -172,6 +173,18 @@ public class TeacherTalkController {
         return new RedirectView("/teacher");
     }
 
+
+    @RequestMapping("/forgotPassword")
+    public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
+        if((loginEmail == null)){
+            System.out.println("Sorry, the email provided does not match our records. Please try again.");
+        }
+        else if(ds.userType(loginEmail).equals("teacher")){
+//            model.put();
+        }
+        return new RedirectView("/");
+    }
+
 //    @RequestMapping("/messageLog")
 //    public String messageLog(ModelMap model){
         //if value = "id"
@@ -182,6 +195,7 @@ public class TeacherTalkController {
 
         //return "messageLog";
    // }
+
 
 //    /mesageLog?value=name
 
