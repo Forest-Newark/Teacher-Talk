@@ -160,7 +160,7 @@ public class TeacherTalkController {
         String messageName = null;
 
         for (Map.Entry<String, String> entry : params.entrySet()) {
-            if (entry.getKey().contains("studentddl")) {
+            if (entry.getKey().contains("studentId")) {
                 studentIdList.add(entry.getValue());
             }
             if (entry.getKey().contains("message")) {
