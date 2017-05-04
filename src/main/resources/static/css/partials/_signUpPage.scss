@@ -71,7 +71,7 @@
         border:1px solid $accent;
         padding: 10px;
       }
-      input:invalid + label {
+      input:valid + label {
         transform:translateY(-27px);
       }
       input:focus {

@@ -31,27 +31,27 @@
         <legend>Parent Registration</legend>
 
         <div class="input-wrapper">
-          <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}"/>
+          <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}" required/>
           <label class="gray-label" for="registerPrimaryFirstName">First Name* </label>
         </div>
 
         <div class="input-wrapper">
-          <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName" th:value="${parent.getPrimaryLastName()}"/>
+          <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName" th:value="${parent.getPrimaryLastName()}" required/>
           <label class="gray-label" for="registerPrimaryLastName">Last Name* </label>
         </div>
 
         <div class="input-wrapper">
-          <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${parent.getPrimaryEmail()}"/>
+          <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${parent.getPrimaryEmail()}" required/>
           <label class="gray-label" for="registerPrimaryEmail"> Email* </label>
         </div>
 
         <div class="input-wrapper">
-          <input type="password" id="registerPassword" name="registerPassword" th:value="${parent.getPassword()}"/>
+          <input type="password" id="registerPassword" name="registerPassword" th:value="${parent.getPassword()}" required/>
           <label class="gray-label" for="registerPassword">Password* </label>
         </div>
 
         <div class="input-wrapper">
-          <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${parent.getPhoneNumber()}"/>
+          <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${parent.getPhoneNumber()}" required/>
           <label class="gray-label" for="registerPhoneNumber"> Phone Number* </label>
         </div>
 

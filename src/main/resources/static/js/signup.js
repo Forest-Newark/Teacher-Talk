@@ -17,11 +17,11 @@
   // });
 
 
-$('input').keyup(function(){
-  if($(this).val().length > 1){
-    $(input).setCustomValidity();
-  }
-})
+// $('input').keyup(function(){
+//   if($(this).val().length > 1){
+//     $(input).setCustomValidity();
+//   }
+// })
   // $(document).ready(function(){
   //   $('input').on('change',function(){
   //     var input =$(this);

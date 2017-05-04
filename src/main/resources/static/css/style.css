@@ -164,7 +164,7 @@ nav ul li {
       position: relative;
       border: 1px solid #ececec;
       padding: 10px; }
-    .signup form .input-wrapper input:invalid + label {
+    .signup form .input-wrapper input:valid + label {
       transform: translateY(-27px); }
     .signup form .input-wrapper input:focus {
       border-color: #00b074; }
