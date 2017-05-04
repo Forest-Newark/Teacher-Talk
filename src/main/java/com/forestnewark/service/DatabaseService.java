@@ -192,6 +192,18 @@ public class DatabaseService {
         return messageLogRepository.findAllByOrderByParentName();
     }
 
+    public List<Log> getAllLogOrderByTemplateSent() {
+        return messageLogRepository.findAllByOrderByTemplateSent();
+    }
+
+    public List<Log> getAllLogOrderByNotes() {
+        return messageLogRepository.findAllByOrderByNotes();
+    }
+
+    public List<Log> getAllLogOrderByLocalDate() {
+        return messageLogRepository.findAllByOrderByLocalDate();
+    }
+
 
 //
 //    public List<Log> getAllMessagesOrderByTemplateSent() {

@@ -16,16 +16,11 @@ public interface MessageLogRepository extends JpaRepository<Log, Integer> {
 
     List<Log> findAllByOrderByParentName();
 
+    List<Log> findAllByOrderByTemplateSent();
 
-//    List<Log> findAllByOrderById();
-//
-//   List<Log> findAllByOrderByParentName();
-//
-//    List<Log> findAllOrderByStudentName();
-//
-//    List<Log> findAllOrderByLocalDate();
-//
-//    List<Log> findAllOrderByTemplateSent();
-//
-//    List<Log> findAllOrderByNotes();
+    List<Log> findAllByOrderByNotes();
+
+    List<Log> findAllByOrderByLocalDate();
+
+
 }
