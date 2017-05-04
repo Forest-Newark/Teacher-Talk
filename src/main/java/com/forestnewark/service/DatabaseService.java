@@ -1,9 +1,6 @@
 package com.forestnewark.service;
 
-import com.forestnewark.bean.Log;
-import com.forestnewark.bean.Message;
-import com.forestnewark.bean.Parent;
-import com.forestnewark.bean.Student;
+import com.forestnewark.bean.*;
 import com.forestnewark.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -65,8 +62,8 @@ public class DatabaseService {
      */
     public boolean validateUser(String email, String password) {
 
-        if (teacherRepository.findByEmail(email).size() > 0) {
-            if (teacherRepository.findByEmail(email).get(0).getPassword().equals(password)) {
+        if (teacherRepository.findAllByEmail(email).size() > 0) {
+            if (teacherRepository.findAllByEmail(email).get(0).getPassword().equals(password)) {
                 return true;
             }
         } else if (parentRepository.findByPrimaryEmail(email) != null) {
@@ -79,7 +76,6 @@ public class DatabaseService {
     }
 
 
-
     /**
      * Checks to see if a valid user holds a teacher or parent account
      *
@@ -87,7 +83,7 @@ public class DatabaseService {
      * @return the type of account the user holds
      */
     public String userType(String loginEmail) {
-        if (teacherRepository.findByEmail(loginEmail).size() > 0) {
+        if (teacherRepository.findAllByEmail(loginEmail).size() > 0) {
             return "teacher";
         }
 
@@ -107,7 +103,7 @@ public class DatabaseService {
     public String getUserPassword(String loginEmail) {
 
         if (userType(loginEmail).equals("teacher")) {
-            return teacherRepository.findByEmail(loginEmail).get(0).getPassword();
+            return teacherRepository.findAllByEmail(loginEmail).get(0).getPassword();
         } else {
             return parentRepository.findByPrimaryEmail(loginEmail).getPassword();
         }
@@ -115,8 +111,24 @@ public class DatabaseService {
     }
 
 
+    /**
+     * Get the Id of a speicific user by their Email Address
+     *
+     * @param email of user to be found
+     * @return integer value of user ID
+     */
+    public Integer getUserIdByEmail(String email) {
+        if (this.userType(email).equals("teacher")) {
+            return this.getTeacherByEmail(email).getId();
+        }
 
+        if (this.userType(email).equals("parent")) {
+            return this.parentByPrimaryEmail(email).getId();
 
+        } else {
+            return null;
+        }
+    }
 
 
     //PARENT METHODS
@@ -134,8 +146,17 @@ public class DatabaseService {
     }
 
 
+    //TEACHER METHODS
 
-
+    /**
+     * Find a TEACHER by their email address
+     *
+     * @param email of teacer to be found
+     * @return teacher with the provided email address
+     */
+    private Teacher getTeacherByEmail(String email) {
+        return teacherRepository.findByEmail(email);
+    }
 
 
     //STUDENT METHODS
@@ -163,14 +184,6 @@ public class DatabaseService {
     }
 
 
-
-
-
-
-
-
-
-
     //MESSAGE METHODS
 
     /**
@@ -182,7 +195,6 @@ public class DatabaseService {
 
         return messageRepository.findAll();
     }
-
 
 
     /**
@@ -197,51 +209,77 @@ public class DatabaseService {
     }
 
 
-
-
-
-
     //MESSAGELOG METHODS
 
 
-    public List<Log> getAllMessagesOrderById() {
-        return messageLogRepository.findAll();
-
-    }
-
+    /**
+     * Get All Message Log Items
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLog() {
         return messageLogRepository.findAll();
     }
 
-    public List<Log> getAllLogIdDesc(){
-        return messageLogRepository.findAllByOrderById();
-    }
 
+    /**
+     * Get Log Items ordered by ID ASCENDING
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderById() {
 
         return messageLogRepository.findAllByOrderById();
     }
 
+
+    /**
+     * Get Log Item Order By Student Name
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByStudentName() {
         return messageLogRepository.findAllByOrderByStudentName();
 
     }
 
+
+    /**
+     * Get Log Items Order By Parent Name
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByParentName() {
         return messageLogRepository.findAllByOrderByParentName();
     }
 
+
+    /**
+     * Get Log Item Order By Template Name
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByTemplateSent() {
         return messageLogRepository.findAllByOrderByTemplateSent();
     }
 
+    /**
+     * Get Log Item Order By Notes
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByNotes() {
         return messageLogRepository.findAllByOrderByNotes();
     }
 
+    /**
+     * Get Log Item Order By Date
+     *
+     * @return list of log items
+     */
+    //TODO: This method is not working
     public List<Log> getAllLogOrderByLocalDate() {
         return messageLogRepository.findAllByOrderByLocalDate();
     }
-
 
 }

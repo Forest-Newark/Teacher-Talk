@@ -181,17 +181,38 @@ public class TeacherTalkController {
     }
 
 
+//    Routes to forgotPassword.html when user clicks "Forgot Password"
     @RequestMapping("/forgotPassword")
-    public RedirectView checkEmailType(@RequestParam("loginEmail") String loginEmail) {
-        if (ds.userType(loginEmail) == null) {
-            System.out.println("Sorry, the email provided does not match our records. Please try again.");
-        } else if (ds.userType(loginEmail).equals("teacher")) {
-            System.out.println("Please check your email to reset your password");
-            return new RedirectView("/resetPassword");
+    public String forgotPassword(){
+        return "forgotPassword";
+    }
 
-        }
+
+//    Sends a password reset link in an email and then redirects to homepage
+    @RequestMapping("/passwordResetEmail")
+    public RedirectView passwordResetEmail(@RequestParam ("email") String email){
+
+//        Gets user ID from database based on email entered
+        Integer userId = ds.getUserIdByEmail(email);
+
+//        Message Service sends the email with the password reset link
+        ms.sendPasswordResetEmail(userId, email);
+
         return new RedirectView("/");
     }
+
+
+//    @RequestMapping("/resetPassword")
+//    public RedirectView checkEmailType(@RequestParam("loginEmail") String loginEmail) {
+//        if (ds.userType(loginEmail) == null) {
+//            System.out.println("Sorry, the email provided does not match our records. Please try again.");
+//        } else if (ds.userType(loginEmail).equals("teacher")) {
+//            System.out.println("Please check your email to reset your password");
+//            return new RedirectView("/resetPassword");
+//
+//        }
+//        return new RedirectView("/");
+//    }
 
 
     @RequestMapping("/messageLog")

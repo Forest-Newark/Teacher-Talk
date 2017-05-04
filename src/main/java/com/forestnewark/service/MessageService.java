@@ -66,4 +66,7 @@ public class MessageService {
         }
 
     }
+
+    public void sendPasswordResetEmail(Integer userId, String email) {
+    }
 }
