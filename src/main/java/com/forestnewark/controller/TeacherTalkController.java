@@ -46,7 +46,8 @@ public class TeacherTalkController {
 
     /**
      * Request for site root
-     * @param model to set model attributes
+     *
+     * @param model   to set model attributes
      * @param request to read user cookies
      * @return login page
      */
@@ -65,10 +66,11 @@ public class TeacherTalkController {
 
     /**
      * Request for site login
-     * @param model to set model attributes
-     * @param response to save userEmail cookie if rememeber me box is seleted
+     *
+     * @param model      to set model attributes
+     * @param response   to save userEmail cookie if rememeber me box is seleted
      * @param loginEmail of the current user
-     * @param password of the current user
+     * @param password   of the current user
      * @param rememberMe option to create cookies for site
      * @return RedirectView to correct page based on user login credentials
      */
@@ -99,6 +101,7 @@ public class TeacherTalkController {
 
     /**
      * Request for parent sign up page
+     *
      * @param model to set model attributes
      * @return parent page
      */
@@ -113,12 +116,13 @@ public class TeacherTalkController {
 
     /**
      * Request for parent page after logging in
-     * @param model to set model attributes
+     *
+     * @param model      to set model attributes
      * @param rememberMe
      * @return
      */
     @RequestMapping("/parentLogin")
-    public String parentLogin(ModelMap model, String rememberMe){
+    public String parentLogin(ModelMap model, String rememberMe) {
 
         Parent parent = ds.parentByPrimaryEmail(model.get("currentUser").toString());
         model.addAttribute("parent", parent);
@@ -131,7 +135,7 @@ public class TeacherTalkController {
     public String teacherSignUp(ModelMap model) {
 
         Teacher teacher = new Teacher();
-        model.addAttribute("teacher",teacher);
+        model.addAttribute("teacher", teacher);
 
         return "teacherSignUp";
     }
@@ -140,33 +144,32 @@ public class TeacherTalkController {
     public String teacher(ModelMap model) {
 
 
-        model.addAttribute("students",ds.getAllStudents());
-        model.addAttribute("messages",ds.getAllMessages());
+        model.addAttribute("students", ds.getAllStudents());
+        model.addAttribute("messages", ds.getAllMessages());
 
         return "teacher";
     }
 
-//    Redirecting to teacher
+    //    Redirecting to teacher
     @RequestMapping("/sendMessage")
-    public RedirectView sendMessage(@RequestParam Map<String, String> params)  {
+    public RedirectView sendMessage(@RequestParam Map<String, String> params) {
 
         ArrayList<String> studentIdList = new ArrayList<>();
         String messageName = null;
 
-        for (Map.Entry<String, String> entry : params.entrySet())
-        {
-            if(entry.getKey().contains("studentddl")){
-              studentIdList.add(entry.getValue());
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if (entry.getKey().contains("studentddl")) {
+                studentIdList.add(entry.getValue());
             }
-            if(entry.getKey().contains("message")){
+            if (entry.getKey().contains("message")) {
                 messageName = entry.getValue();
             }
 
         }
 
-        for(String studentId : studentIdList){
+        for (String studentId : studentIdList) {
 
-            ms.sendMessage(studentId,messageName);
+            ms.sendMessage(studentId, messageName);
 
         }
 
@@ -174,27 +177,45 @@ public class TeacherTalkController {
     }
 
 
-    @RequestMapping("/forgotPassword")
-    public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
-        if((loginEmail == null)){
-            System.out.println("Sorry, the email provided does not match our records. Please try again.");
+    @RequestMapping("/messageLog")
+    public String messageLog(ModelMap model,@RequestParam(value="value",defaultValue = "duck")String value) {
+
+        System.out.println(value);
+
+
+
+        //if value is duck i dont care about the order
+
+        if(value.equals("duck")){
+            model.addAttribute("messages",ds.getAllLog());
         }
-        else if(ds.userType(loginEmail).equals("teacher")){
-//            model.put();
+
+        //if value is id I wanted it ordered by ID from 1 -> up
+        if(value.equals("id")){
+            System.out.println("you want it ordered by id");
+            model.addAttribute("messages",ds.getAllLogOrderById());
         }
-        return new RedirectView("/");
+
+        //if value is StudentName I want it order alphabetically by student name
+        if(value.equals("studentName")){
+            System.out.println("You want it ordered by student name");
+            model.addAttribute("messages",ds.getAllLogOrderByStudentName());
+        }
+        //if value is ParentName i want it ordered alphabetically by parent name
+        if(value.equals("parentName")){
+            System.out.println("You want it ordered by parent name");
+            model.addAttribute("messages", ds.getAllLogOrderByParentName());
+
+            //ordered by parent name
+        }
+//
+//        //if value is date i wanted it ordered by date
+//        if(value.equals("date")){
+//            //ordered by date
+//        }
+
+        return "messageLog";
     }
-
-//    @RequestMapping("/messageLog")
-//    public String messageLog(ModelMap model){
-        //if value = "id"
-        //model.addatribute("messages", ds.getAllMessagesOrderById();
-        //if value = "name"
-        //model.addattribute("message" ,ds.getAllMessagesOrderByName();
-        //model.addAttribute("messages", ds.getAllMessages());
-
-        //return "messageLog";
-   // }
 
 
 //    /mesageLog?value=name
