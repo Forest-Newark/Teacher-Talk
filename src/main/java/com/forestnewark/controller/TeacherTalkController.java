@@ -150,7 +150,7 @@ public class TeacherTalkController {
         return "teacher";
     }
 
-//    Redirecting to teacher
+    //    Redirecting to teacher
     @RequestMapping("/sendMessage")
     public RedirectView sendMessage(@RequestParam Map<String, String> params) {
 
@@ -176,58 +176,43 @@ public class TeacherTalkController {
         return new RedirectView("/teacher");
     }
 
-<<<<<<< HEAD
+
     @RequestMapping("/messageLog")
-    public String messageLog(ModelMap model, String value) {
+    public String messageLog(ModelMap model,@RequestParam(value="value",defaultValue = "duck")String value) {
 
-            System.out.println(value);
+        System.out.println(value);
 
-            if(value == null){
-                model.addAttribute("messages",ds.getAllLog());
-            }
 
-=======
 
-    @RequestMapping("/forgotPassword")
-    public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
-        if((loginEmail == null)){
-            System.out.println("Sorry, the email provided does not match our records. Please try again.");
+        //if value is duck i dont care about the order
+
+        if(value.equals("duck")){
+            model.addAttribute("messages",ds.getAllLog());
         }
-        else if(ds.userType(loginEmail).equals("teacher")){
-//            model.put();
+
+        //if value is id I wanted it ordered by ID from 1 -> up
+        if(value.equals("id")){
+            System.out.println("you want it ordered by id");
+            model.addAttribute("messages",ds.getAllLogOrderById());
         }
-        return new RedirectView("/");
-    }
 
-//    @RequestMapping("/messageLog")
-//    public String messageLog(ModelMap model){
-        //if value = "id"
-        //model.addatribute("messages", ds.getAllMessagesOrderById();
-        //if value = "name"
-        //model.addattribute("message" ,ds.getAllMessagesOrderByName();
-        //model.addAttribute("messages", ds.getAllMessages());
->>>>>>> b3e2f75d6f96736a7f07578096a753339a0288a6
+        //if value is StudentName I want it order alphabetically by student name
+        if(value.equals("studentName")){
+            System.out.println("You want it ordered by student name");
+            model.addAttribute("messages",ds.getAllLogOrderByStudentName());
+        }
+        //if value is ParentName i want it ordered alphabetically by parent name
+        if(value.equals("parentName")){
+            System.out.println("You want it ordered by parent name");
+            model.addAttribute("messages", ds.getAllLogOrderByParentName());
 
-//            model.addAttribute("messages", ds.getAllMessagesOrderById());
-
-
-
-//        if (value = "student name") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByStudentName());
+            //ordered by parent name
+        }
+//
+//        //if value is date i wanted it ordered by date
+//        if(value.equals("date")){
+//            //ordered by date
 //        }
-//        if (value = "parent name") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByParentName());
-//        }
-//        if (value = "local date") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByLocalDate());
-//        }
-//        if (value = "template sent") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByTemplateSent());
-//        }
-//        if (value = "notes") {
-//            model.addAttribute("message", ds.getAllMessagesOrderByNotes());
-//        }
-
 
         return "messageLog";
     }
