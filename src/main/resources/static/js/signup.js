@@ -1,8 +1,29 @@
 // Parent Page Drop Down for second point of contact
+$(document).ready(function(){
   $('.addContact').click(function(){
     $(this).next('.contactInfo').slideToggle();
   });
+});
 
+$(document).ready(function(){
+  $('#fname').focus(function() {
+      $(this).next().css('color','green');
+      $(this).next().css('transform','translateY(-27px)');
+  }).blur(function() {
+      if($('input').val() == '') {
+        $('label').css('transform','translateY(-15px)');
+      }
+  });
+});
+
+  $('#lname').focus(function() {
+      $(this).next().css('color','green');
+      $(this).next().css('transform','translateY(-27px)');
+  }).blur(function() {
+      if($('input').val() == '') {
+        $('label').css('transform','translateY(-15px)');
+      }
+  });
 
 //
   // $(function() {
