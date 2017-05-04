@@ -2,16 +2,16 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-<<<<<<< HEAD
+
     <title>Message Log</title>
 
-    <link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
-=======
+    <!--<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />-->
+
     <title>Teacher Talk</title>
 
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
->>>>>>> d5ffc81d3213618f2801f735885fca488a8d12d1
+
 </head>
 
 <body>
@@ -25,31 +25,54 @@
 </form>
 
 <!--Created table to hold specified items for the message log-->
+
+
+<!--<tr th:each="message : ${messages}">-->
+    <!--<td th:text="${message.getId()}"></td>-->
+    <!--<td th:text="${message.getMessageSentTo()}"></td>-->
+
+<!--</tr>-->
+
 <table>
     <tr>
         <th>
-            <a href="messageLog.html" title="Log ID">Log ID</a>
+            <a th:href="@{/messageLog?value=id}" href="messageLog.html" title="Log ID">Log ID</a>
         </th>
         <th>
-            <a href="messageLog.html" title="Date">Date</a>
+            <a th:href="@{/messageLog?value=date}" href="messageLog.html" title="Date">Date</a>
         </th>
         <th>
-            <a href="messageLog.html" title="Message Sent">Message Sent</a>
+            <a th:href="@{/messageLog?value=messageSent}" href="messageLog.html" title="Message Sent">Message Sent</a>
         </th>
         <th>
-            <a href="messageLog.html" title="Student Name">Student Name</a>
+            <a th:href="@{/messageLog?value=studentName}" href="messageLog.html" title="Student Name">Student Name</a>
         </th>
         <th>
-            <a href="messageLog.html" title="Parent Name">Parent Name</a>
+            <a th:href="@{/messageLog?value=parentName}" href="messageLog.html" title="Parent Name">Parent Name</a>
         </th>
         <th>
-            <a href="messageLog.html" title="Template Sent">Template Sent</a>
+            <a th:href="@{/messageLog?value=templateSent}" href="messageLog.html" title="Template Sent">Template Sent</a>
         </th>
 
         <th>
-            <a href="messageLog.html" title="Notes">Notes</a>
+            <a th:href="@{/messageLog?value=notes}" href="messageLog.html" title="Notes">Notes</a>
         </th>
     </tr>
+
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.getId()}"></td>
+        <td th:text="${message.getLocalDate()}"></td>
+        <td th:text="${message.getMessageSentTo()}"></td>
+        <td th:text="${message.getStudentName()}"></td>
+        <td th:text="${message.getParentName()}"></td>
+        <td th:text="${message.getTemplatesent()}"></td>
+        <td th:text="${message.getNotes()}"></td>
+
+
+    </tr>
+
+
+
 </table>
 </body>
 </html>

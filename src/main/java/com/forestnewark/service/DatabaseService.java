@@ -1,5 +1,6 @@
 package com.forestnewark.service;
 
+import com.forestnewark.bean.Log;
 import com.forestnewark.bean.Message;
 import com.forestnewark.bean.Parent;
 import com.forestnewark.bean.Student;
@@ -163,4 +164,37 @@ public class DatabaseService {
 
         return messageRepository.findByMessageName(messageName);
     }
+
+    public List<Log> getAllMessagesOrderById() {
+        return messageLogRepository.findAll();
+
+    }
+
+    public List<Log> getAllLog() {
+        return messageLogRepository.findAll();
+    }
+
+    public List<Log> getAllLogIdDesc(){
+        return messageLogRepository.findAllByOrderByIdDesc();
+    }
+
+//    public List<Log> getAllMessagesOrderByStudentName() {
+//        return messageLogRepository.findAllOrderByStudentName();
+//    }
+//
+//    public List<Log> getAllMessagesOrderByTemplateSent() {
+//        return messageLogRepository.findAllOrderByTemplateSent();
+//    }
+//
+//    public List<Log> getAllMessagesOrderByNotes() {
+//        return messageLogRepository.findAllOrderByNotes();
+//    }
+//
+//    public List<Log> getAllMessagesOrderByLocalDate() {
+//        return messageLogRepository.findAllOrderByLocalDate();
+//    }
+//
+//    public List<Log> getAllMessagesOrderByParentName() {
+//        return messageLogRepository.findAllOrderByParentName();
+//    }
 }

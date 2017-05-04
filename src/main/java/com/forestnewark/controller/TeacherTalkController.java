@@ -46,7 +46,8 @@ public class TeacherTalkController {
 
     /**
      * Request for site root
-     * @param model to set model attributes
+     *
+     * @param model   to set model attributes
      * @param request to read user cookies
      * @return login page
      */
@@ -65,10 +66,11 @@ public class TeacherTalkController {
 
     /**
      * Request for site login
-     * @param model to set model attributes
-     * @param response to save userEmail cookie if rememeber me box is seleted
+     *
+     * @param model      to set model attributes
+     * @param response   to save userEmail cookie if rememeber me box is seleted
      * @param loginEmail of the current user
-     * @param password of the current user
+     * @param password   of the current user
      * @param rememberMe option to create cookies for site
      * @return RedirectView to correct page based on user login credentials
      */
@@ -99,6 +101,7 @@ public class TeacherTalkController {
 
     /**
      * Request for parent sign up page
+     *
      * @param model to set model attributes
      * @return parent page
      */
@@ -113,12 +116,13 @@ public class TeacherTalkController {
 
     /**
      * Request for parent page after logging in
-     * @param model to set model attributes
+     *
+     * @param model      to set model attributes
      * @param rememberMe
      * @return
      */
     @RequestMapping("/parentLogin")
-    public String parentLogin(ModelMap model, String rememberMe){
+    public String parentLogin(ModelMap model, String rememberMe) {
 
         Parent parent = ds.parentByPrimaryEmail(model.get("currentUser").toString());
         model.addAttribute("parent", parent);
@@ -131,7 +135,7 @@ public class TeacherTalkController {
     public String teacherSignUp(ModelMap model) {
 
         Teacher teacher = new Teacher();
-        model.addAttribute("teacher",teacher);
+        model.addAttribute("teacher", teacher);
 
         return "teacherSignUp";
     }
@@ -140,48 +144,70 @@ public class TeacherTalkController {
     public String teacher(ModelMap model) {
 
 
-        model.addAttribute("students",ds.getAllStudents());
-        model.addAttribute("messages",ds.getAllMessages());
+        model.addAttribute("students", ds.getAllStudents());
+        model.addAttribute("messages", ds.getAllMessages());
 
         return "teacher";
     }
 
     @RequestMapping("/sendMessage")
-    public RedirectView sendMessage(@RequestParam Map<String, String> params)  {
+    public RedirectView sendMessage(@RequestParam Map<String, String> params) {
 
         ArrayList<String> studentIdList = new ArrayList<>();
         String messageName = null;
 
-        for (Map.Entry<String, String> entry : params.entrySet())
-        {
-            if(entry.getKey().contains("studentddl")){
-              studentIdList.add(entry.getValue());
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if (entry.getKey().contains("studentddl")) {
+                studentIdList.add(entry.getValue());
             }
-            if(entry.getKey().contains("message")){
+            if (entry.getKey().contains("message")) {
                 messageName = entry.getValue();
             }
 
         }
 
-        for(String studentId : studentIdList){
+        for (String studentId : studentIdList) {
 
-            ms.sendMessage(studentId,messageName);
+            ms.sendMessage(studentId, messageName);
 
         }
 
         return new RedirectView("/teacher");
     }
 
-//    @RequestMapping("/messageLog")
-//    public String messageLog(ModelMap model){
-        //if value = "id"
-        //model.addatribute("messages", ds.getAllMessagesOrderById();
-        //if value = "name"
-        //model.addattribute("message" ,ds.getAllMessagesOrderByName();
-        //model.addAttribute("messages", ds.getAllMessages());
+    @RequestMapping("/messageLog")
+    public String messageLog(ModelMap model, String value) {
 
-        //return "messageLog";
-   // }
+            System.out.println(value);
+
+            if(value == null){
+                model.addAttribute("messages",ds.getAllLog());
+            }
+
+
+//            model.addAttribute("messages", ds.getAllMessagesOrderById());
+
+
+
+//        if (value = "student name") {
+//            model.addAttribute("message", ds.getAllMessagesOrderByStudentName());
+//        }
+//        if (value = "parent name") {
+//            model.addAttribute("message", ds.getAllMessagesOrderByParentName());
+//        }
+//        if (value = "local date") {
+//            model.addAttribute("message", ds.getAllMessagesOrderByLocalDate());
+//        }
+//        if (value = "template sent") {
+//            model.addAttribute("message", ds.getAllMessagesOrderByTemplateSent());
+//        }
+//        if (value = "notes") {
+//            model.addAttribute("message", ds.getAllMessagesOrderByNotes());
+//        }
+
+
+        return "messageLog";
+    }
 
 //    /mesageLog?value=name
 

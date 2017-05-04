@@ -10,3 +10,8 @@ INSERT INTO student(id, grade, notes, school, student_first_name, student_last_n
 
 INSERT INTO message(id, english_message, message_name, spanish_message) VALUES (1,'Hello from Teacher Talk!','helloMessage','Hola de Teacher Talk ');
 INSERT INTO message(id, english_message, message_name, spanish_message) VALUES (2,'Your child was absent from class today','Absent','Su hijo estuvo ausente hoy');
+
+INSERT INTO log(id, message_sent_to, notes, parent_name, student_name, templatesent) VALUES(1,'forest','awesome convo','Chris','Jimmy','Today');
+INSERT INTO log(id, message_sent_to, notes, parent_name, student_name, templatesent) VALUES(2,'forest','awesome convo','Chris','Jimmy','Today');
+INSERT INTO log(id, message_sent_to, notes, parent_name, student_name, templatesent) VALUES(3,'forest','awesome convo','Chris','Jimmy','Today');
+INSERT INTO log(id, message_sent_to, notes, parent_name, student_name, templatesent) VALUES(4,'forest','awesome convo','Chris','Jimmy','Today');
