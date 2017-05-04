@@ -75,8 +75,8 @@ button {
   padding: 10px 30px;
   border: none;
   outline: 0;
-  -webkit-transition: background 0.2s;
-  transition: background 0.2s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .send {
@@ -130,8 +130,13 @@ input, textarea {
 
 fieldset {
   border:none;
+  margin: 0;
+  padding: 0;
 }
 
+legend {
+  font-weight: 700;
+}
 
 .login-input {
   padding: 25px 15px;
