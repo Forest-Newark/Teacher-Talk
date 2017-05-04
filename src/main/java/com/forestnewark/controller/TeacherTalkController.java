@@ -66,7 +66,7 @@ public class TeacherTalkController {
     /**
      * Request for site login
      * @param model to set model attributes
-     * @param response to save userEmail cookie if rememeber me box is seleted
+     * @param response to save userEmail cookie if remember me box is selected
      * @param loginEmail of the current user
      * @param password of the current user
      * @param rememberMe option to create cookies for site
@@ -175,15 +175,21 @@ public class TeacherTalkController {
 
 
     @RequestMapping("/forgotPassword")
-    public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
-        if((loginEmail == null)){
+    public RedirectView checkEmailType(@RequestParam("loginEmail") String loginEmail){
+        if(ds.userType(loginEmail) == null){
             System.out.println("Sorry, the email provided does not match our records. Please try again.");
-        }
-        else if(ds.userType(loginEmail).equals("teacher")){
-            model.put()
+        } else if (ds.userType(loginEmail).equals("teacher")) {
+            System.out.println("Please check your email to reset your password");
+            return new RedirectView("/resetPassword");
         }
         return new RedirectView("/");
     }
+
+
+
+
+//    @RequestMapping("/resetPassword")
+
 
 //    @RequestMapping("/messageLog")
 //    public String messageLog(ModelMap model){
