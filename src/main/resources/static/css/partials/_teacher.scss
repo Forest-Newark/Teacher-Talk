@@ -1,0 +1,28 @@
+.message-container {
+  background: #fff;
+  width: 75%;
+  margin: 0 auto 25px;
+
+  form {
+    padding: 10px;
+    input {
+      padding: 5px;
+    }
+    textarea {
+      width: 80%;
+      height: 300px;
+      vertical-align: top;
+    }
+  }
+
+  hr {
+    margin: 25px 0;
+  }
+}
+
+.container-title {
+  background: $primary;
+  margin-top: 25px;
+  padding: 10px;
+  font-weight: 700;
+}

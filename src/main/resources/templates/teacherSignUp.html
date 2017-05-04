@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Teacher Talk</title>
+
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+</head>
+
+<body id="signUpPage">
+
+  <div class="faq">
+    <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+         alt="teacher talk logo"/>
+    <h1>Teacher Talk</h1>
+    <!-- <hr /> -->
+    <h3>What is Teacher Talk?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3>Why is this useful?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <h3>How does it work?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3>Can I make my own message template?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
+  <div class="signup">
+    <form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
+      <fieldset>
+        <legend>Teacher Registration</legend>
+        <label for="registerFirstName">
+            First Name <input type="text" id="registerFirstName" name="registerFirstName" th:value="${teacher.getFirstName()}"/>
+        </label>
+        <label for="registerLastName">
+            Last Name <input type="text" id="registerLastName" name="registerLastName" th:value="${teacher.getLastName()}"/>
+        </label>
+        <label for="registerEmail">
+            Email <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
+        </label>
+        <label for="registerPassword">
+            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${teacher.getPassword()}"/>
+        </label>
+        <label for="registerPhoneNumber">
+            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${teacher.getPhoneNumber()}"/>
+        </label>
+        <label for="registerSchoolName">
+            School Name <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${teacher.getSchoolName()}"/>
+        </label>
+        <label for="registerSubjectArea">
+            Subject Area <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${teacher.getSubjectArea()}"/>
+        </label>
+      </fieldset>
+    </form>
+
+    <a href = "login.html" th:href="@{/}"><button type="submit" class="update">Register</button></a>
+  </div>
+
+</body>
+</html>
