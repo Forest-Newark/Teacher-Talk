@@ -67,20 +67,20 @@
       }
       input {
         font-size: .8rem;
-        position: relative;
+        // position: relative;
         border:1px solid $accent;
         padding: 10px;
       }
-      input:valid + label {
-        transform:translateY(-27px);
-      }
+      // input:valid ~ label {
+      //   transform:translateY(-27px);
+      // }
       input:focus {
         border-color: $primary;
       }
-      input:focus + label {
-        color: $primary;
-        transform:translateY(-27px);
-      }
+      // input:focus ~ label {
+      //   color: $primary;
+      //   transform:translateY(-27px);
+      // }
     }
   }
 }
