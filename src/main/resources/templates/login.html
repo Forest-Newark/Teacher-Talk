@@ -15,8 +15,10 @@
 
   <div class="login-input">
     <img src="../static/images/teacher-talk-logo.gif" th:src="${'images/teacher-talk-logo.gif'}" alt="teacher talk logo" />
-    <h1>Teacher Talk</h1>
-    <h3>Where communication between teachers and parents has never been easier.</h3>
+    <div class="login-caption clearfix">
+      <h1>Teacher Talk</h1>
+      <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
+    </div>
     <form action="login.html" th:action="@{/login}" method="post">
       <fieldset>
         <legend>Login</legend>
