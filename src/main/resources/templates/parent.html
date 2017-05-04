@@ -1,58 +1,114 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>Register Your Info</title>
-</head>
-<body>
+    <meta charset="UTF-8"/>
+    <title>Teacher Talk</title>
 
-<form action="parent.html" th:action="@{/parentSignUp}">
-    <fieldset>
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+</head>
+
+<body id="signUpPage">
+
+  <div class="faq">
+    <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+         alt="teacher talk logo"/>
+    <h1>Teacher Talk</h1>
+    <!-- <hr /> -->
+    <h3>What is Teacher Talk?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3>Why is this useful?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+    <h3>How does it work?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <h3>Can I make my own message template?</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+
+  <div class="signup">
+    <form id="signUpForm" action="parent.html" th:action="@{/parentSignUp}">
+      <fieldset>
         <legend>Parent Registration</legend>
-        <label for="registerPrimaryFirstName">
-            Primary First Name <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}"/>
+
+        <div class="input-wrapper">
+          <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}" required/>
+          <label class="gray-label" for="registerPrimaryFirstName">First Name* </label>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName" th:value="${parent.getPrimaryLastName()}" required/>
+          <label class="gray-label" for="registerPrimaryLastName">Last Name* </label>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${parent.getPrimaryEmail()}" required/>
+          <label class="gray-label" for="registerPrimaryEmail"> Email* </label>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="password" id="registerPassword" name="registerPassword" th:value="${parent.getPassword()}" required/>
+          <label class="gray-label" for="registerPassword">Password* </label>
+        </div>
+
+        <div class="input-wrapper">
+          <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${parent.getPhoneNumber()}" required/>
+          <label class="gray-label" for="registerPhoneNumber"> Phone Number* </label>
+        </div>
+
+        <!-- <div class="addContact">Add Another Point of Contact</div>
+        <div class="contactInfo">
+          <label for="registerSecondaryFirstName">
+              First Name <input type="text" id="registerSecondaryFirstName" name="registerSecondaryFirstName" th:value="${parent.getSecondaryFirstName()}"/>
+          </label>
+          <label for="registerSecondaryLastName">
+              Last Name <input type="text" id="registerSecondaryLastName" name="registerSecondaryLastName" th:value="${parent.getSecondaryLastName()}"/>
+          </label>
+          <label for="registerSecondaryEmail">
+              Email <input type="email" id="registerSecondaryEmail" name="registerSecondaryEmail" th:value="${parent.getSecondaryEmail()}"/>
+          </label>
+        </div> -->
+
+        <!-- <legend>Student Registration</legend>
+        <label for="">
+            First Name <input type="text" id="" name="" th:value=""/>
         </label>
-        <br/>
-        <label for="registerPrimaryLastName">
-            Primary Last Name <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName" th:value="${parent.getPrimaryLastName()}"/>
+        <label for="">
+            Last Name <input type="text" id="" name="" th:value=""/>
         </label>
-        <br/>
-        <label for="registerSecondaryFirstName">
-            Secondary First Name <input type="text" id="registerSecondaryFirstName" name="registerSecondaryFirstName" th:value="${parent.getSecondaryFirstName()}"/>
-        </label>
-        <br/>
-        <label for="registerSecondaryLastName">
-            Secondary Last Name <input type="text" id="registerSecondaryLastName" name="registerSecondaryLastName" th:value="${parent.getSecondaryLastName()}"/>
-        </label>
-        <br/>
-        <label for="registerPrimaryEmail">
-            Email <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${parent.getPrimaryEmail()}"/>
-        </label>
-        <br/>
-        <label for="registerSecondaryEmail">
-            Email <input type="email" id="registerSecondaryEmail" name="registerSecondaryEmail" th:value="${parent.getSecondaryEmail()}"/>
-        </label>
-        <br/>
-        <label for="registerPassword">
-            Password <input type="password" id="registerPassword" name="registerPassword" th:value="${parent.getPassword()}"/>
-        </label>
-        <br/>
-        <label for="registerPhoneNumber">
-            Phone Number <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${parent.getPhoneNumber()}"/>
-        </label>
-        <br/>
+        <label for="">
+            School <input type="text" id="" name="" th:value=""/>
+        </label> -->
+
+        <!-- <div class="addContact">Add Another Student<span class="plus">+</span></div>
+        <div class="contactInfo">
+          <label for="">
+              First Name <input type="text" id="" name="" th:value=""/>
+          </label>
+          <label for="">
+              Last Name <input type="text" id="" name="" th:value=""/>
+          </label>
+          <label for="">
+              School <input type="text" id="" name="" th:value=""/>
+          </label>
+        </div> -->
 
         <legend>Preferred Contact Method</legend>
         <select name = "preferredContactMethod">
-            <option value=""></option>
-            <option value="phone" th:value="${parent.getPreferredContactMethod()}">Phone</option>
-            <option value="text">Text</option>
-            <option value="email">Email</option>
-            <option value="both">Both</option>
+          <option value=""></option>
+          <option value="phone" th:value="${parent.getPreferredContactMethod()}">Phone</option>
+          <option value="text">Text</option>
+          <option value="email">Email</option>
+          <option value="both">Both</option>
         </select>
 
-    </fieldset>
-</form>
-<a href="login.html" th:href="@{/}"><button type="submit">Register</button></a>
+      </fieldset>
+    </form>
+    <a href="login.html" th:href="@{/}"><button type="submit" class="update">Register</button></a>
+  </div>
+
+  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
+          src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
+
 </body>
 </html>

@@ -6,6 +6,7 @@
 
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <link rel="stylesheet" th:href="@{/css/easy-autocomplete.css}" href="../static/css/easy-autocomplete.css" />
 </head>
 
 <body>
@@ -28,15 +29,25 @@
 
 <section class="message-container">
     <div class="container-title">New Message</div>
-    <button id="addStudent">+</button>
+
+
+
+    <input id="provider-json" />
+
+
+
+
+
+    <!--<input id="studentAutoComplete" name="studentSearchBox" class="awesomplete" list="mylist" />-->
+    <!--<datalist id="mylist">-->
+        <!--<option th:each="student : ${students}"-->
+                <!--th:text="${student.getId()} + '-'+${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()}"-->
+                <!--&gt;Student 1-->
+        <!--</option>-->
+    <!--</datalist>-->
+
     <form th:action="@{/sendMessage}" action="teacher.html" method="post">
-        <select id="studentddl" name="studentddl">
-            <option th:each="student : ${students}" th:value="${student.getId()}"
-                    th:text="${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()} ">Student 1
-            </option>
-            <option th:remove="all">Student 2</option>
-            <option th:remove="all">Student 3</option>
-        </select>
+
         <div id="studentNameArea"></div>
         <hr/>
 
@@ -57,9 +68,12 @@
     </form>
 </section>
 
+
 <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
+<script th:src="@{/js/jquery.easy-autocomplete.js}"  src="../static/js/jquery.easy-autocomplete.js"></script>
+<script src="../static/js/searchTest.js" th:src="@{/js/searchTest.js}"></script>
 
 </body>
 </html>

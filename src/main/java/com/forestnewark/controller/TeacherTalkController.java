@@ -150,6 +150,7 @@ public class TeacherTalkController {
         return "teacher";
     }
 
+//    Redirecting to teacher
     @RequestMapping("/sendMessage")
     public RedirectView sendMessage(@RequestParam Map<String, String> params) {
 
@@ -175,6 +176,7 @@ public class TeacherTalkController {
         return new RedirectView("/teacher");
     }
 
+<<<<<<< HEAD
     @RequestMapping("/messageLog")
     public String messageLog(ModelMap model, String value) {
 
@@ -184,6 +186,27 @@ public class TeacherTalkController {
                 model.addAttribute("messages",ds.getAllLog());
             }
 
+=======
+
+    @RequestMapping("/forgotPassword")
+    public RedirectView forgotPassword(ModelMap model, @RequestParam("loginEmail") String loginEmail){
+        if((loginEmail == null)){
+            System.out.println("Sorry, the email provided does not match our records. Please try again.");
+        }
+        else if(ds.userType(loginEmail).equals("teacher")){
+//            model.put();
+        }
+        return new RedirectView("/");
+    }
+
+//    @RequestMapping("/messageLog")
+//    public String messageLog(ModelMap model){
+        //if value = "id"
+        //model.addatribute("messages", ds.getAllMessagesOrderById();
+        //if value = "name"
+        //model.addattribute("message" ,ds.getAllMessagesOrderByName();
+        //model.addAttribute("messages", ds.getAllMessages());
+>>>>>>> b3e2f75d6f96736a7f07578096a753339a0288a6
 
 //            model.addAttribute("messages", ds.getAllMessagesOrderById());
 
@@ -208,6 +231,7 @@ public class TeacherTalkController {
 
         return "messageLog";
     }
+
 
 //    /mesageLog?value=name
 
