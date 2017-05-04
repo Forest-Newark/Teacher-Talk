@@ -54,6 +54,8 @@ public class DatabaseService {
     }
 
 
+    //GENERAL USER METHODS (PARENT & TEACHERS)
+
     /**
      * Checks that a user has supplied a valid username and password combination
      *
@@ -75,6 +77,8 @@ public class DatabaseService {
 
         return false;
     }
+
+
 
     /**
      * Checks to see if a valid user holds a teacher or parent account
@@ -110,6 +114,14 @@ public class DatabaseService {
 
     }
 
+
+
+
+
+
+    //PARENT METHODS
+
+
     /**
      * Finds a parent user by their primary email address
      *
@@ -122,6 +134,13 @@ public class DatabaseService {
     }
 
 
+
+
+
+
+    //STUDENT METHODS
+
+
     /**
      * Generates a list of all Students in the database
      *
@@ -130,16 +149,6 @@ public class DatabaseService {
     public List<Student> getAllStudents() {
 
         return studentRepository.findAll();
-    }
-
-    /**
-     * Generates a list of all Messages in the database
-     *
-     * @return list of Messages
-     */
-    public List<Message> getAllMessages() {
-
-        return messageRepository.findAll();
     }
 
     /**
@@ -154,6 +163,28 @@ public class DatabaseService {
     }
 
 
+
+
+
+
+
+
+
+
+    //MESSAGE METHODS
+
+    /**
+     * Generates a list of all Messages in the database
+     *
+     * @return list of Messages
+     */
+    public List<Message> getAllMessages() {
+
+        return messageRepository.findAll();
+    }
+
+
+
     /**
      * Find a message based on its name
      *
@@ -164,6 +195,14 @@ public class DatabaseService {
 
         return messageRepository.findByMessageName(messageName);
     }
+
+
+
+
+
+
+    //MESSAGELOG METHODS
+
 
     public List<Log> getAllMessagesOrderById() {
         return messageLogRepository.findAll();
@@ -205,18 +244,4 @@ public class DatabaseService {
     }
 
 
-//
-//    public List<Log> getAllMessagesOrderByTemplateSent() {
-//        return messageLogRepository.findAllOrderByTemplateSent();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByNotes() {
-//        return messageLogRepository.findAllOrderByNotes();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByLocalDate() {
-//        return messageLogRepository.findAllOrderByLocalDate();
-//    }
-//
-//
 }

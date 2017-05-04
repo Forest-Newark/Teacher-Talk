@@ -20,10 +20,7 @@ $(document).ready(function() {
                 var studentId = searchField.getSelectedItemData().id;
                 var studentFirstName = searchField.getSelectedItemData().studentFirstName;
                 var studentLastName = searchField.getSelectedItemData().studentLastName;
-
-
-
-
+                
 
 
                 //Create Student name box (currently input field)
