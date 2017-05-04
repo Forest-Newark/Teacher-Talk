@@ -25,17 +25,17 @@ public class Log {
     private String localDate;
     private String studentName;
     private String parentName;
-    private String templatesent;
+    private String templateSent;
     private String notes;
 
     public Log() {
     }
 //setting Contructors
-    public Log(String messageSentTo, String studentName, String localDate,String parentName, String templatesent, String notes) {
+    public Log(String messageSentTo, String studentName, String localDate,String parentName, String templateSent, String notes) {
         this.messageSentTo = messageSentTo;
         this.studentName = studentName;
         this.parentName = parentName;
-        this.templatesent = templatesent;
+        this.templateSent = templateSent;
         this.notes = notes;
         this.localDate = localDate;
 
@@ -73,12 +73,12 @@ public class Log {
         this.parentName = parentName;
     }
 
-    public String getTemplatesent() {
-        return templatesent;
+    public String getTemplateSent() {
+        return templateSent;
     }
 
-    public void setTemplatesent(String templatesent) {
-        this.templatesent = templatesent;
+    public void setTemplateSent(String templateSent) {
+        this.templateSent = templateSent;
     }
 
     public String getNotes() {
