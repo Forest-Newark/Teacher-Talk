@@ -160,7 +160,7 @@ public class TeacherTalkController {
         String messageName = null;
 
         for (Map.Entry<String, String> entry : params.entrySet()) {
-            if (entry.getKey().contains("studentddl")) {
+            if (entry.getKey().contains("studentId")) {
                 studentIdList.add(entry.getValue());
             }
             if (entry.getKey().contains("message")) {
@@ -242,6 +242,25 @@ public class TeacherTalkController {
             model.addAttribute("messages", ds.getAllLogOrderByParentName());
 
             //ordered by parent name
+        }
+
+        //if value is TemplateSent --- order alphabetically by template sent
+        if (value.equals("templateSent")){
+            System.out.println("order by template sent");
+            model.addAttribute("messages", ds.getAllLogOrderByTemplateSent());
+        }
+
+        //if value is Notes then we want to order Alphabetically by notes
+        if(value.equals("notes")){
+            System.out.println("order by notes");
+            model.addAttribute("messages", ds.getAllLogOrderByNotes());
+        }
+
+        // if value is date then order alphabetically by date
+        if (value.equals("localDate")){
+            System.out.println("order by date");
+            model.addAttribute("messages", ds.getAllLogOrderByLocalDate());
+
         }
 
         return "messageLog";

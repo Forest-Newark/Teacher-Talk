@@ -191,6 +191,7 @@ public class DatabaseService {
     }
 
 
+
     public Integer getUserIdByEmail(String email) {
         if (this.userType(email).equals("teacher")){
             return this.getTeacherByEmail(email).getId();
@@ -209,24 +210,16 @@ public class DatabaseService {
         return teacherRepository.findByEmail(email);
     }
 
+    public List<Log> getAllLogOrderByTemplateSent() {
+        return messageLogRepository.findAllByOrderByTemplateSent();
+    }
 
-//    public List<Log> getAllMessagesOrderByStudentName() {
-//        return messageLogRepository.findAllOrderByStudentName();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByTemplateSent() {
-//        return messageLogRepository.findAllOrderByTemplateSent();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByNotes() {
-//        return messageLogRepository.findAllOrderByNotes();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByLocalDate() {
-//        return messageLogRepository.findAllOrderByLocalDate();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByParentName() {
-//        return messageLogRepository.findAllOrderByParentName();
-//    }
+    public List<Log> getAllLogOrderByNotes() {
+        return messageLogRepository.findAllByOrderByNotes();
+    }
+
+    public List<Log> getAllLogOrderByLocalDate() {
+        return messageLogRepository.findAllByOrderByLocalDate();
+    }
+
 }

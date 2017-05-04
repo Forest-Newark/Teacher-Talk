@@ -33,22 +33,11 @@
 
 
     <input id="provider-json" />
-
-
-
-
-
-    <!--<input id="studentAutoComplete" name="studentSearchBox" class="awesomplete" list="mylist" />-->
-    <!--<datalist id="mylist">-->
-        <!--<option th:each="student : ${students}"-->
-                <!--th:text="${student.getId()} + '-'+${student.getStudentFirstName()} + ' ' +${student.getStudentLastName()}"-->
-                <!--&gt;Student 1-->
-        <!--</option>-->
-    <!--</datalist>-->
+    <div id="studentNameArea"></div>
 
     <form th:action="@{/sendMessage}" action="teacher.html" method="post">
 
-        <div id="studentNameArea"></div>
+        <div id="studentIdArea"></div>
         <hr/>
 
         <select id="messageSelect" name="message">
