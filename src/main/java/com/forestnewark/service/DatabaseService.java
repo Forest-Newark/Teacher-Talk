@@ -112,7 +112,7 @@ public class DatabaseService {
 
 
     /**
-     * Get the Id of a speicific user by their Email Address
+     * Get the Id of a specific user by their Email Address
      *
      * @param email of user to be found
      * @return integer value of user ID
@@ -129,6 +129,17 @@ public class DatabaseService {
             return null;
         }
     }
+
+
+    /**
+     * Update user password using their ID
+     * @param password create a new password
+     * @param userId using user's ID
+     */
+    public void updateUserPasswordById(String password, Integer userId) {
+
+    }
+
 
 
     //PARENT METHODS
@@ -281,5 +292,8 @@ public class DatabaseService {
     public List<Log> getAllLogOrderByLocalDate() {
         return messageLogRepository.findAllByOrderByLocalDate();
     }
+
+
+
 
 }

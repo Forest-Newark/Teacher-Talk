@@ -202,17 +202,23 @@ public class TeacherTalkController {
     }
 
 
-//    @RequestMapping("/resetPassword")
-//    public RedirectView checkEmailType(@RequestParam("loginEmail") String loginEmail) {
-//        if (ds.userType(loginEmail) == null) {
-//            System.out.println("Sorry, the email provided does not match our records. Please try again.");
-//        } else if (ds.userType(loginEmail).equals("teacher")) {
-//            System.out.println("Please check your email to reset your password");
-//            return new RedirectView("/resetPassword");
-//
-//        }
-//        return new RedirectView("/");
-//    }
+    @RequestMapping("/resetPassword")
+    public String resetPassword(ModelMap model, Integer userId){
+
+        model.addAttribute("userId",userId);
+
+        return "resetPassword";
+    }
+
+
+    @RequestMapping("/updatePassword")
+    public RedirectView passwordResetSubmit(@RequestParam("newPassword") String password, @RequestParam("userId") Integer userId) {
+
+        ds.updateUserPasswordById(password, userId);
+
+        return new RedirectView ("/");
+    }
+
 
 
     @RequestMapping("/messageLog")
