@@ -1,9 +1,6 @@
 package com.forestnewark.service;
 
-import com.forestnewark.bean.Log;
-import com.forestnewark.bean.Message;
-import com.forestnewark.bean.Parent;
-import com.forestnewark.bean.Student;
+import com.forestnewark.bean.*;
 import com.forestnewark.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -54,6 +51,8 @@ public class DatabaseService {
     }
 
 
+    //GENERAL USER METHODS (PARENT & TEACHERS)
+
     /**
      * Checks that a user has supplied a valid username and password combination
      *
@@ -63,8 +62,8 @@ public class DatabaseService {
      */
     public boolean validateUser(String email, String password) {
 
-        if (teacherRepository.findByEmail(email).size() > 0) {
-            if (teacherRepository.findByEmail(email).get(0).getPassword().equals(password)) {
+        if (teacherRepository.findAllByEmail(email).size() > 0) {
+            if (teacherRepository.findAllByEmail(email).get(0).getPassword().equals(password)) {
                 return true;
             }
         } else if (parentRepository.findByPrimaryEmail(email) != null) {
@@ -76,6 +75,7 @@ public class DatabaseService {
         return false;
     }
 
+
     /**
      * Checks to see if a valid user holds a teacher or parent account
      *
@@ -83,7 +83,7 @@ public class DatabaseService {
      * @return the type of account the user holds
      */
     public String userType(String loginEmail) {
-        if (teacherRepository.findByEmail(loginEmail).size() > 0) {
+        if (teacherRepository.findAllByEmail(loginEmail).size() > 0) {
             return "teacher";
         }
 
@@ -103,12 +103,47 @@ public class DatabaseService {
     public String getUserPassword(String loginEmail) {
 
         if (userType(loginEmail).equals("teacher")) {
-            return teacherRepository.findByEmail(loginEmail).get(0).getPassword();
+            return teacherRepository.findAllByEmail(loginEmail).get(0).getPassword();
         } else {
             return parentRepository.findByPrimaryEmail(loginEmail).getPassword();
         }
 
     }
+
+
+    /**
+     * Get the Id of a specific user by their Email Address
+     *
+     * @param email of user to be found
+     * @return integer value of user ID
+     */
+    public Integer getUserIdByEmail(String email) {
+        if (this.userType(email).equals("teacher")) {
+            return this.getTeacherByEmail(email).getId();
+        }
+
+        if (this.userType(email).equals("parent")) {
+            return this.parentByPrimaryEmail(email).getId();
+
+        } else {
+            return null;
+        }
+    }
+
+
+    /**
+     * Update user password using their ID
+     * @param password create a new password
+     * @param userId using user's ID
+     */
+    public void updateUserPasswordById(String password, Integer userId) {
+
+    }
+
+
+
+    //PARENT METHODS
+
 
     /**
      * Finds a parent user by their primary email address
@@ -122,6 +157,22 @@ public class DatabaseService {
     }
 
 
+    //TEACHER METHODS
+
+    /**
+     * Find a TEACHER by their email address
+     *
+     * @param email of teacer to be found
+     * @return teacher with the provided email address
+     */
+    private Teacher getTeacherByEmail(String email) {
+        return teacherRepository.findByEmail(email);
+    }
+
+
+    //STUDENT METHODS
+
+
     /**
      * Generates a list of all Students in the database
      *
@@ -130,16 +181,6 @@ public class DatabaseService {
     public List<Student> getAllStudents() {
 
         return studentRepository.findAll();
-    }
-
-    /**
-     * Generates a list of all Messages in the database
-     *
-     * @return list of Messages
-     */
-    public List<Message> getAllMessages() {
-
-        return messageRepository.findAll();
     }
 
     /**
@@ -154,6 +195,19 @@ public class DatabaseService {
     }
 
 
+    //MESSAGE METHODS
+
+    /**
+     * Generates a list of all Messages in the database
+     *
+     * @return list of Messages
+     */
+    public List<Message> getAllMessages() {
+
+        return messageRepository.findAll();
+    }
+
+
     /**
      * Find a message based on its name
      *
@@ -165,43 +219,83 @@ public class DatabaseService {
         return messageRepository.findByMessageName(messageName);
     }
 
-    public List<Log> getAllMessagesOrderById() {
-        return messageLogRepository.findAll();
 
-    }
+    //MESSAGELOG METHODS
 
+
+    /**
+     * Get All Message Log Items
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLog() {
         return messageLogRepository.findAll();
     }
 
-    public List<Log> getAllLogIdDesc(){
-        return messageLogRepository.findAllByOrderById();
-    }
 
+    /**
+     * Get Log Items ordered by ID ASCENDING
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderById() {
 
         return messageLogRepository.findAllByOrderById();
     }
 
+
+    /**
+     * Get Log Item Order By Student Name
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByStudentName() {
         return messageLogRepository.findAllByOrderByStudentName();
 
     }
 
+
+    /**
+     * Get Log Items Order By Parent Name
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByParentName() {
         return messageLogRepository.findAllByOrderByParentName();
     }
 
+
+    /**
+     * Get Log Item Order By Template Name
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByTemplateSent() {
         return messageLogRepository.findAllByOrderByTemplateSent();
     }
 
+    /**
+     * Get Log Item Order By Notes
+     *
+     * @return list of log items
+     */
     public List<Log> getAllLogOrderByNotes() {
         return messageLogRepository.findAllByOrderByNotes();
     }
 
+<<<<<<< HEAD
     public List<Log> getAllLogOrderByCreated() {
             return messageLogRepository.findAllByOrderByCreated();
+=======
+    /**
+     * Get Log Item Order By Date
+     *
+     * @return list of log items
+     */
+    //TODO: This method is not working
+    public List<Log> getAllLogOrderByLocalDate() {
+        return messageLogRepository.findAllByOrderByLocalDate();
+>>>>>>> 4c9cd8db1a00127a8a6369df63bd63aa24f949be
     }
 
 

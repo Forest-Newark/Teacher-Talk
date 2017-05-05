@@ -66,4 +66,42 @@ public class MessageService {
         }
 
     }
+
+    public void sendPasswordResetEmail(Integer userId, String email) {
+
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+
+        Session session = Session.getInstance(props,
+                new javax.mail.Authenticator() {
+                    protected PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(username, password);
+                    }
+                });
+
+        try {
+
+            Message message = new MimeMessage(session);
+
+            message.setFrom(new InternetAddress(username)); //Sender's Email Address (FROM)
+            message.setRecipients(Message.RecipientType.TO,
+                    InternetAddress.parse(email)); //Receiver's Email Address (TO)
+            message.setSubject("Teacher Talk Password Reset "); // Subject Line
+
+            message.setText("Dear User,\n You can reset your password at the following address\n" +
+                    "http://localhost:8080/resetPassword?userId="+userId);
+
+
+            Transport.send(message);
+
+            System.out.println("Message Sent!"); //Confirmation Method - Not necessary
+
+        } catch (MessagingException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
 }
