@@ -12,7 +12,7 @@ INSERT INTO message(id, english_message, message_name, spanish_message) VALUES (
 INSERT INTO message(id, english_message, message_name, spanish_message) VALUES (2,'Your child was absent from class today','Absent','Su hijo estuvo ausente hoy');
 
 
-INSERT INTO log(id, local_date, message_sent_to, notes, parent_name, student_name, template_sent) VALUES(4, '2/5/2005','ruder','Will','ruder', 'Berry', '4 days ago');
-INSERT INTO log(id, local_date, message_sent_to, notes, parent_name, student_name, template_sent) VALUES(1, '4/5/2005','sweetheart','Chris','ruder', 'Miles', '3 days ago');
-INSERT INTO log(id, local_date, message_sent_to, notes, parent_name, student_name, template_sent) VALUES(2, '7/5/2005','wanted to sue me','Forest','ruder', 'Chuck', '1 days ago');
-INSERT INTO log(id, local_date, message_sent_to, notes, parent_name, student_name, template_sent) VALUES(3, '1/5/2005','very loud','Rasputin','ruder', 'King', '7 days ago');
+INSERT INTO log(id, created,  notes, parent_name, student_name, template_sent)  VALUES(4, CURRENT_TIMESTAMP ,'student was abrasive','Will', 'Berry', '4 days ago');
+INSERT INTO log(id,created,  notes, parent_name, student_name, template_sent) VALUES(1,CURRENT_TIMESTAMP, 'student might have lice','Chris', 'Miles', '3 days ago');
+INSERT INTO log(id,created,  notes, parent_name, student_name, template_sent) VALUES(2,CURRENT_TIMESTAMP, 'student read exceptional well','Forest', 'Chuck', '1 days ago');
+INSERT INTO log(id,created,  notes, parent_name, student_name, template_sent) VALUES(3,CURRENT_TIMESTAMP, 'consider moving student to honors','Rasputin', 'King', '7 days ago');

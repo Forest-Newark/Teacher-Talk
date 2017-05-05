@@ -224,23 +224,24 @@ public class TeacherTalkController {
         }
 
         //if value is TemplateSent --- order alphabetically by template sent
-        if (value.equals("templateSent")){
+        if (value.equals("templateSent")) {
             System.out.println("order by template sent");
             model.addAttribute("messages", ds.getAllLogOrderByTemplateSent());
         }
 
         //if value is Notes then we want to order Alphabetically by notes
-        if(value.equals("notes")){
+        if (value.equals("notes")) {
             System.out.println("order by notes");
             model.addAttribute("messages", ds.getAllLogOrderByNotes());
         }
 
         // if value is date then order alphabetically by date
-        if (value.equals("localDate")){
+        if (value.equals("date")) {
             System.out.println("order by date");
-            model.addAttribute("messages", ds.getAllLogOrderByLocalDate());
+            model.addAttribute("messages", ds.getAllLogOrderByCreated());
 
         }
+
 
         return "messageLog";
     }

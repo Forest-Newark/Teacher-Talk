@@ -20,7 +20,8 @@ public interface MessageLogRepository extends JpaRepository<Log, Integer> {
 
     List<Log> findAllByOrderByNotes();
 
-    List<Log> findAllByOrderByLocalDate();
+    List<Log> findAllByOrderByCreated();
+
 
 
 }

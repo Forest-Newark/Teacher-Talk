@@ -40,9 +40,9 @@
         <th>
             <a th:href="@{/messageLog?value=date}" href="messageLog.html" title="Date">Date</a>
         </th>
-        <th>
-            <a th:href="@{/messageLog?value=messageSent}" href="messageLog.html" title="Message Sent">Message Sent</a>
-        </th>
+        <!--<th>-->
+            <!--<a th:href="@{/messageLog?value=messageSent}" href="messageLog.html" title="Message Sent">Message Sent</a>-->
+        <!--</th>-->
         <th>
             <a th:href="@{/messageLog?value=studentName}" href="messageLog.html" title="Student Name">Student Name</a>
         </th>
@@ -60,8 +60,8 @@
 
     <tr th:each="message : ${messages}">
         <td th:text="${message.getId()}"></td>
-        <td th:text="${message.getLocalDate()}"></td>
-        <td th:text="${message.getMessageSentTo()}"></td>
+        <td th:text="${message.getCreated()}"></td>
+        <!--<td th:text="${message.getMessageSentTo()}"></td>-->
         <td th:text="${message.getStudentName()}"></td>
         <td th:text="${message.getParentName()}"></td>
         <td th:text="${message.getTemplateSent()}"></td>

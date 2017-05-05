@@ -200,23 +200,11 @@ public class DatabaseService {
         return messageLogRepository.findAllByOrderByNotes();
     }
 
-    public List<Log> getAllLogOrderByLocalDate() {
-        return messageLogRepository.findAllByOrderByLocalDate();
+    public List<Log> getAllLogOrderByCreated() {
+            return messageLogRepository.findAllByOrderByCreated();
     }
 
 
-//
-//    public List<Log> getAllMessagesOrderByTemplateSent() {
-//        return messageLogRepository.findAllOrderByTemplateSent();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByNotes() {
-//        return messageLogRepository.findAllOrderByNotes();
-//    }
-//
-//    public List<Log> getAllMessagesOrderByLocalDate() {
-//        return messageLogRepository.findAllOrderByLocalDate();
-//    }
-//
-//
+
+
 }
