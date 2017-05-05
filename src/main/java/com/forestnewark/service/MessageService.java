@@ -1,7 +1,9 @@
 package com.forestnewark.service;
 
+import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 
 import javax.mail.*;
 import javax.mail.internet.*;
@@ -70,29 +72,22 @@ public class MessageService {
     public String messageBuilder(String studentId, String messageName,String currentUserEmail){
 
         StringBuilder sb = new StringBuilder();
-        sb.append("To the parent(s) or Guardian(s) of:  ");
+        sb.append("To the Parent(s) or Guardian(s) of: ");
         sb.append(ds.getStudentById(studentId).getStudentFirstName() +" " +ds.getStudentById(studentId).getStudentLastName());
-        sb.append("\n");
+        sb.append("\n\n");
         if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("english")){
            sb.append(ds.getMessageByName(messageName).getEnglishMessage());
         }
         if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("spanish")){
             sb.append(ds.getMessageByName(messageName).getSpanishMessage());
         }
-        sb.append("\n");
+        sb.append("\n\n");
         sb.append("Respectfully, \n");
-        sb.append(ds.getTeacherByEmail(currentUserEmail).getFirstName() + " " + ds.getTeacherByEmail(currentUserEmail).getLastName());
+        sb.append(WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getFirstName()) + " " + WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getLastName()));
 
         return sb.toString();
 
     }
-
-
-
-
-
-
-
 
 
 
