@@ -158,6 +158,7 @@ public class TeacherTalkController {
 
         ArrayList<String> studentIdList = new ArrayList<>();
         String messageName = null;
+        String messageText = null;
 
         for (Map.Entry<String, String> entry : params.entrySet()) {
             if (entry.getKey().contains("studentId")) {
@@ -166,6 +167,9 @@ public class TeacherTalkController {
             if (entry.getKey().contains("message")) {
                 messageName = entry.getValue();
             }
+           if (entry.getKey().contains("messageText")){
+                messageText = entry.getValue();
+           }
 
         }
 
@@ -173,7 +177,7 @@ public class TeacherTalkController {
 
             System.out.println(studentId);
             System.out.println(model.get("currentUser"));
-            ms.sendMessage(studentId, messageName,model.get("currentUser").toString());
+            ms.sendMessage(studentId, messageName,model.get("currentUser").toString(),messageText);
 
         }
 
