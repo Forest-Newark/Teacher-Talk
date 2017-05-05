@@ -133,13 +133,13 @@ public class DatabaseService {
 
     /**
      * Update user password using their ID
+     *
      * @param password create a new password
-     * @param userId using user's ID
+     * @param userId   using user's ID
      */
     public void updateUserPasswordById(String password, Integer userId) {
 
     }
-
 
 
     //PARENT METHODS
@@ -283,10 +283,11 @@ public class DatabaseService {
         return messageLogRepository.findAllByOrderByNotes();
     }
 
-<<<<<<< HEAD
+
     public List<Log> getAllLogOrderByCreated() {
-            return messageLogRepository.findAllByOrderByCreated();
-=======
+        return messageLogRepository.findAllByOrderByCreated();
+    }
+
     /**
      * Get Log Item Order By Date
      *
@@ -294,11 +295,10 @@ public class DatabaseService {
      */
     //TODO: This method is not working
     public List<Log> getAllLogOrderByLocalDate() {
-        return messageLogRepository.findAllByOrderByLocalDate();
->>>>>>> 4c9cd8db1a00127a8a6369df63bd63aa24f949be
+        return null;
+
     }
 
 
-
-
 }
+
