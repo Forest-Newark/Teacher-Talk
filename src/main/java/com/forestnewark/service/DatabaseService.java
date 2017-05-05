@@ -285,19 +285,28 @@ public class DatabaseService {
 
 
     public List<Log> getAllLogOrderByCreated() {
-        return messageLogRepository.findAllByOrderByCreated();
+
+            return messageLogRepository.findAllByOrderByCreated();
+
+//    /**
+//     * Get Log Item Order By Date
+//     *
+//     * @return list of log items
+//     */
+//    //TODO: This method is not working
+//    public List<Log> getAllLogOrderByLocalDate() {
+//        return messageLogRepository.findAllByOrderByLocalDate();
     }
 
-    /**
-     * Get Log Item Order By Date
-     *
-     * @return list of log items
-     */
-    //TODO: This method is not working
-    public List<Log> getAllLogOrderByLocalDate() {
-        return null;
 
+    public List<Log> messageLogSearch(String search){
+
+        return messageLogRepository.findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrNotesIgnoreCaseContaining(search,search,search,search);
     }
+
+
+
+
 
 
 }

@@ -23,5 +23,9 @@ public interface MessageLogRepository extends JpaRepository<Log, Integer> {
     List<Log> findAllByOrderByCreated();
 
 
+    //    public interface MessageLogRepository extends JpaRepository<Message, Integers>
+    // Allowing the user the ability to search by ID, StudentName, Parentname, TemplateSent, Notes, Created(Datetimestamp)
+    List<Log> findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrNotesIgnoreCaseContaining(String studentName, String parentName, String templateSent, String notes);
+
 
 }
