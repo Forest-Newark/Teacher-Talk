@@ -1,4 +1,16 @@
-// Signup Side with form styled on style.scss
+.faq, .signup {
+  background:#fff;
+  margin: 0 auto;
+}
+
+#signUpPage {
+  display: flex;
+  justify-content: top;
+  // background: #fff;
+  max-width: 1024px;
+  margin: 25px auto;
+}
+
 //fit login form style
 
 .faq {
@@ -23,7 +35,8 @@
   }
 }
 .faq-content {
-  padding: 5px 50px;
+  // font-size: .9rem;
+  padding: 5px 50px 25px;
   h3 {
     font-weight: 700;
     margin: 15px 0 5px;
@@ -51,45 +64,46 @@
       margin: 8px auto;
       display:block;
     }
-
-    .input-wrapper {
-      position: relative;
-      display: inline-block;
-      margin: 5px;
-
-      label {
-        position:absolute;
-        top: 10px;
-        left:15px;
-        z-index: 5;
-        margin: 10px;
-        padding: 0 2px;
-        font-size: .8rem;
-        font-weight: 500;
-        background: #fff;
-        pointer-events: none;
-        transition:transform 100ms ease;
-        transform:translateY(-10px);
-      }
-      input {
-        font-size: .8rem;
-        // position: relative;
-        border:1px solid $accent;
-        padding: 10px;
-      }
-      // input:valid ~ label {
-      //   transform:translateY(-27px);
-      // }
-      // input:focus {
-      //   border-color: $primary;
-      // }
-      // input:focus ~ label {
-      //   color: $primary;
-      //   transform:translateY(-27px);
-      // }
-    }
   }
 }
+
+.input-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+
+  label {
+    position:absolute;
+    top: 10px;
+    left:15px;
+    z-index: 5;
+    margin: 10px;
+    padding: 0 2px;
+    font-size: .8rem;
+    font-weight: 500;
+    background: #fff;
+    pointer-events: none;
+    transition:transform 100ms ease;
+    transform:translateY(-10px);
+  }
+  input {
+    font-size: .8rem;
+    // position: relative;
+    border:1px solid $accent;
+    padding: 10px;
+  }
+  input:invalid ~ label {
+    transform:translateY(-27px);
+  }
+  // input:focus {
+  //   border-color: $primary;
+  // }
+  // input:focus ~ label {
+  //   color: $primary;
+  //   transform:translateY(-27px);
+  // }
+}
+
 
 // Adding Additional Contact or Student Fields
 .border-seperation {

@@ -10,35 +10,40 @@
 </head>
 
 <body id="login-page">
-
+  <section>
   <div class="login-shape"></div>
 
   <div class="login-input">
-    <img src="../static/images/teacher-talk-logo.gif" th:src="${'images/teacher-talk-logo.gif'}" alt="teacher talk logo" />
-    <div class="tagline clearfix">
-      <h1>Teacher Talk</h1>
-      <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
+    <div class="login-header">
+      <img src="../static/images/teacher-talk-logo.gif" th:src="${'images/teacher-talk-logo.gif'}" alt="teacher talk logo" />
+      <div class="tagline clearfix">
+        <h1>Teacher Talk</h1>
+        <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
+      </div>
     </div>
     <form action="login.html" th:action="@{/login}" method="post">
       <fieldset>
-        <legend>Login</legend>
-        <label for="loginEmail" class="loginEmail">
-            Email
-            <input type="text" id="loginEmail" name="loginEmail" th:value="${userEmail}"/>
-        </label>
-        <label for="loginPassword" class="loginPassword">
-            Password
-            <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
-        </label>
+        <!-- <legend>Login</legend> -->
+
+        <div class="input-wrapper">
+         <input type="text" id="loginEmail" name="loginEmail" th:value="${userEmail}"/>
+          <label for="loginEmail" class="loginEmail">First Name </label>
+        </div>
+        <div class="input-wrapper">
+          <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
+          <label for="loginPassword" class="loginPassword">Password </label>
+        </div>
+
         <label for="rememberMe" class="rememberMe">
           <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"  th:checked="${rememberMe}" />
         Remember me?
         </label>
+
       </fieldset>
 
 
         <!--Changed <p> to <a> so might need renaming in CSS-->
-      <a href="forgotPassword.html" th:href="@{/forgotPassword}">Forgot Password</a>
+      <a class="forgot-password" href="forgotPassword.html" th:href="@{/forgotPassword}">Forgot Password</a>
       <button type="submit" class="send">Login</button>
       <!-- <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button> -->
     </form>
@@ -60,9 +65,11 @@
 
 
   </div>
+  </section>
 
   <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script th:src="@{/js/modal.js}" src="../static/js/modal.js"></script>
+  <script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
 
 </body>
 </html>
