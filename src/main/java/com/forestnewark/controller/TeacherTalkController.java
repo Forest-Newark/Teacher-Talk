@@ -44,8 +44,6 @@ public class TeacherTalkController {
     }
 
 
-
-
     /**
      * Request for site root
      *
@@ -156,7 +154,7 @@ public class TeacherTalkController {
 
     //    Redirecting to teacher
     @RequestMapping("/sendMessage")
-    public RedirectView sendMessage(@RequestParam Map<String, String> params) {
+    public RedirectView sendMessage(ModelMap model,@RequestParam Map<String, String> params) {
 
         ArrayList<String> studentIdList = new ArrayList<>();
         String messageName = null;
@@ -173,7 +171,9 @@ public class TeacherTalkController {
 
         for (String studentId : studentIdList) {
 
-            ms.sendMessage(studentId, messageName);
+            System.out.println(studentId);
+            System.out.println(model.get("currentUser"));
+            ms.sendMessage(studentId, messageName,model.get("currentUser").toString());
 
         }
 

@@ -165,7 +165,7 @@ public class DatabaseService {
      * @param email of teacer to be found
      * @return teacher with the provided email address
      */
-    private Teacher getTeacherByEmail(String email) {
+    public Teacher getTeacherByEmail(String email) {
         return teacherRepository.findByEmail(email);
     }
 

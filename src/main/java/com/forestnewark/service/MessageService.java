@@ -33,8 +33,8 @@ public class MessageService {
      * @param studentId of the student who will recieve the message
      * @param messageName for the template of the message to be sent
      */
-    public void sendMessage(String studentId, String messageName) {
-
+    public void sendMessage(String studentId, String messageName, String currentUserEmail) {
+        System.out.println("I made it send message ms");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -55,7 +55,7 @@ public class MessageService {
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(ds.getStudentById(studentId).getParent().getPrimaryEmail())); //Receiver's Email Address (TO)
             message.setSubject("Teacher Talk Test: Student Name: " + ds.getStudentById(studentId).getStudentFirstName()); // Subject Line
-            message.setText(ds.getMessageByName(messageName).getEnglishMessage()); // Body Text
+            message.setText(this.messageBuilder(studentId,messageName,currentUserEmail)); // Body Text
 
             Transport.send(message);
 
@@ -66,6 +66,35 @@ public class MessageService {
         }
 
     }
+
+    public String messageBuilder(String studentId, String messageName,String currentUserEmail){
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("To the parent(s) or Guardian(s) of:  ");
+        sb.append(ds.getStudentById(studentId).getStudentFirstName() +" " +ds.getStudentById(studentId).getStudentLastName());
+        sb.append("\n");
+        if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("english")){
+           sb.append(ds.getMessageByName(messageName).getEnglishMessage());
+        }
+        if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("spanish")){
+            sb.append(ds.getMessageByName(messageName).getSpanishMessage());
+        }
+        sb.append("\n");
+        sb.append("Respectfully, \n");
+        sb.append(ds.getTeacherByEmail(currentUserEmail).getFirstName() + " " + ds.getTeacherByEmail(currentUserEmail).getLastName());
+
+        return sb.toString();
+
+    }
+
+
+
+
+
+
+
+
+
 
     public void sendPasswordResetEmail(Integer userId, String email) {
 

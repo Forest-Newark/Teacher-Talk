@@ -21,7 +21,7 @@
           <li><a href="#">Add Student</a></li>
           <li><a href="#">Add Template</a></li>
           <li><a href="#" th:href="@{/messageLog}">History</a></li>
-          <li><a href="#">Profile</a></li>git
+          <li><a href="#">Profile</a></li>
         </ul>
     </nav>
 </header>
@@ -31,8 +31,10 @@
     <div class="container-title">New Message</div>
 
 
+    <div class="input-wrapper">
+    <input type="text" id="provider-json" />
+    </div>
 
-    <input id="provider-json" />
     <div id="studentNameArea"></div>
 
     <form th:action="@{/sendMessage}" action="teacher.html" method="post">
@@ -62,7 +64,7 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
 <script th:src="@{/js/jquery.easy-autocomplete.js}"  src="../static/js/jquery.easy-autocomplete.js"></script>
-<script src="../static/js/searchTest.js" th:src="@{/js/searchTest.js}"></script>
+<script src="../static/js/signup.js" th:src="@{/js/signup.js}"></script>
 
 </body>
 </html>
