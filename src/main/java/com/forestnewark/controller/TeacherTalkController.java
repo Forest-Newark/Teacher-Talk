@@ -222,15 +222,19 @@ public class TeacherTalkController {
 
 
     @RequestMapping("/messageLog")
-    public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "duck") String value) {
+    public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "duck") String value,String search) {
 
         System.out.println(value);
+        System.out.println(search);
+        if(search == null){
+            search = "";
+        }
 
 
         //if value is duck i dont care about the order
 
         if (value.equals("duck")) {
-            model.addAttribute("messages", ds.getAllLog());
+            model.addAttribute("messages", ds.messageLogSearch(search));
         }
 
         //if value is id I wanted it ordered by ID from 1 -> up
