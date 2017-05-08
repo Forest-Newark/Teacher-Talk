@@ -5,8 +5,6 @@
 
     <title>Message Log</title>
 
-    <!--<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />-->
-
     <title>Teacher Talk</title>
 
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
@@ -20,11 +18,20 @@
     <label>
         <span>Search:</span>
         <input type="text" name="search" value="" th:value="${search}"/>
+        <!--<span>Back to Teacher Message Page:</span>-->
     </label>
     <button>Search</button>
+    <!--<button>Teacher Message Page</button>-->
 </form>
 
+<form action="#" th:action="@{/teacher}">
+    <label>
+        <!--<input type="text" name="teacher" value="" th:value="${teacher}"/>-->
+        <!--<span>Back to Teacher Message Page:</span>-->
+    </label>
 
+    <button>&lt; Back </button>
+</form>
 <!--Created table to hold specified items for the message log-->
 
 <!--<tr th:each="message : ${messages}">-->
