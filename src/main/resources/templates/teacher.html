@@ -10,35 +10,64 @@
 </head>
 
 <body>
+  <div class="header-tagline">
+    <h1>Teacher Talk</h1>
+    <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
+    <p>Quickly contact a parent by typing in the students name and then chose a pre-formated template.</p>
+
+    </template>
+  </div>
 <header>
-    <div class="logo">
+    <!-- <div class="logo">
         <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
              alt="teacher talk logo"/>
         <h1>Teacher Talk</h1>
-    </div>
+    </div> -->
+
     <nav>
-        <ul>
+      <a href="login.html">
+        <img class="logo" src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+           alt="teacher talk logo"/>
+      </a>
+      <ul>
+        <li><a href="#">Add Student</a></li>
+        <li><a href="#">Add Template</a></li>
+
+        <li><a href="#" th:href="@{/messageLog}">History Log</a></li>
+        <li><a href="#">Profile</a></li>
+      </ul>
+    </nav>
+
+    <nav class="mobile">
+      <a href="login.html">
+        <img class="logo" src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+           alt="teacher talk logo"/>
+      </a>
+      <div class="hamburger">&#9776;</div>
+        <ul class="hamburger-menu">
           <li><a href="#">Add Student</a></li>
           <li><a href="#">Add Template</a></li>
-          <li><a href="#" th:href="@{/messageLog}">History</a></li>
-          <li><a href="#">Profile</a></li>git
-        </ul>
+          <li><a href="#" th:href="@{/messageLog}">History Log</a></li>
+          <li><a href="#">Profile</a></li>
+      </ul>
     </nav>
+
 </header>
 
 
-<section class="message-container">
+
+<section class="message-container shadow-effect">
     <div class="container-title">New Message</div>
 
 
+    <div class="input-wrapper">
+      <input type="text" id="provider-json" placeholder="Students Name" />
+    </div>
 
-    <input id="provider-json" />
     <div id="studentNameArea"></div>
 
     <form th:action="@{/sendMessage}" action="teacher.html" method="post">
-
         <div id="studentIdArea"></div>
-        <hr/>
 
         <select id="messageSelect" name="message">
             <option th:each="message: ${messages}" th:value="${message.getMessageName()}"
@@ -48,12 +77,11 @@
             <option th:remove="all">Template 2</option>
             <option th:remove="all">Template 3</option>
         </select>
-        <hr/>
+
         <label>
-            Message
             <textarea id="messageTextArea">Message Goes Here</textarea>
         </label>
-        <button>Send Message</button>
+        <button class="send">Send Message</button>
     </form>
 </section>
 
@@ -62,7 +90,7 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
 <script th:src="@{/js/jquery.easy-autocomplete.js}"  src="../static/js/jquery.easy-autocomplete.js"></script>
-<script src="../static/js/searchTest.js" th:src="@{/js/searchTest.js}"></script>
+<script src="../static/js/signup.js" th:src="@{/js/signup.js}"></script>
 
 </body>
 </html>

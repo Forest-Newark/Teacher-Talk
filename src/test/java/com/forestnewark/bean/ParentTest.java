@@ -3,7 +3,6 @@ package com.forestnewark.bean;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.containsString;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.core.IsNull.notNullValue;
 import static org.junit.Assert.*;
@@ -18,7 +17,8 @@ public class ParentTest {
      */
     @Before
     public void setUp(){
-        parent = new Parent("Frank","Suzie","Jones","Jones","frank@gmail.com","suzie@gmail.com","password123","919-568-3091","both");
+        parent = new Parent("Frank","Suzie","Jones","Jones","frank@gmail.com","suzie@gmail.com","password123","919-568-3091","both", "english");
+
     }
 
 

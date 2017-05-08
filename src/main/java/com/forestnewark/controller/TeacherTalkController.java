@@ -44,8 +44,6 @@ public class TeacherTalkController {
     }
 
 
-
-
     /**
      * Request for site root
      *
@@ -156,7 +154,7 @@ public class TeacherTalkController {
 
     //    Redirecting to teacher
     @RequestMapping("/sendMessage")
-    public RedirectView sendMessage(@RequestParam Map<String, String> params) {
+    public RedirectView sendMessage(ModelMap model,@RequestParam Map<String, String> params) {
 
         ArrayList<String> studentIdList = new ArrayList<>();
         String messageName = null;
@@ -173,7 +171,9 @@ public class TeacherTalkController {
 
         for (String studentId : studentIdList) {
 
-            ms.sendMessage(studentId, messageName);
+            System.out.println(studentId);
+            System.out.println(model.get("currentUser"));
+            ms.sendMessage(studentId, messageName,model.get("currentUser").toString());
 
         }
 
@@ -228,15 +228,19 @@ public class TeacherTalkController {
 
 
     @RequestMapping("/messageLog")
-    public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "duck") String value) {
+    public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "duck") String value,String search) {
 
         System.out.println(value);
+        System.out.println(search);
+        if(search == null){
+            search = "";
+        }
 
 
         //if value is duck i dont care about the order
 
         if (value.equals("duck")) {
-            model.addAttribute("messages", ds.getAllLog());
+            model.addAttribute("messages", ds.messageLogSearch(search));
         }
 
         //if value is id I wanted it ordered by ID from 1 -> up
@@ -259,23 +263,24 @@ public class TeacherTalkController {
         }
 
         //if value is TemplateSent --- order alphabetically by template sent
-        if (value.equals("templateSent")){
+        if (value.equals("templateSent")) {
             System.out.println("order by template sent");
             model.addAttribute("messages", ds.getAllLogOrderByTemplateSent());
         }
 
         //if value is Notes then we want to order Alphabetically by notes
-        if(value.equals("notes")){
+        if (value.equals("notes")) {
             System.out.println("order by notes");
             model.addAttribute("messages", ds.getAllLogOrderByNotes());
         }
 
         // if value is date then order alphabetically by date
-        if (value.equals("localDate")){
+        if (value.equals("date")) {
             System.out.println("order by date");
-            model.addAttribute("messages", ds.getAllLogOrderByLocalDate());
+            model.addAttribute("messages", ds.getAllLogOrderByCreated());
 
         }
+
 
         return "messageLog";
     }

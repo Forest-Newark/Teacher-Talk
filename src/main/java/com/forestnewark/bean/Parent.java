@@ -27,12 +27,13 @@ public class Parent {
     private String password;
     private String phoneNumber;
     private String preferredContactMethod;
+    private String preferredLanguage;
 
     public Parent() {
     }
 
     //setting constructors for parent class
-    public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber, String preferredContactMethod) {
+    public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber, String preferredContactMethod, String preferredLanguage) {
         this.primaryFirstName = primaryFirstName;
         this.secondaryFirstName = secondaryFirstName;
         this.primaryLastName = primaryLastName;
@@ -42,6 +43,7 @@ public class Parent {
         this.password = password;
         this.phoneNumber = phoneNumber;
         this.preferredContactMethod = preferredContactMethod;
+        this.preferredLanguage = preferredLanguage;
     }
 
     //setting the getters and setters for the Parent class
@@ -49,7 +51,7 @@ public class Parent {
         return id;
     }
 
-    public void setId(int id) {
+    void setId(int id) {
         this.id = id;
     }
 
@@ -57,7 +59,7 @@ public class Parent {
         return primaryFirstName;
     }
 
-    public void setPrimaryFirstName(String primaryFirstName) {
+    void setPrimaryFirstName(String primaryFirstName) {
         this.primaryFirstName = primaryFirstName;
     }
 
@@ -65,7 +67,7 @@ public class Parent {
         return secondaryFirstName;
     }
 
-    public void setSecondaryFirstName(String secondaryFirstName) {
+    void setSecondaryFirstName(String secondaryFirstName) {
         this.secondaryFirstName = secondaryFirstName;
     }
 
@@ -73,7 +75,7 @@ public class Parent {
         return primaryLastName;
     }
 
-    public void setPrimaryLastName(String primaryLastName) {
+    void setPrimaryLastName(String primaryLastName) {
         this.primaryLastName = primaryLastName;
     }
 
@@ -81,7 +83,7 @@ public class Parent {
         return secondaryLastName;
     }
 
-    public void setSecondaryLastName(String secondaryLastName) {
+    void setSecondaryLastName(String secondaryLastName) {
         this.secondaryLastName = secondaryLastName;
     }
 
@@ -89,7 +91,7 @@ public class Parent {
         return primaryEmail;
     }
 
-    public void setPrimaryEmail(String primaryEmail) {
+    void setPrimaryEmail(String primaryEmail) {
         this.primaryEmail = primaryEmail;
     }
 
@@ -97,7 +99,7 @@ public class Parent {
         return secondaryEmail;
     }
 
-    public void setSecondaryEmail(String secondaryEmail) {
+    void setSecondaryEmail(String secondaryEmail) {
         this.secondaryEmail = secondaryEmail;
     }
 
@@ -113,7 +115,7 @@ public class Parent {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -121,7 +123,15 @@ public class Parent {
         return preferredContactMethod;
     }
 
-    public void setPreferredContactMethod(String preferredContactMethod) {
+    void setPreferredContactMethod(String preferredContactMethod) {
         this.preferredContactMethod = preferredContactMethod;
+    }
+
+    public String getPreferredLanguage() {
+        return preferredLanguage;
+    }
+
+    public void setPreferredLanguage(String preferredLanguage) {
+        this.preferredLanguage = preferredLanguage;
     }
 }

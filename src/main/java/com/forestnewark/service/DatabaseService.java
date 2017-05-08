@@ -133,8 +133,9 @@ public class DatabaseService {
 
     /**
      * Update user password using their ID
+     *
      * @param password create a new password
-     * @param userId using user's ID
+     * @param userId   using user's ID
      */
     public void updateUserPasswordById(Integer userId,String password) {
 
@@ -169,7 +170,6 @@ public class DatabaseService {
     }
 
 
-
     //PARENT METHODS
 
 
@@ -193,7 +193,7 @@ public class DatabaseService {
      * @param email of teacer to be found
      * @return teacher with the provided email address
      */
-    private Teacher getTeacherByEmail(String email) {
+    public Teacher getTeacherByEmail(String email) {
         return teacherRepository.findByEmail(email);
     }
 
@@ -311,17 +311,31 @@ public class DatabaseService {
         return messageLogRepository.findAllByOrderByNotes();
     }
 
-    /**
-     * Get Log Item Order By Date
-     *
-     * @return list of log items
-     */
-    //TODO: This method is not working
-    public List<Log> getAllLogOrderByLocalDate() {
-        return messageLogRepository.findAllByOrderByLocalDate();
+
+    public List<Log> getAllLogOrderByCreated() {
+
+            return messageLogRepository.findAllByOrderByCreated();
+
+//    /**
+//     * Get Log Item Order By Date
+//     *
+//     * @return list of log items
+//     */
+//    //TODO: This method is not working
+//    public List<Log> getAllLogOrderByLocalDate() {
+//        return messageLogRepository.findAllByOrderByLocalDate();
+    }
+
+
+    public List<Log> messageLogSearch(String search){
+
+        return messageLogRepository.findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrNotesIgnoreCaseContaining(search,search,search,search);
     }
 
 
 
 
+
+
 }
+

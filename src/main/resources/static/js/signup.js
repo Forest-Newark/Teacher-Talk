@@ -1,4 +1,4 @@
-// Parent Page Drop Down for second point of contact
+// Parent Page Drop Down for second point of contact and students
   $('.addContact').click(function(){
     $(this).next('.contactInfo').slideToggle();
   });
@@ -28,4 +28,9 @@
           'transform': 'translateY(-10px)',
         });
       };
+  });
+
+  // mobile menu
+  $('.hamburger').click(function(){
+    $('.hamburger-menu').slideToggle();
   });

@@ -1,8 +1,9 @@
 package com.forestnewark.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Log bean, html page that has a table on it, gets populated with data from log.
@@ -21,23 +22,27 @@ public class Log {
     @GeneratedValue
     private int id;
 
-    private String messageSentTo;
-    private String localDate;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created = new Date();
+
     private String studentName;
     private String parentName;
     private String templateSent;
     private String notes;
 
+
+
     public Log() {
     }
 //setting Contructors
-    public Log(String messageSentTo, String studentName, String localDate,String parentName, String templateSent, String notes) {
-        this.messageSentTo = messageSentTo;
+    public Log(String studentName, Date created, String parentName, String templateSent, String notes) {
+
         this.studentName = studentName;
         this.parentName = parentName;
         this.templateSent = templateSent;
         this.notes = notes;
-        this.localDate = localDate;
+        this.created = created;
 
     }
 //setting getters and setters
@@ -47,14 +52,6 @@ public class Log {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getMessageSentTo() {
-        return messageSentTo;
-    }
-
-    public void setMessageSentTo(String messageSentTo) {
-        this.messageSentTo = messageSentTo;
     }
 
     public String getStudentName() {
@@ -89,11 +86,11 @@ public class Log {
         this.notes = notes;
     }
 
-    public String getLocalDate() {
-        return localDate;
+    public Date getCreated() {
+        return created;
     }
 
-    public void setLocalDate(String localDate) {
-        this.localDate = localDate;
+    public void setCreated(Date created) {
+        this.created = created;
     }
 }
