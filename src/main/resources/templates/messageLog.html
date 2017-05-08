@@ -18,27 +18,22 @@
     <label>
         <span>Search:</span>
         <input type="text" name="search" value="" th:value="${search}"/>
-        <!--<span>Back to Teacher Message Page:</span>-->
+
     </label>
     <button>Search</button>
-    <!--<button>Teacher Message Page</button>-->
+
 </form>
 
 <form action="#" th:action="@{/teacher}">
     <label>
-        <!--<input type="text" name="teacher" value="" th:value="${teacher}"/>-->
-        <!--<span>Back to Teacher Message Page:</span>-->
+
     </label>
 
     <button>&lt; Back </button>
 </form>
-<!--Created table to hold specified items for the message log-->
 
-<!--<tr th:each="message : ${messages}">-->
-    <!--<td th:text="${message.getId()}"></td>-->
-    <!--<td th:text="${message.getMessageSentTo()}"></td>-->
 
-<!--</tr>-->
+
 
 <table>
     <tr>
@@ -48,9 +43,6 @@
         <th>
             <a th:href="@{/messageLog?value=date}" href="messageLog.html" title="Date">Date</a>
         </th>
-        <!--<th>-->
-            <!--<a th:href="@{/messageLog?value=messageSent}" href="messageLog.html" title="Message Sent">Message Sent</a>-->
-        <!--</th>-->
         <th>
             <a th:href="@{/messageLog?value=studentName}" href="messageLog.html" title="Student Name">Student Name</a>
         </th>
@@ -69,7 +61,6 @@
     <tr th:each="message : ${messages}">
         <td th:text="${message.getId()}"></td>
         <td th:text="${message.getCreated()}"></td>
-        <!--<td th:text="${message.getMessageSentTo()}"></td>-->
         <td th:text="${message.getStudentName()}"></td>
         <td th:text="${message.getParentName()}"></td>
         <td th:text="${message.getTemplateSent()}"></td>
