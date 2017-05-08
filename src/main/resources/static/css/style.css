@@ -235,57 +235,41 @@ nav {
   text-decoration: none;
   cursor: pointer; }
 
-.faq, .signup {
-  background: #fff;
-  margin: 0 auto; }
-
-#signUpPage {
+#signUpPage section {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: top;
+  background: #fff;
   max-width: 1024px;
   width: 90%;
-  margin: 25px auto; }
+  margin: 25px auto 3%; }
+
+.faq, .signup {
+  width: 50%;
+  padding: 25px 15px;
+  box-sizing: border-box; }
 
 .faq {
-  width: 53%;
-  margin-right: 3%;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-  .faq .faq-header {
-    background: #faf0a1;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; }
-    .faq .faq-header img {
-      margin-right: 15px;
-      width: 50px; }
-    .faq .faq-header .tagline h3 {
-      font-size: .8rem; }
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0.8)), url("../images/login-shapes.gif"); }
 
-.faq-content {
-  padding: 5px 50px 25px; }
-  .faq-content h3 {
-    font-weight: 700;
-    margin: 15px 0 5px; }
+.faq-content h3 {
+  font-weight: 700;
+  padding: 15px 0 5px;
+  text-transform: uppercase; }
+.faq-content p {
+  font-weight: 300; }
+.faq-content .question {
+  padding: 5px 25px 15px; }
 
-.signup {
-  width: 45%;
-  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
-
-.signup {
-  padding: 10px;
-  box-sizing: border-box; }
-  .signup form {
+.signup form {
+  text-align: center;
+  margin: 15px 0; }
+  .signup form legend {
     text-align: center;
-    margin: 15px 0; }
-    .signup form legend {
-      text-align: center;
-      margin: 8px auto;
-      display: block; }
+    margin: 8px auto;
+    display: block; }
 
 .input-wrapper {
   position: relative;
@@ -293,7 +277,7 @@ nav {
   margin: 5px; }
   .input-wrapper label {
     position: absolute;
-    top: 10px;
+    top: 14px;
     left: 15px;
     z-index: 5;
     margin: 10px;
@@ -309,7 +293,7 @@ nav {
     border: 1px solid #ececec;
     padding: 10px; }
 
-.border-seperation {
+aside {
   margin: 15px 0;
   border: 3px solid #ececec; }
 

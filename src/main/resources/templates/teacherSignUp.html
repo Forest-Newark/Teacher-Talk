@@ -10,66 +10,75 @@
 
 <body id="signUpPage">
 
-  <section class="faq">
-    <div class="faq-header">
-      <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
-         alt="teacher talk logo"/>
-      <div class="tagline">
-       <h1>Teacher Talk</h1>
-       <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
-     </div>
+  <section>
+    <div class="faq">
+      <!-- <div class="faq-header">
+        <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+           alt="teacher talk logo"/>
+        <div class="tagline">
+         <h1>Teacher Talk</h1>
+         <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
+       </div>
+      </div> -->
+
+      <div class="faq-content">
+        <div class="question">
+          <h3>What is Teacher Talk?</h3>
+          <p>Teacher Talk is an app developed to empower education by streamlining the process of communication between teachers and parents.  </p>
+        </div>
+        <div class="question">
+          <h3>Why is this useful?</h3>
+          <p>Teacher Talk saves time by managing contacts, providing professional message templates, and automatically creating a log of your communication. Teacher Talk allows teachers to be more proactive in their communication by simplifying the process from start to finish. </p>
+        </div>
+        <div class="question">
+          <h3>How does it work?</h3>
+          <p>Teacher talk is easy to use. It allows parents to sign up and manage their best contact information. Teachers are present with a familiar email-like view where they can simply select students, their message and hit send. Teacher talk takes care of the rest</p>
+        </div>
+        <div class="question">
+          <h3>Can I make my own message template?</h3>
+          <p>Yes! While Teacher Talk comes with a variety of useful message templates it is easy to add your own message templates at any time</p>
+        </div>
+      </div>
     </div>
 
-    <div class="faq-content">
-      <h3>What is Teacher Talk?</h3>
-      <p>Teacher Talk is an app developed to empower education by streamlining the process of communication between teachers and parents.  </p>
-      <h3>Why is this useful?</h3>
-      <p>Teacher Talk saves time by managing contacts, providing professional message templates, and automatically creating a log of your communication. Teacher Talk allows teachers to be more proactive in their communication by simplifying the process from start to finish. </p>
-      <h3>How does it work?</h3>
-      <p>Teacher talk is easy to use. It allows parents to sign up and manage their best contact information. Teachers are present with a familiar email-like view where they can simply select students, their message and hit send. Teacher talk takes care of the rest</p>
-      <h3>Can I make my own message template?</h3>
-      <p>Yes! While Teacher Talk comes with a variety of useful message templates it is easy to add your own message templates at any time</p>
+    <div class="signup">
+      <form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
+        <fieldset>
+          <legend>Teacher Registration</legend>
+
+          <div class="input-wrapper">
+            <input type="text" id="registerFirstName" name="registerFirstName" th:value="${teacher.getFirstName()}"/>
+            <label for="registerFirstName">First Name </label>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="registerLastName" name="registerLastName" th:value="${teacher.getLastName()}"/>
+            <label for="registerLastName">Last Name </label>
+          </div>
+          <div class="input-wrapper">
+            <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
+            <label for="registerEmail">Email </label>
+          </div>
+          <div class="input-wrapper">
+            <input type="password" id="registerPassword" name="registerPassword" th:value="${teacher.getPassword()}"/>
+            <label for="registerPassword">Password </label>
+          </div>
+          <div class="input-wrapper">
+            <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${teacher.getPhoneNumber()}"/>
+            <label for="registerPhoneNumber">Phone Number </label>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${teacher.getSchoolName()}"/>
+            <label for="registerSchoolName">School Name</label>
+          </div>
+          <div class="input-wrapper">
+            <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${teacher.getSubjectArea()}"/>
+            <label for="registerSubjectArea">Subject Area </label>
+          </div>
+        </fieldset>
+        <button type="submit" class="update">Register</button>
+      </form>
     </div>
   </section>
-
-  <section class="signup">
-    <form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
-      <fieldset>
-        <legend>Teacher Registration</legend>
-
-        <div class="input-wrapper">
-          <input type="text" id="registerFirstName" name="registerFirstName" th:value="${teacher.getFirstName()}"/>
-          <label for="registerFirstName">First Name </label>
-        </div>
-        <div class="input-wrapper">
-          <input type="text" id="registerLastName" name="registerLastName" th:value="${teacher.getLastName()}"/>
-          <label for="registerLastName">Last Name </label>
-        </div>
-        <div class="input-wrapper">
-          <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
-          <label for="registerEmail">Email </label>
-        </div>
-        <div class="input-wrapper">
-          <input type="password" id="registerPassword" name="registerPassword" th:value="${teacher.getPassword()}"/>
-          <label for="registerPassword">Password </label>
-        </div>
-        <div class="input-wrapper">
-          <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${teacher.getPhoneNumber()}"/>
-          <label for="registerPhoneNumber">Phone Number </label>
-        </div>
-        <div class="input-wrapper">
-          <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${teacher.getSchoolName()}"/>
-          <label for="registerSchoolName">School Name</label>
-        </div>
-        <div class="input-wrapper">
-          <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${teacher.getSubjectArea()}"/>
-          <label for="registerSubjectArea">Subject Area </label>
-        </div>
-      </fieldset>
-      <button type="submit" class="update">Register</button>
-    </form>
-  </section>
-
   <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
           src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
