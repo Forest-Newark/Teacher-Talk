@@ -2,7 +2,7 @@ INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, su
 
 INSERT INTO parent(id, password, phone_number, preferred_contact_method, primary_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name,preferred_language) VALUES (1,'password123',9194528196,'email','forest.newark@gmail.com','Jim','Smith','forest.newark@gmail.com','Sally','Smith','english');
 INSERT INTO parent(id, password, phone_number, preferred_contact_method, primary_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name,preferred_language) VALUES (2,'password123',9195555555,'email', 'forestjavadev@gmail.com','Chris','Mitchell','none','Wife','Mitchell','spanish');
-
+INSERT INTO parent(id, password, phone_number, preferred_contact_method, primary_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name,preferred_language) VALUES (3,'hi',9195555345,'email', 'cwolf0913@gmail.com','Chris','Tang','none','Wife','adsf','english');
 
 INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (1,'6','Very-Hyper','School Of The Arts','Johnny','Smith',1);
 INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (2,'7','Very Bright','School of the Arts','Sean','Mitchell',2);
