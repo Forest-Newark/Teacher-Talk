@@ -12,7 +12,7 @@ INSERT INTO message(id, english_message, message_name) VALUES (1,'Hello from Tea
 INSERT INTO message(id, english_message, message_name) VALUES (2,'This message is to inform you that your child was absent from class today. While I will assist your student with the content they missed, it is their responsibility to make up all missing work.','Absent Message');
 
 
-INSERT INTO log(id, created,  notes, parent_name, student_name, template_sent)  VALUES(4, CURRENT_TIMESTAMP ,'student was abrasive','Will', 'Berry', '4 days ago');
-INSERT INTO log(id,created,  notes, parent_name, student_name, template_sent) VALUES(1,CURRENT_TIMESTAMP, 'student might have lice','Chris', 'Miles', '3 days ago');
-INSERT INTO log(id,created,  notes, parent_name, student_name, template_sent) VALUES(2,CURRENT_TIMESTAMP, 'student read exceptional well','Forest', 'Chuck', '1 days ago');
-INSERT INTO log(id,created,  notes, parent_name, student_name, template_sent) VALUES(3,CURRENT_TIMESTAMP, 'consider moving student to honors','Rasputin', 'King', '7 days ago');
+INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES(4, CURRENT_TIMESTAMP, 'student was abrasive','Will', 'Berry', '4 days ago');
+INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES(1, CURRENT_TIMESTAMP, 'student might have lice','Chris', 'Miles', '3 days ago');
+INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES(2, CURRENT_TIMESTAMP, 'student read exceptional well','Forest', 'Chuck', '1 days ago');
+INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES(3, CURRENT_TIMESTAMP, 'consider moving student to honors','Rasputin', 'King', '7 days ago');
