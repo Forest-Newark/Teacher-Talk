@@ -137,7 +137,35 @@ public class DatabaseService {
      * @param password create a new password
      * @param userId   using user's ID
      */
-    public void updateUserPasswordById(String password, Integer userId) {
+    public void updateUserPasswordById(Integer userId,String password) {
+
+        // if user ID matches teacher, then sets password for teacher
+        this.teacherRepository.getOne(userId).setPassword(password);
+        Teacher teacher = teacherRepository.getOne(1);
+        teacher.setPassword(password);
+        teacherRepository.save(teacher);
+
+        this.parentRepository.getOne(userId).setPassword(password);
+        Parent parent = parentRepository.getOne(1);
+        parent.setPassword(password);
+        parentRepository.save(parent);
+
+        // if user ID matches parent, then sets password for parent
+        /*
+
+        Object object = obectrespostory.getOne(1);
+        object.setProperty("hamburger" OR variable for password)
+        object.setProperty2("cheese");
+        objectrepsotiry.save(object);
+
+
+         */
+
+        // if user ID matches parent, then sets password for parent
+//        this.parentRepository.getOne(userId).setPassword(password);
+
+        // saving new password into database
+
 
     }
 

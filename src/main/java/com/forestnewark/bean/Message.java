@@ -17,15 +17,14 @@ public class Message {
 
     private String messageName;
     private String englishMessage;
-    private String spanishMessage;
 
     public Message() {
     }
 
-    public Message(String messageName, String englishMessage, String spanishMessage) {
+    public Message(String messageName, String englishMessage) {
         this.messageName = messageName;
         this.englishMessage = englishMessage;
-        this.spanishMessage = spanishMessage;
+
     }
 
     public int getId() {
@@ -50,13 +49,5 @@ public class Message {
 
     public void setEnglishMessage(String englishMessage) {
         this.englishMessage = englishMessage;
-    }
-
-    public String getSpanishMessage() {
-        return spanishMessage;
-    }
-
-    public void setSpanishMessage(String spanishMessage) {
-        this.spanishMessage = spanishMessage;
     }
 }

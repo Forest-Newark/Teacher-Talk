@@ -2,22 +2,33 @@ package com.forestnewark.service;
 
 import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
+import org.springframework.stereotype.Service;
 
 
-import javax.mail.*;
-import javax.mail.internet.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+import java.util.concurrent.Future;
 
 
 /**
  * Created by Forest Newark on 5/1/17. This class is responsible for generating
  * and sending messages to the appropriate recipients
  */
-@Component
+@Service
 public class MessageService {
 
     private final DatabaseService ds;
+
+    final
+    TranslationService ts;
 
 
     private final String username = "teacher.talk.tiy@gmail.com";
@@ -25,8 +36,9 @@ public class MessageService {
 
 
     @Autowired
-    public MessageService(DatabaseService ds) {
+    public MessageService(DatabaseService ds, TranslationService ts) {
         this.ds = ds;
+        this.ts = ts;
     }
 
 
@@ -35,7 +47,8 @@ public class MessageService {
      * @param studentId of the student who will recieve the message
      * @param messageName for the template of the message to be sent
      */
-    public void sendMessage(String studentId, String messageName, String currentUserEmail) {
+    @Async
+    public Future<String> sendMessage(String studentId, String messageName, String currentUserEmail, String messageText) {
         System.out.println("I made it send message ms");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -57,7 +70,7 @@ public class MessageService {
             message.setRecipients(Message.RecipientType.TO,
                     InternetAddress.parse(ds.getStudentById(studentId).getParent().getPrimaryEmail())); //Receiver's Email Address (TO)
             message.setSubject("Teacher Talk Test: Student Name: " + ds.getStudentById(studentId).getStudentFirstName()); // Subject Line
-            message.setText(this.messageBuilder(studentId,messageName,currentUserEmail)); // Body Text
+            message.setText(this.messageBuilder(studentId,messageName,currentUserEmail,messageText)); // Body Text
 
             Transport.send(message);
 
@@ -67,23 +80,28 @@ public class MessageService {
             throw new RuntimeException(e);
         }
 
+        return new AsyncResult<>("ok");
+
     }
 
-    public String messageBuilder(String studentId, String messageName,String currentUserEmail){
+    public String messageBuilder(String studentId, String messageName,String currentUserEmail, String messageText){
 
         StringBuilder sb = new StringBuilder();
         sb.append("To the Parent(s) or Guardian(s) of: ");
         sb.append(ds.getStudentById(studentId).getStudentFirstName() +" " +ds.getStudentById(studentId).getStudentLastName());
         sb.append("\n\n");
-        if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("english")){
-           sb.append(ds.getMessageByName(messageName).getEnglishMessage());
-        }
+           sb.append(messageText);
+
         if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("spanish")){
-            sb.append(ds.getMessageByName(messageName).getSpanishMessage());
+                sb.append("\n\n");
+                sb.append(ts.translationMessage("The following is an automatic translation of the above message","es","en"));
+                sb.append("\n");
+                sb.append(ts.translationMessage(messageText,"es","en"));
         }
         sb.append("\n\n");
         sb.append("Respectfully, \n");
         sb.append(WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getFirstName()) + " " + WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getLastName()));
+        sb.append("Message Created by Teacher-Talk");
 
         return sb.toString();
 
@@ -129,3 +147,4 @@ public class MessageService {
 
     }
 }
+
