@@ -1,44 +1,32 @@
-.header-tagline {
-  background: #fff;
-  padding: 15px;
-  text-align: center; }
-  .header-tagline p {
-    font-size: .8rem; }
-
 header {
   background: #faf0a1;
-  padding: 10px;
-  position: relative; }
+  width: 30%; }
 
-.logo {
-  position: absolute;
-  top: -20px;
-  left: 0;
-  background: #fff;
-  padding: 13px 7px;
-  width: 45px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+.header-tagline {
+  padding: 0 15px;
+  text-align: center; }
+  .header-tagline img {
+    width: 75px;
+    display: block;
+    margin: 25px auto 10px; }
+  .header-tagline h3 {
+    font-size: .8rem;
+    padding-bottom: 5px; }
 
-nav {
-  position: relative;
-  text-align: right;
-  margin: 0 50px; }
-  nav ul li {
-    display: inline-block; }
-    nav ul li a {
-      cursor: pointer;
-      color: #333;
-      text-decoration: none;
-      margin: 0px 2px;
-      padding: 12px 10px;
-      transition: background .5s;
-      -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-      -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-    nav ul li a:hover, nav ul li a:focus {
-      background: #fff; }
+nav ul li {
+  display: block; }
+  nav ul li a {
+    display: block;
+    cursor: pointer;
+    color: #333;
+    text-decoration: none;
+    padding: 25px 15px;
+    transition: background .5s;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3); }
+  nav ul li a:hover, nav ul li a:focus {
+    background: #fff; }
 
 .mobile {
   display: none; }
@@ -74,33 +62,52 @@ nav {
       padding: 8px 10px;
       background: #faf0a1; }
 
-.container-title {
-  background: #00b074;
-  padding: 10px;
-  font-weight: 700; }
-
-.input-wrapper {
-  padding: 5px 15px; }
+#teacherSendMessage section {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  justify-content: top;
+  background: #fff;
+  max-width: 1024px;
+  width: 90%;
+  margin: 25px auto 3%; }
 
 .message-container {
   background: #fff;
-  width: 75%;
-  margin: 50px auto;
-  padding-bottom: 20px; }
-  .message-container form {
-    width: 90%;
-    margin: auto; }
-    .message-container form select {
-      outline: none;
-      height: 35px;
-      background: #fff;
-      margin: 15px 0;
-      font-size: .8rem; }
-    .message-container form textarea {
+  width: 70%;
+  margin: 25px auto 50px; }
+
+.container-title {
+  border-top: 10px solid #00b074;
+  text-align: center;
+  padding: 5px 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 15px; }
+
+.message {
+  width: 80%;
+  margin: 0px auto;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .message .input-wrapper {
+    padding: 5px 15px; }
+  .message #studentNameArea {
+    font-size: .8rem;
+    font-family: 'Signika', sans-serif; }
+  .message form {
+    padding: 20px 0;
+    border-bottom: 10px solid #00b074; }
+    .message form .select-style {
+      margin: 0 5px;
+      padding: 10px 15px; }
+    .message form textarea {
       font-size: .8rem;
-      width: 100%;
+      width: 90%;
       display: block;
-      margin-bottom: 40px;
+      margin: 0 auto 40px;
       padding: 5px;
       box-sizing: border-box;
       height: 150px;
@@ -269,7 +276,25 @@ nav {
   .signup form legend {
     text-align: center;
     margin: 8px auto;
-    display: block; }
+    display: block;
+    font-size: 1.2rem; }
+
+select {
+  font-family: 'Signika', sans-serif;
+  display: inline-block;
+  border: 1px solid #ececec;
+  outline: none;
+  border-radius: 3px;
+  padding: 0px 15px;
+  margin: 5px;
+  width: 150px;
+  line-height: 2.5em;
+  font-size: .8rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent; }
 
 .input-wrapper {
   position: relative;
@@ -277,7 +302,7 @@ nav {
   margin: 5px; }
   .input-wrapper label {
     position: absolute;
-    top: 14px;
+    top: 10px;
     left: 15px;
     z-index: 5;
     margin: 10px;
@@ -303,7 +328,7 @@ aside {
 .addContact {
   padding: 5px;
   cursor: pointer;
-  font-size: .9rem; }
+  font-size: 1rem; }
   .addContact .plus {
     border-radius: 3px;
     padding: 2px 7px;
@@ -324,7 +349,7 @@ aside {
 body {
   font-size: 16px;
   line-height: 1.4;
-  font-family: sans-serif;
+  font-family: 'Signika', sans-serif;
   color: #333;
   background: #ececec; }
 
@@ -362,6 +387,7 @@ a {
   color: #333; }
 
 button {
+  font-family: 'Signika', sans-serif;
   cursor: pointer;
   display: block;
   margin: 15px auto;

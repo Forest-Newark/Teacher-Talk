@@ -1,76 +1,53 @@
+header {
+  background: $header;
+  width: 30%;
+}
+
 .header-tagline {
-  background: #fff;
-  padding: 15px;
+  padding:0 15px;
   text-align: center;
 
-  p {
+  img {
+    width: 75px;
+    display:block;
+    margin: 25px auto 10px;
+  }
+
+  h3 {
     font-size: .8rem;
+    padding-bottom: 5px;
   }
 }
 
-header {
-  background: $header;
-  padding: 10px;
-  // text-align: center;
-  // display: flex;
-  // justify-content:space-between;
-  // align-items: center;
-  position: relative;
-}
-
-// style if logo is to left instead of centered
 // .logo {
-//   // position: relative;
-//   position: absolute;
-//   top: -7px;
-//   background: #fff;
-//   padding: 10px;
-//   img {
-//     height: 30px;
-//   }
-//   h1 {
-//     font-size: 1.3rem;
-//     // position: absolute;
-//     bottom: 0px;
-//     left: 80px;
-//   }
+//   padding: 13px 7px;
+//   width: 75px;
+//   display: block;
+//   text-align: center;
+//   // -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
+//   // -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
+//   // box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
 // }
-
-.logo {
-  position: absolute;
-  top: -20px;
-  left:0;
-  background: #fff;
-  padding: 13px 7px;
-  width: 45px;
-  -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-}
 
 
 nav {
-  position: relative;
-  text-align: right;
-  margin: 0 50px;
 
   ul {
-    // position: relative;
-    // left: 50px;
 
     li {
-      display: inline-block;
+      display: block;
 
       a {
+        display: block;
         cursor: pointer;
         color: #333;
         text-decoration: none;
-        margin: 0px 2px;
-        padding: 12px 10px;
+        // margin: 10px 2px;
+        padding: 25px 15px;
         transition: background .5s;
         -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
         -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-        box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
+        box-shadow:0 3px 3px rgba(0, 0, 0, 0.3);
       }
       a:hover, a:focus {
         background: #fff;

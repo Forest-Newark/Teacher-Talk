@@ -22,37 +22,12 @@
 }
 
 .faq {
-  // background:
-  //   linear-gradient(
-  //     rgba(255, 255, 255, .9),
-  //     rgba(255, 255, 255, 0.6)
-  //   ),
   background:
     linear-gradient(to right, rgba(255,255,255,1),
       rgba(255,255,255,.8)),
     url("../images/login-shapes.gif");
 
 }
-
-  // border-bottom: 15px solid $header;
-
-  // .faq-header {
-  //   background: $header;
-  //   // height: 65px;
-  //   padding: 10px;
-  //   display: flex;
-  //   justify-content:center;
-  //   align-items: flex-end;
-  //   img {
-  //     margin-right: 15px;
-  //     width: 50px;
-  //   }
-  //   .tagline {
-  //     h3{
-  //       font-size: .8rem;
-  //     }
-  //   }
-  // }
 
 .faq-content {
   h3 {
@@ -70,7 +45,7 @@
 
 
 // Parent Sign Up Page
-// Styling Form
+// Styling all inputsForm
 
 .signup {
 
@@ -82,8 +57,27 @@
       text-align:center;
       margin: 8px auto;
       display:block;
+      font-size: 1.2rem;
     }
   }
+}
+
+select{
+  font-family: 'Signika', sans-serif;
+  display:inline-block;
+  border:1px solid $accent;
+  outline: none;
+  border-radius:3px;
+  padding: 0px 15px;
+  margin: 5px;
+  width: 150px;
+  line-height: 2.5em;
+  font-size: .8rem;
+  cursor: pointer;
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  background:transparent;
 }
 
 .input-wrapper {
@@ -93,7 +87,7 @@
 
   label {
     position:absolute;
-    top: 14px;
+    top: 10px;
     left:15px;
     z-index: 5;
     margin: 10px;
@@ -152,7 +146,7 @@ aside {
 .addContact{
   padding: 5px;
   cursor: pointer;
-  font-size: .9rem;
+  font-size: 1rem;
 
   .plus {
     border-radius: 3px;

@@ -1,54 +1,71 @@
+#teacherSendMessage {
 
-
-.container-title {
-  background: $primary;
-  padding: 10px;
-  font-weight: 700;
-}
-
-.input-wrapper{
-  padding: 5px 15px;
+  section {
+    -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    justify-content: top;
+    background: #fff;
+    max-width: 1024px;
+    width: 90%;
+    margin: 25px auto 3%;
+  }
 }
 
 .message-container {
   background: #fff;
-  width: 75%;
-  margin: 50px auto;
-  padding-bottom: 20px;
+  width: 70%;
+  margin: 25px auto 50px;
+}
 
-  input {
-    // padding: 5px 15px;
+.container-title {
+  border-top: 10px solid $primary;
+  text-align: center;
+  padding: 5px 10px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+
+
+.message {
+  width: 80%;
+  margin: 0px auto;
+  -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .input-wrapper{
+    padding: 5px 15px;
+  }
+
+  #studentNameArea {
+    font-size: .8rem;
+    font-family: 'Signika', sans-serif;
   }
 
   form {
-    width: 90%;
-    margin: auto;
+    padding: 20px 0;
+    border-bottom: 10px solid $primary;
 
-    select {
-      outline: none;
-      height: 35px;
-      background: #fff;
-      margin: 15px 0;
-      font-size: .8rem;
+    .select-style {
+      margin: 0 5px;
+      padding: 10px 15px;
     }
 
     textarea {
       font-size: .8rem;
-      width: 100%;
+      width: 90%;
       display: block;
-      margin-bottom: 40px;
+      margin: 0 auto 40px;
       padding: 5px;
       box-sizing: border-box;
       height: 150px;
       vertical-align: top;
     }
   }
-  //
-  // hr {
-  //   width: 95%;
-  //   margin: 10px auto;
-  //   border-color: #efefef;
-  // }
 }
 
 
