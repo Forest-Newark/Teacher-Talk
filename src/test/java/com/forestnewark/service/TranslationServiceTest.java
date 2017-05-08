@@ -9,12 +9,13 @@ import static org.junit.Assert.*;
  */
 public class TranslationServiceTest {
     @Test
-    public void translateMessage() throws Exception {
+    public void translationPunctionation() throws Exception {
 
         TranslationService ts = new TranslationService();
 
-        System.out.println(ts.translateMessage("Your child was absent from class today","es","en"));
+        System.out.println(ts.translationMessage("Hello world. Hello World!HelloWorld.","es","en"));
 
     }
+
 
 }

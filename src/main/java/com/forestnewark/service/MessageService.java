@@ -79,11 +79,13 @@ public class MessageService {
         sb.append("To the Parent(s) or Guardian(s) of: ");
         sb.append(ds.getStudentById(studentId).getStudentFirstName() +" " +ds.getStudentById(studentId).getStudentLastName());
         sb.append("\n\n");
-        if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("english")){
            sb.append(messageText);
-        }
+
         if(ds.getStudentById(studentId).getParent().getPreferredLanguage().equals("spanish")){
-            sb.append(ts.translateMessage(messageText,"es","en"));
+                sb.append("\n\n");
+                sb.append(ts.translationMessage("The following is an automatic translation of the above message","es","en"));
+                sb.append("\n");
+                sb.append(ts.translationMessage(messageText,"es","en"));
         }
         sb.append("\n\n");
         sb.append("Respectfully, \n");
@@ -133,3 +135,4 @@ public class MessageService {
 
     }
 }
+
