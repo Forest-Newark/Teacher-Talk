@@ -173,13 +173,17 @@ public class TeacherTalkController {
 
         }
 
+        Long start = System.currentTimeMillis();
+
+
         for (String studentId : studentIdList) {
 
-            System.out.println(studentId);
-            System.out.println(model.get("currentUser"));
             ms.sendMessage(studentId, messageName,model.get("currentUser").toString(),messageText);
 
         }
+
+        System.out.println("Run Time:");
+        System.out.println(System.currentTimeMillis() - start);
 
         return new RedirectView("/teacher");
     }
