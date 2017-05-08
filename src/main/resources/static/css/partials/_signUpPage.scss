@@ -1,69 +1,78 @@
-.faq, .signup {
-  background:#fff;
-  margin: 0 auto;
-}
-
 #signUpPage {
-  display: flex;
-  justify-content: top;
-  // background: #fff;
-  max-width: 1024px;
-  width: 90%;
-  margin: 25px auto;
+
+  section {
+    -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    justify-content: top;
+    background: #fff;
+    max-width: 1024px;
+    width: 90%;
+    margin: 25px auto 3%;
+  }
 }
 
 //fit login form style
 
+.faq, .signup {
+  width: 50%;
+  padding: 25px 15px;
+  box-sizing: border-box;
+}
+
 .faq {
-  width: 53%;
-  margin-right: 3%;
-  -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  // background:
+  //   linear-gradient(
+  //     rgba(255, 255, 255, .9),
+  //     rgba(255, 255, 255, 0.6)
+  //   ),
+  background:
+    linear-gradient(to right, rgba(255,255,255,1),
+      rgba(255,255,255,.8)),
+    url("../images/login-shapes.gif");
+
+}
+
   // border-bottom: 15px solid $header;
 
-  .faq-header {
-    background: $header;
-    // height: 65px;
-    padding: 10px;
-    display: flex;
-    justify-content:center;
-    align-items: flex-end;
-    img {
-      margin-right: 15px;
-      width: 50px;
-    }
-    .tagline {
-      h3{
-        font-size: .8rem;
-      }
-    }
-  }
-}
+  // .faq-header {
+  //   background: $header;
+  //   // height: 65px;
+  //   padding: 10px;
+  //   display: flex;
+  //   justify-content:center;
+  //   align-items: flex-end;
+  //   img {
+  //     margin-right: 15px;
+  //     width: 50px;
+  //   }
+  //   .tagline {
+  //     h3{
+  //       font-size: .8rem;
+  //     }
+  //   }
+  // }
+
 .faq-content {
-  // font-size: .9rem;
-  padding: 5px 50px 25px;
   h3 {
     font-weight: 700;
-    margin: 15px 0 5px;
+    padding: 15px 0 5px;
+    text-transform: uppercase;
   }
-}
-
-.signup {
-  width: 45%;
-  -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  p {
+    font-weight: 300;
+  }
+  .question {
+    padding: 5px 25px 15px;
+  }
 }
 
 
 // Parent Sign Up Page
-
 // Styling Form
 
 .signup {
-  padding: 10px;
-  box-sizing: border-box;
 
   form {
     text-align: center;
@@ -84,7 +93,7 @@
 
   label {
     position:absolute;
-    top: 10px;
+    top: 14px;
     left:15px;
     z-index: 5;
     margin: 10px;
@@ -114,12 +123,27 @@
   // }
 }
 
-
 // Adding Additional Contact or Student Fields
-.border-seperation {
+aside {
   margin: 15px 0;
   border:3px solid $accent;
 }
+
+// aside:nth-of-type(1) {
+//   border:3px solid #9b1c1f;
+// }
+//
+// aside:nth-of-type(2) {
+//   border:3px solid #9b1c1f;
+// }
+//
+// aside:nth-of-type(3) {
+//   border:3px solid #1e429b;
+// }
+//
+// aside:nth-of-type(4) {
+//   border:3px solid #1e429b;
+// }
 
 .contactInfo {
   display:none;

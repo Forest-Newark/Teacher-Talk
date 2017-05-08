@@ -213,6 +213,15 @@ public class TeacherTalkController {
 //        Gets user ID from database based on email entered
         Integer userId = ds.getUserIdByEmail(email);
 
+        //Failure -> forgotPasswordForm
+        if (userId == null){
+            return new RedirectView("/forgotPasswordForm");
+        }
+
+
+        //Success -> Send message and go to Root
+
+
 //        Message Service sends the email with the password reset link
         ms.sendPasswordResetEmail(userId, email);
 
@@ -221,21 +230,21 @@ public class TeacherTalkController {
 
 
     @RequestMapping("/resetPassword")
-    public String resetPassword(ModelMap model, Integer userId){
+    public String resetPassword(ModelMap model, Integer userId, String email){
 
         model.addAttribute("userId",userId);
-
+        model.addAttribute("email", email);
         return "changePasswordForm";
     }
 
 
     @RequestMapping("/passwordResetSubmit")
-    public RedirectView passwordResetSubmit(@RequestParam("password")String password,@RequestParam("userId")Integer userId) {
+    public RedirectView passwordResetSubmit(@RequestParam("password")String password,@RequestParam("userId")Integer userId, @RequestParam("email")String email) {
         System.out.println(password);
         System.out.println(userId);
         System.out.println("Made it to password reset submit");
 
-        ds.updateUserPasswordById(userId,password);
+        ds.updateUserPasswordById(userId, password, email);
 
         return new RedirectView ("/");
     }
