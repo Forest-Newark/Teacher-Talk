@@ -1,8 +1,6 @@
 package com.forestnewark.bean;
 
-/**
- * Created by forestnewark on 5/5/17.
- */
+
 public class MessageTranslation {
 
     private String text;

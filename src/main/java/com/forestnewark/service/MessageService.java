@@ -2,19 +2,27 @@ package com.forestnewark.service;
 
 import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
+import org.springframework.stereotype.Service;
 
 
-import javax.mail.*;
-import javax.mail.internet.*;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.util.Properties;
+import java.util.concurrent.Future;
 
 
 /**
  * Created by Forest Newark on 5/1/17. This class is responsible for generating
  * and sending messages to the appropriate recipients
  */
-@Component
+@Service
 public class MessageService {
 
     private final DatabaseService ds;
@@ -39,7 +47,8 @@ public class MessageService {
      * @param studentId of the student who will recieve the message
      * @param messageName for the template of the message to be sent
      */
-    public void sendMessage(String studentId, String messageName, String currentUserEmail,String messageText) {
+    @Async
+    public Future<String> sendMessage(String studentId, String messageName, String currentUserEmail, String messageText) {
         System.out.println("I made it send message ms");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -71,6 +80,8 @@ public class MessageService {
             throw new RuntimeException(e);
         }
 
+        return new AsyncResult<>("ok");
+
     }
 
     public String messageBuilder(String studentId, String messageName,String currentUserEmail, String messageText){
@@ -90,6 +101,7 @@ public class MessageService {
         sb.append("\n\n");
         sb.append("Respectfully, \n");
         sb.append(WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getFirstName()) + " " + WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getLastName()));
+        sb.append("Message Created by Teacher-Talk");
 
         return sb.toString();
 
@@ -122,7 +134,9 @@ public class MessageService {
             message.setSubject("Teacher Talk Password Reset "); // Subject Line
 
             message.setText("Dear User,\n You can reset your password at the following address\n" +
-                    "http://localhost:8080/resetPassword?userId="+userId);
+                    "http://localhost:8080/resetPassword?userId="+userId+"&email="+email);
+
+
 
 
             Transport.send(message);

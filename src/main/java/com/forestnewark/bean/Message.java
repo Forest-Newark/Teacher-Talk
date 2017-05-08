@@ -4,9 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-/**
- * Created by forestnewark on 5/1/17.
- */
+
 
 @Entity
 public class Message {

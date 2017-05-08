@@ -24,7 +24,6 @@ public class Teacher {
     public Teacher() {
     }
 
-    //Contructor for Teacher
     public Teacher(String firstName, String lastName, String email, String password, String phoneNumber, String subjectArea, String schoolName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -36,7 +35,6 @@ public class Teacher {
     }
 
 
-//Getters and Setters for Teacher
 
     public int getId() {
         return id;
