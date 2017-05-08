@@ -134,7 +134,9 @@ public class MessageService {
             message.setSubject("Teacher Talk Password Reset "); // Subject Line
 
             message.setText("Dear User,\n You can reset your password at the following address\n" +
-                    "http://localhost:8080/resetPassword?userId="+userId);
+                    "http://localhost:8080/resetPassword?userId="+userId+"&email="+email);
+
+
 
 
             Transport.send(message);

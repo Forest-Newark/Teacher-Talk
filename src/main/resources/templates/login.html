@@ -11,66 +11,74 @@
 </head>
 
 <body id="login-page">
-  <section>
-  <div class="login-shape"></div>
+<section>
+    <div class="login-shape"></div>
 
-  <div class="login-input">
-    <div class="login-header">
-      <img src="../static/images/teacher-talk-logo.gif" th:src="${'images/teacher-talk-logo.gif'}" alt="teacher talk logo" />
-      <div class="tagline clearfix">
-        <h1>Teacher Talk</h1>
-        <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
-      </div>
+    <div class="login-input">
+        <div class="login-header">
+            <img src="../static/images/teacher-talk-logo.gif" th:src="${'images/teacher-talk-logo.gif'}"
+                 alt="teacher talk logo"/>
+            <div class="tagline clearfix">
+                <h1>Teacher Talk</h1>
+                <h3>Empowering <span class="bold">Education</span> Through Better <span
+                        class="bold">Communication</span>.</h3>
+            </div>
+        </div>
+        <form action="login.html" th:action="@{/login}" method="post">
+            <fieldset>
+                <!-- <legend>Login</legend> -->
+
+                <div class="input-wrapper">
+                    <input type="text" id="loginEmail" name="loginEmail" th:value="${userEmail}"/>
+                    <label for="loginEmail" class="loginEmail">Email</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
+                    <label for="loginPassword" class="loginPassword">Password </label>
+                </div>
+
+                <label for="rememberMe" class="rememberMe">
+                    <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"
+                           th:checked="${rememberMe}"/>
+                    Remember me?
+                </label>
+
+            </fieldset>
+
+
+            <!--Changed <p> to <a> so might need renaming in CSS-->
+            <a class="forgot-password" href="forgotPasswordForm.html" th:href="@{/forgotPassword}">Forgot Password?</a>
+            <button type="submit" class="send">Login</button>
+            <!-- <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button> -->
+        </form>
+        <button id="openModal" class="update">Sign Up</button>
+        <div th:if="${hasError}">Invalid Login. Please Try Again</div>
+
+
+
+        <!-- Modal -->
+        <!-- <div class="modal-bkgrd"></div> -->
+        <div id="modal" class="remodal" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <i class="fa fa-times close" aria-label="close" aria-hidden="true"></i>
+                <h3>Which Account Would You Like to Create?</h3>
+                <a href="parent.html">
+                    <button class="update">Parent</button>
+                </a>
+                <a href="teacherSignUp.html">
+                    <button class="update">Teacher</button>
+                </a>
+            </div>
+        </div>
+
+
     </div>
-    <form action="login.html" th:action="@{/login}" method="post">
-      <fieldset>
-        <!-- <legend>Login</legend> -->
+</section>
 
-        <div class="input-wrapper">
-         <input type="text" id="loginEmail" name="loginEmail" th:value="${userEmail}"/>
-          <label for="loginEmail" class="loginEmail">Email</label>
-        </div>
-        <div class="input-wrapper">
-          <input type="password" id="loginPassword" name="loginPassword" th:value="${userPassword}"/>
-          <label for="loginPassword" class="loginPassword">Password </label>
-        </div>
-
-        <label for="rememberMe" class="rememberMe">
-          <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe"  th:checked="${rememberMe}" />
-        Remember me?
-        </label>
-
-      </fieldset>
-
-
-        <!--Changed <p> to <a> so might need renaming in CSS-->
-      <a class="forgot-password" href="forgotPasswordForm.html" th:href="@{/forgotPassword}">Forgot Password?</a>
-      <button type="submit" class="send">Login</button>
-      <!-- <button type="submit"><a href="teacherSignUp.html" th:href="@{/teacherSignUp}">Sign-Up</a></button> -->
-    </form>
-    <button id="openModal" class="update">Sign Up</button>
-
-
-
-    	<!-- Modal -->
-      <!-- <div class="modal-bkgrd"></div> -->
-    	<div id="modal" class="remodal" role="dialog" aria-hidden="true">
-  			<div class="modal-content">
-          <i class="fa fa-times close" aria-label="close" aria-hidden="true"></i>
-  				<h3>Which Account Would You Like to Create?</h3>
-          <a href="parent.html"><button class="update">Parent</button></a>
-          <a href="teacherSignUp.html"><button class="update">Teacher</button></a>
-  			</div>
-    	</div>
-
-
-
-  </div>
-  </section>
-
-  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script th:src="@{/js/modal.js}" src="../static/js/modal.js"></script>
-  <script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script th:src="@{/js/modal.js}" src="../static/js/modal.js"></script>
+<script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
 
 </body>
 </html>

@@ -32,7 +32,7 @@ public class Parent {
     public Parent() {
     }
 
-    //setting constructors for parent class
+
     public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber, String preferredContactMethod, String preferredLanguage) {
         this.primaryFirstName = primaryFirstName;
         this.secondaryFirstName = secondaryFirstName;
@@ -46,7 +46,7 @@ public class Parent {
         this.preferredLanguage = preferredLanguage;
     }
 
-    //setting the getters and setters for the Parent class
+
     public int getId() {
         return id;
     }

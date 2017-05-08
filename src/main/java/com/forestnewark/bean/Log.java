@@ -35,7 +35,7 @@ public class Log {
 
     public Log() {
     }
-//setting Contructors
+
     public Log(String studentName, Date created, String parentName, String templateSent, String notes) {
 
         this.studentName = studentName;
@@ -45,7 +45,7 @@ public class Log {
         this.created = created;
 
     }
-//setting getters and setters
+
     public int getId() {
         return id;
     }

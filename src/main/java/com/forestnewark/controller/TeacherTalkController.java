@@ -9,10 +9,8 @@ import com.forestnewark.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,6 +41,11 @@ public class TeacherTalkController {
         this.ms = ms;
     }
 
+    @ModelAttribute("hasError")
+    public boolean command() {
+        return false;
+    }
+
 
     /**
      * Request for site root
@@ -52,7 +55,7 @@ public class TeacherTalkController {
      * @return login page
      */
     @RequestMapping("/")
-    public String loginPage(ModelMap model, HttpServletRequest request) {
+    public String loginPage(ModelMap model, HttpServletRequest request,@ModelAttribute("hasError") boolean hasError) {
 
 
         if (cs.readEmailCookie(request) != null) {
@@ -60,6 +63,7 @@ public class TeacherTalkController {
             model.addAttribute("userPassword", ds.getUserPassword(cs.readEmailCookie(request)));
             model.addAttribute("rememberMe", true);
         }
+        model.addAttribute("hasError",hasError);
         return "login";
     }
 
@@ -77,7 +81,7 @@ public class TeacherTalkController {
      * @return RedirectView to correct page based on user login credentials
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public RedirectView login(ModelMap model, HttpServletResponse response, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam(value = "rememberMe", required = false, defaultValue = "dontRememberMe") String rememberMe) {
+    public String login(ModelMap model, HttpServletResponse response,RedirectAttributes redirectAttributes, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam(value = "rememberMe", required = false, defaultValue = "dontRememberMe") String rememberMe) {
         if (ds.validateUser(loginEmail, password)) {
             if (ds.userType(loginEmail).equals("teacher")) {
 
@@ -85,7 +89,8 @@ public class TeacherTalkController {
                 if (rememberMe.equals("rememberMe")) {
                     cs.saveUserEmail(response, loginEmail);
                 }
-                return new RedirectView("/teacher");
+               // return new RedirectView("/teacher");
+                return "redirect:/teacher/";
 
             } else if (ds.userType(loginEmail).equals("parent")) {
 
@@ -93,11 +98,13 @@ public class TeacherTalkController {
                 if (rememberMe.equals("rememberMe")) {
                     cs.saveUserEmail(response, loginEmail);
                 }
-                return new RedirectView("/parentLogin");
+//                return new RedirectView("/parentLogin");
+                return "redirect:/parentLogin";
             }
 
         }
-        return new RedirectView("/");
+        redirectAttributes.addFlashAttribute("hasError", true);
+        return "redirect:/";
 
     }
 
@@ -206,6 +213,15 @@ public class TeacherTalkController {
 //        Gets user ID from database based on email entered
         Integer userId = ds.getUserIdByEmail(email);
 
+        //Failure -> forgotPasswordForm
+        if (userId == null){
+            return new RedirectView("/forgotPasswordForm");
+        }
+
+
+        //Success -> Send message and go to Root
+
+
 //        Message Service sends the email with the password reset link
         ms.sendPasswordResetEmail(userId, email);
 
@@ -214,21 +230,21 @@ public class TeacherTalkController {
 
 
     @RequestMapping("/resetPassword")
-    public String resetPassword(ModelMap model, Integer userId){
+    public String resetPassword(ModelMap model, Integer userId, String email){
 
         model.addAttribute("userId",userId);
-
+        model.addAttribute("email", email);
         return "changePasswordForm";
     }
 
 
     @RequestMapping("/passwordResetSubmit")
-    public RedirectView passwordResetSubmit(@RequestParam("password")String password,@RequestParam("userId")Integer userId) {
+    public RedirectView passwordResetSubmit(@RequestParam("password")String password,@RequestParam("userId")Integer userId, @RequestParam("email")String email) {
         System.out.println(password);
         System.out.println(userId);
         System.out.println("Made it to password reset submit");
 
-        ds.updateUserPasswordById(userId,password);
+        ds.updateUserPasswordById(userId, password, email);
 
         return new RedirectView ("/");
     }
@@ -292,6 +308,7 @@ public class TeacherTalkController {
 
         return "messageLog";
     }
+
 }
 
 
