@@ -181,11 +181,14 @@ public class TeacherTalkController {
     }
 
 
-//    Routes to forgotPassword.html when user clicks "Forgot Password"
+
+
+//    Routes to forgotPasswordForm.html when user clicks "Forgot Password"
     @RequestMapping("/forgotPassword")
     public String forgotPassword(){
-        return "forgotPassword";
+        return "forgotPasswordForm";
     }
+
 
 
 //    Sends a password reset link in an email and then redirects to homepage
@@ -207,14 +210,17 @@ public class TeacherTalkController {
 
         model.addAttribute("userId",userId);
 
-        return "resetPassword";
+        return "changePasswordForm";
     }
 
 
-    @RequestMapping("/updatePassword")
-    public RedirectView passwordResetSubmit(@RequestParam("newPassword") String password, @RequestParam("userId") Integer userId) {
+    @RequestMapping("/passwordResetSubmit")
+    public RedirectView passwordResetSubmit(@RequestParam("password")String password,@RequestParam("userId")Integer userId) {
+        System.out.println(password);
+        System.out.println(userId);
+        System.out.println("Made it to password reset submit");
 
-        ds.updateUserPasswordById(password, userId);
+        ds.updateUserPasswordById(userId,password);
 
         return new RedirectView ("/");
     }
