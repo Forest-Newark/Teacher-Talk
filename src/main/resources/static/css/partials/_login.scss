@@ -53,9 +53,6 @@
       margin: 0 auto;
     }
   }
-  //   button {
-  //     margin-top: 5px ;
-  // }
 }
 
 .rememberMe {
@@ -77,4 +74,9 @@
 .forgot-password:hover {
   border-bottom: 1px solid #53b98f;
   color: #53b98f;
+}
+
+.login-error {
+  font-size: .8rem;
+  color: #9b1c1f;
 }

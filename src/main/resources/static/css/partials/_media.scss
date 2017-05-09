@@ -1,21 +1,38 @@
 @media (max-width:767px) {
 
-  // Header Navigation
-  nav {
+// Teacher Message Navigation
+
+  header {
+    width: 100%;
+    display:block;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+  .menu {
     display: none;
-    // height: 30px;
+  }
+  nav {
+    ul {
+      text-align: center;
+      li {
+        a {
+          padding: 10px 15px;
+        }
+        a:hover, a:focus, a:active {
+          background: #fff;
+        }
+      }
+    }
   }
 
-  .logo {
-    padding: 13px 7px;
-    width: 45px;
-    top: -16px;
+  // Teacher Page Message
+
+  .message-container {
+    width: 100%;
   }
 
-  .mobile {
-    display: flex;
-    justify-content: space-between;
-  }
 
   // Login Page
   .login-input .login-header{
@@ -26,26 +43,31 @@
     }
   }
 
-
-  // Signup Page One Column
-  #signUpPage {
-    display: block;
-    margin: 25px auto;
+  .remodal {
+    .modal-content{
+      width: 50%;
+      top: 20%;
+    }
   }
+  // Signup Page One Column
 
-  .faq {
-    width: 90%;
-    margin: 25px auto;
+  .faq, .signup {
+    width: 100%;
+    padding: 25px 35px;
   }
 
   .faq-content {
-    padding: 5px 25px 25px;
+    .question {
+      padding: 0;
+    }
   }
 
   .signup {
-    width: 90%;
-    padding: 25px;
+    .input-wrapper {
+      margin: 5px 10px;
+    }
   }
+
 }
 
 @media (max-width: 585px) {
@@ -53,6 +75,7 @@
   #login-page section{
     box-shadow: none;
   }
+
   // login page
   .login-shape{
     display: none;
@@ -68,7 +91,6 @@
   // Modal Styles
  .remodal .modal-content {
     width: 65%;
-    top: 20%;
   }
 
   #modal h3 {

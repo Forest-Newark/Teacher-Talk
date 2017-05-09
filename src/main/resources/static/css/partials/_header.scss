@@ -1,6 +1,6 @@
 header {
   background: $header;
-  width: 30%;
+  width: 40%;
 }
 
 .header-tagline {
@@ -19,16 +19,14 @@ header {
   }
 }
 
-// .logo {
-//   padding: 13px 7px;
-//   width: 75px;
-//   display: block;
-//   text-align: center;
-//   // -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-//   // -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-//   // box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-// }
-
+.mobile-toggle {
+  display: none;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+}
 
 nav {
 
@@ -45,56 +43,21 @@ nav {
         // margin: 10px 2px;
         padding: 25px 15px;
         transition: background .5s;
-        -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-        -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-        box-shadow:0 3px 3px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
+        box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
       }
-      a:hover, a:focus {
+      a:hover, a:focus, a:active {
         background: #fff;
       }
     }
   }
 }
 
-
-// Mobile Navigation
-.mobile {
-  display: none;
-}
-
-.hamburger {
-  color: #333;
-  font-size: 20px;
-  padding: 5px 8px;
-  margin-left: 25px;
-  position: relative;
-  top: 0px;
-  right: 0px;
-  cursor: pointer;
-  transition: background .5s;
-  -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-}
-.hamburger:hover, .hamburger:focus {
+// Profile Toggle Input
+#updateProfile {
+  display:none;
   background: #fff;
-}
-
-
-.hamburger-menu {
-  display: none;
-  position: absolute;
-  right:-2px;
-  top:35px;
-  z-index: 100;
-
-  li {
-    display:block;
-    a {
-      display: block;
-      width: 100px;
-      padding: 8px 10px;
-      background: $header;
-    }
-  }
+  text-align: center;
+  padding-bottom: 15px;
 }

@@ -1,6 +1,6 @@
 header {
   background: #faf0a1;
-  width: 30%; }
+  width: 40%; }
 
 .header-tagline {
   padding: 0 15px;
@@ -13,6 +13,14 @@ header {
     font-size: .8rem;
     padding-bottom: 5px; }
 
+.mobile-toggle {
+  display: none;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer; }
+
 nav ul li {
   display: block; }
   nav ul li a {
@@ -22,45 +30,17 @@ nav ul li {
     text-decoration: none;
     padding: 25px 15px;
     transition: background .5s;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3); }
-  nav ul li a:hover, nav ul li a:focus {
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1); }
+  nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
     background: #fff; }
 
-.mobile {
-  display: none; }
-
-.hamburger {
-  color: #333;
-  font-size: 20px;
-  padding: 5px 8px;
-  margin-left: 25px;
-  position: relative;
-  top: 0px;
-  right: 0px;
-  cursor: pointer;
-  transition: background .5s;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
-
-.hamburger:hover, .hamburger:focus {
-  background: #fff; }
-
-.hamburger-menu {
+#updateProfile {
   display: none;
-  position: absolute;
-  right: -2px;
-  top: 35px;
-  z-index: 100; }
-  .hamburger-menu li {
-    display: block; }
-    .hamburger-menu li a {
-      display: block;
-      width: 100px;
-      padding: 8px 10px;
-      background: #faf0a1; }
+  background: #fff;
+  text-align: center;
+  padding-bottom: 15px; }
 
 #teacherSendMessage section {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -68,6 +48,7 @@ nav ul li {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: top;
+  flex-wrap: wrap;
   background: #fff;
   max-width: 1024px;
   width: 90%;
@@ -75,8 +56,8 @@ nav ul li {
 
 .message-container {
   background: #fff;
-  width: 70%;
-  margin: 25px auto 50px; }
+  width: 60%;
+  margin: 50px auto; }
 
 .container-title {
   border-top: 10px solid #00b074;
@@ -87,7 +68,7 @@ nav ul li {
   margin-bottom: 15px; }
 
 .message {
-  width: 80%;
+  width: 90%;
   margin: 0px auto;
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -111,7 +92,8 @@ nav ul li {
       padding: 5px;
       box-sizing: border-box;
       height: 150px;
-      vertical-align: top; }
+      vertical-align: top;
+      border-color: #ececec; }
 
 .shadow-effect {
   position: relative;
@@ -198,6 +180,10 @@ nav ul li {
   border-bottom: 1px solid #53b98f;
   color: #53b98f; }
 
+.login-error {
+  font-size: .8rem;
+  color: #9b1c1f; }
+
 .remodal {
   display: none;
   position: fixed;
@@ -248,6 +234,7 @@ nav ul li {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: flex;
   justify-content: top;
+  flex-wrap: wrap;
   background: #fff;
   max-width: 1024px;
   width: 90%;
@@ -314,6 +301,7 @@ select {
     transition: transform 100ms ease;
     transform: translateY(-10px); }
   .input-wrapper input {
+    font-family: 'Signika', sans-serif;
     font-size: .8rem;
     border: 1px solid #ececec;
     padding: 10px; }
@@ -341,6 +329,9 @@ aside {
   .addContact .plus:hover,
   .addContact .plus:focus {
     background: rgba(26, 177, 116, 0.8); }
+
+.thirdStudent {
+  margin: 5px 0; }
 
 * {
   margin: 0;
@@ -434,37 +425,44 @@ legend {
   display: block; }
 
 @media (max-width: 767px) {
-  nav {
+  header {
+    width: 100%;
+    display: block; }
+
+  .mobile-toggle {
+    display: block; }
+
+  .menu {
     display: none; }
 
-  .logo {
-    padding: 13px 7px;
-    width: 45px;
-    top: -16px; }
+  nav ul {
+    text-align: center; }
+    nav ul li a {
+      padding: 10px 15px; }
+    nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
+      background: #fff; }
 
-  .mobile {
-    display: flex;
-    justify-content: space-between; }
+  .message-container {
+    width: 100%; }
 
   .login-input .login-header {
     margin: 10px; }
     .login-input .login-header h3 {
       width: 90%; }
 
-  #signUpPage {
-    display: block;
-    margin: 25px auto; }
+  .remodal .modal-content {
+    width: 50%;
+    top: 20%; }
 
-  .faq {
-    width: 90%;
-    margin: 25px auto; }
+  .faq, .signup {
+    width: 100%;
+    padding: 25px 35px; }
 
-  .faq-content {
-    padding: 5px 25px 25px; }
+  .faq-content .question {
+    padding: 0; }
 
-  .signup {
-    width: 90%;
-    padding: 25px; } }
+  .signup .input-wrapper {
+    margin: 5px 10px; } }
 @media (max-width: 585px) {
   #login-page section {
     box-shadow: none; }
@@ -479,8 +477,7 @@ legend {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
 
   .remodal .modal-content {
-    width: 65%;
-    top: 20%; }
+    width: 65%; }
 
   #modal h3 {
     margin-bottom: 15px; }

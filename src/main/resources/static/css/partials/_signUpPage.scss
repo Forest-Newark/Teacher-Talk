@@ -6,6 +6,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     justify-content: top;
+    flex-wrap: wrap;
     background: #fff;
     max-width: 1024px;
     width: 90%;
@@ -100,6 +101,7 @@ select{
     transform:translateY(-10px);
   }
   input {
+    font-family: 'Signika', sans-serif;
     font-size: .8rem;
     // position: relative;
     border:1px solid $accent;
@@ -162,4 +164,8 @@ aside {
   .plus:focus {
     background: rgba(26,177,116,.8);
   }
+}
+
+.thirdStudent{
+  margin: 5px 0;
 }
