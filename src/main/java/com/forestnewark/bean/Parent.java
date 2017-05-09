@@ -1,5 +1,8 @@
 package com.forestnewark.bean;
 
+import org.hibernate.annotations.Proxy;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -9,6 +12,7 @@ import javax.persistence.Id;
 
 
 @Entity
+@Proxy(lazy=false)
 public class Parent {
     //@ID is setting the primary key which is private int id.
     //@Generated Value is telling JPA that it should automatically generate the key for this entity(private int id

@@ -72,6 +72,7 @@ public class DatabaseService {
             }
         }
 
+
         return false;
     }
 
@@ -321,6 +322,9 @@ public class DatabaseService {
         return messageLogRepository.findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrNotesIgnoreCaseContaining(search,search,search,search);
     }
 
+    public void saveNewLog(Log log){
+        messageLogRepository.saveAndFlush(log);
+    }
 
 
 

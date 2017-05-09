@@ -1,11 +1,15 @@
 package com.forestnewark.bean;
 
+import org.hibernate.annotations.Proxy;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 //this tells JPA that the teacher class is a JPA entity and can be persisted to a database
 @Entity
+@Proxy(lazy=false)
 public class Teacher {
 //@Id this tells JPA that private int id is the primary key.
 // @Generated Value this tells JPA that is should automatically generate this key for this entity

@@ -16,3 +16,5 @@ INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VA
 INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES(1, CURRENT_TIMESTAMP, 'student might have lice','Chris', 'Miles', '3 days ago');
 INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES(2, CURRENT_TIMESTAMP, 'student read exceptional well','Forest', 'Chuck', '1 days ago');
 INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES(3, CURRENT_TIMESTAMP, 'consider moving student to honors','Rasputin', 'King', '7 days ago');
+
+SELECT setval('hibernate_sequence',100);

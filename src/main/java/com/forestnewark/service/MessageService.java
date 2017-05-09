@@ -1,11 +1,12 @@
 package com.forestnewark.service;
 
+import com.forestnewark.bean.Log;
+import com.forestnewark.bean.Student;
 import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
-import org.springframework.scheduling.annotation.AsyncResult;
+import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.stereotype.Service;
-
 
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -15,7 +16,6 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
-import java.util.concurrent.Future;
 
 
 /**
@@ -23,6 +23,7 @@ import java.util.concurrent.Future;
  * and sending messages to the appropriate recipients
  */
 @Service
+@EnableAsync
 public class MessageService {
 
     private final DatabaseService ds;
@@ -48,7 +49,8 @@ public class MessageService {
      * @param messageName for the template of the message to be sent
      */
     @Async
-    public Future<String> sendMessage(String studentId, String messageName, String currentUserEmail, String messageText) {
+//    public Future<String> sendMessage(String studentId, String messageName, String currentUserEmail, String messageText) {
+    public void sendMessage(String studentId, String messageName, String currentUserEmail, String messageText) {
         System.out.println("I made it send message ms");
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -73,14 +75,18 @@ public class MessageService {
             message.setText(this.messageBuilder(studentId,messageName,currentUserEmail,messageText)); // Body Text
 
             Transport.send(message);
+            System.out.println("Messag Sent");
 
-            System.out.println("Message Sent!"); //Confirmation Method - Not necessary
+            Student student = ds.getStudentById(studentId);
+            Log newLog = new Log(student.getStudentFirstName() + " " + student.getStudentLastName(),null,student.getParent().getPrimaryFirstName() + " " + student.getParent().getPrimaryLastName(),messageName,"");
+            ds.saveNewLog(newLog);
+
 
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
 
-        return new AsyncResult<>("ok");
+//        return new AsyncResult<>("ok");
 
     }
 
@@ -101,7 +107,7 @@ public class MessageService {
         sb.append("\n\n");
         sb.append("Respectfully, \n");
         sb.append(WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getFirstName()) + " " + WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getLastName()));
-        sb.append("Message Created by Teacher-Talk");
+        sb.append("\nMessage Created by Teacher-Talk");
 
         return sb.toString();
 

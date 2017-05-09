@@ -126,7 +126,7 @@ public class TeacherTalkController {
     /**
      * Request for parent page after logging in
      *
-     * @param model      to set model attributes
+     * @param model  to set model attributes
      * @param rememberMe
      * @return
      */
@@ -185,12 +185,9 @@ public class TeacherTalkController {
 
         for (String studentId : studentIdList) {
 
-            ms.sendMessage(studentId, messageName,model.get("currentUser").toString(),messageText);
+            ms.sendMessage("1", messageName,model.get("currentUser").toString(),messageText);
 
         }
-
-        System.out.println("Run Time:");
-        System.out.println(System.currentTimeMillis() - start);
 
         return new RedirectView("/teacher");
     }
