@@ -5,7 +5,7 @@
 $(document).ready(function() {
     var userId;
     var idCount = 1;
-    var searchField = $("#provider-json");
+    var searchField = $("#student");
 
     var options = {
         url: "/getAllStudents",
