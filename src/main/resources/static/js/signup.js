@@ -5,6 +5,18 @@ $(document).ready(function(){
   });
 });
 
+// Input Form
+
+$(document).ready(function(){
+  if($('input').val()!==''){
+    $(this).css({'border': '1px solid #00b074'});
+    $(this).next().css({
+      'color':'#00b074',
+      'transform': 'translateY(-27px)',
+    });
+  }
+});
+
   $('input').focus(function() {
       $(this).css({'border': '1px solid #00b074'});
       $(this).next().css({
