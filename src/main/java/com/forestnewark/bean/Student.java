@@ -2,10 +2,14 @@ package com.forestnewark.bean;
 
 
 
+import org.hibernate.annotations.Proxy;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 
 //@Entity is telling JPA tht the Student class is a JPA entity  and this can be persisted to a database
 @Entity
+@Proxy(lazy=false)
 public class Student{
 //@Id this tells JPA that private int id is the primary key for this entity.
 // @GeneratedValue this tells JPA that JPA should automatically generate this key for the entity

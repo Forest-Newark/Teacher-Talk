@@ -1,6 +1,8 @@
 package com.forestnewark.bean;
 
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Proxy;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -13,14 +15,18 @@ import java.util.Date;
 //creating log class for the message log for the teacher to view previous/recent messages that the teacher sent to the parents/guardians regarding the student/child
 
 //this tells JPA that the log class is a JPA entity and can be persisted to a database
+
 @Entity
+@Proxy(lazy=false)
+@Transactional
 public class Log {
 //using @Id and @GeneratedValue for hibernate.
 // @Id tells JPA that private int id is the primary key.
 // @Generated Value tells JPA that is should automatically generate this key for this entity
+
     @Id
     @GeneratedValue
-    private int id;
+    private Integer id;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
@@ -46,11 +52,11 @@ public class Log {
 
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

@@ -1,5 +1,8 @@
 package com.forestnewark.bean;
 
+import org.hibernate.annotations.Proxy;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -7,6 +10,7 @@ import javax.persistence.Id;
 
 
 @Entity
+@Proxy(lazy=false)
 public class Message {
 
     @Id
