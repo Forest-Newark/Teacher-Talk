@@ -4,21 +4,24 @@
     <meta charset="UTF-8"/>
     <title>Teacher Talk</title>
 
-    <script th:href="@{https://use.fontawesome.com/f2bdd0ae67.js}" src="https://use.fontawesome.com/f2bdd0ae67.js"></script>
-    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}" href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
+    <script th:href="@{https://use.fontawesome.com/f2bdd0ae67.js}"
+            src="https://use.fontawesome.com/f2bdd0ae67.js"></script>
+    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}"
+          href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
-    <link rel="stylesheet" th:href="@{/css/easy-autocomplete.css}" href="../static/css/easy-autocomplete.css" />
+    <link rel="stylesheet" th:href="@{/css/easy-autocomplete.css}" href="../static/css/easy-autocomplete.css"/>
+    <link rel="stylesheet" th:href="@{/css/hopscotch.css}" href="../static/css/hopscotch.css"/>
 </head>
 
 <body id="teacherSendMessage">
-  <section>
+<section>
 
-  <!-- <div class="header-tagline">
-    <h1>Teacher Talk</h1>
-    <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
-    <p>Quickly contact a parent by typing in the students name and then chose a pre-formated template.</p>
-  </div> -->
+    <!-- <div class="header-tagline">
+      <h1>Teacher Talk</h1>
+      <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
+      <p>Quickly contact a parent by typing in the students name and then chose a pre-formated template.</p>
+    </div> -->
     <header>
         <!-- <div class="logo">
             <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
@@ -26,80 +29,86 @@
             <h1>Teacher Talk</h1>
         </div> -->
 
-      <nav>
-        <div class="header-tagline">
-          <a href="login.html">
-            <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
-               alt="teacher talk logo"/>
-          </a>
-          <h1>Teacher Talk</h1>
-          <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
-        </div>
-        <ul>
-          <li><a href="#">Add Student</a></li>
-          <li><a href="#">Add Template</a></li>
+        <nav>
+            <div class="header-tagline">
+                <a href="login.html">
+                    <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+                         alt="teacher talk logo"/>
+                </a>
+                <h1 id="teacherTalkTitle">Teacher Talk</h1>
+                <h3>Empowering <span class="bold">Education</span> Through Better <span
+                        class="bold">Communication</span>.</h3>
+            </div>
+            <ul>
+                <li><a href="#">Add Student</a></li>
+                <li><a href="#">Add Template</a></li>
 
-          <li><a href="#" th:href="@{/messageLog}">History Log</a></li>
-          <li><a href="#">Profile</a></li>
-        </ul>
-      </nav>
+                <li><a href="#" th:href="@{/messageLog}">History Log</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
 
-      <nav class="mobile">
-        <a href="login.html">
-          <img class="logo" src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
-             alt="teacher talk logo"/>
-        </a>
-        <div class="hamburger">&#9776;</div>
-          <ul class="hamburger-menu">
-            <li><a href="#">Add Student</a></li>
-            <li><a href="#">Add Template</a></li>
-            <li><a href="#" th:href="@{/messageLog}">History Log</a></li>
-            <li><a href="#">Profile</a></li>
-        </ul>
-      </nav>
+        <nav class="mobile">
+            <a href="login.html">
+                <img class="logo" src="../static/images/teacher-talk-logo.gif"
+                     th:src="${'/images/teacher-talk-logo.gif'}"
+                     alt="teacher talk logo"/>
+            </a>
+            <div class="hamburger">&#9776;</div>
+            <ul class="hamburger-menu">
+                <li><a href="#">Add Student</a></li>
+                <li><a href="#">Add Template</a></li>
+                <li><a href="#" th:href="@{/messageLog}">History Log</a></li>
+                <li><a href="#">Profile</a></li>
+            </ul>
+        </nav>
 
     </header>
 
     <div class="message-container">
-      <div class="message">
-        <div class="container-title">New Message</div>
+        <div class="message">
+            <div class="container-title">New Message</div>
 
-        <div class="input-wrapper">
-          <input type="text" id="student" name="student" />
-          <label for="student">Students Name</label>
+            <div class="input-wrapper">
+                <input type="text" id="student" name="student"/>
+                <label for="student">Students Name</label>
+            </div>
+
+            <div id="studentNameArea"></div>
+
+            <form th:action="@{/sendMessage}" action="teacher.html" method="post">
+                <div id="studentIdArea"></div>
+
+                <div class="select-style">
+                    <select id="messageSelect" name="message">
+                        <option th:each="message: ${messages}" th:value="${message.getMessageName()}"
+                                th:text="${message.getMessageName()}"
+                                th:attr="data-message=${message.getEnglishMessage()}">Template
+                            1
+                        </option>
+                        <option th:remove="all">Template 2</option>
+                        <option th:remove="all">Template 3</option>
+                    </select>
+                </div>
+
+                <label>
+                    <textarea name="messageText" id="messageTextArea">Message Goes Here</textarea>
+                </label>
+                <button id="messageSendButton" class="send">Send Message</button>
+            </form>
         </div>
-
-        <div id="studentNameArea"></div>
-
-        <form th:action="@{/sendMessage}" action="teacher.html" method="post">
-          <div id="studentIdArea"></div>
-
-          <div class="select-style">
-            <select id="messageSelect" name="message">
-              <option th:each="message: ${messages}" th:value="${message.getMessageName()}"
-                      th:text="${message.getMessageName()}" th:attr="data-message=${message.getEnglishMessage()}">Template
-                  1
-              </option>
-              <option th:remove="all">Template 2</option>
-              <option th:remove="all">Template 3</option>
-            </select>
-          </div>
-
-          <label>
-              <textarea name="messageText" id="messageTextArea">Message Goes Here</textarea>
-          </label>
-          <button class="send">Send Message</button>
-        </form>
-      </div>
     </div>
-  </section>
+    <button id="startTour">Start Tour</button>
+</section>
 
 
-  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
-          src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
-  <script th:src="@{/js/jquery.easy-autocomplete.js}"  src="../static/js/jquery.easy-autocomplete.js"></script>
-  <script src="../static/js/signup.js" th:src="@{/js/signup.js}"></script>
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
+<script th:src="@{/js/jquery.easy-autocomplete.js}" src="../static/js/jquery.easy-autocomplete.js"></script>
+<script src="../static/js/signup.js" th:src="@{/js/signup.js}"></script>
+<script th:src="@{/js/hopscotch.js}" src="../static/js/hopscotch.js"></script>
+<script th:src="@{/js/tour.js}" src="../static/js/tour.js"></script>
 
 </body>
 </html>
