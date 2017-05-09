@@ -5,6 +5,7 @@ $(document).ready(function(){
   });
 });
 
+
 // Input Form
 
 $(document).ready(function(){
@@ -44,6 +45,14 @@ $(document).ready(function(){
 // Teacher Sign in Page Profile Image
 $(document).ready(function(){
   $('.profile').click(function(){
-    $('#updateProfile').slideToggle();
+
+    if(!$('#updateProfile').is(':visible'))
+      $('.profile').css({'background':'#fff'});
+
+    $('#updateProfile').slideToggle(function(){
+      if(!$('#updateProfile').is(':visible'))
+      $('.profile').css({'background':'#faf0a1'});
+    });
+
   });
 });

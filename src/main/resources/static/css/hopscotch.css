@@ -233,9 +233,9 @@
   -o-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
-div.hopscotch-bubble .hopscotch-nav-button {
+/*div.hopscotch-bubble .hopscotch-nav-button {*/
   /* borrowed from katy styles */
-  font-weight: bold;
+  /*font-weight: bold;
   border-width: 1px;
   border-style: solid;
   cursor: pointer;
@@ -278,9 +278,9 @@ div.hopscotch-bubble .hopscotch-nav-button:active {
 div.hopscotch-bubble .hopscotch-nav-button.next {
   border-color: #1b5480;
   color: #fff;
-  margin: 0 0 0 10px;
-  /* HS specific*/
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+  margin: 0 0 0 10px;*/
+  /* HS specific*******************/
+  /*text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   background-color: #287bbc;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#287bbc', endColorstr='#23639a');
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #287bbc), color-stop(100%, #23639a));
@@ -288,8 +288,8 @@ div.hopscotch-bubble .hopscotch-nav-button.next {
   background-image: -moz-linear-gradient(to bottom, #287bbc 0%, #23639a 100%);
   background-image: -o-linear-gradient(to bottom, #287bbc 0%, #23639a 100%);
   background-image: linear-gradient(to bottom, #287bbc 0%, #23639a 100%);
-}
-div.hopscotch-bubble .hopscotch-nav-button.next:hover {
+}*/
+/*div.hopscotch-bubble .hopscotch-nav-button.next:hover {
   background-color: #2672ae;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#2672ae', endColorstr='#1e4f7e');
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #2672ae), color-stop(100%, #1e4f7e));
@@ -318,7 +318,7 @@ div.hopscotch-bubble .hopscotch-nav-button.prev:hover {
   background-image: -moz-linear-gradient(to bottom, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
   background-image: -o-linear-gradient(to bottom, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
   background-image: linear-gradient(to bottom, #e8e8e8 0%, #e3e3e3 13%, #d7d7d7 32%, #b9b9b9 71%, #a9a9a9 100%);
-}
+}*/
 div.hopscotch-bubble {
   background-color: #ffffff;
   border: 5px solid #000000;
