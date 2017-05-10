@@ -117,6 +117,5 @@ $(document).ready(function(){
       if(!$('#updateProfile').is(':visible'))
       $('.profile').css({'background':'#faf0a1'});
     });
-
   });
 });
