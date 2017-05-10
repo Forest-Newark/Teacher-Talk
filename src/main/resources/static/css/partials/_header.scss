@@ -55,7 +55,7 @@ nav {
 }
 
 // Profile Toggle Input
-#updateProfile {
+#updateProfile, #addStudent {
   display:none;
   background: #fff;
   text-align: center;
@@ -65,5 +65,4 @@ nav {
 .history {
   position: relative;
   z-index: 100;
-
 }

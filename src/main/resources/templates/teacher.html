@@ -25,10 +25,46 @@
           <h1>Teacher Talk</h1>
           <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
         </div>
+
         <div class="mobile-toggle">Menu</div>
         <ul class="menu">
-          <li><a href="#">Add Student</a></li>
+
+          <li class="student"><a href="#">Add Student</a></li>
+          <div id="addStudent">
+            <form action="" th:action="">
+              <fieldset>
+
+                <legend>Student Registration</legend>
+                <div class="input-wrapper">
+                  <input type="text" id="registerFirstNam" name="" th:value=""/>
+                  <label id="" for="">First Name </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="" name="" th:value=""/>
+                  <label id="" for="">Last Name </label>
+                </div>
+
+                <legend>Parent Registration</legend>
+                <div class="input-wrapper">
+                  <input type="text" id="registerFirstNam" name="" th:value=""/>
+                  <label id="" for="">First Name </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="" name="" th:value=""/>
+                  <label id="" for="">Last Name </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="" id="" name="" th:value=""/>
+                  <label id="" for="">Email </label>
+                </div>
+
+              </fieldset>
+              <button type="submit" class="update">Update</button>
+            </form>
+          </div>
+
           <li><a href="#">Add Template</a></li>
+
           <li class="history"><a href="messageLog.html" th:href="@{/messageLog}">History Log</a></li>
 
           <li class="profile"><a href="#updateProfile">Profile</a></li>
@@ -112,6 +148,7 @@
 <script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
 <script th:src="@{/js/jquery.easy-autocomplete.js}" src="../static/js/jquery.easy-autocomplete.js"></script>
 <script src="../static/js/signup.js" th:src="@{/js/signup.js}"></script>
+<script src="../static/js/menu.js" th:src="@{/js/menu.js}"></script>
 <script th:src="@{/js/hopscotch.js}" src="../static/js/hopscotch.js"></script>
 <script th:src="@{/js/tour.js}" src="../static/js/tour.js"></script>
 

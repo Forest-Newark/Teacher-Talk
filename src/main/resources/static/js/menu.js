@@ -6,12 +6,6 @@ $(document).ready(function(){
 });
 
 
-
-$(window).resize(function(){
-  if ($(window).width() > 767)
-    $('.menu').css({'display': 'block !important'});
-})
-
 //////////////////////////
 // Teacher Message Page
 // Header Slide Toggles
@@ -27,9 +21,20 @@ $(document).ready(function(){
 
     $('#updateProfile').slideToggle(function(){
       if(!$('#updateProfile').is(':visible'))
-      $('.profile').css({'background':'#faf0a1'});
+      // $('.profile').css({'background':'#faf0a1'});
+      $('.profile').css({'background':'red'});
+
     });
   });
 });
 
 // Add Student
+
+$(document).ready(function(){
+  $('.student').click(function(){
+
+    $('#addStudent').slideToggle();
+
+
+  });
+});

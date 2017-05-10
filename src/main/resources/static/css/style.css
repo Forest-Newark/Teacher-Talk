@@ -36,7 +36,7 @@ nav ul li {
   nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
     background: #fff; }
 
-#updateProfile {
+#updateProfile, #addStudent {
   display: none;
   background: #fff;
   text-align: center;
@@ -488,7 +488,8 @@ fieldset {
   padding: 0; }
 
 legend {
-  font-weight: 700; }
+  font-weight: 700;
+  margin: auto; }
 
 .clearfix::after {
   content: "";
