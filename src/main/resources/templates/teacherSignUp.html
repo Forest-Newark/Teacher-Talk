@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <title>Teacher Talk</title>
 
-    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}" href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}" href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 </head>
@@ -13,15 +13,6 @@
 
   <section>
     <div class="faq">
-      <!-- <div class="faq-header">
-        <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
-           alt="teacher talk logo"/>
-        <div class="tagline">
-         <h1>Teacher Talk</h1>
-         <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
-       </div>
-      </div> -->
-
       <div class="faq-content">
         <div class="question">
           <h3>What is Teacher Talk?</h3>
@@ -43,36 +34,36 @@
     </div>
 
     <div class="signup">
-      <form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
+      <form action="teacherSignUp.html" th:action="@{/teacherSignUpSubmit}" method="post">
         <fieldset>
           <legend>Teacher Registration</legend>
 
           <div class="input-wrapper">
-            <input type="text" id="registerFirstName" name="registerFirstName" th:value="${teacher.getFirstName()}"/>
+            <input type="text" id="registerFirstName" name="firstName" />
             <label for="registerFirstName">First Name </label>
           </div>
           <div class="input-wrapper">
-            <input type="text" id="registerLastName" name="registerLastName" th:value="${teacher.getLastName()}"/>
+            <input type="text" id="registerLastName" name="lastName" />
             <label for="registerLastName">Last Name </label>
           </div>
           <div class="input-wrapper">
-            <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
+            <input type="email" id="registerEmail" name="Email" />
             <label for="registerEmail">Email </label>
           </div>
           <div class="input-wrapper">
-            <input type="password" id="registerPassword" name="registerPassword" th:value="${teacher.getPassword()}"/>
+            <input type="password" id="registerPassword" name="Password"/>
             <label for="registerPassword">Password </label>
           </div>
           <div class="input-wrapper">
-            <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${teacher.getPhoneNumber()}"/>
+            <input type="number" id="registerPhoneNumber" name="phoneNumber" />
             <label for="registerPhoneNumber">Phone Number </label>
           </div>
           <div class="input-wrapper">
-            <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${teacher.getSchoolName()}"/>
+            <input type="text" id="registerSchoolName" name="schoolName" />
             <label for="registerSchoolName">School Name</label>
           </div>
           <div class="input-wrapper">
-            <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${teacher.getSubjectArea()}"/>
+            <input type="text" id="registerSubjectArea" name="subjectArea"/>
             <label for="registerSubjectArea">Subject Area </label>
           </div>
         </fieldset>

@@ -143,16 +143,18 @@ public class TeacherTalkController {
 
     /**
      * Request for teacher sign up page
-     * @param model  to set model attributes
      * @return teacher sign up page
      */
     @RequestMapping("/teacherSignUp")
-    public String teacherSignUp(ModelMap model) {
-
-        Teacher teacher = new Teacher();
-        model.addAttribute("teacher", teacher);
+    public String teacherSignUp() {
 
         return "teacherSignUp";
+    }
+
+    @RequestMapping("/teacherSignUpSubmit")
+    public RedirectView teacherSignUpSubmit(Teacher teacher){
+        ds.saveTeacher(teacher);
+      return new RedirectView("/");
     }
 
     /**

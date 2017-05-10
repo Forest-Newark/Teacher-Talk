@@ -75,7 +75,7 @@
 
                 <li class="profile"><a href="#updateProfile">Profile</a></li>
                 <div id="updateProfile">
-                    <form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
+                    <form action="javascript:void(0);" method="post">
                         <fieldset>
                             <div class="input-wrapper">
                                 <input type="text" id="registerFirstName" name="registerFirstName"
@@ -113,7 +113,7 @@
                                 <label id="subjectAreaLabel" for="registerSubjectArea">Subject Area </label>
                             </div>
                         </fieldset>
-                        <button type="submit" class="update">Update</button>
+                        <button id="teacherUpdateInfoButton" type="submit" class="update">Update</button>
                     </form>
                 </div>
 
@@ -161,7 +161,7 @@
 
 <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
         src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
+<script src="../static/js/teacher.js" th:src="@{/js/teacidher.js}"></script>
 <script th:src="@{/js/jquery.easy-autocomplete.js}" src="../static/js/jquery.easy-autocomplete.js"></script>
 <script src="../static/js/signup.js" th:src="@{/js/signup.js}"></script>
 <script src="../static/js/menu.js" th:src="@{/js/menu.js}"></script>
@@ -169,6 +169,7 @@
 <script th:src="@{/js/tour.js}" src="../static/js/tour.js"></script>
 <script th:src="@{/js/alertify.js}" src="../static/js/alertify.js"></script>
 <script th:src="@{/js/teacherAddStudent.js}" src="../static/js/teacherAddStudent.js"></script>
+<script th:src="@{/js/teacherUpdateInfo.js}" src="../static/js/teacherUpdateInfo.js"></script>
 
 </body>
 </html>

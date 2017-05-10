@@ -327,8 +327,9 @@ public class DatabaseService {
     }
 
 
+    public void saveTeacher(Teacher teacher) {
 
-
-
+        teacherRepository.save(teacher);
+    }
 }
 
