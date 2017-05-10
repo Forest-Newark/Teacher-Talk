@@ -1,0 +1,54 @@
+#history-log {
+
+  section {
+    -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #fff;
+    max-width: 1024px;
+    width: 90%;
+    margin: 25px auto 3%;
+    padding: 25px;
+    text-align: center;
+
+    form {
+      display: inline-block;
+
+      button {
+        margin: 0 15px;
+      }
+    }
+    button {
+      min-width: 100px;
+      display: inline-block;
+      margin: 10px 0;
+    }
+    // form:nth-of-type(1){
+    //   button {
+    //
+    //   }
+    // }
+  }
+}
+
+
+table {
+  border-collapse: collapse;
+  border:1px solid $accent;
+  width: 60%;
+  margin: 25px auto;
+  line-height: 1.5;
+  -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 5px 12px 0 rgba(0, 0, 0, .1);
+
+  tr {
+    margin: 50px 0;
+    th, td{
+      padding: 10px 12px;
+    }
+  }
+  tr:nth-of-type(even){
+    background: $accent;
+  }
+}

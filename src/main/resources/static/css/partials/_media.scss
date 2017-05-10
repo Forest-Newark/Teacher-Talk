@@ -107,4 +107,36 @@
       display: none;
     }
   }
+
+  // History Message Log Page
+  #history-log {
+
+    section {
+      width: 80%;
+      margin: 25px auto 3%;
+      padding: 25px;
+
+      form {
+        display: block;
+
+        button {
+          margin: 10px auto;
+        }
+      }
+      button {
+        display: block;
+        margin: 10px auto;
+      }
+    }
+  }
+
+  table {
+    tr {
+      th, td{
+        padding: 10px 7px;
+        font-size: .85rem;
+      }
+    }
+  }
+
 }

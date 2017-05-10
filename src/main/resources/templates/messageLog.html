@@ -1,42 +1,37 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-
-    <title>Message Log</title>
-
     <title>Teacher Talk</title>
 
+    <script th:href="@{https://use.fontawesome.com/f2bdd0ae67.js}" src="https://use.fontawesome.com/f2bdd0ae67.js"></script>
+    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}" href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
-
 </head>
 
-<body>
+<body id="history-log">
 
-<form action="#" th:action="@{/messageLog}">
-    <label>
-        <span>Search:</span>
+  <section>
+
+    <form action="#" th:action="@{/messageLog}">
+      <div class="input-wrapper">
         <input type="text" name="search" value="" th:value="${search}"/>
+        <label>Search</label>
+      </div>
 
-    </label>
-    <button>Search</button>
+      <button class="update">Search</button>
+    </form>
 
-</form>
+    <!-- <form action="#" th:action="@{/teacher}">
+      <label></label> -->
+      <a href="teacher.html">
+        <button class="update"><i class="fa fa-arrow-left" aria-hidden="true">&nbsp;</i>Back</button>
+      </a>
+    <!-- </form> -->
 
-<form action="#" th:action="@{/teacher}">
-    <label>
-
-    </label>
-
-    <button>&lt; Back </button>
-</form>
-
-
-
-
-<table>
-    <tr>
+    <table>
+      <tr>
         <th>
             <a th:href="@{/messageLog?value=id}" href="messageLog.html" title="Log ID">Log ID</a>
         </th>
@@ -52,25 +47,27 @@
         <th>
             <a th:href="@{/messageLog?value=templateSent}" href="messageLog.html" title="Template Sent">Template Sent</a>
         </th>
-
         <th>
             <a th:href="@{/messageLog?value=notes}" href="messageLog.html" title="Notes">Notes</a>
         </th>
-    </tr>
+      </tr>
 
-    <tr th:each="message : ${messages}">
-        <td th:text="${message.getId()}"></td>
-        <td th:text="${message.getCreated()}"></td>
-        <td th:text="${message.getStudentName()}"></td>
-        <td th:text="${message.getParentName()}"></td>
-        <td th:text="${message.getTemplateSent()}"></td>
-        <td th:text="${message.getNotes()}"></td>
+      <tr th:each="message : ${messages}">
+        <td th:text="${message.getId()}">Test</td>
+        <td th:text="${message.getCreated()}">Test</td>
+        <td th:text="${message.getStudentName()}">Test</td>
+        <td th:text="${message.getParentName()}">Test</td>
+        <td th:text="${message.getTemplateSent()}">Test</td>
+        <td th:text="${message.getNotes()}">Test</td>
+      </tr>
 
+    </table>
 
-    </tr>
+  </section>
 
+  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
+          src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
 
-
-</table>
 </body>
 </html>

@@ -57,6 +57,8 @@ nav ul li {
   max-width: 1024px;
   width: 90%;
   margin: 25px auto 3%; }
+#teacherSendMessage #messageSendButton {
+  margin: 0 auto; }
 
 .message-container {
   background: #fff;
@@ -74,17 +76,24 @@ nav ul li {
 
 #startTour {
   position: absolute;
-  right: 0px;
-  top: -60px;
+  right: -35px;
+  top: -20px;
   min-width: 100px;
-  background: #00b074;
+  background: #9b1c1f;
+  color: #fff;
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: rotate(-90deg);
   transition: background 1s; }
 
 #startTour:hover {
-  background: #53b98f; }
+  background: rgba(155, 28, 31, 0.9); }
+
+#studentNameArea {
+  font-size: .8rem;
+  font-family: 'Signika', sans-serif;
+  margin: 5px 25px; }
 
 .message {
   width: 90%;
@@ -94,9 +103,6 @@ nav ul li {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
   .message .input-wrapper {
     padding: 5px 15px; }
-  .message #studentNameArea {
-    font-size: .8rem;
-    font-family: 'Signika', sans-serif; }
   .message form {
     padding: 20px 0;
     border-bottom: 10px solid #00b074; }
@@ -107,7 +113,7 @@ nav ul li {
       font-size: .8rem;
       width: 90%;
       display: block;
-      margin: 0 auto 40px;
+      margin: 0 auto 25px;
       padding: 5px;
       box-sizing: border-box;
       height: 150px;
@@ -363,6 +369,41 @@ aside {
 .thirdStudent {
   margin: 5px 0; }
 
+#history-log section {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #fff;
+  max-width: 1024px;
+  width: 90%;
+  margin: 25px auto 3%;
+  padding: 25px;
+  text-align: center; }
+  #history-log section form {
+    display: inline-block; }
+    #history-log section form button {
+      margin: 0 15px; }
+  #history-log section button {
+    min-width: 100px;
+    display: inline-block;
+    margin: 10px 0; }
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #ececec;
+  width: 60%;
+  margin: 25px auto;
+  line-height: 1.5;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 5px 12px 0 rgba(0, 0, 0, 0.1); }
+  table tr {
+    margin: 50px 0; }
+    table tr th, table tr td {
+      padding: 10px 12px; }
+  table tr:nth-of-type(even) {
+    background: #ececec; }
+
 * {
   margin: 0;
   padding: 0; }
@@ -516,6 +557,22 @@ legend {
     margin: 5px auto; }
 
   .header-tagline p {
-    display: none; } }
+    display: none; }
+
+  #history-log section {
+    width: 80%;
+    margin: 25px auto 3%;
+    padding: 25px; }
+    #history-log section form {
+      display: block; }
+      #history-log section form button {
+        margin: 10px auto; }
+    #history-log section button {
+      display: block;
+      margin: 10px auto; }
+
+  table tr th, table tr td {
+    padding: 10px 7px;
+    font-size: .85rem; } }
 
 /*# sourceMappingURL=style.css.map */

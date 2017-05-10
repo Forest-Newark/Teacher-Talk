@@ -12,6 +12,10 @@
     width: 90%;
     margin: 25px auto 3%;
   }
+
+  #messageSendButton {
+    margin: 0 auto;
+  }
 }
 
 .message-container {
@@ -32,17 +36,26 @@
 
 #startTour{
   position: absolute;
-  right: 0px;
-  top: -60px;
+  right: -35px;
+  top: -20px;
   min-width: 100px;
-  background: $primary;
+  background: #9b1c1f;
+  color: #fff;
   -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
   box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
+  transform: rotate(-90deg);
   transition: background 1s;
 }
+
 #startTour:hover {
-  background:  #53b98f;
+  background: rgba(155, 28, 31, .9);
+}
+
+#studentNameArea {
+  font-size: .8rem;
+  font-family: 'Signika', sans-serif;
+  margin: 5px 25px;
 }
 
 .message {
@@ -54,11 +67,6 @@
 
   .input-wrapper{
     padding: 5px 15px;
-  }
-
-  #studentNameArea {
-    font-size: .8rem;
-    font-family: 'Signika', sans-serif;
   }
 
   form {
@@ -74,7 +82,7 @@
       font-size: .8rem;
       width: 90%;
       display: block;
-      margin: 0 auto 40px;
+      margin: 0 auto 25px;
       padding: 5px;
       box-sizing: border-box;
       height: 150px;
