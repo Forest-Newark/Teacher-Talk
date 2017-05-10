@@ -45,23 +45,23 @@
                 </div>
                 <div class="input-wrapper">
                   <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
-                  <label for="registerEmail">Email </label>
+                  <label id="emailLabel" for="registerEmail">Email </label>
                 </div>
                 <div class="input-wrapper">
                   <input type="password" id="registerPassword" name="registerPassword" th:value="${teacher.getPassword()}"/>
-                  <label for="registerPassword">Password </label>
+                  <label id="passwordLabel" for="registerPassword">Password </label>
                 </div>
                 <div class="input-wrapper">
                   <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${teacher.getPhoneNumber()}"/>
-                  <label for="registerPhoneNumber">Phone Number </label>
+                  <label id="phoneNumberLabel" for="registerPhoneNumber">Phone Number </label>
                 </div>
                 <div class="input-wrapper">
                   <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${teacher.getSchoolName()}"/>
-                  <label for="registerSchoolName">School Name</label>
+                  <label id="schoolNameLabel" for="registerSchoolName">School Name</label>
                 </div>
                 <div class="input-wrapper">
                   <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${teacher.getSubjectArea()}"/>
-                  <label for="registerSubjectArea">Subject Area </label>
+                  <label id="subjectAreaLabel" for="registerSubjectArea">Subject Area </label>
                 </div>
               </fieldset>
               <button type="submit" class="update">Update</button>
