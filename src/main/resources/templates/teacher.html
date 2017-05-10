@@ -18,66 +18,96 @@
 <body id="teacherSendMessage">
 <section>
     <header>
-        <nav>
-            <div class="header-tagline">
-                <a href="login.html" th:href="@{/}">
-                    <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
-                         alt="teacher talk logo"/>
-                </a>
-                <h1>Teacher Talk</h1>
-                <h3>Empowering <span class="bold">Education</span> Through Better <span
-                        class="bold">Communication</span>.</h3>
-            </div>
-            <div class="mobile-toggle">Menu</div>
-            <ul class="menu">
-                <li><a href="#">Add Student</a></li>
-                <li><a href="#">Add Template</a></li>
-                <li class="history"><a href="messageLog.html" th:href="@{/messageLog}">History Log</a></li>
-                <li class="profile"><a href="#updateProfile">Profile</a></li>
-                <div id="updateProfile">
-                    <form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
-                        <fieldset>
-                            <div class="input-wrapper">
-                                <input type="text" id="registerFirstName" name="registerFirstName"
-                                       th:value="${teacher.getFirstName()}"/>
-                                <label id="firstNameLabel" for="registerFirstName">First Name </label>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="text" id="registerLastName" name="registerLastName"
-                                       th:value="${teacher.getLastName()}"/>
-                                <label id="lastNameLabel" for="registerLastName">Last Name </label>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="email" id="registerEmail" name="registerEmail"
-                                       th:value="${teacher.getEmail()}"/>
-                                <label for="registerEmail">Email </label>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="password" id="registerPassword" name="registerPassword"
-                                       th:value="${teacher.getPassword()}"/>
-                                <label for="registerPassword">Password </label>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="number" id="registerPhoneNumber" name="registerPhoneNumber"
-                                       th:value="${teacher.getPhoneNumber()}"/>
-                                <label for="registerPhoneNumber">Phone Number </label>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="text" id="registerSchoolName" name="registerSchoolName"
-                                       th:value="${teacher.getSchoolName()}"/>
-                                <label for="registerSchoolName">School Name</label>
-                            </div>
-                            <div class="input-wrapper">
-                                <input type="text" id="registerSubjectArea" name="registerSubjectArea"
-                                       th:value="${teacher.getSubjectArea()}"/>
-                                <label for="registerSubjectArea">Subject Area </label>
-                            </div>
-                        </fieldset>
-                        <button type="submit" class="update">Update</button>
-                    </form>
+      <nav>
+        <div class="header-tagline">
+            <a href="login.html" th:href="@{/}">
+            <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
+               alt="teacher talk logo"/>
+          </a>
+          <h1>Teacher Talk</h1>
+          <h3>Empowering <span class="bold">Education</span> Through Better <span class="bold">Communication</span>.</h3>
+        </div>
+
+        <div class="mobile-toggle">Menu</div>
+        <ul class="menu">
+
+          <li class="student"><a href="#addStudent">Add Student</a></li>
+          <div id="addStudent">
+            <form action="#">
+              <fieldset>
+
+                <legend>Student Contact</legend>
+                <div class="input-wrapper">
+                  <input type="text" id="registerFirstNameStudent" name="studentFirstName"/>
+                  <label for="registerFirstNameStudent"> Student First Name </label>
                 </div>
-            </ul>
-        </nav>
+                <div class="input-wrapper">
+                  <input type="text" id="registerLastNameStudent" name="studentLastName"/>
+                  <label for="registerLastNameStudent">Student Last Name </label>
+                </div>
+
+                <legend>Parent Contact</legend>
+                <div class="input-wrapper">
+                  <input type="text" id="registerFirstNameParent" name="parentFirstName" />
+                  <label for="registerFirstNameParent">Parent First Name </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="registerLastNameParent" name="parentLastName"/>
+                  <label for="registerLastNameParent">Parent Last Name </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" id="registerParentEmail" name="parentEmail"/>
+                  <label for="registerParentEmail">Parent Email </label>
+                </div>
+
+              </fieldset>
+              <button type="submit" class="update">Save</button>
+            </form>
+          </div>
+
+          <li><a href="#">Add Template</a></li>
+
+          <li class="history"><a href="messageLog.html" th:href="@{/messageLog}">History Log</a></li>
+
+          <li class="profile"><a href="#updateProfile">Profile</a></li>
+          <div id="updateProfile">
+            <form action="teacherSignUp.html" th:action="@{/teacherSignUp}">
+              <fieldset>
+                <div class="input-wrapper">
+                  <input type="text" id="registerFirstName" name="registerFirstName" th:value="${teacher.getFirstName()}"/>
+                  <label id="firstNameLabel" for="registerFirstName">First Name </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="registerLastName" name="registerLastName" th:value="${teacher.getLastName()}"/>
+                  <label id="lastNameLabel" for="registerLastName">Last Name </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
+                  <label id="emailLabel" for="registerEmail">Email </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="password" id="registerPassword" name="registerPassword" th:value="${teacher.getPassword()}"/>
+                  <label id="passwordLabel" for="registerPassword">Password </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${teacher.getPhoneNumber()}"/>
+                  <label id="phoneNumberLabel" for="registerPhoneNumber">Phone Number </label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="registerSchoolName" name="registerSchoolName" th:value="${teacher.getSchoolName()}"/>
+                  <label id="schoolNameLabel" for="registerSchoolName">School Name</label>
+                </div>
+                <div class="input-wrapper">
+                  <input type="text" id="registerSubjectArea" name="registerSubjectArea" th:value="${teacher.getSubjectArea()}"/>
+                  <label id="subjectAreaLabel" for="registerSubjectArea">Subject Area </label>
+                </div>
+              </fieldset>
+              <button type="submit" class="update">Update</button>
+            </form>
+          </div>
+        </ul>
+      </nav>
+>>>>>>> a07c2f39f2dd76d2b68fb86a5411b6827cfa8703
     </header>
 
     <div class="message-container">
@@ -121,6 +151,7 @@
 <script src="../static/js/teacher.js" th:src="@{/js/teacher.js}"></script>
 <script th:src="@{/js/jquery.easy-autocomplete.js}" src="../static/js/jquery.easy-autocomplete.js"></script>
 <script src="../static/js/signup.js" th:src="@{/js/signup.js}"></script>
+<script src="../static/js/menu.js" th:src="@{/js/menu.js}"></script>
 <script th:src="@{/js/hopscotch.js}" src="../static/js/hopscotch.js"></script>
 <script th:src="@{/js/tour.js}" src="../static/js/tour.js"></script>
 
