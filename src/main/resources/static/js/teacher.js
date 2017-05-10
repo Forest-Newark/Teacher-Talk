@@ -32,6 +32,7 @@ $(document).ready(function() {
 
 
 
+
                 $("#studentNameArea").append(input).append("<a class='deletebutton' id='studentNameButton_"+ idCount + "' data-countId='"+idCount+"'><span>X</span></a>");
 
                 var hiddenInput = document.createElement("input");
@@ -52,10 +53,8 @@ $(document).ready(function() {
 
     searchField.easyAutocomplete(options);
 
-
-
-
 });
+
 
 
 $(document).ready(function(){
@@ -74,8 +73,6 @@ $(document).ready(function() {
     var message = $("#messageSelect").find(':selected').data('message');
     $('#messageTextArea').val(message);
 
-
-
 });
 
 
@@ -85,5 +82,6 @@ $("#messageSelect").change(function () {
     $('#messageTextArea').val(message);
 
 });
+
 
 

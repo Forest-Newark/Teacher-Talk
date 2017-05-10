@@ -7,6 +7,7 @@ import com.forestnewark.service.DatabaseService;
 
 import com.forestnewark.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -142,16 +143,18 @@ public class TeacherTalkController {
 
     /**
      * Request for teacher sign up page
-     * @param model  to set model attributes
      * @return teacher sign up page
      */
     @RequestMapping("/teacherSignUp")
-    public String teacherSignUp(ModelMap model) {
-
-        Teacher teacher = new Teacher();
-        model.addAttribute("teacher", teacher);
+    public String teacherSignUp() {
 
         return "teacherSignUp";
+    }
+
+    @RequestMapping("/teacherSignUpSubmit")
+    public RedirectView teacherSignUpSubmit(Teacher teacher){
+        ds.saveTeacher(teacher);
+      return new RedirectView("/");
     }
 
     /**
@@ -235,8 +238,6 @@ public class TeacherTalkController {
 
 
         //Success -> Send message and go to Root
-
-
 //        Message Service sends the email with the password reset link
         ms.sendPasswordResetEmail(userId, email);
 
