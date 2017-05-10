@@ -155,6 +155,7 @@ public class TeacherTalkController {
 
         model.addAttribute("students", ds.getAllStudents());
         model.addAttribute("messages", ds.getAllMessages());
+        model.addAttribute("teacher",ds.getTeacherByEmail(model.get("currentUser").toString()));
 
         return "teacher";
     }

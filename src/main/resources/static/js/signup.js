@@ -1,5 +1,6 @@
 // Parent Page Drop Down for second point of contact and students
 $(document).ready(function(){
+
   $('.addContact').click(function(){
     $(this).next('.contactInfo').slideToggle();
   });
@@ -9,13 +10,28 @@ $(document).ready(function(){
 // Input Form
 
 $(document).ready(function(){
-  if($('input').val()!==''){
-    $(this).css({'border': '1px solid #00b074'});
-    $(this).next().css({
-      'color':'#00b074',
-      'transform': 'translateY(-27px)',
-    });
-  }
+    var inputSelector = $('.input-wrapper');
+    var firstNameValue= inputSelector.find("input[name='registerFirstName']").val();
+    var lastNameValue= inputSelector.find("input[name='registerLastName']").val();
+
+    //firstName
+    if(firstNameValue.length > 0){
+        $('#registerFirstName').css({'border': '1px solid #00b074'});
+        $('#firstNameLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+    if(firstNameValue.length >0){
+        $('#registerLastName').css({'border': '1px solid #00b074'});
+        $('#lastNameLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+
 });
 
   $('input').focus(function() {
@@ -39,6 +55,7 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.mobile-toggle').click(function(){
     $('.menu').slideToggle();
+
   });
 });
 
