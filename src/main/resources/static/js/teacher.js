@@ -32,6 +32,7 @@ $(document).ready(function() {
 
 
 
+
                 $("#studentNameArea").append(input).append("<a class='deletebutton' id='studentNameButton_"+ idCount + "' data-countId='"+idCount+"'><span>X</span></a>");
 
                 var hiddenInput = document.createElement("input");

@@ -1,16 +1,10 @@
 // mobile menu
 $(document).ready(function(){
   $('.mobile-toggle').click(function(){
-    $('.menu').slideToggle('medium', function(){
+    $('.menu').slideToggle();
   });
 });
 
-
-
-$(window).resize(function(){
-  if ($(window).width() > 767)
-    $('.menu').css({'display': 'block !important'});
-})
 
 //////////////////////////
 // Teacher Message Page
@@ -18,18 +12,29 @@ $(window).resize(function(){
 /////////////////////////
 
 // Profile
-
 $(document).ready(function(){
   $('.profile').click(function(){
 
     if(!$('#updateProfile').is(':visible'))
-      $('.profile').css({'background':'#fff'});
+      $('.profile').css('background','#fff');
 
     $('#updateProfile').slideToggle(function(){
       if(!$('#updateProfile').is(':visible'))
-      $('.profile').css({'background':'#faf0a1'});
+      $('.profile').css('background','#faf0a1');
     });
   });
 });
 
 // Add Student
+$(document).ready(function(){
+  $('.student').click(function(){
+
+    if(!$('#addStudent').is(':visible'))
+      $('.student').css('background','#fff');
+
+    $('#addStudent').slideToggle(function(){
+      if(!$('#addStudent').is(':visible'))
+      $('.student').css('background','#faf0a1');
+    });
+  });
+});
