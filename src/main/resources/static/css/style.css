@@ -120,9 +120,12 @@ nav ul li {
   .message .message-wrapper {
     width: 85%;
     margin: 0 auto; }
+  .message input::placeholder {
+    color: #333; }
   .message form {
     padding: 20px 0; }
     .message form textarea {
+      font-family: 'Signika', sans-serif;
       font-size: .8rem;
       width: 100%;
       display: block;

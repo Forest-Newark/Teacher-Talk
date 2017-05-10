@@ -73,10 +73,15 @@
     margin: 0 auto;
   }
 
+  input::placeholder {
+    color: #333;
+  }
+
   form {
     padding: 20px 0;
 
     textarea {
+      font-family: 'Signika', sans-serif;
       font-size: .8rem;
       width: 100%;
       display: block;
