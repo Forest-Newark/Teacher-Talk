@@ -26,7 +26,6 @@
 }
 
 .container-title {
-  border-top: 10px solid $primary;
   text-align: center;
   padding: 5px 10px;
   font-weight: 700;
@@ -37,19 +36,20 @@
 #startTour{
   position: absolute;
   right: -35px;
-  top: -20px;
-  min-width: 100px;
-  background: #9b1c1f;
+  top: -21px;
+  min-width: 75px;
+  background: $red;
   color: #fff;
-  -webkit-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
-  box-shadow:0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  -webkit-box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
+  box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
   transform: rotate(-90deg);
   transition: background 1s;
 }
 
 #startTour:hover {
-  background: rgba(155, 28, 31, .9);
+  background: #b72f32;
 }
 
 #studentNameArea {
@@ -61,28 +61,25 @@
 .message {
   width: 90%;
   margin: 0px auto;
+  border-top: 10px solid $primary;
+  border-bottom: 10px solid $primary;
   -webkit-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  .input-wrapper{
-    padding: 5px 15px;
+  .message-wrapper {
+    width: 85%;
+    margin: 0 auto;
   }
 
   form {
     padding: 20px 0;
-    border-bottom: 10px solid $primary;
-
-    .select-style {
-      margin: 0 5px;
-      padding: 10px 15px;
-    }
 
     textarea {
       font-size: .8rem;
-      width: 90%;
+      width: 100%;
       display: block;
-      margin: 0 auto 25px;
+      margin: 15px 5px 25px;
       padding: 5px;
       box-sizing: border-box;
       height: 150px;
@@ -102,7 +99,7 @@ div.hopscotch-bubble .hopscotch-bubble-close {
 
 div.hopscotch-bubble, {
   background: $header;
-  border-color: $header;
+  border-color: $red;
   font-family: 'Signika', sans-serif;
 
   .hopscotch-bubble-number {
@@ -122,11 +119,11 @@ div.hopscotch-bubble, {
 
 // Yellow arrow
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.left .hopscotch-bubble-arrow-border {
-  border-right: 17px solid $header;
+  border-right: 17px solid $red;
 }
 
 div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-arrow-border{
-  border-top: 17px solid $header;
+  border-top: 17px solid $red;
 }
 
 // Yellow background on arrow
@@ -139,16 +136,16 @@ div.hopscotch-bubble .hopscotch-bubble-arrow-container.down .hopscotch-bubble-ar
 
 // Next
 div.hopscotch-bubble .hopscotch-nav-button.next:hover {
-  background-color: #53b98f;
+  background: #b72f32;
 }
 
 
 div.hopscotch-bubble .hopscotch-nav-button.next {
   min-width: 100px;
   margin: 5px auto;
-  border-color: $primary;
+  border-color: $red;
   color: #fff;
   font-size: 1rem;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
-  background-color: $primary;
+  background-color: $red;
 }
