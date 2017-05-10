@@ -8,7 +8,7 @@ INSERT INTO student(id, grade, notes, school, student_first_name, student_last_n
 INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (2,'7','Very Bright','School of the Arts','Sean','Mitchell',2);
 
 
-INSERT INTO message(id, english_message, message_name) VALUES (1,'Hello from Teacher Talk!','helloMessage');
+INSERT INTO message(id, english_message, message_name) VALUES (1,'Hello from Teacher Talk!','Greeting Message');
 INSERT INTO message(id, english_message, message_name) VALUES (2,'This message is to inform you that your child was absent from class today. While I will assist your student with the content they missed, it is their responsibility to make up all missing work.','Absent Message');
 
 
