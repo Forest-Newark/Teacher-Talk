@@ -233,11 +233,8 @@ public class TeacherTalkController {
             return new RedirectView("/forgotPasswordForm");
         }
 
-
         //Success -> Send message and go to Root
-
-
-//        Message Service sends the email with the password reset link
+//      Message Service sends the email with the password reset link
         ms.sendPasswordResetEmail(userId, email);
 
         return new RedirectView("/");
