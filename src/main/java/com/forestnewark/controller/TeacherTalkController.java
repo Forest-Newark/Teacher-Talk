@@ -24,7 +24,6 @@ import java.util.Map;
  */
 @Controller
 @SessionAttributes("currentUser")
-@EnableAutoConfiguration
 public class TeacherTalkController {
 
     final
