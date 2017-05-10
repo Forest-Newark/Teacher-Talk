@@ -7,7 +7,7 @@ $(document).ready(function(){
 });
 
 
-// Input Form
+// Input Form Teacher Page
 
 $(document).ready(function(){
     var inputSelector = $('.input-wrapper');
@@ -79,6 +79,40 @@ $(document).ready(function(){
 
 });
 
+
+// Input Form Login Page
+
+$(document).ready(function(){
+    var inputSelector = $('.input-wrapper');
+    var loginEmailValue= inputSelector.find("input[name='loginEmail']").val();
+    var passwordValue= inputSelector.find("input[name='loginPassword']").val();
+
+    if(loginEmailValue.length > 0){
+        $('#loginEmail').css({'border': '1px solid #00b074'});
+        $('#emailLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+    if(passwordValue.length >0){
+        $('#loginPassword').css({'border': '1px solid #00b074'});
+        $('#passwordLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+});
+
+
+
+
+
+
+
+
+
   $('input').focus(function() {
       $(this).css({'border': '1px solid #00b074'});
       $(this).next().css({
@@ -97,24 +131,24 @@ $(document).ready(function(){
 
 
 // mobile menu
-$(document).ready(function(){
-  $('.mobile-toggle').click(function(){
-    $('.menu').slideToggle();
-
-  });
-});
+// $(document).ready(function(){
+//   $('.mobile-toggle').click(function(){
+//     $('.menu').slideToggle();
+//
+//   });
+// });
 
 // Teacher Sign in Page Profile Image
-$(document).ready(function(){
-  $('.profile').click(function(){
-
-    if(!$('#updateProfile').is(':visible'))
-      $('.profile').css({'background':'#fff'});
-
-    $('#updateProfile').slideToggle(function(){
-      if(!$('#updateProfile').is(':visible'))
-      $('.profile').css({'background':'#faf0a1'});
-    });
-
-  });
-});
+// $(document).ready(function(){
+//   $('.profile').click(function(){
+//
+//     if(!$('#updateProfile').is(':visible'))
+//       $('.profile').css({'background':'#fff'});
+//
+//     $('#updateProfile').slideToggle(function(){
+//       if(!$('#updateProfile').is(':visible'))
+//       $('.profile').css({'background':'#faf0a1'});
+//     });
+//
+//   });
+// });
