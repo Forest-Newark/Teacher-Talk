@@ -7,6 +7,8 @@ $(document).ready(function(){
 });
 
 
+// Input Form
+
 $(document).ready(function(){
     var inputSelector = $('.input-wrapper');
     var firstNameValue= inputSelector.find("input[name='registerFirstName']").val();
@@ -61,7 +63,13 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.profile').click(function(){
 
-      // $('#firstNameLabel').css( {'color':'#00b074', 'transform': 'translateY(-27px)'});
-    $('#updateProfile').slideToggle();
+    if(!$('#updateProfile').is(':visible'))
+      $('.profile').css({'background':'#fff'});
+
+    $('#updateProfile').slideToggle(function(){
+      if(!$('#updateProfile').is(':visible'))
+      $('.profile').css({'background':'#faf0a1'});
+    });
+
   });
 });
