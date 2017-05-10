@@ -7,6 +7,7 @@ import com.forestnewark.service.DatabaseService;
 
 import com.forestnewark.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
@@ -233,8 +234,9 @@ public class TeacherTalkController {
             return new RedirectView("/forgotPasswordForm");
         }
 
+
         //Success -> Send message and go to Root
-//      Message Service sends the email with the password reset link
+//        Message Service sends the email with the password reset link
         ms.sendPasswordResetEmail(userId, email);
 
         return new RedirectView("/");
