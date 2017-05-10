@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8"/>
-  <title>Teacher Talk</title>
+    <meta charset="UTF-8"/>
+    <title>Teacher Talk</title>
 
-  <script th:href="@{https://use.fontawesome.com/f2bdd0ae67.js}" src="https://use.fontawesome.com/f2bdd0ae67.js"></script>
-  <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}" href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
-  <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
-  <link rel="stylesheet" th:href="@{/css/easy-autocomplete.css}" href="../static/css/easy-autocomplete.css" />
-  <link rel="stylesheet" th:href="@{/css/hopscotch.css}" href="../static/css/hopscotch.css" />
-  <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <script th:href="@{https://use.fontawesome.com/f2bdd0ae67.js}"
+            src="https://use.fontawesome.com/f2bdd0ae67.js"></script>
+    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}"
+          href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
+    <link rel="stylesheet" th:href="@{/css/easy-autocomplete.css}" href="../static/css/easy-autocomplete.css"/>
+    <link rel="stylesheet" th:href="@{/css/hopscotch.css}" href="../static/css/hopscotch.css"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 
 </head>
 
 <body id="teacherSendMessage">
-  <section>
+<section>
     <header>
       <nav>
         <div class="header-tagline">
-          <a href="login.html">
+            <a href="login.html" th:href="@{/}">
             <img src="../static/images/teacher-talk-logo.gif" th:src="${'/images/teacher-talk-logo.gif'}"
                alt="teacher talk logo"/>
           </a>
@@ -105,17 +107,18 @@
           </div>
         </ul>
       </nav>
+>>>>>>> a07c2f39f2dd76d2b68fb86a5411b6827cfa8703
     </header>
 
     <div class="message-container">
-      <button id="startTour">Start Tour</button>
-      <div class="message">
-        <div class="container-title">New Message</div>
+        <button id="startTour">Start Tour</button>
+        <div class="message">
+            <div class="container-title">New Message</div>
 
-        <div class="input-wrapper">
-          <input type="text" id="student" name="student" Placeholder="Student" />
-          <!-- <label for="student">Students Name</label> -->
-        </div>
+            <div class="input-wrapper">
+                <input type="text" id="student" name="student" Placeholder="Student"/>
+                <!-- <label for="student">Students Name</label> -->
+            </div>
 
             <div id="studentNameArea"></div>
 
