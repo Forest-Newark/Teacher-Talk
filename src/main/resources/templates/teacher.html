@@ -37,11 +37,11 @@
               <fieldset>
                 <div class="input-wrapper">
                   <input type="text" id="registerFirstName" name="registerFirstName" th:value="${teacher.getFirstName()}"/>
-                  <label for="registerFirstName">First Name </label>
+                  <label id="firstNameLabel" for="registerFirstName">First Name </label>
                 </div>
                 <div class="input-wrapper">
                   <input type="text" id="registerLastName" name="registerLastName" th:value="${teacher.getLastName()}"/>
-                  <label for="registerLastName">Last Name </label>
+                  <label id="lastNameLabel" for="registerLastName">Last Name </label>
                 </div>
                 <div class="input-wrapper">
                   <input type="email" id="registerEmail" name="registerEmail" th:value="${teacher.getEmail()}"/>
