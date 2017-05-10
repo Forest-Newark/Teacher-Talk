@@ -47,19 +47,23 @@ nav {
         -moz-box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
         box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
       }
-      a:hover, a:focus, a:active {
+      a:hover, a:focus {
         background: #fff;
       }
     }
   }
 }
 
-// Profile Toggle Input
+// Header Toggle Field Inputs
 #updateProfile, #addStudent {
   display:none;
   background: #fff;
   text-align: center;
   padding-bottom: 15px;
+
+  legend {
+    margin: 10px auto;
+  }
 }
 
 .history {
