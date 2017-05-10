@@ -13,6 +13,11 @@ $(document).ready(function(){
     var inputSelector = $('.input-wrapper');
     var firstNameValue= inputSelector.find("input[name='registerFirstName']").val();
     var lastNameValue= inputSelector.find("input[name='registerLastName']").val();
+    var emailValue= inputSelector.find("input[name='registerEmail']").val();
+    var passwordValue= inputSelector.find("input[name='registerPassword']").val();
+    var phoneNumberValue= inputSelector.find("input[name='registerPhoneNumber']").val();
+    var schoolNameValue= inputSelector.find("input[name='registerSchoolName']").val();
+    var subjectAreaValue= inputSelector.find("input[name='registerSubjectArea']").val();
 
     //firstName
     if(firstNameValue.length > 0){
@@ -23,9 +28,49 @@ $(document).ready(function(){
         });
     }
 
-    if(firstNameValue.length >0){
+    if(lastNameValue.length >0){
         $('#registerLastName').css({'border': '1px solid #00b074'});
         $('#lastNameLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+    if(emailValue.length >0){
+        $('#registerEmail').css({'border': '1px solid #00b074'});
+        $('#emailLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+    if(passwordValue.length >0){
+        $('#registerPassword').css({'border': '1px solid #00b074'});
+        $('#passwordLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+    if(phoneNumberValue.length >0){
+        $('#registerPhoneNumber').css({'border': '1px solid #00b074'});
+        $('#phoneNumberLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+    if(schoolNameValue.length >0){
+        $('#registerSchoolName').css({'border': '1px solid #00b074'});
+        $('#schoolNameLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
+
+    if(subjectAreaValue.length >0){
+        $('#registerSubjectArea').css({'border': '1px solid #00b074'});
+        $('#subjectAreaLabel').css({
             'color':'#00b074',
             'transform': 'translateY(-27px)'
         });
