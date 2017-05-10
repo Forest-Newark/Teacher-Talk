@@ -11,7 +11,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     var inputSelector = $('.input-wrapper');
+
     var firstNameValue= inputSelector.find("input[name='registerFirstName']").val();
+
     var lastNameValue= inputSelector.find("input[name='registerLastName']").val();
     var emailValue= inputSelector.find("input[name='registerEmail']").val();
     var passwordValue= inputSelector.find("input[name='registerPassword']").val();
@@ -152,3 +154,4 @@ $(document).ready(function(){
 //
 //   });
 // });
+
