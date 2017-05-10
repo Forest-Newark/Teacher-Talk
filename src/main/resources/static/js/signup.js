@@ -11,7 +11,9 @@ $(document).ready(function(){
 
 $(document).ready(function(){
     var inputSelector = $('.input-wrapper');
+
     var firstNameValue= inputSelector.find("input[name='registerFirstName']").val();
+
     var lastNameValue= inputSelector.find("input[name='registerLastName']").val();
 
     //firstName
@@ -23,7 +25,8 @@ $(document).ready(function(){
         });
     }
 
-    if(firstNameValue.length >0){
+
+    if(lastNameValue.length >0){
         $('#registerLastName').css({'border': '1px solid #00b074'});
         $('#lastNameLabel').css({
             'color':'#00b074',

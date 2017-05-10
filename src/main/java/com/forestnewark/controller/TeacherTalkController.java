@@ -55,7 +55,7 @@ public class TeacherTalkController {
      * @return login page
      */
     @RequestMapping("/")
-    public String loginPage(ModelMap model, HttpServletRequest request,@ModelAttribute("hasError") boolean hasError) {
+    public String loginPage(ModelMap model, HttpServletRequest request, @ModelAttribute("hasError") boolean hasError) {
 
 
         if (cs.readEmailCookie(request) != null) {
@@ -63,7 +63,7 @@ public class TeacherTalkController {
             model.addAttribute("userPassword", ds.getUserPassword(cs.readEmailCookie(request)));
             model.addAttribute("rememberMe", true);
         }
-        model.addAttribute("hasError",hasError);
+        model.addAttribute("hasError", hasError);
         return "login";
     }
 
@@ -74,14 +74,14 @@ public class TeacherTalkController {
      * @param model      to set model attributes
      * @param response   to save userEmail cookie if remember me box is selected
      * @param model      to set model attributes
-     * @param response   to save userEmail cookie if rememeber me box is seleted
+     * @param response   to save userEmail cookie if rememeber me box is selected
      * @param loginEmail of the current user
      * @param password   of the current user
      * @param rememberMe option to create cookies for site
      * @return RedirectView to correct page based on user login credentials
      */
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(ModelMap model, HttpServletResponse response,RedirectAttributes redirectAttributes, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam(value = "rememberMe", required = false, defaultValue = "dontRememberMe") String rememberMe) {
+    public String login(ModelMap model, HttpServletResponse response, RedirectAttributes redirectAttributes, @RequestParam("loginEmail") String loginEmail, @RequestParam("loginPassword") String password, @RequestParam(value = "rememberMe", required = false, defaultValue = "dontRememberMe") String rememberMe) {
         if (ds.validateUser(loginEmail, password)) {
             if (ds.userType(loginEmail).equals("teacher")) {
 
@@ -89,7 +89,7 @@ public class TeacherTalkController {
                 if (rememberMe.equals("rememberMe")) {
                     cs.saveUserEmail(response, loginEmail);
                 }
-               // return new RedirectView("/teacher");
+
                 return "redirect:/teacher/";
 
             } else if (ds.userType(loginEmail).equals("parent")) {
@@ -98,7 +98,7 @@ public class TeacherTalkController {
                 if (rememberMe.equals("rememberMe")) {
                     cs.saveUserEmail(response, loginEmail);
                 }
-//                return new RedirectView("/parentLogin");
+
                 return "redirect:/parentLogin";
             }
 
@@ -126,9 +126,9 @@ public class TeacherTalkController {
     /**
      * Request for parent page after logging in
      *
-     * @param model  to set model attributes
-     * @param rememberMe
-     * @return
+     * @param model      to set model attributes
+     * @param rememberMe value set by checkbox on login page
+     * @return parent page
      */
     @RequestMapping("/parentLogin")
     public String parentLogin(ModelMap model, String rememberMe) {
@@ -140,6 +140,11 @@ public class TeacherTalkController {
         return "parent";
     }
 
+    /**
+     * Request for teacher sign up page
+     * @param model  to set model attributes
+     * @return teacher sign up page
+     */
     @RequestMapping("/teacherSignUp")
     public String teacherSignUp(ModelMap model) {
 
@@ -149,20 +154,31 @@ public class TeacherTalkController {
         return "teacherSignUp";
     }
 
+    /**
+     * Rest for teacher page
+     * @param model to set model attributes
+     * @return teacher page
+     */
     @RequestMapping("/teacher")
     public String teacher(ModelMap model) {
 
 
         model.addAttribute("students", ds.getAllStudents());
         model.addAttribute("messages", ds.getAllMessages());
-        model.addAttribute("teacher",ds.getTeacherByEmail(model.get("currentUser").toString()));
+        model.addAttribute("teacher", ds.getTeacherByEmail(model.get("currentUser").toString()));
 
         return "teacher";
     }
 
-    //    Redirecting to teacher
+
+    /**
+     * Requst to end messages from teacher page
+     * @param model to set model attributes
+     * @param params Map that contains all parameters
+     * @return redirect view back to teacher page
+     */
     @RequestMapping("/sendMessage")
-    public RedirectView sendMessage(ModelMap model,@RequestParam Map<String, String> params) {
+    public RedirectView sendMessage(ModelMap model, @RequestParam Map<String, String> params) {
 
         ArrayList<String> studentIdList = new ArrayList<>();
         String messageName = null;
@@ -175,18 +191,15 @@ public class TeacherTalkController {
             if (entry.getKey().contains("message")) {
                 messageName = entry.getValue();
             }
-           if (entry.getKey().contains("messageText")){
+            if (entry.getKey().contains("messageText")) {
                 messageText = entry.getValue();
-           }
+            }
 
         }
 
-        Long start = System.currentTimeMillis();
-
-
         for (String studentId : studentIdList) {
 
-            ms.sendMessage("1", messageName,model.get("currentUser").toString(),messageText);
+            ms.sendMessage(studentId, messageName, model.get("currentUser").toString(), messageText);
 
         }
 
@@ -194,25 +207,29 @@ public class TeacherTalkController {
     }
 
 
-
-
-//    Routes to forgotPasswordForm.html when user clicks "Forgot Password"
+    /**
+     * Routes to forgotPasswordForm.html when user clicks "Forgot Password"
+     * @return forgotpassword page
+     */
     @RequestMapping("/forgotPassword")
-    public String forgotPassword(){
+    public String forgotPassword() {
         return "forgotPasswordForm";
     }
 
 
-
-//    Sends a password reset link in an email and then redirects to homepage
+    /**
+     *  Sends a password reset link in an email and then redirects to homepage
+     * @param email to send reset email to
+     * @return login page
+     */
     @RequestMapping("/passwordResetEmail")
-    public RedirectView passwordResetEmail(@RequestParam ("email") String email){
+    public RedirectView passwordResetEmail(@RequestParam("email") String email) {
 
 //        Gets user ID from database based on email entered
         Integer userId = ds.getUserIdByEmail(email);
 
         //Failure -> forgotPasswordForm
-        if (userId == null){
+        if (userId == null) {
             return new RedirectView("/forgotPasswordForm");
         }
 
@@ -227,41 +244,59 @@ public class TeacherTalkController {
     }
 
 
+    /**
+     * Request for password reset page
+     * @param model to add model attributes
+     * @param userId of the user resetting password
+     * @param email of the user resetting password
+     * @return changePasswordForm page
+     */
     @RequestMapping("/resetPassword")
-    public String resetPassword(ModelMap model, Integer userId, String email){
+    public String resetPassword(ModelMap model, Integer userId, String email) {
 
-        model.addAttribute("userId",userId);
+        model.addAttribute("userId", userId);
         model.addAttribute("email", email);
         return "changePasswordForm";
     }
 
 
+    /**
+     * Changes password for the appropriate user
+     * @param password new password to be set
+     * @param userId of the user resetting password
+     * @param email of the user resetting password
+     * @return login page
+     */
     @RequestMapping("/passwordResetSubmit")
-    public RedirectView passwordResetSubmit(@RequestParam("password")String password,@RequestParam("userId")Integer userId, @RequestParam("email")String email) {
+    public RedirectView passwordResetSubmit(@RequestParam("password") String password, @RequestParam("userId") Integer userId, @RequestParam("email") String email) {
         System.out.println(password);
         System.out.println(userId);
         System.out.println("Made it to password reset submit");
 
         ds.updateUserPasswordById(userId, password, email);
 
-        return new RedirectView ("/");
+        return new RedirectView("/");
     }
 
 
-
+    /**
+     * Retrieves message log and allows user to search and sort by the fields
+     * @param model to add model attributes
+     * @param value of the display order
+     * @param search parameter
+     * @return
+     */
     @RequestMapping("/messageLog")
-    public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "duck") String value,String search) {
+    public String messageLog(ModelMap model, @RequestParam(value = "value", defaultValue = "") String value, String search) {
 
         System.out.println(value);
         System.out.println(search);
-        if(search == null){
+        if (search == null) {
             search = "";
         }
 
 
-        //if value is duck i dont care about the order
-
-        if (value.equals("duck")) {
+        if (value.equals("")) {
             model.addAttribute("messages", ds.messageLogSearch(search));
         }
 
@@ -281,7 +316,6 @@ public class TeacherTalkController {
             System.out.println("You want it ordered by parent name");
             model.addAttribute("messages", ds.getAllLogOrderByParentName());
 
-            //ordered by parent name
         }
 
         //if value is TemplateSent --- order alphabetically by template sent
@@ -303,16 +337,6 @@ public class TeacherTalkController {
 
         }
 
-
         return "messageLog";
     }
-
 }
-
-
-
-
-
-
-
-
