@@ -39,12 +39,12 @@
         <th>Delete</th>
     </tr>
     <tr th:each="student : ${students}">
-        <td th:value="${student.getId()}"></td>
-        <td th:value="${student.getStudentFirstName()}"></td>
-        <td th:value="${student.getStudentLastName()}"></td>
-        <td th:value="${student.getGrade()}"></td>
-        <td th:value="${student.getSchool()}"></td>
-        <td th:value="${student.getParent().getId()}"></td>
+        <td th:text="${student.getId()}"></td>
+        <td th:text="${student.getStudentFirstName()}"></td>
+        <td th:text="${student.getStudentLastName()}"></td>
+        <td th:text="${student.getGrade()}"></td>
+        <td th:text="${student.getSchool()}"></td>
+        <td th:text="${student.getParent().getId()}"></td>
         <td><a href="adminPage.html" th:href="@{'/deleteStudent?studentId=' + ${student.getId()}}">
             DELETE-ME
         </a></td>
@@ -65,10 +65,10 @@
 
     </tr>
     <tr th:each="parent : ${parents}">
-        <td th:value="${parent.getId()}"></td>
-        <td th:value="${parent.getPrimaryFirstName()}"></td>
-        <td th:value="${parent.getPrimaryLastName()}"></td>
-        <td th:value="${parent.getPrimaryEmail()}"></td>
+        <td th:text="${parent.getId()}"></td>
+        <td th:text="${parent.getPrimaryFirstName()}"></td>
+        <td th:text="${parent.getPrimaryLastName()}"></td>
+        <td th:text="${parent.getPrimaryEmail()}"></td>
         <td><a href="adminPage.html" th:href="@{'/deleteparent?parentId=' + ${parent.getId()}}">
             DELETE-ME
         </a></td>
@@ -89,10 +89,10 @@
 
     </tr>
     <tr th:each="teacher : ${teachers}">
-        <td th:value="${teacher.getId()}"></td>
-        <td th:value="${teacher.getFirstName()}"></td>
-        <td th:value="${teacher.getLastName()}"></td>
-        <td th:value="${teacher.getEmail()}"></td>
+        <td th:text="${teacher.getId()}"></td>
+        <td th:text="${teacher.getFirstName()}"></td>
+        <td th:text="${teacher.getLastName()}"></td>
+        <td th:text="${teacher.getEmail()}"></td>
         <td><a href="adminPage.html" th:href="@{'/deleteTeacher?teacherId=' + ${teacher.getId()}}">
             DELETE-ME
         </a></td>

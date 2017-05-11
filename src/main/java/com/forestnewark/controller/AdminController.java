@@ -18,18 +18,21 @@ public class AdminController {
     final
     MessageRepository messageRepository;
 
-    @Autowired
+    final
     StudentRepository studentRepository;
 
-    @Autowired
+    final
     ParentRepository parentRepository;
 
-    @Autowired
+    final
     TeacherRepository teacherRepository;
 
     @Autowired
-    public AdminController(MessageRepository messageRepository) {
+    public AdminController(MessageRepository messageRepository, StudentRepository studentRepository, ParentRepository parentRepository, TeacherRepository teacherRepository) {
         this.messageRepository = messageRepository;
+        this.studentRepository = studentRepository;
+        this.parentRepository = parentRepository;
+        this.teacherRepository = teacherRepository;
     }
 
 
