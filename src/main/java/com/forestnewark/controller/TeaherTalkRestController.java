@@ -63,6 +63,13 @@ public class TeaherTalkRestController {
         ds.saveTeacher(updateTeacher);
     }
 
+    @PostMapping("/teacherAddTemplate")
+    public void teacherAddTemplate(@RequestParam("templateName")String templateName,@RequestParam("templateBody") String templateBody){
+
+        ds.saveMessage(templateName,templateBody);
+    }
+
+
 
 
 }

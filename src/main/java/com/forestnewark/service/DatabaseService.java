@@ -341,5 +341,11 @@ public class DatabaseService {
 
         studentRepository.save(student);
     }
+
+    public void saveMessage(String templateName, String templateBody) {
+
+        messageRepository.save(new Message(templateName,templateBody));
+
+    }
 }
 
