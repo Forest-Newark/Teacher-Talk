@@ -40,9 +40,8 @@ $(document).ready(function() {
                 deleteButtonTest.setAttribute("id","studentNameButton_"+idCount);
                 deleteButtonTest.setAttribute("data-countId",idCount);
 
-                var deleteIcon = document.createElement("span");
-                deleteIcon.setAttribute("class","fa-times");
-                deleteIcon.setAttribute("aria-hidden","true");
+                var deleteIcon = document.createElement("i");
+                deleteIcon.setAttribute("class","fa fa-times");
 
                 deleteButtonTest.innerHTML = deleteIcon;
 
