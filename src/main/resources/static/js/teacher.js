@@ -20,6 +20,13 @@ $(document).ready(function() {
             userId = element.id;
             return element.studentFirstName + ' ' + element.studentLastName;
         },
+        template: {
+            type: "custom",
+            method: function(value, item) {
+                return item.studentFirstName +" " + item.studentLastName + " (" + item.grade +"th)";
+                // return "<img src='" + item.icon + "' /> | " + item.type + " | " + value;
+            }
+        },
 
         list: {
             onChooseEvent: function() {
