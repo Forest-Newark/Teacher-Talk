@@ -43,7 +43,7 @@ $(document).ready(function() {
                 var deleteIcon = document.createElement("i");
                 deleteIcon.setAttribute("class","fa fa-times");
 
-                deleteButtonTest.innerHTML = deleteIcon;
+                deleteButtonTest.appendChild(deleteIcon);
 
 
                 $("#studentNameArea").append(input).append(deleteButtonTest);
