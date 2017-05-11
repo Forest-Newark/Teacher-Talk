@@ -186,6 +186,36 @@ div.hopscotch-bubble .hopscotch-nav-button.next {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   background-color: #9b1c1f; }
 
+.alertify,
+.alertify-log {
+  font-family: 'Signika', sans-serif; }
+
+.alertify-button-cancel,
+.alertify-button-cancel:hover,
+.alertify-button-cancel:focus {
+  background-color: #9b1c1f;
+  border: 1px solid #9b1c1f; }
+
+.alertify-button-ok,
+.alertify-button-ok:hover,
+.alertify-button-ok:focus {
+  background-color: #1ab174;
+  border: 1px solid #1ab174; }
+
+.alertify-log {
+  padding: 15px;
+  border-radius: 0px;
+  color: #FFF;
+  text-shadow: none; }
+
+.alertify-log-error {
+  background: #9b1c1f;
+  background: rgba(155, 28, 31, 0.9); }
+
+.alertify-log-success {
+  background: #1ab174;
+  background: rgba(26, 177, 116, 0.9); }
+
 #login-page section {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
