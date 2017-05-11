@@ -49,7 +49,6 @@ public class MessageService {
      * @param messageName for the template of the message to be sent
      */
     @Async
-//    public Future<String> sendMessage(String studentId, String messageName, String currentUserEmail, String messageText) {
     public void sendMessage(String studentId, String messageName, String currentUserEmail, String messageText) {
         System.out.println("I made it send message ms");
         Properties props = new Properties();
@@ -85,8 +84,6 @@ public class MessageService {
         } catch (MessagingException e) {
             throw new RuntimeException(e);
         }
-
-//        return new AsyncResult<>("ok");
 
     }
 
@@ -153,6 +150,10 @@ public class MessageService {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public void sendParentSignUpNotification(String parentEmail) {
+        System.out.println("This should send an email....");
     }
 }
 
