@@ -62,6 +62,7 @@
     font-family: 'Signika', sans-serif;
     line-height: 1.6;
     padding: 5px;
+    margin: 5px 0;
   }
 
   .deletebutton {
@@ -70,6 +71,7 @@
     position: relative;
     left: -12px;
     top: -6px;
+    text-shadow: 1px 1px #ddd;
   }
 }
 
@@ -194,13 +196,12 @@ div.hopscotch-bubble .hopscotch-nav-button.next {
 }
 
 .alertify-log {
-// background: #1F1F1F;
-// background: rgba(0,0,0,.9);
 padding: 15px;
 border-radius: 0px;
 color: #FFF;
 text-shadow: none;
 }
+
 .alertify-log-error {
 background: #9b1c1f;
 background: rgba(155,28,31,.9);

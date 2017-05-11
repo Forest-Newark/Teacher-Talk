@@ -111,13 +111,15 @@ nav ul li {
   #studentNameArea input {
     font-family: 'Signika', sans-serif;
     line-height: 1.6;
-    padding: 5px; }
+    padding: 5px;
+    margin: 5px 0; }
   #studentNameArea .deletebutton {
     font-weight: 700;
     font-family: 'Signika', sans-serif;
     position: relative;
     left: -12px;
-    top: -6px; }
+    top: -6px;
+    text-shadow: 1px 1px #ddd; }
 
 .message {
   width: 90%;
