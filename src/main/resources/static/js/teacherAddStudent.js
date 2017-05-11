@@ -4,11 +4,18 @@
 
 $('#teacherSubmitStudentButton').click(function(){
     var studentFirstName = $('#registerFirstNameStudent').val();
-    // var studentLastName = $('#registerLastNameStudent').val();
+    var studentLastName = $('#registerLastNameStudent').val();
+    var parentFirstName = $('#registerFirstNameParent').val();
+    var parentLastName = $('#registerLastNameParent').val();
+    var parentEmail = $('#registerParentEmail').val();
 
 
     var formData = new FormData();
     formData.append('studentFirstName', studentFirstName);
+    formData.append('studentLastName', studentLastName);
+    formData.append('parentFirstName', parentFirstName);
+    formData.append('parentLastName',parentLastName);
+    formData.append('parentEmail', parentEmail);
 
     $.ajax({
         url: "/teacherAddStudent",

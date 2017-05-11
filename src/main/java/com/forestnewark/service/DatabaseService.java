@@ -331,5 +331,15 @@ public class DatabaseService {
 
         teacherRepository.save(teacher);
     }
+
+    public void saveParent(Parent parent) {
+
+        parentRepository.save(parent);
+    }
+
+    public void saveStudent(Student student) {
+
+        studentRepository.save(student);
+    }
 }
 

@@ -3,9 +3,15 @@
  */
 
 $(document).ready(function() {
+
+
+    var inputSelector = $('.input-wrapper');
+
+
+    var searchField = inputSelector.find("input[name='students']");
+
     var userId;
     var idCount = 1;
-    var searchField = $("#student");
 
     var options = {
         url: "/getAllStudents",
@@ -20,7 +26,7 @@ $(document).ready(function() {
                 var studentId = searchField.getSelectedItemData().id;
                 var studentFirstName = searchField.getSelectedItemData().studentFirstName;
                 var studentLastName = searchField.getSelectedItemData().studentLastName;
-                
+
 
 
                 //Create Student name box (currently input field)
@@ -70,6 +76,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function() {
+
     var message = $("#messageSelect").find(':selected').data('message');
     $('#messageTextArea').val(message);
 

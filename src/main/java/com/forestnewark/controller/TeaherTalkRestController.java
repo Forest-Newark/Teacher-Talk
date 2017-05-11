@@ -1,8 +1,10 @@
 package com.forestnewark.controller;
 
+import com.forestnewark.bean.Parent;
 import com.forestnewark.bean.Student;
 import com.forestnewark.bean.Teacher;
 import com.forestnewark.service.DatabaseService;
+import com.forestnewark.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +20,9 @@ public class TeaherTalkRestController {
     @Autowired
     DatabaseService ds;
 
+    @Autowired
+    MessageService ms;
+
     @RequestMapping("/getAllStudents")
     public List<Student> getAllStudents(){
 
@@ -27,8 +32,17 @@ public class TeaherTalkRestController {
 
 
     @PostMapping("/teacherAddStudent")
-    public void teacherAddStudent(@RequestParam("studentFirstName") String studentFirstName){
-        System.out.println(studentFirstName);
+    public void teacherAddStudent(@RequestParam("studentFirstName") String studentFirstName,@RequestParam("studentLastName") String studentLastName,
+    @RequestParam("parentFirstName")String parentFirstName,@RequestParam("parentLastName") String parentLastName,
+    @RequestParam("parentEmail")String parentEmail){
+
+        Parent parent = new Parent(parentFirstName,"",parentLastName,"",parentEmail,"","passwordHere","","email","english");
+        Student student = new Student(studentFirstName,studentLastName,"","","",parent);
+
+        ds.saveParent(parent);
+        ds.saveStudent(student);
+
+        ms.sendParentSignUpNotification(parentEmail);
 
     }
 
