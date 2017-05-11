@@ -176,12 +176,6 @@ div.hopscotch-bubble .hopscotch-nav-button.next {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
   background-color: #9b1c1f; }
 
-.alertify-logs {
-  background: transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none; }
-
 #login-page section {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
