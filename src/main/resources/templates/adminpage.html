@@ -69,7 +69,7 @@
         <td th:text="${parent.getPrimaryFirstName()}"></td>
         <td th:text="${parent.getPrimaryLastName()}"></td>
         <td th:text="${parent.getPrimaryEmail()}"></td>
-        <td><a href="adminPage.html" th:href="@{'/deleteparent?parentId=' + ${parent.getId()}}">
+        <td><a href="adminPage.html" th:href="@{'/deleteParent?parentId=' + ${parent.getId()}}">
             DELETE-ME
         </a></td>
     </tr>
