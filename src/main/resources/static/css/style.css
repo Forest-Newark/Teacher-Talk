@@ -90,7 +90,7 @@ nav ul li {
 #startTour {
   position: absolute;
   right: -35px;
-  top: -21px;
+  top: -25px;
   min-width: 75px;
   background: #9b1c1f;
   color: #fff;
@@ -108,6 +108,16 @@ nav ul li {
   font-size: .8rem;
   font-family: 'Signika', sans-serif;
   margin: 5px 25px; }
+  #studentNameArea input {
+    font-family: 'Signika', sans-serif;
+    line-height: 1.6;
+    padding: 5px; }
+  #studentNameArea .deletebutton {
+    font-weight: 700;
+    font-family: 'Signika', sans-serif;
+    position: relative;
+    left: -12px;
+    top: -6px; }
 
 .message {
   width: 90%;
