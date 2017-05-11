@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<h3> Teacher Talk Admin Page</h3>
+<h4>Message Table</h4>
+<table>
+    <tr>
+        <th>Message Id</th>
+        <th>English Message</th>
+        <th>Message Name</th>
+        <th></th>
+    </tr>
+    <tr th:each="message : ${messages}">
+        <td th:text="${message.getId()}">1</td>
+        <td th:text="${message.getEnglishMessage()}"></td>
+        <td th:text="${message.getMessageName()}">Jones</td>
+        <td>
+            <a href="adminPage.html" th:href="@{'/deleteMessage?messageId=' + ${message.getId()}}">
+                DELETE-ME
+            </a></td>
+    </tr>
+</table>
+
+</body>
+</html>
