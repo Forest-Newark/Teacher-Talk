@@ -344,6 +344,6 @@
 
 .input-wrapper input {
   font-size: .8rem;
-  border:1px solid $accent;
+  border:1px solid #faf0a1;
   padding: 10px;
 }
