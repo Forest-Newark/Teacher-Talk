@@ -312,12 +312,12 @@ div.hopscotch-bubble .hopscotch-nav-button.next {
 
 .faq-content h3 {
   font-weight: 700;
-  padding: 15px 0 5px;
+  padding: 15px 0 3px;
   text-transform: uppercase; }
 .faq-content p {
   font-weight: 300; }
 .faq-content .question {
-  padding: 5px 25px 15px; }
+  padding: 5px 25px; }
 
 .signup form {
   text-align: center;
@@ -327,6 +327,13 @@ div.hopscotch-bubble .hopscotch-nav-button.next {
     margin: 8px auto;
     display: block;
     font-size: 1.2rem; }
+
+#signUpPage .student-notes {
+  width: 85%;
+  margin: 5px auto; }
+  #signUpPage .student-notes input {
+    width: 100%;
+    box-sizing: border-box; }
 
 select {
   font-family: 'Signika', sans-serif;

@@ -27,11 +27,14 @@ $('#teacherSubmitStudentButton').click(function(){
         success: function (data) {
             alertify.success("Successfully added student: " + studentFirstName);
             $('#addStudent').slideToggle(function() {
-                if (!$('#addStudent').is(':visible'))
-                    $('.student').css('background', '#faf0a1');
+              if(!$('#addStudent').is(':visible')){
+                $('.student').css('background','#faf0a1');
+                $('a').css({'-webkit-box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)', '-moz-box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)', 'box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)'});
+              } else {
+                $('.student a').css({'-webkit-box-shadow' : 'none', '-moz-box-shadow' : 'none', 'box-shadow' : 'none'});
+              }
 
-            })
+            });
         }
     });
 });
-
