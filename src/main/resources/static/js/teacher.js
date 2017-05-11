@@ -36,7 +36,7 @@ $(document).ready(function() {
                 input.setAttribute('id','studentName_' + idCount);
 
                 var deleteButtonTest = document.createElement("a")
-                deleteButtonTest.settAttribute("class", "deletebutton");
+                deleteButtonTest.setAttribute("class", "deletebutton");
                 deleteButtonTest.setAttribute("id","studentNameButton_"+idCount);
                 deleteButtonTest.setAttribute("data-countId",idCount);
 
