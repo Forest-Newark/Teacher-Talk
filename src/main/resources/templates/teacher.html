@@ -90,15 +90,15 @@
 
                 <li class="template"><a href="#addTemplate">Add Template</a></li>
                 <div id="addTemplate">
-                  <form action="#">
+                    <form action="javascript:void(0);" method="post">
                     <fieldset>
                       <div class="input-wrapper">
-                        <input type="text" id="registerFirstNam"/>
-                        <label>Subject </label>
+                        <input type="text" id="addTemplateName"/>
+                        <label>Template Name </label>
                       </div>
-                      <textarea name="messageText" id="messageTemplateArea">Message Goes Here</textarea>
+                      <textarea name="messageText" id="messageTemplateArea" placeholder="Message Body Goes Here"></textarea>
                     </fieldset>
-                    <button type="submit" class="update">Add</button>
+                    <button id="teacherAddTemplate" type="submit" class="update">Add</button>
                   </form>
                 </div>
 
@@ -158,8 +158,10 @@
         <div class="message-wrapper">
           <div class="container-title">New Message</div>
           <div class="input-wrapper">
+
             <input type="text" name="students" id="student" placeholder="Student Name"/>
             <!-- <label for="student">Students Name</label> -->
+
           </div>
 
           <div id="studentNameArea"></div>
@@ -199,6 +201,7 @@
 <script th:src="@{/js/alertify.js}" src="../static/js/alertify.js"></script>
 <script th:src="@{/js/teacherAddStudent.js}" src="../static/js/teacherAddStudent.js"></script>
 <script th:src="@{/js/teacherUpdateInfo.js}" src="../static/js/teacherUpdateInfo.js"></script>
+<script th:src="@{/js/teacherTemplateAdd.js}" src="../static/js/teacherTemplateAdd.js"></script>
 
 </body>
 </html>
