@@ -61,7 +61,6 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th>Email</th>
-        <th>Delete</th>
 
     </tr>
     <tr th:each="parent : ${parents}">
@@ -69,9 +68,6 @@
         <td th:text="${parent.getPrimaryFirstName()}"></td>
         <td th:text="${parent.getPrimaryLastName()}"></td>
         <td th:text="${parent.getPrimaryEmail()}"></td>
-        <td><a href="adminPage.html" th:href="@{'/deleteParent?parentId=' + ${parent.getId()}}">
-            DELETE-ME
-        </a></td>
     </tr>
 
 </table>
