@@ -1,6 +1,8 @@
 header {
   background: #faf0a1;
   width: 40%; }
+  header textarea {
+    font-size: .8rem; }
 
 .header-tagline {
   padding: 0 15px;
@@ -47,6 +49,8 @@ nav ul li {
   text-align: left;
   width: 90%;
   margin: 0px auto; }
+  #addTemplate form .input-wrapper {
+    margin: 10px 0; }
 #addTemplate textarea {
   display: block;
   width: 100%;
@@ -77,8 +81,7 @@ nav ul li {
 .message-container {
   background: #fff;
   width: 60%;
-  margin: 50px auto;
-  position: relative; }
+  margin: 50px auto; }
 
 .container-title {
   text-align: center;
@@ -89,8 +92,8 @@ nav ul li {
 
 #startTour {
   position: absolute;
-  right: -35px;
-  top: -25px;
+  right: 0px;
+  top: 0px;
   min-width: 75px;
   background: #9b1c1f;
   color: #fff;
@@ -107,13 +110,15 @@ nav ul li {
 #studentNameArea {
   font-size: .8rem;
   font-family: 'Signika', sans-serif;
-  margin: 5px 25px; }
+  margin: 5px 25px;
+  width: 100%; }
   #studentNameArea input {
     font-family: 'Signika', sans-serif;
     line-height: 1.6;
     padding: 5px;
     margin: 5px 0; }
   #studentNameArea .deletebutton {
+    cursor: pointer;
     font-weight: 700;
     font-family: 'Signika', sans-serif;
     position: relative;
@@ -122,6 +127,7 @@ nav ul li {
     text-shadow: 1px 1px #ddd; }
 
 .message {
+  position: relative;
   width: 90%;
   margin: 0px auto;
   border-top: 10px solid #00b074;
@@ -135,7 +141,7 @@ nav ul li {
   .message input::placeholder {
     color: #333; }
   .message form {
-    padding: 20px 0; }
+    padding: 0 0 20px; }
     .message form textarea {
       font-family: 'Signika', sans-serif;
       font-size: .8rem;
@@ -480,6 +486,9 @@ body {
   font-family: 'Signika', sans-serif;
   color: #333;
   background: #ececec; }
+
+button, input, select, textarea, label {
+  font-family: 'Signika', sans-serif; }
 
 h1 {
   font-size: 32px;

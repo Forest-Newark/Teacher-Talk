@@ -26,6 +26,10 @@ body {
   background: $accent;
 }
 
+button, input, select, textarea, label {
+  font-family: 'Signika', sans-serif;
+}
+
 h1 {
   font-size: 32px;
   font-weight: 700;

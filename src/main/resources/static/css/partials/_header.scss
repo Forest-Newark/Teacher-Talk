@@ -1,6 +1,10 @@
 header {
   background: $header;
   width: 40%;
+
+  textarea {
+    font-size: .8rem;
+  }
 }
 
 .header-tagline {
@@ -71,6 +75,10 @@ nav {
     text-align: left;
     width: 90%;
     margin: 0px auto;
+
+    .input-wrapper {
+      margin: 10px 0;
+    }
   }
   textarea {
     display: block;

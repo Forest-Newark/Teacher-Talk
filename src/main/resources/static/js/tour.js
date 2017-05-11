@@ -35,7 +35,7 @@ var tour = {
         {
             title: "Send Message",
             number: "5",
-            content: "Hit send and teacher talk takes care of the rest.",
+            content: "Hit send and Teacher Talk takes care of the rest.",
             target: document.getElementById("messageSendButton"),
             placement: "top"
         }
