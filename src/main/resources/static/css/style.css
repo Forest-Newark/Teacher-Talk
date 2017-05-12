@@ -111,27 +111,21 @@ nav ul li {
   font-size: .8rem;
   font-family: 'Signika', sans-serif;
   margin: 5px;
-  padding: 10px;
   background: #ececec;
   width: 100%; }
   #studentNameArea input {
     font-family: 'Signika', sans-serif;
     line-height: 1.6;
     padding: 5px;
-    margin: 5px 0;
+    margin: 5px;
     border: 1px solid #00b074; }
   #studentNameArea .deletebutton {
-    cursor: pointer;
-    font-weight: 700;
     font-size: 1rem;
-    font-family: 'Signika', sans-serif;
-    position: relative;
-    border: 1px solid blue; }
+    position: relative; }
     #studentNameArea .deletebutton .fa-times {
       position: absolute;
-      top: 0;
-      right: 0;
-      border: 1px solid red; }
+      top: -3px;
+      right: 8px; }
 
 .message {
   position: relative;
