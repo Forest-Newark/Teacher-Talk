@@ -34,6 +34,14 @@ $('#teacherSubmitStudentButton').click(function(){
                 $('.student a').css({'-webkit-box-shadow' : 'none', '-moz-box-shadow' : 'none', 'box-shadow' : 'none'});
               }
 
+              $('#registerFirstNameStudent').val("");
+              $('#registerLastNameStudent').val("");
+              $('#registerFirstNameParent').val("");
+              $('#registerLastNameParent').val("");
+              $('#registerParentEmail').val("");
+
+
+
             });
         }
     });

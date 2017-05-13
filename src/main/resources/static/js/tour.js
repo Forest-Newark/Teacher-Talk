@@ -48,3 +48,24 @@ var btn = document.getElementById('startTour');
 btn.onclick = function() {
     hopscotch.startTour(tour);
 };
+
+// Toggle Eye
+// Added By Lyndsey 5.13.17
+
+$(document).ready(function(){
+  $('.fa-eye').click(function(){
+
+    if(!$('#startTour').is(':visible'))
+      $('.fa-eye').css('color', '#fff');
+
+    $('#startTour').slideToggle(function(){
+      if(!$('#startTour').is(':visible'))
+        $('.fa-eye').css('color', 'black');
+    });
+  });
+  // Hide tour once it's started
+  $('#startTour').click(function(){
+    $('#startTour').slideToggle();
+    $('.fa-eye').css('color', 'black');
+  });
+});

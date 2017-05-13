@@ -33,20 +33,36 @@
   margin-bottom: 15px;
 }
 
-#startTour{
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  min-width: 75px;
-  background: $red;
-  color: #fff;
-  font-weight: 500;
-  -webkit-box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
-  box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
-  transform: rotate(-90deg);
-  transition: background 1s;
-}
+// .tour-wrapper {
+//   position: relative;
+//   min-width: 100px;
+//   right: 0px;
+//   top: 0px;
+//   border: 1px solid blue;
+
+  .fa-eye {
+    position: absolute;
+    top: -25px;
+    right: 30px;
+    z-index: 100;
+    color: #fff;
+  }
+
+  #startTour{
+    position: absolute;
+    top: 0;
+    right: -25px;
+    min-width: 75px;
+    background: $red;
+    color: #fff;
+    font-weight: 500;
+    -webkit-box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
+    box-shadow:0 0px 10px rgba(0, 0, 0, 0.6);
+    transform: rotate(-90deg);
+    transition: background 1s;
+  }
+// }
 
 #startTour:hover {
   background: #b72f32;
