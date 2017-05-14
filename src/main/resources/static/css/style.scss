@@ -120,6 +120,10 @@ input, textarea {
   outline: none;
 }
 
+input:-webkit-autofill {
+    color: #fff !important;
+}
+
 // Login Input/////////////
 //  Sign Up Input//
 

@@ -30,6 +30,10 @@ $('#teacherSubmitStudentButton').click(function(){
               if(!$('#addStudent').is(':visible')){
                 $('.student').css('background','#faf0a1');
                 $('a').css({'-webkit-box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)', '-moz-box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)', 'box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)'});
+                $('input').css({
+                  'color':'#333',
+                  'transform': 'translateY(-10px)'
+                });
               } else {
                 $('.student a').css({'-webkit-box-shadow' : 'none', '-moz-box-shadow' : 'none', 'box-shadow' : 'none'});
               }

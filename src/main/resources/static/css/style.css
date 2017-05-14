@@ -567,6 +567,9 @@ button {
 input, textarea {
   outline: none; }
 
+input:-webkit-autofill {
+  color: #fff !important; }
+
 fieldset {
   border: none;
   margin: 0;
