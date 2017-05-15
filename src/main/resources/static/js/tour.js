@@ -53,19 +53,28 @@ btn.onclick = function() {
 // Added By Lyndsey 5.13.17
 
 $(document).ready(function(){
-  $('.fa-eye-slash').click(function(){
+  $('.tourclick').click(function(){
+
+    $(".message i").removeClass("fa-eye-slash");
+    $(".message i").addClass("fa-eye");
+
 
     if(!$('#startTour').is(':visible'))
+    // $(".message i").removeClass("fa-eye");
+      $(".message i").addClass("fa-eye-slash");
+      $('.fa-eye').css('color', 'transparent');
       $('.fa-eye-slash').css('color', '#fff');
 
     $('#startTour').slideToggle(function(){
       if(!$('#startTour').is(':visible'))
-        $('.fa-eye-slash').css('color', 'black');
+        $('.fa-eye').css('color', 'black');
     });
   });
   // Hide tour once it's started
   $('#startTour').click(function(){
     $('#startTour').slideToggle();
-    $('.fa-eye-slash').css('color', 'black');
+    $(".message i").removeClass("fa-eye-slash");
+    $(".message i").addClass("fa-eye");
+    $('.fa-eye').css('color', 'black');
   });
 });

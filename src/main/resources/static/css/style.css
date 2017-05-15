@@ -90,7 +90,7 @@ nav ul li {
   font-size: 1.5rem;
   margin-bottom: 15px; }
 
-.fa-eye-slash {
+.fa-eye, .fa-eye-slash {
   position: absolute;
   top: -25px;
   right: 30px;

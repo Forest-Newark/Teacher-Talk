@@ -4,6 +4,12 @@ $(document).ready(function(){
   $('.addContact').click(function(){
     $(this).next('.contactInfo').slideToggle();
   });
+  $('.addStudent2').click(function(){
+    $('.addStudent2').text('Second Student');
+  });
+  $('.addStudent3').click(function(){
+    $('.addStudent3').text('Third Student');
+  });
 });
 
 
