@@ -60,7 +60,6 @@ $(document).ready(function(){
 
 
     if(!$('#startTour').is(':visible'))
-    // $(".message i").removeClass("fa-eye");
       $(".message i").addClass("fa-eye-slash");
       $('.fa-eye').css('color', 'transparent');
       $('.fa-eye-slash').css('color', '#fff');

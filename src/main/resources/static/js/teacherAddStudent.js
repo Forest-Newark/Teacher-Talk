@@ -42,7 +42,6 @@ $('#teacherSubmitStudentButton').click(function () {
                         'box-shadow': 'none'
                     });
                 }
-
                 $('#registerFirstNameStudent').val("");
                 $('#registerLastNameStudent').val("");
                 $('#registerFirstNameParent').val("");
