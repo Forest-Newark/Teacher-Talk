@@ -236,10 +236,6 @@ $(document).ready(function() {
         });
     }
 
-
-
-
-
     if (studentPrimaryFirstNameValue.length > 0) {
         $('#registerStudentPrimaryFirstName').css({'border': '1px solid #00b074'});
         $('#studentPrimaryFirstNameLabel').css({
@@ -271,12 +267,6 @@ $(document).ready(function() {
             'transform': 'translateY(-27px)'
         });
     }
-
-
-
-
-
-
 
     if (studentSecondaryFirstNameValue.length > 0) {
         $('#registerStudentSecondaryFirstName').css({'border': '1px solid #00b074'});
@@ -310,10 +300,6 @@ $(document).ready(function() {
         });
     }
 
-
-
-
-
     if (studentTertiaryFirstNameValue.length > 0) {
         $('#registerStudentTertiaryFirstName').css({'border': '1px solid #00b074'});
         $('#studentTertiaryFirstNameLabel').css({
@@ -345,8 +331,4 @@ $(document).ready(function() {
             'transform': 'translateY(-27px)'
         });
     }
-
-
-
-
 });
