@@ -3,6 +3,7 @@ package com.forestnewark.bean;
 import org.hibernate.annotations.Proxy;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,6 +19,8 @@ public class Message {
     private int id;
 
     private String messageName;
+
+    @Column(columnDefinition="TEXT")
     private String englishMessage;
 
     public Message() {
