@@ -48,7 +48,7 @@ $(document).ready(function() {
                 deleteButtonTest.setAttribute("data-countId",idCount);
 
                 var deleteIcon = document.createElement("i");
-                deleteIcon.setAttribute("class","fa-times");
+                deleteIcon.setAttribute("class","fa fa-times");
 
                 deleteButtonTest.appendChild(deleteIcon);
 
