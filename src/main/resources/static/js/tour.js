@@ -53,19 +53,19 @@ btn.onclick = function() {
 // Added By Lyndsey 5.13.17
 
 $(document).ready(function(){
-  $('.fa-eye').click(function(){
+  $('.fa-eye-slash').click(function(){
 
     if(!$('#startTour').is(':visible'))
-      $('.fa-eye').css('color', '#fff');
+      $('.fa-eye-slash').css('color', '#fff');
 
     $('#startTour').slideToggle(function(){
       if(!$('#startTour').is(':visible'))
-        $('.fa-eye').css('color', 'black');
+        $('.fa-eye-slash').css('color', 'black');
     });
   });
   // Hide tour once it's started
   $('#startTour').click(function(){
     $('#startTour').slideToggle();
-    $('.fa-eye').css('color', 'black');
+    $('.fa-eye-slash').css('color', 'black');
   });
 });
