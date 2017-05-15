@@ -51,86 +51,95 @@
       </div>
     </div>
 
+
+    <!--<div class="input-wrapper">-->
+      <!--<input type="email" id="registerEmail" name="registerEmail"-->
+             <!--th:value="${teacher.getEmail()}"/>-->
+      <!--<label id="emailLabel" for="registerEmail">Email </label>-->
+    <!--</div>-->
+    <!---->
+
+
     <div class="signup">
       <form id="signUpForm" action="parent.html" th:action="@{/parentSignUp}">
         <fieldset>
           <legend>Parent Registration</legend>
 
           <div class="input-wrapper">
-            <input type="text" id="registerPrimaryFirstName" name="registerPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}" required="required"/>
-            <label for="registerPrimaryFirstName">First Name*</label>
+            <input type="text" id="registerParentPrimaryFirstName" name="registerParentPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}" required="required"/>
+            <label id="parentPrimaryFirstNameLabel" for="registerParentPrimaryFirstName">First Name*</label>
           </div>
           <div class="input-wrapper">
-            <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName" th:value="${parent.getPrimaryLastName()}" required="required" />
-            <label for="registerPrimaryLastName">Last Name* </label>
+            <input type="text" id="registerParentPrimaryLastName" name="registerParentPrimaryLastName" th:value="${parent.getPrimaryLastName()}" required="required" />
+            <label id="parentPrimaryLastNameLabel" for="registerParentPrimaryLastName">Last Name* </label>
           </div>
           <div class="input-wrapper">
-            <input type="email" id="registerPrimaryEmail" name="registerPrimaryEmail" th:value="${parent.getPrimaryEmail()}" required="required"/>
-            <label for="registerPrimaryEmail"> Email* </label>
+            <input type="email" id="registerParentPrimaryEmail" name="registerParentPrimaryEmail" th:value="${parent.getPrimaryEmail()}" required="required"/>
+            <label id="parentPrimaryEmailLabel" for="registerParentPrimaryEmail"> Email* </label>
           </div>
           <div class="input-wrapper">
             <input type="password" id="registerPassword" name="registerPassword" th:value="${parent.getPassword()}" required="required"/>
-            <label for="registerPassword">Password* </label>
+            <label id="parentPasswordLabel" for="registerPassword">Password* </label>
           </div>
           <div class="input-wrapper">
             <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${parent.getPhoneNumber()}" required="required"/>
-            <label for="registerPhoneNumber"> Phone Number* </label>
+            <label id="parentPhoneNumberLabel" for="registerPhoneNumber"> Phone Number* </label>
           </div>
           <aside class="border-seperation"></aside>
 
           <div class="addContact">Add Another Parent <span class="plus">+</span></div>
           <div class="contactInfo">
             <div class="input-wrapper">
-              <input type="text" id="registerSecondaryFirstName" name="registerSecondaryFirstName" th:value="${parent.getSecondaryFirstName()}"/>
-              <label for="registerSecondaryFirstName">First Name </label>
+              <input type="text" id="registerParentSecondaryFirstName" name="registerParentSecondaryFirstName" th:value="${parent.getSecondaryFirstName()}"/>
+              <label id="parentSecondaryFirstNameLabel" for="registerParentSecondaryFirstName">First Name </label>
             </div>
             <div class="input-wrapper">
-              <input type="text" id="registerSecondaryLastName" name="registerSecondaryLastName" th:value="${parent.getSecondaryLastName()}"/>
-              <label for="registerSecondaryLastName">Last Name </label>
+              <input type="text" id="registerParentSecondaryLastName" name="registerParentSecondaryLastName" th:value="${parent.getSecondaryLastName()}"/>
+              <label id="parentSecondaryLastNameLabel" for="registerParentSecondaryLastName">Last Name </label>
             </div>
             <div class="input-wrapper">
-              <input type="email" id="registerSecondaryEmail" name="registerSecondaryEmail" th:value="${parent.getSecondaryEmail()}"/>
-              <label for="registerSecondaryEmail">Email </label>
+              <input type="email" id="registerParentSecondaryEmail" name="registerParentSecondaryEmail" th:value="${parent.getSecondaryEmail()}"/>
+              <label id="parentSecondaryEmailLabel" for="registerParentSecondaryEmail">Email </label>
             </div>
           </div>
           <aside class="border-seperation"></aside>
 
           <legend>Student Registration</legend>
           <div class="input-wrapper">
-            <input type="text"  name="studentFirstName"  required="required"/>
-            <label>First Name* </label>
+            <input type="text" id="registerStudentPrimaryFirstName" name="registerStudentPrimaryFirstName"  required="required"/>
+            <label id="studentPrimaryFirstNameLabel" for="registerStudentPrimaryFirstName">First Name* </label>
           </div>
           <div class="input-wrapper">
-            <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName" th:value="${parent.getPrimaryLastName()}" required="required" />
-            <label>Last Name* </label>
+            <input type="text" id="registerStudentPrimaryLastName" name="registerStudentPrimaryLastName" required="required" />
+            <label id="studentPrimaryLastNameLabel" for="registerStudentPrimaryLastName">Last Name* </label>
           </div>
           <div class="input-wrapper">
-            <input type="text"  name="studentSchool" required="required"/>
-            <label>School* </label>
+            <input type="text" id="registerStudentPrimarySchool" name="registerStudentPrimarySchool" required="required"/>
+            <label id="studentPrimarySchoolLabel" for="registerStudentPrimarySchool">School* </label>
           </div>
           <div class="input-wrapper student-notes">
-            <input type="text" name="studentNotes" />
-            <label>Notes </label>
+            <input type="text" id="registerStudentPrimaryNotes" name="registerStudentPrimaryNotes" />
+            <label id="studentPrimaryNotesLabel" for="registerStudentPrimaryNotes">Notes</label>
           </div>
           <aside class="border-seperation"></aside>
 
           <div class="addContact">Add Another Student <span class="plus">+</span></div>
           <div class="contactInfo">
             <div class="input-wrapper">
-              <input type="text" />
-              <label>First Name </label>
+              <input type="text" id="registerStudentSecondaryFirstName" name="registerStudentSecondaryFirstName" required="required"/>
+              <label id="studentSecondaryFirstNameLabel" for="registerStudentSecondaryFirstName">First Name </label>
             </div>
             <div class="input-wrapper">
-              <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName"  />
-              <label>Last Name </label>
+              <input type="text" id="registerStudentSecondaryLastName" name="registerStudentSecondaryLastName" required="required"/>
+              <label id="studentSecondaryLastNameLabel" for="registerStudentSecondaryLastName">Last Name </label>
             </div>
             <div class="input-wrapper">
-              <input type="text"/>
-              <label>School </label>
+              <input type="text" id="registerStudentSecondarySchool" name="registerStudentSecondarySchool" required="required"/>
+              <label id="studentSecondarySchoolLabel" for="registerStudentSecondarySchool">School </label>
             </div>
             <div class="input-wrapper student-notes">
-              <input type="text" name="studentNotes" />
-              <label>Notes </label>
+              <input type="text" id="registerStudentSecondaryNotes" name="registerStudentSecondaryNotes"  />
+              <label id="studentSecondaryNotesLabel" for="registerStudentSecondaryNotes">Notes </label>
             </div>
 
             <!-- 3rd Student -->
@@ -138,20 +147,20 @@
             <div class="addContact thirdStudent">Add Another Student <span class="plus">+</span></div>
             <div class="contactInfo">
               <div class="input-wrapper">
-                <input type="text"/>
-                <label>First Name </label>
+                <input type="text" id="registerStudentTertiaryFirstName" name="registerStudentTertiaryFirstName" required="required"/>
+                <label id="studentTertiaryFirstNameLabel" for="registerStudentTertiaryFirstName">First Name </label>
               </div>
               <div class="input-wrapper">
-                <input type="text" id="registerPrimaryLastName" name="registerPrimaryLastName"/>
-                <label>Last Name </label>
+                <input type="text" id="registerStudentTertiaryLastName" name="registerStudentTertiaryLastName" required="required"/>
+                <label id="studentTertiaryLastNameLabel" for="registerStudentTertiaryLastName">Last Name </label>
               </div>
               <div class="input-wrapper">
-                <input type="text" name="studentNotes" />
-                <label>School </label>
+                <input type="text" id="registerStudentTertiarySchool" name="registerStudentTertiarySchool" required="required"/>
+                <label id="studentTertiarySchoolLabel" for="registerStudentTertiarySchool">School </label>
               </div>
               <div class="input-wrapper student-notes">
-                <input type="text"/>
-                <label>Notes </label>
+                <input type="text" id="registerStudentTertiaryNotes" name="registerStudentTertiaryNotes"/>
+                <label id="studentTertiaryNotesLabel" for="registerStudentTertiaryNotes">Notes </label>
               </div>
             </div>
           </div>
