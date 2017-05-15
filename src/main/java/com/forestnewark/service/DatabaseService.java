@@ -347,5 +347,9 @@ public class DatabaseService {
         messageRepository.save(new Message(templateName,templateBody));
 
     }
+
+    public List<Message> getAllTemplates() {
+        return messageRepository.findAll();
+    }
 }
 

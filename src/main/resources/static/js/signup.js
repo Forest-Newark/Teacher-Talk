@@ -22,15 +22,18 @@ $(document).ready(function(){
     var loginEmailValue= inputSelector.find("input[name='loginEmail']").val();
     var passwordValue= inputSelector.find("input[name='loginPassword']").val();
 
-    if(loginEmailValue.length > 0){
-        $('#loginEmail').css({'border': '1px solid #00b074'});
-        $('#emailLabel').css({
-            'color':'#00b074',
-            'transform': 'translateY(-27px)'
-        });
-    }
 
-    if(passwordValue.length >0){
+        if(loginEmailValue !== ""){
+            $('#loginEmail').css({'border': '1px solid #00b074'});
+            $('#emailLabel').css({
+                'color':'#00b074',
+                'transform': 'translateY(-27px)'
+            });
+        }
+
+
+
+    if(passwordValue !== ""){
         $('#loginPassword').css({'border': '1px solid #00b074'});
         $('#passwordLabel').css({
             'color':'#00b074',
@@ -74,7 +77,7 @@ $(document).ready(function(){
     var teacherSubjectAreaValue= inputSelector.find("input[name='registerSubjectArea']").val();
 
     //firstName
-    if(teacherFirstNameValue.length > 0){
+    if(teacherFirstNameValue !== ""){
         $('#registerFirstName').css({'border': '1px solid #00b074'});
         $('#firstNameLabel').css({
             'color':'#00b074',
@@ -82,7 +85,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherLastNameValue.length >0){
+    if(teacherLastNameValue !== ""){
         $('#registerLastName').css({'border': '1px solid #00b074'});
         $('#lastNameLabel').css({
             'color':'#00b074',
@@ -90,7 +93,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherEmailValue.length >0){
+    if(teacherEmailValue !== ""){
         $('#registerEmail').css({'border': '1px solid #00b074'});
         $('#emailLabel').css({
             'color':'#00b074',
@@ -98,7 +101,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherPasswordValue.length >0){
+    if(teacherPasswordValue !== ""){
         $('#registerPassword').css({'border': '1px solid #00b074'});
         $('#passwordLabel').css({
             'color':'#00b074',
@@ -106,7 +109,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherPhoneNumberValue.length >0){
+    if(teacherPhoneNumberValue !== ""){
         $('#registerPhoneNumber').css({'border': '1px solid #00b074'});
         $('#phoneNumberLabel').css({
             'color':'#00b074',
@@ -114,7 +117,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherSchoolNameValue.length >0){
+    if(teacherSchoolNameValue !== ""){
         $('#registerSchoolName').css({'border': '1px solid #00b074'});
         $('#schoolNameLabel').css({
             'color':'#00b074',
@@ -122,7 +125,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherSubjectAreaValue.length >0){
+    if(teacherSubjectAreaValue !== ""){
         $('#registerSubjectArea').css({'border': '1px solid #00b074'});
         $('#subjectAreaLabel').css({
             'color':'#00b074',
@@ -178,7 +181,7 @@ $(document).ready(function() {
 
 
 
-    if (parentPrimaryFirstNameValue.length > 0) {
+    if (parentPrimaryFirstNameValue !== "") {
         $('#registerParentPrimaryFirstName').css({'border': '1px solid #00b074'});
         $('#parentPrimaryFirstNameLabel').css({
             'color': '#00b074',
@@ -186,7 +189,7 @@ $(document).ready(function() {
         });
     }
 
-    if (parentPrimaryLastNameValue.length > 0) {
+    if (parentPrimaryLastNameValue !== "") {
         $('#registerParentPrimaryLastName').css({'border': '1px solid #00b074'});
         $('#parentPrimaryLastNameLabel').css({
             'color': '#00b074',
@@ -194,7 +197,7 @@ $(document).ready(function() {
         });
     }
 
-    if (parentPrimaryEmailValue.length > 0) {
+    if (parentPrimaryEmailValue !== "") {
         $('#registerParentPrimaryEmail').css({'border': '1px solid #00b074'});
         $('#parentPrimaryEmailLabel').css({
             'color': '#00b074',
@@ -202,7 +205,7 @@ $(document).ready(function() {
         });
     }
 
-    if (parentPrimaryPasswordValue.length > 0) {
+    if (parentPrimaryPasswordValue !== "") {
         $('#registerPassword').css({'border': '1px solid #00b074'});
         $('#parentPasswordLabel').css({
             'color': '#00b074',
@@ -210,7 +213,7 @@ $(document).ready(function() {
         });
     }
 
-    if (parentPrimaryPhoneNumberValue.length > 0) {
+    if (parentPrimaryPhoneNumberValue !== "") {
         $('#registerPhoneNumber').css({'border': '1px solid #00b074'});
         $('#parentPhoneNumberLabel').css({
             'color': '#00b074',
@@ -218,7 +221,7 @@ $(document).ready(function() {
         });
     }
 
-    if (parentSecondaryFirstNameValue.length > 0) {
+    if (parentSecondaryFirstNameValue !== "") {
         $('#registerParentSecondaryFirstName').css({'border': '1px solid #00b074'});
         $('#parentSecondaryFirstNameLabel').css({
             'color': '#00b074',
@@ -226,7 +229,7 @@ $(document).ready(function() {
         });
     }
 
-    if (parentSecondaryLastNameValue.length > 0) {
+    if (parentSecondaryLastNameValue !== "") {
         $('#registerParentSecondaryLastName').css({'border': '1px solid #00b074'});
         $('#parentSecondaryLastNameLabel').css({
             'color': '#00b074',
@@ -234,7 +237,7 @@ $(document).ready(function() {
         });
     }
 
-    if (parentSecondaryEmailValue.length > 0) {
+    if (parentSecondaryEmailValue !== "") {
         $('#registerParentSecondaryEmail').css({'border': '1px solid #00b074'});
         $('#parentSecondaryEmailLabel').css({
             'color': '#00b074',
@@ -242,7 +245,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentPrimaryFirstNameValue.length > 0) {
+    if (studentPrimaryFirstNameValue !== "") {
         $('#registerStudentPrimaryFirstName').css({'border': '1px solid #00b074'});
         $('#studentPrimaryFirstNameLabel').css({
             'color': '#00b074',
@@ -250,7 +253,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentPrimaryLastNameValue.length > 0) {
+    if (studentPrimaryLastNameValue !== "") {
         $('#registerStudentPrimaryLastName').css({'border': '1px solid #00b074'});
         $('#studentPrimaryLastNameLabel').css({
             'color': '#00b074',
@@ -258,7 +261,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentPrimarySchoolValue.length > 0) {
+    if (studentPrimarySchoolValue !== "") {
         $('#registerStudentPrimarySchool').css({'border': '1px solid #00b074'});
         $('#studentPrimarySchoolLabel').css({
             'color': '#00b074',
@@ -266,7 +269,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentPrimaryNotesValue.length > 0) {
+    if (studentPrimaryNotesValue !== "") {
         $('#registerStudentPrimaryNotes').css({'border': '1px solid #00b074'});
         $('#studentPrimaryNotesLabel').css({
             'color': '#00b074',
@@ -274,7 +277,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentSecondaryFirstNameValue.length > 0) {
+    if (studentSecondaryFirstNameValue !== "") {
         $('#registerStudentSecondaryFirstName').css({'border': '1px solid #00b074'});
         $('#studentSecondaryFirstNameLabel').css({
             'color': '#00b074',
@@ -282,7 +285,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentSecondaryLastNameValue.length > 0) {
+    if (studentSecondaryLastNameValue  !== "") {
         $('#registerStudentSecondaryLastName').css({'border': '1px solid #00b074'});
         $('#studentSecondaryLastNameLabel').css({
             'color': '#00b074',
@@ -290,7 +293,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentSecondarySchoolValue.length > 0) {
+    if (studentSecondarySchoolValue  !== "") {
         $('#registerStudentSecondarySchool').css({'border': '1px solid #00b074'});
         $('#studentSecondarySchoolLabel').css({
             'color': '#00b074',
@@ -298,7 +301,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentSecondaryNotesValue.length > 0) {
+    if (studentSecondaryNotesValue !== "") {
         $('#registerStudentSecondaryNotes').css({'border': '1px solid #00b074'});
         $('#studentSecondaryNotesLabel').css({
             'color': '#00b074',
@@ -306,7 +309,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentTertiaryFirstNameValue.length > 0) {
+    if (studentTertiaryFirstNameValue !== "") {
         $('#registerStudentTertiaryFirstName').css({'border': '1px solid #00b074'});
         $('#studentTertiaryFirstNameLabel').css({
             'color': '#00b074',
@@ -314,7 +317,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentTertiaryLastNameValue.length > 0) {
+    if (studentTertiaryLastNameValue !== "") {
         $('#registerStudentTertiaryLastName').css({'border': '1px solid #00b074'});
         $('#studentTertiaryLastNameLabel').css({
             'color': '#00b074',
@@ -322,7 +325,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentTertiarySchoolValue.length > 0) {
+    if (studentTertiarySchoolValue !== "") {
         $('#registerStudentTertiarySchool').css({'border': '1px solid #00b074'});
         $('#studentTertiarySchoolLabel').css({
             'color': '#00b074',
@@ -330,7 +333,7 @@ $(document).ready(function() {
         });
     }
 
-    if (studentTertiaryNotesValue.length > 0) {
+    if (studentTertiaryNotesValue !== "") {
         $('#registerStudentTertiaryNotes').css({'border': '1px solid #00b074'});
         $('#studentTertiaryNotesLabel').css({
             'color': '#00b074',

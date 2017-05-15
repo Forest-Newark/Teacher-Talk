@@ -1,5 +1,6 @@
 package com.forestnewark.controller;
 
+import com.forestnewark.bean.Message;
 import com.forestnewark.bean.Parent;
 import com.forestnewark.bean.Student;
 import com.forestnewark.bean.Teacher;
@@ -69,6 +70,11 @@ public class TeaherTalkRestController {
         ds.saveMessage(templateName,templateBody);
     }
 
+    @GetMapping("/getAllMessageTemplates")
+    public List<Message> getAllTemplates(){
+
+        return ds.getAllTemplates();
+    }
 
 
 

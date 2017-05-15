@@ -1,11 +1,14 @@
 /**
  * Created by forestnewark on 5/1/17.
  */
+var selectTemplate = $("#messageSelect");
+
 
 $(document).ready(function() {
 
 
     var inputSelector = $('.input-wrapper');
+
 
 
     var searchField = inputSelector.find("input[name='students']");
@@ -76,11 +79,6 @@ $(document).ready(function() {
 
     searchField.easyAutocomplete(options);
 
-});
-
-
-
-$(document).ready(function(){
     $("#studentNameArea").on("click", ".deletebutton", function(){
 
         var controlNumber =$(this).attr('data-countId');
@@ -90,19 +88,36 @@ $(document).ready(function(){
         $("#studentId_"+controlNumber).remove();
 
     });
-});
 
-$(document).ready(function() {
+    updateTemplates();
 
-    var message = $("#messageSelect").find(':selected').data('message');
+    var message = selectTemplate.find(':selected').data('message');
     $('#messageTextArea').val(message);
 
 });
 
 
-$("#messageSelect").change(function () {
+selectTemplate.change(function () {
 
     var message = $(this).find(':selected').data('message');
     $('#messageTextArea').val(message);
 
 });
+
+
+function updateTemplates() {
+
+    var templateItems;
+    $.ajax({
+        type: 'get',
+        url: '/getAllMessageTemplates',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);
+            for(var i = 0; i < data.length;i++){
+                templateItems = templateItems + '<option value="'+data[i].messageName +'" data-message="'+data[i].englishMessage+'"> '+ data[i].messageName + '</option>';
+            }
+            selectTemplate.append(templateItems);
+        }
+    });
+}
