@@ -15,6 +15,8 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.profile').click(function(){
 
+    $(this).find('i').toggleClass('fa-angle-down fa-angle-up');
+
     if(!$('#updateProfile').is(':visible'))
       $('.profile').css('background','#fff');
 
@@ -28,6 +30,8 @@ $(document).ready(function(){
 // Add Student
 $(document).ready(function(){
   $('.student').click(function(){
+
+    $(this).find('i').toggleClass('fa-angle-down fa-angle-up');
 
     if(!$('#addStudent').is(':visible')){
       $('.student').css('background','#fff');
@@ -48,6 +52,9 @@ $(document).ready(function(){
 // Add Template
 $(document).ready(function(){
   $('.template').click(function(){
+
+    $(this).find('i').toggleClass('fa-angle-down fa-angle-up');
+    
     if(!$('#addTemplate').is(':visible'))
       $('.template').css('background','#fff')
     $('#addTemplate').slideToggle(function(){

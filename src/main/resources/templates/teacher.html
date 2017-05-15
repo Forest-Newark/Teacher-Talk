@@ -54,7 +54,7 @@
             <div class="mobile-toggle">Menu</div>
             <ul class="menu">
 
-                <li class="student"><a href="#addStudent">Add Student</a></li>
+                <li class="student"><a href="#addStudent">Add Student &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                 <div id="addStudent">
                     <form action="javascript:void(0);" method="post">
                         <fieldset>
@@ -88,7 +88,7 @@
                     </form>
                 </div>
 
-                <li class="template"><a href="#addTemplate">Add Template</a></li>
+                <li class="template"><a href="#addTemplate">Add Template  &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                 <div id="addTemplate">
                     <form action="javascript:void(0);" method="post">
                     <fieldset>
@@ -102,9 +102,7 @@
                   </form>
                 </div>
 
-                <li class="history"><a href="messageLog.html" th:href="@{/messageLog}" target="_blank">History Log</a></li>
-
-                <li class="profile"><a href="#updateProfile">Profile</a></li>
+                <li class="profile"><a href="#updateProfile">Profile  &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
                 <div id="updateProfile">
                     <form action="javascript:void(0);" method="post">
                         <fieldset>
@@ -147,6 +145,9 @@
                         <button id="teacherUpdateInfoButton" type="submit" class="update">Update</button>
                     </form>
                 </div>
+
+                <li class="history"><a href="messageLog.html" th:href="@{/messageLog}" target="_blank">History Log</a></li>
+
             </ul>
         </nav>
     </header>
