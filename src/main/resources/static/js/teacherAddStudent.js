@@ -2,7 +2,7 @@
  * Created by forestnewark on 5/10/17.
  */
 
-$('#teacherSubmitStudentButton').click(function(){
+$('#teacherSubmitStudentButton').click(function () {
     var studentFirstName = $('#registerFirstNameStudent').val();
     var studentLastName = $('#registerLastNameStudent').val();
     var parentFirstName = $('#registerFirstNameParent').val();
@@ -14,7 +14,7 @@ $('#teacherSubmitStudentButton').click(function(){
     formData.append('studentFirstName', studentFirstName);
     formData.append('studentLastName', studentLastName);
     formData.append('parentFirstName', parentFirstName);
-    formData.append('parentLastName',parentLastName);
+    formData.append('parentLastName', parentLastName);
     formData.append('parentEmail', parentEmail);
 
     $.ajax({
@@ -26,25 +26,28 @@ $('#teacherSubmitStudentButton').click(function(){
         data: formData,
         success: function (data) {
             alertify.success("Successfully added student: " + studentFirstName);
-            $('#addStudent').slideToggle(function() {
-              if(!$('#addStudent').is(':visible')){
-                $('.student').css('background','#faf0a1');
-                $('a').css({'-webkit-box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)', '-moz-box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)', 'box-shadow' : '0 2px 3px rgba(0, 0, 0, 0.1)'});
-                });
-              } else {
-                $('.student a').css({'-webkit-box-shadow' : 'none', '-moz-box-shadow' : 'none', 'box-shadow' : 'none'});
-              }
+            $('#addStudent').slideToggle(function () {
+                if (!$('#addStudent').is(':visible')) {
+                    $('.student').css('background', '#faf0a1');
+                    $('a').css({
+                        '-webkit-box-shadow': '0 2px 3px rgba(0, 0, 0, 0.1)',
+                        '-moz-box-shadow': '0 2px 3px rgba(0, 0, 0, 0.1)',
+                        'box-shadow': '0 2px 3px rgba(0, 0, 0, 0.1)'
+                    });
+                }
+                else {
+                    $('.student a').css({
+                        '-webkit-box-shadow': 'none',
+                        '-moz-box-shadow': 'none',
+                        'box-shadow': 'none'
+                    });
+                }
 
-              $('#registerFirstNameStudent').val("");
-              $('#registerLastNameStudent').val("");
-              $('#registerFirstNameParent').val("");
-              $('#registerLastNameParent').val("");
-              $('#registerParentEmail').val("");
-              // Remove green border
-              // $('input').css({
-              //   'color':'#333',
-              //   'transform': 'translateY(-10px)'
-
+                $('#registerFirstNameStudent').val("");
+                $('#registerLastNameStudent').val("");
+                $('#registerFirstNameParent').val("");
+                $('#registerLastNameParent').val("");
+                $('#registerParentEmail').val("");
 
 
             });
