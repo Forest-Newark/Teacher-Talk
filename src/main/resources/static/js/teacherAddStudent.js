@@ -41,9 +41,9 @@ $('#teacherSubmitStudentButton').click(function(){
               $('#registerLastNameParent').val("");
               $('#registerParentEmail').val("");
               // Remove green border
-              $('input').css({
-                'color':'#333',
-                'transform': 'translateY(-10px)'
+              // $('input').css({
+              //   'color':'#333',
+              //   'transform': 'translateY(-10px)'
 
 
 
