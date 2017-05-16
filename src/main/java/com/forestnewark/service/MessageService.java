@@ -74,10 +74,9 @@ public class MessageService {
             message.setText(this.messageBuilder(studentId,messageName,currentUserEmail,messageText)); // Body Text
 
             Transport.send(message);
-            System.out.println("Messag Sent");
 
             Student student = ds.getStudentById(studentId);
-            Log newLog = new Log(student.getStudentFirstName() + " " + student.getStudentLastName(),null,student.getParent().getPrimaryFirstName() + " " + student.getParent().getPrimaryLastName(),messageName,"");
+            Log newLog = new Log(student.getStudentFirstName() + " " + student.getStudentLastName(),null,student.getParent().getPrimaryFirstName() + " " + student.getParent().getPrimaryLastName(),messageName,ds.getTeacherByEmail(currentUserEmail).getFirstName() +" "+ ds.getTeacherByEmail(currentUserEmail).getLastName());
             ds.saveNewLog(newLog);
 
 

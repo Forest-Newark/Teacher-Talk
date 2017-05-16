@@ -326,9 +326,9 @@ public class TeacherTalkController {
         }
 
         //if value is Notes then we want to order Alphabetically by notes
-        if (value.equals("notes")) {
+        if (value.equals("sentBy")) {
             System.out.println("order by notes");
-            model.addAttribute("messages", ds.getAllLogOrderByNotes());
+            model.addAttribute("messages", ds.getAllLogOrderBySentBy());
         }
 
         // if value is date then order alphabetically by date

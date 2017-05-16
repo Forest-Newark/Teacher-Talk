@@ -297,8 +297,8 @@ public class DatabaseService {
      *
      * @return list of log items
      */
-    public List<Log> getAllLogOrderByNotes() {
-        return messageLogRepository.findAllByOrderByNotes();
+    public List<Log> getAllLogOrderBySentBy() {
+        return messageLogRepository.findAllByOrderBySentBy();
     }
 
 
@@ -319,7 +319,7 @@ public class DatabaseService {
 
     public List<Log> messageLogSearch(String search){
 
-        return messageLogRepository.findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrNotesIgnoreCaseContaining(search,search,search,search);
+        return messageLogRepository.findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrSentByIgnoreCaseContaining(search,search,search,search);
     }
 
     public void saveNewLog(Log log){

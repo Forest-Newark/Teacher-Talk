@@ -58,9 +58,6 @@ $(document).ready(function() {
 
                 $("#studentNameArea").append(input).append(deleteButtonTest);
 
-
-                // $("#studentNameArea").append(input).append("<a class='deletebutton' id='studentNameButton_"+ idCount + "' data-countId='"+idCount+"'><span><i class='fa fa-times' aria-hidden='true'></i></span></a>");
-
                 var hiddenInput = document.createElement("input");
                 hiddenInput.setAttribute("id","studentId_" + idCount);
                 hiddenInput.setAttribute("type","hidden");
