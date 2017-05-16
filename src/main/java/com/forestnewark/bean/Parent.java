@@ -12,7 +12,7 @@ import javax.persistence.Id;
 
 
 @Entity
-@Proxy(lazy=false)
+@Proxy(lazy = false)
 public class Parent {
     //@ID is setting the primary key which is private int id.
     //@Generated Value is telling JPA that it should automatically generate the key for this entity(private int id
@@ -36,6 +36,16 @@ public class Parent {
     public Parent() {
     }
 
+    public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber) {
+        this.primaryFirstName = primaryFirstName;
+        this.secondaryFirstName = secondaryFirstName;
+        this.primaryLastName = primaryLastName;
+        this.secondaryLastName = secondaryLastName;
+        this.primaryEmail = primaryEmail;
+        this.secondaryEmail = secondaryEmail;
+        this.password = password;
+        this.phoneNumber = phoneNumber;
+    }
 
     public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber, String preferredContactMethod, String preferredLanguage) {
         this.primaryFirstName = primaryFirstName;
