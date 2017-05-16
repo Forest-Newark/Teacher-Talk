@@ -63,8 +63,9 @@ nav {
   font-weight: 700;
 }
 
-// Header Toggle Field Inputs
-#updateProfile, #addStudent, #addTemplate {
+// Header Toggle Menu Drop Downs
+
+.menu-drop {
   display:none;
   background: #fff;
   text-align: center;
@@ -74,6 +75,12 @@ nav {
     margin: 10px auto;
   }
 }
+
+.menu-section a:focus {
+  background: #fff;
+}
+
+// Syling for template
 
 #addTemplate {
   form {
@@ -93,9 +100,4 @@ nav {
     padding: 5px;
     border-color: $accent;
   }
-}
-
-.history, .student {
-  position: relative;
-  z-index: 100;
 }
