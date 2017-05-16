@@ -25,12 +25,12 @@ header {
 
 .mobile-toggle {
   display: none;
-  // padding: 10px 0;
   text-align: center;
   font-size: 1.25rem;
   font-weight: 700;
   cursor: pointer;
 }
+
 
 nav {
 
@@ -44,14 +44,14 @@ nav {
         cursor: pointer;
         color: #333;
         text-decoration: none;
-        // margin: 10px 2px;
         padding: 25px 15px;
-        transition: background .5s;
+        transition: all .5s;
         -webkit-box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
         -moz-box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
         box-shadow:0 2px 3px rgba(0, 0, 0, 0.1);
       }
-      a:hover, a:focus {
+      a:hover, .hovered {
+        // transition: all .5s;
         background: #fff;
       }
     }
@@ -63,8 +63,9 @@ nav {
   font-weight: 700;
 }
 
-// Header Toggle Field Inputs
-#updateProfile, #addStudent, #addTemplate {
+// Header Toggle Menu Drop Downs
+
+.menu-drop {
   display:none;
   background: #fff;
   text-align: center;
@@ -74,6 +75,8 @@ nav {
     margin: 10px auto;
   }
 }
+
+// Syling for template
 
 #addTemplate {
   form {
@@ -93,9 +96,4 @@ nav {
     padding: 5px;
     border-color: $accent;
   }
-}
-
-.history, .student {
-  position: relative;
-  z-index: 100;
 }

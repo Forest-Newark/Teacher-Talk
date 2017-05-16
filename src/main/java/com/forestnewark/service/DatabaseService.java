@@ -305,15 +305,6 @@ public class DatabaseService {
     public List<Log> getAllLogOrderByCreated() {
 
             return messageLogRepository.findAllByOrderByCreated();
-
-//    /**
-//     * Get Log Item Order By Date
-//     *
-//     * @return list of log items
-//     */
-//    //TODO: This method is not working
-//    public List<Log> getAllLogOrderByLocalDate() {
-//        return messageLogRepository.findAllByOrderByLocalDate();
     }
 
 

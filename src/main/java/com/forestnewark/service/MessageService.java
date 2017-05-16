@@ -139,8 +139,6 @@ public class MessageService {
                     "http://localhost:8080/resetPassword?userId="+userId+"&email="+email);
 
 
-
-
             Transport.send(message);
 
             System.out.println("Message Sent!"); //Confirmation Method - Not necessary
