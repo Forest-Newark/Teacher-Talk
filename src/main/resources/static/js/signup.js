@@ -106,7 +106,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherPhoneNumberValue !== ""){
+    if(teacherPhoneNumberValue.length > 0){
         $('#registerPhoneNumber').css({'border': '1px solid #00b074'});
         $('#phoneNumberLabel').css({
             'color':'#00b074',
