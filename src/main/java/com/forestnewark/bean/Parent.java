@@ -36,16 +36,16 @@ public class Parent {
     public Parent() {
     }
 
-    public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber) {
-        this.primaryFirstName = primaryFirstName;
-        this.secondaryFirstName = secondaryFirstName;
-        this.primaryLastName = primaryLastName;
-        this.secondaryLastName = secondaryLastName;
-        this.primaryEmail = primaryEmail;
-        this.secondaryEmail = secondaryEmail;
-        this.password = password;
-        this.phoneNumber = phoneNumber;
-    }
+//    public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber) {
+//        this.primaryFirstName = primaryFirstName;
+//        this.secondaryFirstName = secondaryFirstName;
+//        this.primaryLastName = primaryLastName;
+//        this.secondaryLastName = secondaryLastName;
+//        this.primaryEmail = primaryEmail;
+//        this.secondaryEmail = secondaryEmail;
+//        this.password = password;
+//        this.phoneNumber = phoneNumber;
+//    }
 
     public Parent(String primaryFirstName, String secondaryFirstName, String primaryLastName, String secondaryLastName, String primaryEmail, String secondaryEmail, String password, String phoneNumber, String preferredContactMethod, String preferredLanguage) {
         this.primaryFirstName = primaryFirstName;
@@ -148,4 +148,6 @@ public class Parent {
     public void setPreferredLanguage(String preferredLanguage) {
         this.preferredLanguage = preferredLanguage;
     }
+
+
 }

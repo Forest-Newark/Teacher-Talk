@@ -105,4 +105,19 @@ public class Student{
     public void setParent(Parent parent) {
         this.parent = parent;
     }
+
+
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", studentFirstName='" + studentFirstName + '\'' +
+                ", studentLastName='" + studentLastName + '\'' +
+                ", grade='" + grade + '\'' +
+                ", school='" + school + '\'' +
+                ", notes='" + notes + '\'' +
+                ", parent=" + parent +
+                '}';
+    }
 }

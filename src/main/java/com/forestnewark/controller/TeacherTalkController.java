@@ -129,6 +129,7 @@ public class TeacherTalkController {
                                      @RequestParam("registerParentPrimaryEmail") String registerParentPrimaryEmail,
                                      @RequestParam("registerPassword") String registerPassword,
                                      @RequestParam("registerPhoneNumber") String registerPhoneNumber,
+                                     @RequestParam("preferredLanguage") String preferredLanguage,
                                      @RequestParam("registerParentSecondaryEmail") String registerParentSecondaryEmail,
                                      @RequestParam("registerParentSecondaryLastName") String registerParentSecondaryLastName,
                                      @RequestParam("registerParentPrimaryLastName") String registerParentPrimaryLastName,
@@ -146,29 +147,33 @@ public class TeacherTalkController {
                                      @RequestParam("registerStudentTertiaryLastName") String registerStudentTertiaryLastName,
                                      @RequestParam("registerStudentTertiarySchool") String registerStudentTertiarySchool,
                                      @RequestParam("registerStudentTertiaryNotes") String registerStudentTertiaryNotes,
-                                     @RequestParam("studentTertiaryGrade") String studentTertiaryGrade
+                                     @RequestParam("studentTertiaryGrade") String studentTertiaryGrade,
+                                     @RequestParam("preferredContactMethod") String preferredContactMethod
+
                                      ) {
         //Build Parent Object (new parent(firstname, lastname, etc);
 //        Parent parent = new Parent(firstname, lastname, email, password, phonenumber);
-        Parent parent = new Parent(parentPrimaryFirstname, parentSecondaryFirstName, registerParentPrimaryEmail,
-                registerPassword, registerPhoneNumber, registerParentSecondaryEmail, registerParentSecondaryLastName, registerParentPrimaryLastName);
+        Parent parent = new Parent(parentPrimaryFirstname, parentSecondaryFirstName, registerParentPrimaryLastName, registerParentSecondaryLastName,
+                registerParentPrimaryEmail,registerParentSecondaryEmail,
+                registerPassword, registerPhoneNumber, preferredContactMethod, preferredLanguage );
 
 
 
          //Class variableName = new Class (constructor)
 
 
-        //variableName.setName('jfjafj"
+
 
         Student studentPrimary = new Student (registerStudentPrimaryFirstName, registerStudentPrimaryLastName, registerStudentPrimarySchool,
-                registerStudentPrimaryNotes, studentPrimaryGrade);
+                registerStudentPrimaryNotes, studentPrimaryGrade,parent);
 
         Student studentSecondary = new Student(registerStudentSecondaryFirstName, registerStudentSecondaryLastName, registerStudentSecondarySchool,
-                 registerStudentSecondaryNotes, studentSecondaryGrade);
+                 registerStudentSecondaryNotes, studentSecondaryGrade,parent);
 
         Student studentTertiary = new Student( registerStudentTertiaryFirstName, registerStudentTertiaryLastName, registerStudentTertiarySchool,
-                registerStudentTertiaryNotes, studentTertiaryGrade);
+                registerStudentTertiaryNotes, studentTertiaryGrade,parent);
 
+        System.out.println(studentPrimary);
 
         //Build (first Student) Object (new Student(firstname,Lastname,grade,parent)
         //if(registerSecondaryStudentFirstName != "" then build second student Object)
@@ -179,11 +184,10 @@ public class TeacherTalkController {
         ds.saveStudent(studentPrimary);
         ds.saveStudent(studentSecondary);
         ds.saveStudent(studentTertiary);
-
-        if (())
+//
+////        if (())
         return new RedirectView("/");
     }
-
 
 
     /**
