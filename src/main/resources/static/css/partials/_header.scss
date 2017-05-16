@@ -58,6 +58,11 @@ nav {
   }
 }
 
+// Carot Style
+.fa-angle-down, .fa-angle-up {
+  font-weight: 700;
+}
+
 // Header Toggle Field Inputs
 #updateProfile, #addStudent, #addTemplate {
   display:none;

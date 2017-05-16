@@ -55,12 +55,12 @@ btn.onclick = function() {
 $(document).ready(function(){
   $('.tourclick').click(function(){
 
-    $(".message i").removeClass("fa-eye-slash");
-    $(".message i").addClass("fa-eye");
+    $(".message > i").removeClass("fa-eye-slash");
+    $(".message > i").addClass("fa-eye");
 
 
     if(!$('#startTour').is(':visible'))
-      $(".message i").addClass("fa-eye-slash");
+      $(".message > i").addClass("fa-eye-slash");
       $('.fa-eye').css('color', 'transparent');
       $('.fa-eye-slash').css('color', '#fff');
 
@@ -72,8 +72,8 @@ $(document).ready(function(){
   // Hide tour once it's started
   $('#startTour').click(function(){
     $('#startTour').slideToggle();
-    $(".message i").removeClass("fa-eye-slash");
-    $(".message i").addClass("fa-eye");
+    $(".message > i").removeClass("fa-eye-slash");
+    $(".message > i").addClass("fa-eye");
     $('.fa-eye').css('color', 'black');
   });
 });

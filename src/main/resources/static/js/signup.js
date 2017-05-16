@@ -22,16 +22,13 @@ $(document).ready(function(){
     var loginEmailValue= inputSelector.find("input[name='loginEmail']").val();
     var passwordValue= inputSelector.find("input[name='loginPassword']").val();
 
-
-        if(loginEmailValue !== ""){
+        if(loginEmailValue.length > 0){
             $('#loginEmail').css({'border': '1px solid #00b074'});
             $('#emailLabel').css({
                 'color':'#00b074',
                 'transform': 'translateY(-27px)'
             });
         }
-
-
 
     if(passwordValue !== ""){
         $('#loginPassword').css({'border': '1px solid #00b074'});

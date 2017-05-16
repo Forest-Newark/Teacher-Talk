@@ -37,6 +37,9 @@ nav ul li {
   nav ul li a:hover, nav ul li a:focus {
     background: #fff; }
 
+.fa-angle-down, .fa-angle-up {
+  font-weight: 700; }
+
 #updateProfile, #addStudent, #addTemplate {
   display: none;
   background: #fff;
