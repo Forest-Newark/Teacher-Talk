@@ -31,6 +31,16 @@ public class Student{
     public Student() {
     }
 //constructors for the student class
+
+
+    public Student(String studentFirstName, String studentLastName, String grade, String school, String notes) {
+        this.studentFirstName = studentFirstName;
+        this.studentLastName = studentLastName;
+        this.grade = grade;
+        this.school = school;
+        this.notes = notes;
+    }
+
     public Student(String studentFirstName, String studentLastName, String grade, String school, String notes, Parent parent) {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;

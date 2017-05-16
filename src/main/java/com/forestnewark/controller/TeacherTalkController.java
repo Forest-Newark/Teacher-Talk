@@ -118,24 +118,72 @@ public class TeacherTalkController {
      */
     @RequestMapping("/parentSignUp")
     public String parentSignUp(ModelMap model) {
-        model.addAttribute("parent",new Parent());
+        model.addAttribute("parent", new Parent());
         return "parent";
     }
 
     @RequestMapping("/parentSignUpSubmit")
     //Request EVERY PARAMETER
-    public RedirectView parentSignUp(@RequestParam("registerParentPrimaryFirstName") String parentPrimaryFirstname) {
+    public RedirectView parentSignUp(@RequestParam("registerParentPrimaryFirstName") String parentPrimaryFirstname,
+                                     @RequestParam("registerParentSecondaryFirstName") String parentSecondaryFirstName,
+                                     @RequestParam("registerParentPrimaryEmail") String registerParentPrimaryEmail,
+                                     @RequestParam("registerPassword") String registerPassword,
+                                     @RequestParam("registerPhoneNumber") String registerPhoneNumber,
+                                     @RequestParam("registerParentSecondaryEmail") String registerParentSecondaryEmail,
+                                     @RequestParam("registerParentSecondaryLastName") String registerParentSecondaryLastName,
+                                     @RequestParam("registerParentPrimaryLastName") String registerParentPrimaryLastName,
+                                     @RequestParam("registerStudentPrimaryFirstName") String registerStudentPrimaryFirstName,
+                                     @RequestParam("registerStudentPrimaryLastName") String registerStudentPrimaryLastName,
+                                     @RequestParam("registerStudentPrimarySchool") String registerStudentPrimarySchool,
+                                     @RequestParam("registerStudentPrimaryNotes") String registerStudentPrimaryNotes,
+                                     @RequestParam("studentPrimaryGrade") String studentPrimaryGrade,
+                                     @RequestParam("registerStudentSecondaryFirstName") String registerStudentSecondaryFirstName,
+                                     @RequestParam("registerStudentSecondaryLastName") String registerStudentSecondaryLastName,
+                                     @RequestParam("registerStudentSecondarySchool") String registerStudentSecondarySchool,
+                                     @RequestParam("registerStudentSecondaryNotes") String registerStudentSecondaryNotes,
+                                     @RequestParam("studentSecondaryGrade") String studentSecondaryGrade,
+                                     @RequestParam("registerStudentTertiaryFirstName") String registerStudentTertiaryFirstName,
+                                     @RequestParam("registerStudentTertiaryLastName") String registerStudentTertiaryLastName,
+                                     @RequestParam("registerStudentTertiarySchool") String registerStudentTertiarySchool,
+                                     @RequestParam("registerStudentTertiaryNotes") String registerStudentTertiaryNotes,
+                                     @RequestParam("studentTertiaryGrade") String studentTertiaryGrade
+                                     ) {
         //Build Parent Object (new parent(firstname, lastname, etc);
+//        Parent parent = new Parent(firstname, lastname, email, password, phonenumber);
+        Parent parent = new Parent(parentPrimaryFirstname, parentSecondaryFirstName, registerParentPrimaryEmail,
+                registerPassword, registerPhoneNumber, registerParentSecondaryEmail, registerParentSecondaryLastName, registerParentPrimaryLastName);
+
+
+
+         //Class variableName = new Class (constructor)
+
+
+        //variableName.setName('jfjafj"
+
+        Student studentPrimary = new Student (registerStudentPrimaryFirstName, registerStudentPrimaryLastName, registerStudentPrimarySchool,
+                registerStudentPrimaryNotes, studentPrimaryGrade);
+
+        Student studentSecondary = new Student(registerStudentSecondaryFirstName, registerStudentSecondaryLastName, registerStudentSecondarySchool,
+                 registerStudentSecondaryNotes, studentSecondaryGrade);
+
+        Student studentTertiary = new Student( registerStudentTertiaryFirstName, registerStudentTertiaryLastName, registerStudentTertiarySchool,
+                registerStudentTertiaryNotes, studentTertiaryGrade);
+
+
         //Build (first Student) Object (new Student(firstname,Lastname,grade,parent)
         //if(registerSecondaryStudentFirstName != "" then build second student Object)
         //Same with third student
         //Print out OR save to database if your feeling good
 
-        System.out.println(parentPrimaryFirstname);
+        ds.saveParent(parent);
+        ds.saveStudent(studentPrimary);
+        ds.saveStudent(studentSecondary);
+        ds.saveStudent(studentTertiary);
 
 
         return new RedirectView("/");
     }
+
 
 
     /**
@@ -157,6 +205,7 @@ public class TeacherTalkController {
 
     /**
      * Request for teacher sign up page
+     *
      * @return teacher sign up page
      */
     @RequestMapping("/teacherSignUp")
@@ -166,13 +215,14 @@ public class TeacherTalkController {
     }
 
     @RequestMapping("/teacherSignUpSubmit")
-    public RedirectView teacherSignUpSubmit(Teacher teacher){
+    public RedirectView teacherSignUpSubmit(Teacher teacher) {
         ds.saveTeacher(teacher);
-      return new RedirectView("/");
+        return new RedirectView("/");
     }
 
     /**
      * Rest for teacher page
+     *
      * @param model to set model attributes
      * @return teacher page
      */
@@ -190,7 +240,8 @@ public class TeacherTalkController {
 
     /**
      * Requst to end messages from teacher page
-     * @param model to set model attributes
+     *
+     * @param model  to set model attributes
      * @param params Map that contains all parameters
      * @return redirect view back to teacher page
      */
@@ -226,6 +277,7 @@ public class TeacherTalkController {
 
     /**
      * Routes to forgotPasswordForm.html when user clicks "Forgot Password"
+     *
      * @return forgotpassword page
      */
     @RequestMapping("/forgotPassword")
@@ -235,7 +287,8 @@ public class TeacherTalkController {
 
 
     /**
-     *  Sends a password reset link in an email and then redirects to homepage
+     * Sends a password reset link in an email and then redirects to homepage
+     *
      * @param email to send reset email to
      * @return login page
      */
@@ -261,9 +314,10 @@ public class TeacherTalkController {
 
     /**
      * Request for password reset page
-     * @param model to add model attributes
+     *
+     * @param model  to add model attributes
      * @param userId of the user resetting password
-     * @param email of the user resetting password
+     * @param email  of the user resetting password
      * @return changePasswordForm page
      */
     @RequestMapping("/resetPassword")
@@ -277,9 +331,10 @@ public class TeacherTalkController {
 
     /**
      * Changes password for the appropriate user
+     *
      * @param password new password to be set
-     * @param userId of the user resetting password
-     * @param email of the user resetting password
+     * @param userId   of the user resetting password
+     * @param email    of the user resetting password
      * @return login page
      */
     @RequestMapping("/passwordResetSubmit")
@@ -296,8 +351,9 @@ public class TeacherTalkController {
 
     /**
      * Retrieves message log and allows user to search and sort by the fields
-     * @param model to add model attributes
-     * @param value of the display order
+     *
+     * @param model  to add model attributes
+     * @param value  of the display order
      * @param search parameter
      * @return
      */
