@@ -46,19 +46,14 @@ public class TranslationService {
 
             String test = source.substring(start,end);
             if(test.substring(test.length()-1,test.length()).equals(" ")){
-//                System.out.println(test.substring(test.length()-2,test.length()-1));
                 sb.append(test.substring(test.length()-2,test.length()-1));
             }
             if(!test.substring(test.length()-1,test.length()).equals(" ")) {
-//                System.out.println(test.substring(test.length()-1,test.length()));
                 sb.append(test.substring(test.length()-1,test.length()));
             }
 
         }
-
-
         return sb.toString();
-
     }
 
 

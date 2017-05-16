@@ -1,6 +1,7 @@
 package com.forestnewark.controller;
 
 import com.forestnewark.bean.Parent;
+import com.forestnewark.bean.Student;
 import com.forestnewark.bean.Teacher;
 import com.forestnewark.service.CookieService;
 import com.forestnewark.service.DatabaseService;
@@ -117,12 +118,25 @@ public class TeacherTalkController {
      */
     @RequestMapping("/parentSignUp")
     public String parentSignUp(ModelMap model) {
-
-        Parent parent = new Parent();
-        model.addAttribute("parent", parent);
-
+        model.addAttribute("parent",new Parent());
         return "parent";
     }
+
+    @RequestMapping("/parentSignUpSubmit")
+    //Request EVERY PARAMETER
+    public RedirectView parentSignUp(@RequestParam("registerParentPrimaryFirstName") String parentPrimaryFirstname) {
+        //Build Parent Object (new parent(firstname, lastname, etc);
+        //Build (first Student) Object (new Student(firstname,Lastname,grade,parent)
+        //if(registerSecondaryStudentFirstName != "" then build second student Object)
+        //Same with third student
+        //Print out OR save to database if your feeling good
+
+        System.out.println(parentPrimaryFirstname);
+
+
+        return new RedirectView("/");
+    }
+
 
     /**
      * Request for parent page after logging in
