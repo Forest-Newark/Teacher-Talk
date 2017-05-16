@@ -414,7 +414,9 @@ select {
     padding: 10px; }
 
 .radio-inputs input {
-  margin-left: 10px; }
+  margin-left: 15px; }
+.radio-inputs h6 {
+  padding-left: 5px; }
 
 aside {
   margin: 15px 0;
