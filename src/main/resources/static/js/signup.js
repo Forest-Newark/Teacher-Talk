@@ -74,7 +74,7 @@ $(document).ready(function(){
     var teacherSubjectAreaValue= inputSelector.find("input[name='registerSubjectArea']").val();
 
     //firstName
-    if(teacherFirstNameValue !== ""){
+    if(teacherFirstNameValue.length > 0){
         $('#registerFirstName').css({'border': '1px solid #00b074'});
         $('#firstNameLabel').css({
             'color':'#00b074',
@@ -98,13 +98,15 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherPasswordValue !== ""){
+    if(teacherPasswordValue.length > 0){
         $('#registerPassword').css({'border': '1px solid #00b074'});
         $('#passwordLabel').css({
             'color':'#00b074',
             'transform': 'translateY(-27px)'
         });
     }
+
+
 
     if(teacherPhoneNumberValue.length > 0){
         $('#registerPhoneNumber').css({'border': '1px solid #00b074'});
