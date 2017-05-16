@@ -54,8 +54,8 @@
             <div class="mobile-toggle">Menu</div>
             <ul class="menu">
 
-                <li class="student"><a href="#addStudent">Add Student &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <div id="addStudent">
+                <li class="menu-section"><a href="#">Add Student &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                <div class="menu-drop">
                     <form action="javascript:void(0);" method="post">
                         <fieldset>
 
@@ -69,7 +69,15 @@
                                 <label for="registerLastNameStudent">Student Last Name </label>
                             </div>
 
-                            <!-- <legend>Parent Contact</legend> -->
+                            <div class="input-wrapper">
+                                <select>
+                                    <option value="">Select Grade</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                </select>
+                            </div>
+
                             <div class="input-wrapper">
                                 <input type="text" id="registerFirstNameParent" name="parentFirstName"/>
                                 <label for="registerFirstNameParent">Parent First Name </label>
@@ -88,8 +96,8 @@
                     </form>
                 </div>
 
-                <li class="template"><a href="#addTemplate">Add Template  &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <div id="addTemplate">
+                <li class="menu-section"><a href="#">Add Template  &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                <div id="addTemplate" class="menu-drop">
                     <form action="javascript:void(0);" method="post">
                     <fieldset>
                       <div class="input-wrapper">
@@ -102,8 +110,8 @@
                   </form>
                 </div>
 
-                <li class="profile"><a href="#updateProfile">Profile  &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
-                <div id="updateProfile">
+                <li class="menu-section"><a href="#">Profile  &nbsp;<i class="fa fa-angle-down" aria-hidden="true"></i></a></li>
+                <div class="menu-drop">
                     <form action="javascript:void(0);" method="post">
                         <fieldset>
                             <div class="input-wrapper">

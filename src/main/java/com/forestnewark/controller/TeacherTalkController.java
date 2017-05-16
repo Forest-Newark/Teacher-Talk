@@ -180,7 +180,7 @@ public class TeacherTalkController {
         ds.saveStudent(studentSecondary);
         ds.saveStudent(studentTertiary);
 
-
+        if (())
         return new RedirectView("/");
     }
 
