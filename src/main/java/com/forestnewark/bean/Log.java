@@ -35,19 +35,19 @@ public class Log {
     private String studentName;
     private String parentName;
     private String templateSent;
-    private String notes;
+    private String sentBy;
 
 
 
     public Log() {
     }
 
-    public Log(String studentName, Date created, String parentName, String templateSent, String notes) {
+    public Log(String studentName, Date created, String parentName, String templateSent, String sentBy) {
 
         this.studentName = studentName;
         this.parentName = parentName;
         this.templateSent = templateSent;
-        this.notes = notes;
+        this.sentBy = sentBy;
         this.created = created;
 
     }
@@ -84,12 +84,12 @@ public class Log {
         this.templateSent = templateSent;
     }
 
-    public String getNotes() {
-        return notes;
+    public String getSentBy() {
+        return sentBy;
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setSentBy(String notes) {
+        this.sentBy = sentBy;
     }
 
     public Date getCreated() {

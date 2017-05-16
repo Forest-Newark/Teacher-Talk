@@ -297,29 +297,20 @@ public class DatabaseService {
      *
      * @return list of log items
      */
-    public List<Log> getAllLogOrderByNotes() {
-        return messageLogRepository.findAllByOrderByNotes();
+    public List<Log> getAllLogOrderBySentBy() {
+        return messageLogRepository.findAllByOrderBySentBy();
     }
 
 
     public List<Log> getAllLogOrderByCreated() {
 
             return messageLogRepository.findAllByOrderByCreated();
-
-//    /**
-//     * Get Log Item Order By Date
-//     *
-//     * @return list of log items
-//     */
-//    //TODO: This method is not working
-//    public List<Log> getAllLogOrderByLocalDate() {
-//        return messageLogRepository.findAllByOrderByLocalDate();
     }
 
 
     public List<Log> messageLogSearch(String search){
 
-        return messageLogRepository.findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrNotesIgnoreCaseContaining(search,search,search,search);
+        return messageLogRepository.findByStudentNameIgnoreCaseContainingOrParentNameIgnoreCaseContainingOrTemplateSentIgnoreCaseContainingOrSentByIgnoreCaseContaining(search,search,search,search);
     }
 
     public void saveNewLog(Log log){

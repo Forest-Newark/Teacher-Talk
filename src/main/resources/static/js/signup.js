@@ -22,13 +22,13 @@ $(document).ready(function(){
     var loginEmailValue= inputSelector.find("input[name='loginEmail']").val();
     var passwordValue= inputSelector.find("input[name='loginPassword']").val();
 
-        if(loginEmailValue.length > 0){
-            $('#loginEmail').css({'border': '1px solid #00b074'});
-            $('#emailLabel').css({
-                'color':'#00b074',
-                'transform': 'translateY(-27px)'
-            });
-        }
+    if(loginEmailValue.length > 0){
+        $('#loginEmail').css({'border': '1px solid #00b074'});
+        $('#emailLabel').css({
+            'color':'#00b074',
+            'transform': 'translateY(-27px)'
+        });
+    }
 
     if(passwordValue !== ""){
         $('#loginPassword').css({'border': '1px solid #00b074'});
@@ -90,7 +90,7 @@ $(document).ready(function(){
         });
     }
 
-    if(teacherEmailValue !== ""){
+    if(teacherEmailValue.length > 0){
         $('#registerEmail').css({'border': '1px solid #00b074'});
         $('#emailLabel').css({
             'color':'#00b074',
@@ -150,7 +150,7 @@ $(document).ready(function() {
     var parentPrimaryPasswordValue = inputSelector.find("input[name='registerPassword']").val();
     var parentPrimaryPhoneNumberValue = inputSelector.find("input[name='registerPhoneNumber']").val();
 
-    // Add Additional Parents
+    // Add Additional Parent
     var parentSecondaryFirstNameValue = inputSelector.find("input[name='registerParentSecondaryFirstName']").val();
     var parentSecondaryLastNameValue = inputSelector.find("input[name='registerParentSecondaryLastName']").val();
     var parentSecondaryEmailValue = inputSelector.find("input[name='registerParentSecondaryEmail']").val();

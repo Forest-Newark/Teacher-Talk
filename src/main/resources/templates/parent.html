@@ -2,196 +2,246 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Teacher Talk</title>
-    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}" href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
+    <link th:href="@{https://fonts.googleapis.com/css?family=Signika:300,400,700}"
+          href="https://fonts.googleapis.com/css?family=Signika:300,400,700" rel="stylesheet"/>
     <link rel="stylesheet" th:href="@{/css/normalize.css}" href="../static/css/normalize.css"/>
     <link rel="stylesheet" th:href="@{/css/style.css}" href="../static/css/style.css"/>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="../static/images/favicon/apple-icon-57x57.png" th:href="@{/images/favicon/apple-icon-57x57.png}" />
-    <link rel="apple-touch-icon" sizes="60x60" href="../static/images/favicon/apple-icon-60x60.png" th:href="@{/images/favicon/apple-icon-60x60.png}" />
-    <link rel="apple-touch-icon" sizes="72x72" href="../static/images/favicon/apple-icon-72x72.png" th:href="@{/images/favicon/apple-icon-72x72.png}" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../static/images/favicon/apple-icon-76x76.png" th:href="@{/images/favicon/apple-icon-76x76.png}" />
-    <link rel="apple-touch-icon" sizes="114x114" href="../static/images/favicon/apple-icon-114x114.png" th:href="@{/images/favicon/apple-icon-114x114.png}"/>
-    <link rel="apple-touch-icon" sizes="120x120" href="../static/images/favicon/apple-icon-120x120.png" th:href="@{/images/favicon/apple-icon-120x120.png}" />
-    <link rel="apple-touch-icon" sizes="144x144" href="../static/images/favicon/apple-icon-144x144.png" th:href="@{/images/favicon/apple-icon-144x144.png}"/>
-    <link rel="apple-touch-icon" sizes="152x152" href="../static/images/favicon/apple-icon-152x152.png" th:href="@{/images/favicon/apple-icon-152x152.png}"/>
-    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon/apple-icon-180x180.png" th:href="@{/images/favicon/apple-icon-180x180.png}"/>
-    <link rel="icon" type="image/png" sizes="192x192"  href="../static/images/favicon/android-icon-192x192.png" th:href="@{/images/favicon/android-icon-192x192.png}"/>
-    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png" th:href="@{/images/favicon/favicon-32x32.png}"/>
-    <link rel="icon" type="image/png" sizes="96x96" href="../static/images/favicon/favicon-96x96.png" th:href="@{/images/favicon/favicon-96x96.png}"/>
-    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png" th:href="@{/images/favicon/favicon-16x16.png}"/>
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
-    <meta name="theme-color" content="#ffffff" />
+    <link rel="apple-touch-icon" sizes="57x57" href="../static/images/favicon/apple-icon-57x57.png"
+          th:href="@{/images/favicon/apple-icon-57x57.png}"/>
+    <link rel="apple-touch-icon" sizes="60x60" href="../static/images/favicon/apple-icon-60x60.png"
+          th:href="@{/images/favicon/apple-icon-60x60.png}"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../static/images/favicon/apple-icon-72x72.png"
+          th:href="@{/images/favicon/apple-icon-72x72.png}"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="../static/images/favicon/apple-icon-76x76.png"
+          th:href="@{/images/favicon/apple-icon-76x76.png}"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../static/images/favicon/apple-icon-114x114.png"
+          th:href="@{/images/favicon/apple-icon-114x114.png}"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="../static/images/favicon/apple-icon-120x120.png"
+          th:href="@{/images/favicon/apple-icon-120x120.png}"/>
+    <link rel="apple-touch-icon" sizes="144x144" href="../static/images/favicon/apple-icon-144x144.png"
+          th:href="@{/images/favicon/apple-icon-144x144.png}"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="../static/images/favicon/apple-icon-152x152.png"
+          th:href="@{/images/favicon/apple-icon-152x152.png}"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/images/favicon/apple-icon-180x180.png"
+          th:href="@{/images/favicon/apple-icon-180x180.png}"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="../static/images/favicon/android-icon-192x192.png"
+          th:href="@{/images/favicon/android-icon-192x192.png}"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="../static/images/favicon/favicon-32x32.png"
+          th:href="@{/images/favicon/favicon-32x32.png}"/>
+    <link rel="icon" type="image/png" sizes="96x96" href="../static/images/favicon/favicon-96x96.png"
+          th:href="@{/images/favicon/favicon-96x96.png}"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="../static/images/favicon/favicon-16x16.png"
+          th:href="@{/images/favicon/favicon-16x16.png}"/>
+    <link rel="manifest" href="/manifest.json"/>
+    <meta name="msapplication-TileColor" content="#ffffff"/>
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png"/>
+    <meta name="theme-color" content="#ffffff"/>
     <!-- End of Favicon Content  -->
 
 </head>
 
 <body id="signUpPage">
 
-  <section>
+<section>
     <div class="faq">
 
-      <div class="faq-content">
-        <div class="question">
-          <h3>What is Teacher Talk?</h3>
-          <p>Teacher Talk is an app developed to empower education by streamlining the process of communication between teachers and parents. </p>
+        <div class="faq-content">
+            <div class="question">
+                <h3>What is Teacher Talk?</h3>
+                <p>Teacher Talk is an app developed to empower education by streamlining the process of communication
+                    between teachers and parents. </p>
+            </div>
+            <div class="question">
+                <h3>Why is this useful?</h3>
+                <p>Teacher Talk allows parents to manage their contact information all in one place. No more filling out
+                    form after form from different teachers with the same information. By maintaining your best contact
+                    information here, all of your student's teachers have the ability to quickly and easily to keep you
+                    informed on your student's progress in the classroom. </p>
+            </div>
+            <div class="question">
+                <h3>How does it work?</h3>
+                <p>Once you have signed up for an account and entered your contact information your job is done. All
+                    teachers will have access to your best contact information to help keep you informed about your
+                    students. Make sure to log back and update your information whenever it changes.</p>
+            </div>
         </div>
-        <div class="question">
-          <h3>Why is this useful?</h3>
-          <p>Teacher Talk allows parents to manage their contact information all in one place. No more filling out form after form from different teachers with the same information. By maintaining your best contact information here, all of your student's teachers have the ability to quickly and easily to keep you informed on your student's progress in the classroom.  </p>
-        </div>
-        <div class="question">
-          <h3>How does it work?</h3>
-          <p>Once you have signed up for an account and entered your contact information your job is done. All teachers will have access to your best contact information to help keep you informed about your students. Make sure to log back and update your information whenever it changes.</p>
-        </div>
-      </div>
     </div>
 
 
     <!--<div class="input-wrapper">-->
-      <!--<input type="email" id="registerEmail" name="registerEmail"-->
-             <!--th:value="${teacher.getEmail()}"/>-->
-      <!--<label id="emailLabel" for="registerEmail">Email </label>-->
+    <!--<input type="email" id="registerEmail" name="registerEmail"-->
+    <!--th:value="${teacher.getEmail()}"/>-->
+    <!--<label id="emailLabel" for="registerEmail">Email </label>-->
     <!--</div>-->
     <!---->
 
 
     <div class="signup">
-      <form id="signUpForm" action="parent.html" th:action="@{/parentSignUp}">
-        <fieldset>
-          <legend>Parent Registration</legend>
+        <form id="signUpForm" action="parent.html" th:action="@{/parentSignUpSubmit}" method="post">
+            <fieldset>
+                <legend>Parent Registration</legend>
 
-          <div class="input-wrapper">
-            <input type="text" id="registerParentPrimaryFirstName" name="registerParentPrimaryFirstName" th:value="${parent.getPrimaryFirstName()}" required="required"/>
-            <label id="parentPrimaryFirstNameLabel" for="registerParentPrimaryFirstName">First Name*</label>
-          </div>
-          <div class="input-wrapper">
-            <input type="text" id="registerParentPrimaryLastName" name="registerParentPrimaryLastName" th:value="${parent.getPrimaryLastName()}" required="required" />
-            <label id="parentPrimaryLastNameLabel" for="registerParentPrimaryLastName">Last Name* </label>
-          </div>
-          <div class="input-wrapper">
-            <input type="email" id="registerParentPrimaryEmail" name="registerParentPrimaryEmail" th:value="${parent.getPrimaryEmail()}" required="required"/>
-            <label id="parentPrimaryEmailLabel" for="registerParentPrimaryEmail"> Email* </label>
-          </div>
-          <div class="input-wrapper">
-            <input type="password" id="registerPassword" name="registerPassword" th:value="${parent.getPassword()}" required="required"/>
-            <label id="parentPasswordLabel" for="registerPassword">Password* </label>
-          </div>
-          <div class="input-wrapper">
-            <input type="number" id="registerPhoneNumber" name="registerPhoneNumber" th:value="${parent.getPhoneNumber()}" required="required"/>
-            <label id="parentPhoneNumberLabel" for="registerPhoneNumber"> Phone Number* </label>
-          </div>
-          <aside class="border-seperation"></aside>
+                <div class="input-wrapper">
+                    <input type="text" id="registerParentPrimaryFirstName" name="registerParentPrimaryFirstName"
+                           th:value="${parent.getPrimaryFirstName()}" required="required"/>
+                    <label id="parentPrimaryFirstNameLabel" for="registerParentPrimaryFirstName">First Name*</label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="registerParentPrimaryLastName" name="registerParentPrimaryLastName"
+                           th:value="${parent.getPrimaryLastName()}" required="required"/>
+                    <label id="parentPrimaryLastNameLabel" for="registerParentPrimaryLastName">Last Name* </label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="email" id="registerParentPrimaryEmail" name="registerParentPrimaryEmail"
+                           th:value="${parent.getPrimaryEmail()}" required="required"/>
+                    <label id="parentPrimaryEmailLabel" for="registerParentPrimaryEmail"> Email* </label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="password" id="registerPassword" name="registerPassword"
+                           th:value="${parent.getPassword()}" required="required"/>
+                    <label id="parentPasswordLabel" for="registerPassword">Password* </label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="number" id="registerPhoneNumber" name="registerPhoneNumber"
+                           th:value="${parent.getPhoneNumber()}" required="required"/>
+                    <label id="parentPhoneNumberLabel" for="registerPhoneNumber"> Phone Number* </label>
+                </div>
+                <aside class="border-seperation"></aside>
 
-          <div class="addContact">Add Another Parent <span class="plus">+</span></div>
-          <div class="contactInfo">
-            <div class="input-wrapper">
-              <input type="text" id="registerParentSecondaryFirstName" name="registerParentSecondaryFirstName" th:value="${parent.getSecondaryFirstName()}"/>
-              <label id="parentSecondaryFirstNameLabel" for="registerParentSecondaryFirstName">First Name </label>
-            </div>
-            <div class="input-wrapper">
-              <input type="text" id="registerParentSecondaryLastName" name="registerParentSecondaryLastName" th:value="${parent.getSecondaryLastName()}"/>
-              <label id="parentSecondaryLastNameLabel" for="registerParentSecondaryLastName">Last Name </label>
-            </div>
-            <div class="input-wrapper">
-              <input type="email" id="registerParentSecondaryEmail" name="registerParentSecondaryEmail" th:value="${parent.getSecondaryEmail()}"/>
-              <label id="parentSecondaryEmailLabel" for="registerParentSecondaryEmail">Email </label>
-            </div>
-          </div>
-          <aside class="border-seperation"></aside>
+                <div class="addContact">Add Another Parent <span class="plus">+</span></div>
+                <div class="contactInfo">
+                    <div class="input-wrapper">
+                        <input type="text" id="registerParentSecondaryFirstName" name="registerParentSecondaryFirstName"
+                               th:value="${parent.getSecondaryFirstName()}"/>
+                        <label id="parentSecondaryFirstNameLabel" for="registerParentSecondaryFirstName">First
+                            Name </label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="registerParentSecondaryLastName" name="registerParentSecondaryLastName"
+                               th:value="${parent.getSecondaryLastName()}"/>
+                        <label id="parentSecondaryLastNameLabel" for="registerParentSecondaryLastName">Last
+                            Name </label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="email" id="registerParentSecondaryEmail" name="registerParentSecondaryEmail"
+                               th:value="${parent.getSecondaryEmail()}"/>
+                        <label id="parentSecondaryEmailLabel" for="registerParentSecondaryEmail">Email </label>
+                    </div>
+                </div>
+                <aside class="border-seperation"></aside>
 
-          <legend>Student Registration</legend>
-          <div class="input-wrapper">
-            <input type="text" id="registerStudentPrimaryFirstName" name="registerStudentPrimaryFirstName"  required="required"/>
-            <label id="studentPrimaryFirstNameLabel" for="registerStudentPrimaryFirstName">First Name* </label>
-          </div>
-          <div class="input-wrapper">
-            <input type="text" id="registerStudentPrimaryLastName" name="registerStudentPrimaryLastName" required="required" />
-            <label id="studentPrimaryLastNameLabel" for="registerStudentPrimaryLastName">Last Name* </label>
-          </div>
-          <div class="input-wrapper">
-            <input type="text" id="registerStudentPrimarySchool" name="registerStudentPrimarySchool" required="required"/>
-            <label id="studentPrimarySchoolLabel" for="registerStudentPrimarySchool">School* </label>
-          </div>
-          <div class="input-wrapper student-notes">
-            <input type="text" id="registerStudentPrimaryNotes" name="registerStudentPrimaryNotes" />
-            <label id="studentPrimaryNotesLabel" for="registerStudentPrimaryNotes">Notes</label>
-          </div>
-          <aside class="border-seperation"></aside>
+                <legend>Student Registration</legend>
+                <div class="input-wrapper">
+                    <input type="text" id="registerStudentPrimaryFirstName" name="registerStudentPrimaryFirstName"
+                           required="required"/>
+                    <label id="studentPrimaryFirstNameLabel" for="registerStudentPrimaryFirstName">First Name* </label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="registerStudentPrimaryLastName" name="registerStudentPrimaryLastName"
+                           required="required"/>
+                    <label id="studentPrimaryLastNameLabel" for="registerStudentPrimaryLastName">Last Name* </label>
+                </div>
+                <div class="input-wrapper">
+                    <input type="text" id="registerStudentPrimarySchool" name="registerStudentPrimarySchool"
+                           required="required"/>
+                    <label id="studentPrimarySchoolLabel" for="registerStudentPrimarySchool">School* </label>
+                </div>
+                <div class="input-wrapper">
+                    <select>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                    </select>
+                </div>
+                <div class="input-wrapper student-notes">
+                    <input type="text" id="registerStudentPrimaryNotes" name="registerStudentPrimaryNotes"/>
+                    <label id="studentPrimaryNotesLabel" for="registerStudentPrimaryNotes">Notes</label>
+                </div>
+                <aside class="border-seperation"></aside>
 
-          <div class="addContact"><span class="addStudent2">Add Another Student</span> <span class="plus">+</span></div>
-          <div class="contactInfo">
-            <div class="input-wrapper">
-              <input type="text" id="registerStudentSecondaryFirstName" name="registerStudentSecondaryFirstName" required="required"/>
-              <label id="studentSecondaryFirstNameLabel" for="registerStudentSecondaryFirstName">First Name </label>
-            </div>
-            <div class="input-wrapper">
-              <input type="text" id="registerStudentSecondaryLastName" name="registerStudentSecondaryLastName" required="required"/>
-              <label id="studentSecondaryLastNameLabel" for="registerStudentSecondaryLastName">Last Name </label>
-            </div>
-            <div class="input-wrapper">
-              <input type="text" id="registerStudentSecondarySchool" name="registerStudentSecondarySchool" required="required"/>
-              <label id="studentSecondarySchoolLabel" for="registerStudentSecondarySchool">School </label>
-            </div>
-            <div class="input-wrapper student-notes">
-              <input type="text" id="registerStudentSecondaryNotes" name="registerStudentSecondaryNotes"  />
-              <label id="studentSecondaryNotesLabel" for="registerStudentSecondaryNotes">Notes </label>
-            </div>
+                <div class="addContact"><span class="addStudent2">Add Another Student</span> <span class="plus">+</span>
+                </div>
+                <div class="contactInfo">
+                    <div class="input-wrapper">
+                        <input type="text" id="registerStudentSecondaryFirstName"
+                               name="registerStudentSecondaryFirstName"/>
+                        <label id="studentSecondaryFirstNameLabel" for="registerStudentSecondaryFirstName">First
+                            Name </label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="registerStudentSecondaryLastName" name="registerStudentSecondaryLastName"
+                              />
+                        <label id="studentSecondaryLastNameLabel" for="registerStudentSecondaryLastName">Last
+                            Name </label>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="text" id="registerStudentSecondarySchool" name="registerStudentSecondarySchool"
+                               />
+                        <label id="studentSecondarySchoolLabel" for="registerStudentSecondarySchool">School </label>
+                    </div>
+                    <div class="input-wrapper student-notes">
+                        <input type="text" id="registerStudentSecondaryNotes" name="registerStudentSecondaryNotes"/>
+                        <label id="studentSecondaryNotesLabel" for="registerStudentSecondaryNotes">Notes </label>
+                    </div>
 
-            <!-- 3rd Student -->
-            <div class="border-seperation"></div>
-            <div class="addContact thirdStudent"><span class="addStudent3">Add Another Student</span> <span class="plus">+</span></div>
-            <div class="contactInfo">
-              <div class="input-wrapper">
-                <input type="text" id="registerStudentTertiaryFirstName" name="registerStudentTertiaryFirstName" required="required"/>
-                <label id="studentTertiaryFirstNameLabel" for="registerStudentTertiaryFirstName">First Name </label>
-              </div>
-              <div class="input-wrapper">
-                <input type="text" id="registerStudentTertiaryLastName" name="registerStudentTertiaryLastName" required="required"/>
-                <label id="studentTertiaryLastNameLabel" for="registerStudentTertiaryLastName">Last Name </label>
-              </div>
-              <div class="input-wrapper">
-                <input type="text" id="registerStudentTertiarySchool" name="registerStudentTertiarySchool" required="required"/>
-                <label id="studentTertiarySchoolLabel" for="registerStudentTertiarySchool">School </label>
-              </div>
-              <div class="input-wrapper student-notes">
-                <input type="text" id="registerStudentTertiaryNotes" name="registerStudentTertiaryNotes"/>
-                <label id="studentTertiaryNotesLabel" for="registerStudentTertiaryNotes">Notes </label>
-              </div>
-            </div>
-          </div>
-          <aside class="border-seperation"></aside>
+                    <!-- 3rd Student -->
+                    <div class="border-seperation"></div>
+                    <div class="addContact thirdStudent"><span class="addStudent3">Add Another Student</span> <span
+                            class="plus">+</span></div>
+                    <div class="contactInfo">
+                        <div class="input-wrapper">
+                            <input type="text" id="registerStudentTertiaryFirstName"
+                                   name="registerStudentTertiaryFirstName" />
+                            <label id="studentTertiaryFirstNameLabel" for="registerStudentTertiaryFirstName">First
+                                Name </label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" id="registerStudentTertiaryLastName"
+                                   name="registerStudentTertiaryLastName" />
+                            <label id="studentTertiaryLastNameLabel" for="registerStudentTertiaryLastName">Last
+                                Name </label>
+                        </div>
+                        <div class="input-wrapper">
+                            <input type="text" id="registerStudentTertiarySchool" name="registerStudentTertiarySchool"
+                                   />
+                            <label id="studentTertiarySchoolLabel" for="registerStudentTertiarySchool">School </label>
+                        </div>
+                        <div class="input-wrapper student-notes">
+                            <input type="text" id="registerStudentTertiaryNotes" name="registerStudentTertiaryNotes"/>
+                            <label id="studentTertiaryNotesLabel" for="registerStudentTertiaryNotes">Notes </label>
+                        </div>
+                    </div>
+                </div>
+                <aside class="border-seperation"></aside>
 
-          <legend>Preferred Contact Method</legend>
-          <select name = "preferredContactMethod">
-            <option value="">Select Method</option>
-            <option value="text" th:value="${parent.getPreferredContactMethod()}">Text</option>
-            <option value="email">Email</option>
-            <option value="both">Both</option>
-          </select>
-          <select name="">
-            <option value="">Select Phone Carrier</option>
-            <option value="AT&amp;T">AT&amp;T</option>
-            <option value="Sprint">Sprint</option>
-            <option value="T-Mobile">T-Mobile</option>
-            <option value="Verizon">Verizon</option>
-          </select>
-          <aside class="border-seperation"></aside>
-
-        </fieldset>
-        <button type="submit" class="update">Register</button>
-      </form>
-      <!-- <a href="login.html" th:href="@{/}"><button type="submit" class="update">Register</button></a> -->
+                <legend>Preferred Contact Method</legend>
+                <select name="preferredContactMethod">
+                    <option value="">Select Method</option>
+                    <option value="text" th:value="${parent.getPreferredContactMethod()}">Text</option>
+                    <option value="email">Email</option>
+                    <option value="both">Both</option>
+                </select>
+                <select name="phoneCarrier">
+                    <option value="">Select Phone Carrier</option>
+                    <option value="AT&amp;T">AT&amp;T</option>
+                    <option value="Sprint">Sprint</option>
+                    <option value="T-Mobile">T-Mobile</option>
+                    <option value="Verizon">Verizon</option>
+                </select>
+                <aside class="border-seperation"></aside>
+            </fieldset>
+            <button type="submit" class="update">Register</button>
+        </form>
     </div>
-  </section>
+</section>
 
-  <script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
-          src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
+<script th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js}"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script th:src="@{js/signup.js}" src="../static/js/signup.js"></script>
 
 </body>
 </html>
