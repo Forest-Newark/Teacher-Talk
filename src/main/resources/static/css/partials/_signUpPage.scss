@@ -117,16 +117,13 @@ select{
     border:1px solid $accent;
     padding: 10px;
   }
-  // input:invalid ~ label {
-  //   transform:translateY(-27px);
-  // }
-  // input:focus {
-  //   border-color: $primary;
-  // }
-  // input:focus ~ label {
-  //   color: $primary;
-  //   transform:translateY(-27px);
-  // }
+}
+
+// Styling Radio Buttons
+.radio-inputs {
+  input {
+    margin-left: 10px;
+  }
 }
 
 // Adding Additional Contact or Student Fields

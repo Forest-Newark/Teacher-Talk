@@ -41,7 +41,7 @@ $(document).ready(function(){
 });
 
 
-$('input').focus(function() {
+$('.input-wrapper > input').focus(function() {
     $(this).css({'border': '1px solid #00b074'});
     $(this).next().css({
         'color':'#00b074',

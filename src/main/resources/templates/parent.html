@@ -72,14 +72,6 @@
     </div>
 
 
-    <!--<div class="input-wrapper">-->
-    <!--<input type="email" id="registerEmail" name="registerEmail"-->
-    <!--th:value="${teacher.getEmail()}"/>-->
-    <!--<label id="emailLabel" for="registerEmail">Email </label>-->
-    <!--</div>-->
-    <!---->
-
-
     <div class="signup">
         <form id="signUpForm" action="parent.html" th:action="@{/parentSignUpSubmit}" method="post">
             <fieldset>
@@ -152,6 +144,7 @@
                 </div>
                 <div class="input-wrapper">
                     <select>
+                        <option value="">Select Grade</option>
                         <option>6</option>
                         <option>7</option>
                         <option>8</option>
@@ -183,6 +176,14 @@
                                />
                         <label id="studentSecondarySchoolLabel" for="registerStudentSecondarySchool">School </label>
                     </div>
+                    <div class="input-wrapper">
+                        <select>
+                            <option value="">Select Grade</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                        </select>
+                    </div>
                     <div class="input-wrapper student-notes">
                         <input type="text" id="registerStudentSecondaryNotes" name="registerStudentSecondaryNotes"/>
                         <label id="studentSecondaryNotesLabel" for="registerStudentSecondaryNotes">Notes </label>
@@ -210,6 +211,14 @@
                                    />
                             <label id="studentTertiarySchoolLabel" for="registerStudentTertiarySchool">School </label>
                         </div>
+                        <div class="input-wrapper">
+                            <select>
+                                <option value="">Select Grade</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </select>
+                        </div>
                         <div class="input-wrapper student-notes">
                             <input type="text" id="registerStudentTertiaryNotes" name="registerStudentTertiaryNotes"/>
                             <label id="studentTertiaryNotesLabel" for="registerStudentTertiaryNotes">Notes </label>
@@ -217,6 +226,16 @@
                     </div>
                 </div>
                 <aside class="border-seperation"></aside>
+
+                <legend>Preferred Language</legend>
+                <!-- <select>
+                    <option value="english">English</option>
+                    <option value="spanish">Spanish</option>
+                </select> -->
+                <div class="radio-inputs">
+                  <input type="radio" name="language" value="english" checked /><h6>English</h6>
+                  <input type="radio" name="language" value="spanish" /><h6>Spanish</h6>
+                </div>
 
                 <legend>Preferred Contact Method</legend>
                 <select name="preferredContactMethod">

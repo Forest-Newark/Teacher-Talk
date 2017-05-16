@@ -413,6 +413,9 @@ select {
     border: 1px solid #ececec;
     padding: 10px; }
 
+.radio-inputs input {
+  margin-left: 10px; }
+
 aside {
   margin: 15px 0;
   border: 3px solid #ececec; }
@@ -529,7 +532,8 @@ h5 {
 
 h6 {
   font-size: 16px;
-  font-weight: 300; }
+  font-weight: 500;
+  display: inline-block; }
 
 img {
   max-width: 100%; }
@@ -596,13 +600,13 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
   transition: background-color 5000s ease-in-out 0s; }
 
-h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, p::selection, em::selection, ul::selection, li::selection, a::selection, legend::selection, label::selection, select::selection, option::selection, button::selection, .container-title::selection, .addContact::selection, .bold::selection, img::selection {
+h1::selection, h2::selection, h3::selection, h4::selection, h5::selection, h6::selection, p::selection, em::selection, ul::selection, li::selection, a::selection, legend::selection, label::selection, select::selection, option::selection, button::selection, .container-title::selection, .addContact::selection, .secondStudent::selection, .thirdStudent::selection, .addStudent2::selection, .addStudent3::selection, .bold::selection, img::selection {
   background-color: #faf0a1; }
 
-h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, h5::-moz-selection, h6::-moz-selection, p::-moz-selection, em::-moz-selection, ul::-moz-selection, li::-moz-selection, a::-moz-selection, legend::-moz-selection, label::-moz-selection, select::-moz-selection, button::-moz-selection, .container-title::-moz-selection, option::-moz-selection, .addContact::-moz-selection, .bold::-moz-selection, img::-moz-selection {
+h1::-moz-selection, h2::-moz-selection, h3::-moz-selection, h4::-moz-selection, h5::-moz-selection, h6::-moz-selection, p::-moz-selection, em::-moz-selection, ul::-moz-selection, li::-moz-selection, a::-moz-selection, legend::-moz-selection, label::-moz-selection, select::-moz-selection, button::-moz-selection, .container-title::-moz-selection, option::-moz-selection, .addContact::-moz-selection, .secondStudent::-moz-selection, .thirdStudent::-moz-selection, .addStudent2::-moz-selection, .addStudent3::-moz-selection, .bold::-moz-selection, img::-moz-selection {
   background-color: #faf0a1; }
 
-h1::-webkit-selection, h2::-webkit-selection, h3::-webkit-selection, h4::-webkit-selection, h5::-webkit-selection, h6::-webkit-selection, p::-webkit-selection, em::-webkit-selection, ul::-webkit-selection, li::-webkit-selection, a::-webkit-selection, legend::-webkit-selection, select::-webkit-selection, option::-webkit-selection, label::-webkit-selection, button::-webkit-selection, .container-title::-webkit-selection, .bold::-webkit-selection .addContact::-webkit-selection, img::-webkit-selection {
+h1::-webkit-selection, h2::-webkit-selection, h3::-webkit-selection, h4::-webkit-selection, h5::-webkit-selection, h6::-webkit-selection, p::-webkit-selection, em::-webkit-selection, ul::-webkit-selection, li::-webkit-selection, a::-webkit-selection, legend::-webkit-selection, select::-webkit-selection, option::-webkit-selection, label::-webkit-selection, button::-webkit-selection, .container-title::-webkit-selection, .bold::-webkit-selection .addContact::-webkit-selection, .secondStudent::-webkit-selection, .thirdStudent::-webkit-selection, .addStudent2::-webkit-selection, .addStudent3::-webkit-selection, img::-webkit-selection {
   background-color: #faf0a1; }
 
 fieldset {
