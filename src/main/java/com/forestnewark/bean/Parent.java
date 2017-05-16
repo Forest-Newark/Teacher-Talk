@@ -3,6 +3,7 @@ package com.forestnewark.bean;
 import org.hibernate.annotations.Proxy;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -26,6 +27,7 @@ public class Parent {
     private String secondaryFirstName;
     private String primaryLastName;
     private String secondaryLastName;
+    @Column(name = "primay_email", unique=true)
     private String primaryEmail;
     private String secondaryEmail;
     private String password;

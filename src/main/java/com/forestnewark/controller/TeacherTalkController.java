@@ -179,13 +179,14 @@ public class TeacherTalkController {
         //if(registerSecondaryStudentFirstName != "" then build second student Object)
         //Same with third student
         //Print out OR save to database if your feeling good
+        Parent validate = ds.parentByPrimaryEmail(registerParentPrimaryEmail);
+        if(!parent.getPrimaryEmail().equals(validate)){
+            ds.saveParent(parent);
+            ds.saveStudent(studentPrimary);
+            ds.saveStudent(studentSecondary);
+            ds.saveStudent(studentTertiary);
+        }
 
-        ds.saveParent(parent);
-        ds.saveStudent(studentPrimary);
-        ds.saveStudent(studentSecondary);
-        ds.saveStudent(studentTertiary);
-//
-////        if (())
         return new RedirectView("/");
     }
 
