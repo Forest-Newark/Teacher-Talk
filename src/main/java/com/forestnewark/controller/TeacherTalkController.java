@@ -18,6 +18,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -164,16 +165,16 @@ public class TeacherTalkController {
 
 
 
-        Student studentPrimary = new Student (registerStudentPrimaryFirstName, registerStudentPrimaryLastName, registerStudentPrimarySchool,
-                registerStudentPrimaryNotes, studentPrimaryGrade,parent);
+        Student studentPrimary = new Student (registerStudentPrimaryFirstName, registerStudentPrimaryLastName, studentPrimaryGrade, registerStudentPrimarySchool,
+                registerStudentPrimaryNotes,parent);
 
-        Student studentSecondary = new Student(registerStudentSecondaryFirstName, registerStudentSecondaryLastName, registerStudentSecondarySchool,
-                 registerStudentSecondaryNotes, studentSecondaryGrade,parent);
+        Student studentSecondary = new Student(registerStudentSecondaryFirstName, registerStudentSecondaryLastName, studentSecondaryGrade, registerStudentSecondarySchool,
+                 registerStudentSecondaryNotes,parent);
 
-        Student studentTertiary = new Student( registerStudentTertiaryFirstName, registerStudentTertiaryLastName, registerStudentTertiarySchool,
-                registerStudentTertiaryNotes, studentTertiaryGrade,parent);
+        Student studentTertiary = new Student( registerStudentTertiaryFirstName, registerStudentTertiaryLastName,studentTertiaryGrade, registerStudentTertiarySchool,
+                registerStudentTertiaryNotes,parent);
 
-        System.out.println(studentPrimary);
+
 
         //Build (first Student) Object (new Student(firstname,Lastname,grade,parent)
         //if(registerSecondaryStudentFirstName != "" then build second student Object)
@@ -202,6 +203,19 @@ public class TeacherTalkController {
     public String parentLogin(ModelMap model, String rememberMe) {
 
         Parent parent = ds.parentByPrimaryEmail(model.get("currentUser").toString());
+
+        List<Student> students = ds.findStudentByParentId(parent.getId());
+
+        model.addAttribute("primaryStudent",students.get(0));
+        model.addAttribute("secondaryStudent",new Student());
+        model.addAttribute("tertiaryStudent",new Student());
+        if(students.size() >1){
+            model.addAttribute("secondaryStudent",students.get(1));
+        }
+        if(students.size() > 2){
+            model.addAttribute("tertiaryStudent",students.get(2));
+        }
+
         model.addAttribute("parent", parent);
         model.addAttribute("rememberMe", rememberMe);
 

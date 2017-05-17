@@ -342,5 +342,10 @@ public class DatabaseService {
     public List<Message> getAllTemplates() {
         return messageRepository.findAll();
     }
+
+    public List<Student> findStudentByParentId(Integer id){
+
+        return studentRepository.findAllByParentId(id);
+    }
 }
 

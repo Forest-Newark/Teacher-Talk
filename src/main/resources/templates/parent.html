@@ -128,22 +128,22 @@
 
                 <legend>Student Registration</legend>
                 <div class="input-wrapper">
-                    <input type="text" id="registerStudentPrimaryFirstName" name="registerStudentPrimaryFirstName"
+                    <input type="text" id="registerStudentPrimaryFirstName" th:value="${primaryStudent.getStudentFirstName()}" name="registerStudentPrimaryFirstName"
                            required="required"/>
                     <label id="studentPrimaryFirstNameLabel" for="registerStudentPrimaryFirstName">First Name* </label>
                 </div>
                 <div class="input-wrapper">
-                    <input type="text" id="registerStudentPrimaryLastName" name="registerStudentPrimaryLastName"
+                    <input type="text" id="registerStudentPrimaryLastName" th:value="${primaryStudent.getStudentLastName()}" name="registerStudentPrimaryLastName"
                            required="required"/>
                     <label id="studentPrimaryLastNameLabel" for="registerStudentPrimaryLastName">Last Name* </label>
                 </div>
                 <div class="input-wrapper">
-                    <input type="text" id="registerStudentPrimarySchool" name="registerStudentPrimarySchool"
+                    <input type="text" id="registerStudentPrimarySchool" th:value="${primaryStudent.getSchool()}" name="registerStudentPrimarySchool"
                            required="required"/>
                     <label id="studentPrimarySchoolLabel" for="registerStudentPrimarySchool">School* </label>
                 </div>
                 <div class="input-wrapper">
-                    <select name="studentPrimaryGrade">
+                    <select name="studentPrimaryGrade" th:value="${primaryStudent.getGrade()}">
                       <option>Select Grade</option>
                       <option value="sixth">6</option>
                       <option value="seventh">7</option>
@@ -155,7 +155,7 @@
                     </select>
                 </div>
                 <div class="input-wrapper student-notes">
-                    <input type="text" id="registerStudentPrimaryNotes" name="registerStudentPrimaryNotes"/>
+                    <input type="text" id="registerStudentPrimaryNotes" th:value="${primaryStudent.getNotes()}" name="registerStudentPrimaryNotes"/>
                     <label id="studentPrimaryNotesLabel" for="registerStudentPrimaryNotes">Notes</label>
                 </div>
                 <aside class="border-seperation"></aside>
