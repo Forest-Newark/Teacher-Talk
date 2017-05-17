@@ -10,9 +10,9 @@ INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, su
 --MESSAGE TEMPLATES
 
 -- LOG INSERT
-INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'','Suzie Johnson','Bill Johnson','Minor Discipline');
-INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'','Nathan Poling','Cole Poling','Absent');
-INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'','Elijah Ellis','Niki Ellis','Late');
-INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'','Joe Smith','John Smith','Missing Work');
-INSERT INTO log(id, created, notes, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'','Jason Bourne','Sarah Bourne','Positive Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'Forest Newark','Suzie Johnson','Bill Johnson','Minor Discipline');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'Lyndsey Mitchel','Nathan Poling','Cole Poling','Absent');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'John Doe','Elijah Ellis','Niki Ellis','Late');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'Jane Emmeth','Joe Smith','John Smith','Missing Work');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (1,CURRRENT_TIMESTAMP,'Curtis Brown','Jason Bourne','Sarah Bourne','Positive Message');
 
