@@ -2,6 +2,8 @@
 
 -- TEACHER INSERT
 INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area) VALUES (1,'forest.newark@gmail.com','forest','newark','admin','9194528196','music');
+INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area) VALUES (2,'chris.tang0913@gmail.com','chris','tang','helloworld','9194528873','photography');
+
 
 --PARENT INSERT
 
