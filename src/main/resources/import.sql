@@ -5,7 +5,6 @@ INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, su
 
 --PARENT INSERT
 
-
 --STUDENT INSERT
 
 --MESSAGE TEMPLATES
