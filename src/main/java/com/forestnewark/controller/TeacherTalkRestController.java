@@ -16,7 +16,7 @@ import java.util.List;
  */
 
 @RestController
-public class TeaherTalkRestController {
+public class TeacherTalkRestController {
 
     @Autowired
     DatabaseService ds;
