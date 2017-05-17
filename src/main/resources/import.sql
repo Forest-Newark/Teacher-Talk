@@ -30,9 +30,13 @@ INSERT INTO message(id, english_message, message_name) VALUES (6,'This message i
 -- LOG INSERT
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (1,now(),'Forest Newark','Suzie Johnson','Bill Johnson','Minor Discipline Problem Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (2,now(),'Lyndsey Mitchel','Nathan Poling','Cole Poling','Absent Message');
-INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (3,now(),'Chris Tang','Elijah Simmons','Joel Simmons','Late Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (3,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Late Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (4,now(),'Jane Emmeth','Joe Hudson','Robert Hudson','Missing Work Message');
-INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (5,now(),'Curtis Brown','Jason Bourne','Sarah Bourne','Positive Message');
-
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (5,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Minor Discipline Problem Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (6,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Missing Work Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (7,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Absent Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (8,now(),'Lyndsey Mitchel','Joe Hudson','Robert Hudson','Late Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (9,now(),'Jane Emmeth','Joe Hudson','Finn Hudson','Late Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (10,now(),'Curtis Brown','Elijah Simmons','Fionna Simmons','Positive Message');
 
 SELECT setval('hibernate_sequence',100);
