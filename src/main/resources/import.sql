@@ -7,6 +7,13 @@ INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, su
 
 
 --STUDENT INSERT
+INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (1,'6','very-hyper','DSA','Joel','Simmons',1);
+INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (2,'9','fast learner','DSA','Fionna','Simmons',1);
+INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (3,'12','loves computers','DSA','Spencer','Simmons',1);
+INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (4,'7','reads at a high level','SCS','Robert','Hudson',2);
+INSERT INTO student(id, grade, notes, school, student_first_name, student_last_name, parent_id) VALUES (5,'11','needs extra supervision','SCS','Finn','Hudson',2);
+
+
 
 --MESSAGE TEMPLATES
 INSERT INTO message(id, english_message, message_name) VALUES (1,'This message is to inform you that your student was absent from class today. While I will assist your student with the content they missed, it is their responsibility to make up any missing work. If you have any questions or concerns please feel to contact me at your earliest convenience.','Absent Message');
