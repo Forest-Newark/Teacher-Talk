@@ -30,8 +30,8 @@ INSERT INTO message(id, english_message, message_name) VALUES (6,'This message i
 -- LOG INSERT
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (1,now(),'Forest Newark','Suzie Johnson','Bill Johnson','Minor Discipline Problem Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (2,now(),'Lyndsey Mitchel','Nathan Poling','Cole Poling','Absent Message');
-INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (3,now(),'John Doe','Elijah Ellis','Niki Ellis','Late Message');
-INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (4,now(),'Jane Emmeth','Joe Smith','John Smith','Missing Work Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (3,now(),'Chris Tang','Elijah Simmons','Joel Simmons','Late Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (4,now(),'Jane Emmeth','Joe Hudson','Robert Hudson','Missing Work Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (5,now(),'Curtis Brown','Jason Bourne','Sarah Bourne','Positive Message');
 
 
