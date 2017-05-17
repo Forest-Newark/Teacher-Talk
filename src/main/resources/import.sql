@@ -35,3 +35,4 @@ INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) 
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (5,now(),'Curtis Brown','Jason Bourne','Sarah Bourne','Positive Message');
 
 
+SELECT setval('hibernate_sequence',100);
