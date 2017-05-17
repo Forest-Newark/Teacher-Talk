@@ -6,8 +6,8 @@ INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, su
 
 
 --PARENT INSERT
-INSERT INTO parent(id, password, phone_number, preferred_contact_method, preferred_language, primary_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name) VALUES (1,'3222342333','email','english','simmons@gmail.com','bob','simmons','joe@gmail.com', 'jess', 'simmons');
-INSERT INTO parent(id, password, phone_number, preferred_contact_method, preferred_language, primary_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name) VALUES (2,'2323223333','email','english','hudson@gmail.com','greg','hudson','hudson@gmail.com', 'kat', 'hudson');
+INSERT INTO parent(id, password, phone_number, preferred_contact_method, preferred_language, primay_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name) VALUES (1,'password1','3222342333','email','english','simmons@gmail.com','bob','simmons','joe@gmail.com', 'jess', 'simmons');
+INSERT INTO parent(id, password, phone_number, preferred_contact_method, preferred_language, primay_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name) VALUES (2,'password2','2323223333','email','english','hudson@gmail.com','greg','hudson','hudson@gmail.com', 'kat', 'hudson');
 
 
 --STUDENT INSERT
