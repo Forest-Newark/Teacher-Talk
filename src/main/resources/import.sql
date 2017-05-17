@@ -1,9 +1,9 @@
 
 
 -- TEACHER INSERT
-INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area) VALUES (1,'forest.newark@gmail.com','forest','newark','admin','9194528196','music');
-INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area) VALUES (2,'chris.tang0913@gmail.com','chris','tang','helloworld','9194528873','photography');
-INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area) VALUES (3,'lyndsey.r.mitchel@gmail.com','lyndsey','mitchel','TeacherTalk','9194528873','designer');
+INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area,school_name) VALUES (1,'forest.newark@gmail.com','forest','newark','admin','9194528196','Music','SCS');
+INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area,school_name) VALUES (2,'chris.tang0913@gmail.com','chris','tang','helloworld','9194528873','Photography','DSA');
+INSERT INTO teacher(id, email, first_name, last_name, password, phone_number, subject_area,school_name) VALUES (3,'lyndsey.r.mitchel@gmail.com','lyndsey','mitchel','TeacherTalk','9194528873','History','SCS');
 
 --PARENT INSERT
 INSERT INTO parent(id, password, phone_number, preferred_contact_method, preferred_language, primay_email, primary_first_name, primary_last_name, secondary_email, secondary_first_name, secondary_last_name) VALUES (1,'password1','3222342333','email','english','simmons@gmail.com','bob','simmons','joe@gmail.com', 'jess', 'simmons');

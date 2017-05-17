@@ -103,6 +103,7 @@ public class MessageService {
         sb.append("\n\n");
         sb.append("Respectfully, \n");
         sb.append(WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getFirstName()) + " " + WordUtils.capitalize(ds.getTeacherByEmail(currentUserEmail).getLastName()));
+        sb.append("\n");
         sb.append(ds.getTeacherByEmail(currentUserEmail).getSubjectArea() + " Teacher at " + ds.getTeacherByEmail(currentUserEmail).getSchoolName());
         sb.append("\nMessage Created by Teacher-Talk");
 
