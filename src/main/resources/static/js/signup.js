@@ -116,6 +116,7 @@ $(document).ready(function(){
         });
     }
 
+
     if(teacherSchoolNameValue !== ""){
         $('#registerSchoolName').css({'border': '1px solid #00b074'});
         $('#schoolNameLabel').css({

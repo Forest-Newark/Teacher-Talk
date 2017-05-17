@@ -115,7 +115,7 @@ select{
   input {
     font-family: 'Signika', sans-serif;
     font-size: .8rem;
-    border:1px solid $accent !important;
+    border:1px solid $accent;
     padding: 10px;
   }
 }

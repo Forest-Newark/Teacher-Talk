@@ -411,7 +411,7 @@ select {
   .input-wrapper input {
     font-family: 'Signika', sans-serif;
     font-size: .8rem;
-    border: 1px solid #ececec !important;
+    border: 1px solid #ececec;
     padding: 10px; }
 
 .radio-inputs input {
