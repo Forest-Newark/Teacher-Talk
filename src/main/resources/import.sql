@@ -33,10 +33,17 @@ INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) 
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (3,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Late Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (4,now(),'Jane Emmeth','Joe Hudson','Robert Hudson','Missing Work Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (5,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Minor Discipline Problem Message');
-INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (6,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Missing Work Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (6,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Late Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (7,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Absent Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (8,now(),'Lyndsey Mitchel','Joe Hudson','Robert Hudson','Late Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (9,now(),'Jane Emmeth','Joe Hudson','Finn Hudson','Late Message');
 INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (10,now(),'Curtis Brown','Elijah Simmons','Fionna Simmons','Positive Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (11,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Absent Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (12,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Late Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (13,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Missing Work Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (14,now(),'Curtis Brown','Elijah Simmons','Joel Simmons','Absent Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (15,now(),'Jane Emmeth','Joe Hudson','Finn Hudson','Missing Work Message');
+INSERT INTO log(id, created, sent_by, parent_name, student_name, template_sent) VALUES (16,now(),'Jane Emmeth','Joe Hudson','Finn Hudson','Late Message');
+
 
 SELECT setval('hibernate_sequence',100);
