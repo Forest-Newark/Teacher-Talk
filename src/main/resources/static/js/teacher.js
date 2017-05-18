@@ -94,6 +94,11 @@ $(document).ready(function() {
 });
 
 
+$('#messageSendButton').click(function () {
+    alertify.success("Successfully sent messages(s)");
+});
+
+
 selectTemplate.change(function () {
 
     var message = $(this).find(':selected').data('message');
