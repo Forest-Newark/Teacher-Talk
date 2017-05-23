@@ -120,6 +120,9 @@ public class TeacherTalkController {
     @RequestMapping("/parentSignUp")
     public String parentSignUp(ModelMap model) {
         model.addAttribute("parent", new Parent());
+        model.addAttribute("primaryStudent", new Student());
+        model.addAttribute("secondaryStudent",new Student());
+        model.addAttribute("tertiaryStudent",new Student());
         return "parent";
     }
 
