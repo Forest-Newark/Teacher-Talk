@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Created by forestnewark on 5/3/17.
- */
 
 @RestController
 public class TeacherTalkRestController {

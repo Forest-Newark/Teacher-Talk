@@ -8,9 +8,8 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 /**
- * Created by Forest Newark on 4/30/17. This class is responsible for managing
- * connections with the database and performing functions with individual
- * repositories
+ * This class is responsible for managing connections with the database and
+ * performing functions with individual repositories
  */
 @Component
 public class DatabaseService {

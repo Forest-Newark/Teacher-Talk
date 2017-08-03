@@ -19,7 +19,7 @@ import java.util.Properties;
 
 
 /**
- * Created by Forest Newark on 5/1/17. This class is responsible for generating
+ * This class is responsible for generating
  * and sending messages to the appropriate recipients
  */
 @Service

@@ -12,9 +12,13 @@ import java.util.Date;
  * Form on top of log that lets you search.
  */
 
-//creating log class for the message log for the teacher to view previous/recent messages that the teacher sent to the parents/guardians regarding the student/child
+/**
+ * creating log class for the message log for the teacher to view previous/recent messages
+ * that the teacher sent to the parents/guardians regarding the student/child
+ */
 
-//this tells JPA that the log class is a JPA entity and can be persisted to a database
+
+//this tells JPA that the log class is a JPA entity and can be persisted to a database in Hibernate
 
 @Entity
 @Proxy(lazy=false)

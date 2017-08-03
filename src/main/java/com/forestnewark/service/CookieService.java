@@ -13,7 +13,7 @@ public class CookieService {
 
 
     /**
-     * Create and saves a cookie which contain user email address
+     * Creates and saves a cookie which contain user email address
      * @param response used to set cookies
      * @param loginEmail email address of the user to be set
      */

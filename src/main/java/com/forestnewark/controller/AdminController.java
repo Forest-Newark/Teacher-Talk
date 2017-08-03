@@ -10,9 +10,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.view.RedirectView;
 
-/**
- * Created by forestnewark on 5/11/17.
- */
+
 @Controller
 public class AdminController {
     final

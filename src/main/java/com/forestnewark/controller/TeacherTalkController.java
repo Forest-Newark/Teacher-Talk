@@ -299,7 +299,6 @@ public class TeacherTalkController {
 
     /**
      * Routes to forgotPasswordForm.html when user clicks "Forgot Password"
-     *
      * @return forgotpassword page
      */
     @RequestMapping("/forgotPassword")
@@ -310,7 +309,6 @@ public class TeacherTalkController {
 
     /**
      * Sends a password reset link in an email and then redirects to homepage
-     *
      * @param email to send reset email to
      * @return login page
      */
@@ -324,7 +322,6 @@ public class TeacherTalkController {
         if (userId == null) {
             return new RedirectView("/forgotPasswordForm");
         }
-
 
         //Success -> Send message and go to Root
 //        Message Service sends the email with the password reset link

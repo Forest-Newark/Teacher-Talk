@@ -1,13 +1,12 @@
 package com.forestnewark.bean;
 
-
-
 import org.hibernate.annotations.Proxy;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
-//@Entity is telling JPA tht the Student class is a JPA entity  and this can be persisted to a database
+//@Entity is telling JPA that the Student class is a JPA entity and can be persisted to a database
+
 @Entity
 @Proxy(lazy=false)
 public class Student{

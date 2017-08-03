@@ -7,9 +7,7 @@ import org.springframework.web.client.RestTemplate;
 import java.text.BreakIterator;
 import java.util.Locale;
 
-/**
- * Created by forestnewark on 5/5/17.
- */
+
 @Service
 public class TranslationService {
 
